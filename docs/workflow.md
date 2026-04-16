@@ -1,40 +1,62 @@
-# AI Workflow: Dossier Creatie
+# ⚡ AI RESEARCH WORKFLOW: DOSSIER_GEN_V1
 
-Volg deze instructies strikt bij het toevoegen van nieuwe onderzoeksonderwerpen aan het **Great Awakening Research Project**.
+```pseudocode
+// DO-WHILE: topics_remaining IN items.md
+[PROCESS_START]
+    TARGET = Select_Next_Topic(items.md)
+    STATUS = "Initializing research for: " + TARGET
 
-## 🎯 Doel
-Het creëren van een individuele onderzoekspagina in `/pages/` die de grens bewaakt tussen gedocumenteerde feiten en vigerende theorieën.
+[STEP_1: RAW_DATA_MINING]
+    SEARCH(Primary_Sources ONLY) {
+        - UN_Resolution_Database
+        - WEF_Official_Publications
+        - SEC_EDGAR_Filings (BlackRock/Vanguard)
+        - CIA_FOIA_Reading_Room
+        - National_Legislative_Archives
+    }
+    EXTRACT(Data_Points) {
+        - Document_ID, Date, Signatories, Funding_Sources
+    }
 
-## 🛠️ Stap-voor-Stap Instructies
+[STEP_2: NARRATIVE_MAPPING]
+    SEARCH(Context) {
+        - Great_Awakening_Map_Nodes
+        - Narrative_Origin_Points
+    }
+    COMPILE(Claims) {
+        - List_Common_Theories(WITHOUT_VERIFYING_AS_FACT)
+    }
 
-### 1. Pagina Initialisatie
-- Maak een nieuw bestand aan: `/pages/[onderwerp].html`.
-- Kopieer de basisstructuur en navigatie van `index.html`.
-- Zorg dat de CSS correct wordt ingeladen (`../css/style.css`).
+[STEP_3: SOURCE_VALIDATION]
+    ASSERT(Separation == STRICT) // If Fact == Theory -> REJECT
+    GENERATE(Citation_List) // All facts must have URL link
 
-### 2. Onderzoekfase (De "Fact-Check")
-Zoek naar bewijsmateriaal in deze volgorde van betrouwbaarheid:
-1.  **Primaire Bronnen**: Officiële documenten van organisaties (UN, WEF), overheidsarchieven, wetsteksten.
-2.  **Financiële Data**: SEC-filings, jaarverslagen, aandeelhoudersdata.
-3.  **Historische Feiten**: Gedecertificeerde dossiers (CIA.gov FOIA-reading room).
-4.  **De Theorie**: Beschrijf de context van de "Great Awakening Map" (wat wordt er beweerd?).
+[STEP_4: COMPONENT_BUILD]
+    CREATE_FILE("/pages/" + TARGET + ".html")
+    TEMPLATE(Dashboard_UI) {
+        HEADER(Target_Title, Status_Tag)
+        BODY_GRID {
+            SECTION("Gedocumenteerde Bewijsvoering") -> Inject(Step_1_Data)
+            SECTION("Context / Narratief") -> Inject(Step_2_Claims)
+            SECTION("Bronnen & Referenties") -> Inject(Step_3_Citations)
+        }
+    }
 
-### 3. Pagina Opbouw (HTML Content)
-Elke pagina MOET de volgende secties bevatten:
+[STEP_5: SYSTEM_UPDATE]
+    UPDATE("index.html") {
+        STATS_COUNTER++
+        APPEND_CARD(TARGET, Dossier_Grid)
+    }
+    GIT_PUSH("Research complete: " + TARGET)
 
-- **Header**: De naam van het onderwerp en een status-tag (`tag-fact`, `tag-investigation` of `tag-declassified`).
-- **Sectie: Bewijsvoering**: Een `<ul>` lijst met puntsgewijze feiten + bronvermelding.
-- **Sectie: Het Narratief**: Beschrijving van hoe dit item past in de "rabbit hole". Gebruik neutrale taal ("Wordt geassocieerd met...", "Supporters beweren...").
-- **Sectie: Geldstromen**: Indien van toepassing, wie financiert dit of wie profiteert ervan?
+[STEP_6: SEQUENCE_CONTROL]
+    IF (Topic_Complete) {
+        GOTO [PROCESS_START] // Start next topic ONLY when current is live
+    }
+```
 
-### 4. Integratie
-- Update de `stats-grid` op de `index.html` (verhoog de teller).
-- Voeg een `dossier-card` toe aan de `card-grid` op `index.html` die linkt naar de nieuwe pagina.
-
----
-
-## ⚠️ Belangrijke Richtlijnen voor de AI
-- **GEEN Speculatie als feit presenteren**: Gebruik woorden als "Gedocumenteerd", "Gerapporteerd", versus "Beweerd", "Gesuggereerd".
-- **Design Integrity**: Gebruik alleen CSS classes uit `css/style.css`.
-- **Interlinking**: Link naar andere relevante dossiers binnen het project (bv. `[[Agenda 2030]]` linkt naar `agenda-2030.html`).
-- **User Rule**: Gebruik NOOIT `translate` in de CSS voor hover-effecten.
+## ⚠️ Core Directives
+- **ATOMIC_WORKFLOW**: Voltooi 1 topic volledig voor je aan de volgende begint.
+- **SOURCE_OR_DELETE**: Geen bron? Verwijder het feit.
+- **CSS_LOCKED**: Gebruik enkel `css/style.css`.
+- **NO_TRANSLATE**: Never use `translate` in UI effects.
