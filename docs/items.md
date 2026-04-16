@@ -52,3 +52,22 @@ Dit dossier is een verzameling van gedocumenteerde informatie over onderwerpen d
 - **Gedocumenteerde Feiten**: Een grootschalige Amerikaanse marine-expeditie naar Antarctica in 1946-1947 onder leiding van admiraal Richard Byrd.
 - **Narratief**: Speculaties over het vinden van een "Ander Land" of een nazi-basis op Antarctica.
 - **Onderzoekspunten**: De officiële logboeken van admiraal Byrd en de redenen voor de voortijdige beëindiging van de missie.
+
+---
+
+## 📉 Enshittificatie & De "Rent-Seeking" Economie
+
+### De Concentratie van Bezit (BlackRock, Vanguard, State Street)
+- **Gedocumenteerde Feiten**: Deze "Big Three" investeringsmaatschappijen beheren samen meer dan 20 biljoen dollar en zijn de grootste aandeelhouders in bijna alle beursgenoteerde bedrijven ter wereld (van tech tot farma).
+- **Narratief**: Het idee dat een kleine kern van financiële instellingen een onzichtbaar monopolie heeft op de hele wereldeconomie en het beleid van bedrijven bepaalt (ESG-scores).
+- **Onderzoekspunten**: Stemgedrag van deze groepen in aandeelhoudersvergaderingen en hun invloed op de woningmarkt (het opkopen van woonwijken).
+
+### "You will own nothing and be happy"
+- **Gedocumenteerde Feiten**: Een uitspraak uit een video van het World Economic Forum (WEF) over de toekomstvisie voor 2030, waarin de overgang naar een deeleconomie (Product-as-a-Service) wordt geschetst.
+- **Narratief**: De vrees dat privé-eigendom volledig wordt uitgefaseerd en dat alles (van auto's tot woningen) gehuurd moet worden van een centrale macht, waardoor controle makkelijker wordt.
+- **Onderzoekspunten**: Strategische documenten over de "Circular Economy" en de shift naar abonnementsmodellen in alle sectoren.
+
+### Algoritmische Enshittificatie
+- **Gedocumenteerde Feiten**: Het proces waarbij platforms (Google, Amazon, Social Media) eerst waarde leveren, maar daarna de kwaliteit verlagen om data te oogsten en advertentie-inkomsten te maximaliseren.
+- **Narratief**: Het doelbewust "stuk maken" van informatievoorziening om de publieke opinie makkelijker te kunnen sturen via algoritmes.
+- **Onderzoekspunten**: De werking van aanbevelingsalgoritmes en de afname van organisch bereik voor kritische geluiden.
