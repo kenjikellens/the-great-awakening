@@ -9,73 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* .dossier-content: Main container for the research paper layout */
-        .dossier-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 3rem;
-            border: 1px solid var(--border-light);
-            margin-bottom: 4rem;
-        }
-
-        /* .infobox-side: Sidebar for key metadata and quick facts */
-        .infobox-side {
-            float: right;
-            width: 300px;
-            margin-left: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-light);
-            padding: 1rem;
-            background: #f8f9fa;
-        }
-
-        /* .infobox-side h4: Title for the metadata sidebar */
-        .infobox-side h4 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1rem;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        /* .infobox-table: Table layout for metadata details */
-        .infobox-table {
-            width: 100%;
-            font-size: 0.85rem;
-            border-collapse: collapse;
-        }
-
-        /* .infobox-table th: Metadata field labels */
-        .infobox-table th {
-            text-align: left;
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-            width: 40%;
-        }
-
-        /* .infobox-table td: Metadata field values */
-        .infobox-table td {
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        /* .source-link: Styling for outbound citation links */
-        .source-link {
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 1rem;
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-
-        /* .source-link:hover: Visual feedback for link interaction */
-        .source-link:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <header class="site-header">
@@ -90,9 +23,9 @@
         </nav>
     </header>
 
-    <main class="dashboard-section" style="margin-top: 3rem;">
-        <div class="dossier-content">
-            <aside class="infobox-side">
+    <main class="dashboard-section u-mt-3">
+        <div class="dossier-layout">
+            <aside class="infobox-metadata">
                 <h4>Dossier Metadata</h4>
                 <table class="infobox-table">
                     <tr>
@@ -116,12 +49,12 @@
                         <td>Archived Exercise</td>
                     </tr>
                 </table>
-                <a href="https://www.centerforhealthsecurity.org/our-work/exercises/event201/" target="_blank" class="source-link">Johns Hopkins Exercise Archive &nearr;</a>
+                <a href="https://www.centerforhealthsecurity.org/our-work/exercises/event201/" target="_blank" class="cite-link">Johns Hopkins Exercise Archive &nearr;</a>
             </aside>
 
-            <header style="margin-bottom: 2rem;">
-                <h1 style="font-family: 'Libre Baskerville', serif; font-size: 2.5rem; border-bottom: 2px solid #000; padding-bottom: 0.5rem;">Event 201</h1>
-                <p style="color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">A high-level pandemic exercise hosted months before the COVID-19 outbreak.</p>
+            <header class="dossier-header">
+                <h1>Event 201</h1>
+                <p>A high-level pandemic exercise hosted months before the COVID-19 outbreak.</p>
             </header>
 
             <section>
@@ -129,12 +62,12 @@
                 <p><strong>Event 201</strong> was a 3.5-hour pandemic tabletop exercise that simulated a series of dramatic, scenario-based facilitated discussions regarding response to a hypothetical, but scientifically plausible, pandemic. It aimed to identify areas where public-private partnerships will be necessary during the response to a severe pandemic in order to diminish large-scale economic and societal consequences.</p>
             </section>
 
-            <section style="margin-top: 3rem;">
+            <section class="u-mt-3">
                 <h2 class="section-title">Scenario Details</h2>
                 <p>The exercise simulated an outbreak of a novel zoonotic coronavirus (CAPS) transmitted from bats to pigs to people that eventually becomes efficiently transmissible from person to person, leading to a severe pandemic. The pathogen and the disease it caused were modeled largely on SARS, but it was more transmissible in the community setting by people with mild symptoms.</p>
             </section>
 
-            <section style="margin-top: 3rem;">
+            <section class="u-mt-3">
                 <h2 class="section-title">Key Recommendations</h2>
                 <p>The Event 201 exercise resulted in seven key recommendations for public and private sector leaders:</p>
                 <ul style="margin: 1.5rem 0; padding-left: 2rem;">
@@ -146,12 +79,12 @@
                 </ul>
             </section>
 
-            <section style="margin-top: 3rem; background: #fffcf0; padding: 1.5rem; border: 1px solid #e6db55;">
-                <h3 style="font-family: 'Libre Baskerville', serif; margin-bottom: 1rem;">Research Note: Narrative Context</h3>
-                <p style="font-size: 0.9rem;">Event 201 is frequently cited by independent researchers due to its timing—occurring just months before the official identification of COVID-19—and its focus on "countering misinformation" and the role of social media platforms in controlling the narrative during a health crisis. The simulation included specific discussions on how to manage "fake news" and "disinformation" through algorithmic control and government-media partnerships.</p>
+            <section class="research-note">
+                <h3>Research Note: Narrative Context</h3>
+                <p>Event 201 is frequently cited by independent researchers due to its timing—occurring just months before the official identification of COVID-19—and its focus on "countering misinformation" and the role of social media platforms in controlling the narrative during a health crisis. The simulation included specific discussions on how to manage "fake news" and "disinformation" through algorithmic control and government-media partnerships.</p>
             </section>
 
-            <section style="margin-top: 3rem;">
+            <section class="u-mt-3">
                 <h2 class="section-title">Primary Sources</h2>
                 <ul style="font-size: 0.9rem;">
                     <li>Johns Hopkins Center for Health Security. (2019). <i>Event 201 Pandemic Exercise: Highlights and Recommendations</i>.</li>

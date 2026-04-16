@@ -9,73 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* .dossier-content: Main container for the research paper layout */
-        .dossier-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 3rem;
-            border: 1px solid var(--border-light);
-            margin-bottom: 4rem;
-        }
-
-        /* .infobox-side: Sidebar for key metadata and quick facts */
-        .infobox-side {
-            float: right;
-            width: 300px;
-            margin-left: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-light);
-            padding: 1rem;
-            background: #f8f9fa;
-        }
-
-        /* .infobox-side h4: Title for the metadata sidebar */
-        .infobox-side h4 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1rem;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        /* .infobox-table: Table layout for metadata details */
-        .infobox-table {
-            width: 100%;
-            font-size: 0.85rem;
-            border-collapse: collapse;
-        }
-
-        /* .infobox-table th: Metadata field labels */
-        .infobox-table th {
-            text-align: left;
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-            width: 40%;
-        }
-
-        /* .infobox-table td: Metadata field values */
-        .infobox-table td {
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        /* .source-link: Styling for outbound citation links */
-        .source-link {
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 1rem;
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-
-        /* .source-link:hover: Visual feedback for link interaction */
-        .source-link:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <header class="site-header">
@@ -90,9 +23,9 @@
         </nav>
     </header>
 
-    <main class="dashboard-section" style="margin-top: 3rem;">
-        <div class="dossier-content">
-            <aside class="infobox-side">
+    <main class="dashboard-section u-mt-3">
+        <div class="dossier-layout">
+            <aside class="infobox-metadata">
                 <h4>Dossier Metadata</h4>
                 <table class="infobox-table">
                     <tr>
@@ -116,12 +49,12 @@
                         <td>Global Governance, Ecology</td>
                     </tr>
                 </table>
-                <a href="https://www.clubofrome.org/" target="_blank" class="source-link">Official Club of Rome Portal &nearr;</a>
+                <a href="https://www.clubofrome.org/" target="_blank" class="cite-link">Official Club of Rome Portal &nearr;</a>
             </aside>
 
-            <header style="margin-bottom: 2rem;">
-                <h1 style="font-family: 'Libre Baskerville', serif; font-size: 2.5rem; border-bottom: 2px solid #000; padding-bottom: 0.5rem;">Club of Rome</h1>
-                <p style="color: var(--text-muted); font-style: italic; margin-top: 0.5rem;">The think tank that pioneered the global ecological limits narrative.</p>
+            <header class="dossier-header">
+                <h1>Club of Rome</h1>
+                <p>The think tank that pioneered the global ecological limits narrative.</p>
             </header>
 
             <section>
@@ -129,28 +62,28 @@
                 <p>The **Club of Rome** is an international think tank composed of current and former heads of state, UN bureaucrats, high-level politicians, government officials, diplomats, scientists, economists, and business leaders from around the globe. It was founded in 1968 at the Accademia dei Lincei in Rome and gained world fame with its first report, <i>The Limits to Growth</i> (1972).</p>
             </section>
 
-            <section style="margin-top: 3rem;">
+            <section class="u-mt-3">
                 <h2 class="section-title">Critical Publications</h2>
-                <div style="margin: 1.5rem 0; border-left: 4px solid var(--accent-blue); padding-left: 1rem;">
+                <div class="pillar-quote">
                     <p><strong>The Limits to Growth (1972):</strong> This report used computer modeling to predict that economic growth could not continue indefinitely because of the limited availability of natural resources. It introduced the concept of "overshoot" and argued for a state of global equilibrium.</p>
                     <p><strong>The First Global Revolution (1991):</strong> This report analyzed the state of the world after the Cold War and argued that humanity is in the midst of a global revolution as it transitions to a new era.</p>
                 </div>
             </section>
 
-            <section style="margin-top: 3rem;">
+            <section class="u-mt-3">
                 <h2 class="section-title">The "Common Enemy" Quote</h2>
                 <p>One of the most significant and frequently cited passages from <i>The First Global Revolution</i> (page 75) discusses the need for a unifying threat to achieve global cooperation:</p>
-                <blockquote style="font-style: italic; background: #f9f9f9; padding: 1.5rem; border-left: 5px solid #ccc; margin: 1.5rem 0;">
+                <blockquote class="dossier-quote">
                     "In searching for a common enemy against whom we can unite, we came up with the idea that pollution, the threat of global warming, water shortages, famine and the like, would fit the bill... in designating these dangers as the enemy, we fall into the trap... namely mistaking symptoms for causes. All these dangers are caused by human intervention... the real enemy then is humanity itself."
                 </blockquote>
             </section>
 
-            <section style="margin-top: 3rem; background: #fffcf0; padding: 1.5rem; border: 1px solid #e6db55;">
-                <h3 style="font-family: 'Libre Baskerville', serif; margin-bottom: 1rem;">Research Note: Malthusian Influence</h3>
-                <p style="font-size: 0.9rem;">The Club of Rome is often viewed by independent researchers as the intellectual foundation for modern neo-Malthusianism. Their emphasis on resource scarcity and the "common threat" of environmental decay is analyzed as a strategic narrative designed to justify centralized global management of resources and population control measures.</p>
+            <section class="research-note">
+                <h3>Research Note: Malthusian Influence</h3>
+                <p>The Club of Rome is often viewed by independent researchers as the intellectual foundation for modern neo-Malthusianism. Their emphasis on resource scarcity and the "common threat" of environmental decay is analyzed as a strategic narrative designed to justify centralized global management of resources and population control measures.</p>
             </section>
 
-            <section style="margin-top: 3rem;">
+            <section class="u-mt-3">
                 <h2 class="section-title">Primary Sources</h2>
                 <ul style="font-size: 0.9rem;">
                     <li>Meadows, D. H., et al. (1972). <i>The Limits to Growth</i>. Universe Books.</li>

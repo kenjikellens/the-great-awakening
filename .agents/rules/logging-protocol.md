@@ -27,9 +27,8 @@ Each entry must occupy a single line and follow this exact timestamped format:
 
 ## 🚀 Execution Logic
 1. Perform file operation (**Create/Edit/Delete**).
-2. Get current system timestamp.
-3. Append formatted line to `LOG/changelog.log`.
-4. Proceed to next task.
+2. Append the line to `LOG/changelog.log`.
+3. Proceed to next file.
 
 > [!IMPORTANT]
 > **DO NOT USE ECHO** to update this file via shell redirection, as it often causes encoding issues. Use file-writing tools instead.
