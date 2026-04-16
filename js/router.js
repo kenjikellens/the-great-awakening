@@ -12,7 +12,8 @@
         home: {
             fragment: 'pages/fragments/home.html',
             title: `${baseTitle} | Home`,
-            init: () => {
+            init: async () => {
+                await DossierManager.renderHomeList();
                 if (typeof window.initDossierSearch === 'function') {
                     window.initDossierSearch();
                 }
@@ -21,7 +22,8 @@
         dossiers: {
             fragment: 'pages/fragments/dossiers.html',
             title: `${baseTitle} | Dossiers`,
-            init: () => {
+            init: async () => {
+                await DossierManager.renderDossiersIndex();
                 if (typeof window.initLegendSearch === 'function') {
                     window.initLegendSearch();
                 }

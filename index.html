@@ -20,70 +20,12 @@
                 <li class="has-mega-menu">
                     <a href="#dossiers" data-route="dossiers">Dossiers</a>
                     <div class="mega-menu">
-                        <div class="mega-menu-content">
-                            <!-- Category 1: Global Agendas -->
-                            <div class="mega-menu-category">
-                                <h4>Global Agendas</h4>
-                                <ul class="mega-menu-list">
-                                    <li><a href="#dossier/the-great-reset">The Great Reset</a></li>
-                                    <li><a href="#dossier/agenda-2030">UN Agenda 2030</a></li>
-                                    <li><a href="#dossier/event-201">Event 201</a></li>
-                                    <li><a href="#dossier/15-minute-cities">15-Minute Cities</a></li>
-                                    <li><a href="#dossier/wef">World Economic Forum</a></li>
-                                    <li><a href="#dossier/davos-manifesto">Davos Manifesto</a></li>
-                                </ul>
-                            </div>
-                            <!-- Category 2: Surveillance & ID -->
-                            <div class="mega-menu-category">
-                                <h4>Surveillance & ID</h4>
-                                <ul class="mega-menu-list">
-                                    <li><a href="#dossier/digital-id">Digital ID</a></li>
-                                    <li><a href="#dossier/cbdc">CBDC (Digital Cash)</a></li>
-                                    <li><a href="#dossier/social-credit">Social Credit Systems</a></li>
-                                    <li><a href="#dossier/id2020">ID2020 Alliance</a></li>
-                                    <li><a href="#dossier/pegasus-spyware">Pegasus Spyware</a></li>
-                                    <li><a href="#dossier/haarp">HAARP</a></li>
-                                </ul>
-                            </div>
-                            <!-- Category 3: Elite Networks -->
-                            <div class="mega-menu-category">
-                                <h4>Elite Networks</h4>
-                                <ul class="mega-menu-list">
-                                    <li><a href="#dossier/bilderberg">Bilderberg Group</a></li>
-                                    <li><a href="#dossier/cfr">CFR (Foreign Relations)</a></li>
-                                    <li><a href="#dossier/bohemian-grove">Bohemian Grove</a></li>
-                                    <li><a href="#dossier/club-of-rome">Club of Rome</a></li>
-                                    <li><a href="#dossier/trilateral-commission">Trilateral Commission</a></li>
-                                    <li><a href="#dossier/epstein-files">The Epstein Files</a></li>
-                                </ul>
-                            </div>
-                            <!-- Category 4: Declassified Ops -->
-                            <div class="mega-menu-category">
-                                <h4>Declassified Ops</h4>
-                                <ul class="mega-menu-list">
-                                    <li><a href="#dossier/mk-ultra">Project MK-Ultra</a></li>
-                                    <li><a href="#dossier/operation-paperclip">Operation Paperclip</a></li>
-                                    <li><a href="#dossier/operation-northwoods">Operation Northwoods</a></li>
-                                    <li><a href="#dossier/operation-mockingbird">Operation Mockingbird</a></li>
-                                    <li><a href="#dossier/operation-gladio">Operation Gladio</a></li>
-                                    <li><a href="#dossier/tuskegee">Tuskegee Study</a></li>
-                                </ul>
-                            </div>
-                            <!-- Category 5: Financial Architecture -->
-                            <div class="mega-menu-category">
-                                <h4>Finance & Power</h4>
-                                <ul class="mega-menu-list">
-                                    <li><a href="#dossier/blackrock-vanguard">BlackRock & Vanguard</a></li>
-                                    <li><a href="#dossier/bis">BIS (Bank for Banks)</a></li>
-                                    <li><a href="#dossier/federal-reserve">Federal Reserve</a></li>
-                                    <li><a href="#dossier/imf-world-bank">IMF & World Bank</a></li>
-                                    <li><a href="#dossier/esg-scores">ESG Scores</a></li>
-                                    <li><a href="#dossiers" class="view-all-link">→ View All Dossiers</a></li>
-                                </ul>
-                            </div>
+                        <div id="mega-menu-dynamic-content" class="mega-menu-content">
+                            <!-- Dynamically populated by DossierManager -->
                         </div>
                     </div>
                 </li>
+
                 <li><a href="#about" data-route="about">About</a></li>
                 <li><a href="#contact" data-route="contact">Contact</a></li>
             </ul>
@@ -96,6 +38,8 @@
         <p>&copy; 2026 The Great Awakening Research Project. All data is based on public records and factual documentation.</p>
     </footer>
 
+    <script src="data/dossiers.js"></script>
+    <script src="js/dossier-manager.js"></script>
     <script src="js/search.js"></script>
     <script src="js/legend-search.js"></script>
     <script src="js/router.js"></script>
