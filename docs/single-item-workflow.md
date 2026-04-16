@@ -25,6 +25,3 @@ This protocol is intended for the focused development or update of a specific re
 - Perform a link check and a visual review against the global style system.
 - **Do NOT initiate any git push commands**. This workflow ends with local file completion.
 
----
-**STATUS**: SINGLE_TARGET_MODE
-**VERSION**: 1.0.1

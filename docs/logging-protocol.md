@@ -1,6 +1,6 @@
 # Logging Protocol: Changelog Management
 
-This protocol is mandatory for all AI agents and contributors working on the Great Awakening Research Project. Every file modification, creation, or deletion MUST be recorded in the root `changelog.log` file.
+This protocol is mandatory for all AI agents and contributors working on the Great Awakening Research Project. Every file modification, creation, or deletion MUST be recorded in the folder LOG in the `changelog.log` file.
 
 ## 📝 Logging Rules
 
@@ -9,9 +9,9 @@ The log entry must be created or updated immediately after the associated file o
 
 ### 2. Format
 Each entry must occupy a single line and follow this exact timestamped format:
-`[HH:MM:SS DD/MM/YYYY] file.extension - description_of_change`
+"[HH:MM DD/MM/YYYY] `file.extension` - description_of_change"
 
-- **HH:MM:SS**: 24-hour timestamp (Current local time).
+- **HH:MM**: 24-hour timestamp (Current local time).
 - **DD/MM/YYYY**: Current date.
 - **file.extension**: The relative path and name of the modified file.
 - **description**: A concise summary of the specific changes made.
@@ -26,7 +26,3 @@ Each entry must occupy a single line and follow this exact timestamped format:
 2. Get current system timestamp.
 3. Append formatted line to `changelog.log`.
 4. Proceed to next task.
-
----
-**STATUS**: LOGGING_MANDATORY
-**LAST UPDATED**: 16/04/2026
