@@ -2,6 +2,8 @@
 trigger: always_on
 ---
 
+think about what setting i chose, did i select planning mode or quick/fast mode? when yo uidentified this:
+
 # Planning Mode Rules
 
 - ALWAYS create an implementation plan before making any changes, including bug fixes.
