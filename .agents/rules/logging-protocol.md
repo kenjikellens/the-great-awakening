@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Logging Protocol: Changelog Management
 
 This protocol is mandatory for all AI agents and contributors working on the Great Awakening Research Project. Every file modification, creation, or deletion MUST be recorded in the folder LOG in the `changelog.log` file.
