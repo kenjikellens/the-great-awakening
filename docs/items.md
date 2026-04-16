@@ -1,73 +1,103 @@
-# Research Wiki: Feiten & Dossiers
+# Research Wiki: Facts & Dossiers (Expanded)
 
-Dit dossier is een verzameling van gedocumenteerde informatie over onderwerpen die vaak worden gekoppeld aan "The Great Awakening". Het doel is om een objectieve scheiding te maken tussen vaststaand bewijs en vigerende theorieën.
+This dossier is a comprehensive collection of documented information regarding the "Great Awakening" research scope. Our goal is to maintain an objective separation between verified evidence and prevailing narratives.
 
 ---
 
-## 🏗️ Mondiale Agenda's & Organisaties
+## 🏗️ Global Agendas & Transnational Organizations
 
 ### UN Agenda 2030 / Sustainable Development Goals
-- **Gedocumenteerde Feiten**: In september 2015 hebben alle 193 lidstaten van de Verenigde Naties de "Agenda 2030 voor Duurzame Ontwikkeling" aangenomen. Het bevat 17 doelen (SDG's) gericht op o.a. klimaat, armoede en ongelijkheid.
-- **Narratief**: Critici suggereren dat dit een blauwdruk is voor een centrale wereldregering en totale controle over natuurlijke hulpbronnen.
-- **Onderzoekspunten**: De implementatie van deze doelen in lokale wetgeving en de rol van internationale NGO's bij de uitvoering.
+- **Documented Facts**: Adopted in 2015 by all 193 UN Member States. Contains 17 SDGs targeting climate, poverty, and inequality.
+- **Narrative**: Critics suggest a blueprint for centralized world governance and absolute resource control.
 
 ### World Economic Forum (WEF) - "The Great Reset"
-- **Gedocumenteerde Feiten**: Het WEF is een invloedrijke stichting in Davos waar jaarlijks wereldleiders, CEO's en academici samenkomen. Het initiatief "The Great Reset" werd in 2020 gelanceerd door Klaus Schwab.
-- **Narratief**: Men vermoedt een ondemocratische invloed van het WEF op nationale regeringen (o.a. via het "Young Global Leaders" programma).
-- **Onderzoekspunten**: Lobbying-activiteiten van aangesloten bedrijven en de deelname van nationale ministers aan WEF-bijeenkomsten.
+- **Documented Facts**: Launched in 2020 by Klaus Schwab. Focuses on restructuring global economies post-crisis.
+- **Narrative**: Undemocratic influence through the "Young Global Leaders" program.
+
+### Event 201
+- **Documented Facts**: A high-level pandemic exercise hosted by Johns Hopkins Center for Health Security, WEF, and the Bill & Melinda Gates Foundation in October 2019.
+- **Narrative**: Allegations that it served as a rehearsal for the subsequent COVID-19 pandemic.
+
+### Club of Rome
+- **Documented Facts**: Global think tank founded in 1968. Famous for "The Limits to Growth" report.
+- **Narrative**: Focuses on population control and managing global resources through a non-democratic board.
+
+### 15-Minute Cities
+- **Documented Facts**: Urban planning concept where all necessities are within 15 minutes by foot or bike.
+- **Narrative**: Concerns about "climate lockdowns" and restrictions on freedom of movement via digital zoning.
 
 ---
 
-## 💳 Technologie & Digitalisering
+## 💳 Technology, ID & Surveillance
 
-### Digital ID & Digitale Wallet
-- **Gedocumenteerde Feiten**: Veel overheden en de EU (eIDAS-verordening) werken aan een raamwerk voor een Europese digitale identiteit.
-- **Narratief**: Dit wordt gezien als de voorloper van een sociaal kredietsysteem vergelijkbaar met dat in China.
-- **Onderzoekspunten**: Welke tech-bedrijven bouwen de infrastructuur en welke garanties zijn er voor privacy en anonimiteit?
+### Digital ID & Wallets (eIDAS)
+- **Documented Facts**: EU and national frameworks for digital identities. Key for digital governance.
+- **Narrative**: Foundation for a China-style social credit system.
 
 ### CBDC (Central Bank Digital Currency)
-- **Gedocumenteerde Feiten**: Centrale banken (o.a. de ECB) onderzoeken de invoering van een digitale euro. Dit is programmeerbaar geld dat direct door de centrale bank wordt uitgegeven.
-- **Narratief**: De vrees voor het einde van contant geld en de mogelijkheid om transacties technisch te limiteren of te verbieden.
-- **Onderzoekspunten**: Testfases van de ECB en wetgevende trajecten in de EU.
+- **Documented Facts**: Digital version of central bank money (e.g., Digital Euro) being tested by the ECB and Fed.
+- **Narrative**: The end of financial privacy and the introduction of "programmable" money.
+
+### ID2020 Alliance
+- **Documented Facts**: Public-private partnership (Microsoft, Gates Foundation, Gavi) for digital identity.
+- **Narrative**: Pushing for universal biometric identification from birth.
+
+### Social Credit Systems
+- **Documented Facts**: Operational in China; various "trust scores" used in Western insurance and finance.
+- **Narrative**: Method for total societal behavioral control.
 
 ---
 
-## 🏢 Financiële Systemen & Macht
+## ⚔️ Declassified Operations & Intelligence Dossiers
 
-### Federal Reserve (Fed) & Centrale Banken
-- **Gedocumenteerde Feiten**: De Federal Reserve is een hybride entiteit (privaat/publiek) die het monetaire beleid van de VS bepaalt. De meeste nationale centrale banken zijn onderdeel van het BIS (Bank for International Settlements).
-- **Narratief**: De stelling dat een klein aantal families via de grote banken de wereldwijde geldtoevoer en daarmee de politiek beheerst.
-- **Onderzoekspunten**: De aandeelhoudersstructuur van de regionale Federal Reserve banken en de historische macht van het BIS in Basel.
-
----
-
-## 📜 Historische Dossiers (Gedecertificeerd)
+### The Epstein Files
+- **Documented Facts**: Court documents unsealed in 2024 detailing Jeffrey Epstein's network of high-profile associates and safe houses.
+- **Narrative**: Operative involved in kompromat or intelligence gathering for various agencies.
 
 ### Project MK-Ultra
-- **Gedocumenteerde Feiten**: Een illegaal onderzoeksprogramma van de CIA (jaren '50/'60) gericht op gedragsbeïnvloeding en mind control via drugs en marteling. Dit werd in 1975 publiekelijk bekend via de Church Committee.
-- **Status**: **FEIT**. Dit is niet langer een theorie, maar een officieel erkende operatie van de Amerikaanse overheid.
-- **Relevantie**: Het toont aan dat overheden in het verleden geavanceerde en ethisch grensoverschrijdende methoden hebben gebruikt om de bevolking te beïnvloeden.
+- **Documented Facts**: CIA behavioral engineering program (1950s-70s) using drugs and psychological torture. Declassified by the Church Committee (1975).
+- **Status**: **FACT**.
 
-### Operation Highjump
-- **Gedocumenteerde Feiten**: Een grootschalige Amerikaanse marine-expeditie naar Antarctica in 1946-1947 onder leiding van admiraal Richard Byrd.
-- **Narratief**: Speculaties over het vinden van een "Ander Land" of een nazi-basis op Antarctica.
-- **Onderzoekspunten**: De officiële logboeken van admiraal Byrd en de redenen voor de voortijdige beëindiging van de missie.
+### Operation Paperclip
+- **Documented Facts**: OSS program that recruited 1,600+ Nazi scientists and engineers to the US after WWII.
+- **Status**: **FACT**.
+
+### Operation Northwoods
+- **Documented Facts**: Proposed 1962 DoD plan for "false flag" attacks on US soil to justify war with Cuba. Rejected by JFK.
+- **Status**: **FACT**.
+
+### Operation Mockingbird
+- **Documented Facts**: CIA campaign (1950s) to influence domestic and international media outlets and recruit journalists.
+- **Status**: **FACT**.
+
+### Operation Gladio
+- **Documented Facts**: NATO "stay-behind" clandestine armies in Europe during the Cold War; linked to domestic political violence.
+- **Status**: **FACT**.
 
 ---
 
-## 📉 Enshittificatie & De "Rent-Seeking" Economie
+## 🏢 Finance, Investment & Global Control
 
-### De Concentratie van Bezit (BlackRock, Vanguard, State Street)
-- **Gedocumenteerde Feiten**: Deze "Big Three" investeringsmaatschappijen beheren samen meer dan 20 biljoen dollar en zijn de grootste aandeelhouders in bijna alle beursgenoteerde bedrijven ter wereld (van tech tot farma).
-- **Narratief**: Het idee dat een kleine kern van financiële instellingen een onzichtbaar monopolie heeft op de hele wereldeconomie en het beleid van bedrijven bepaalt (ESG-scores).
-- **Onderzoekspunten**: Stemgedrag van deze groepen in aandeelhoudersvergaderingen en hun invloed op de woningmarkt (het opkopen van woonwijken).
+### The "Big Three" (BlackRock, Vanguard, State Street)
+- **Documented Facts**: Manage ~$20 trillion. Top shareholders in almost all S&P 500 companies.
+- **Narrative**: Invisible monopoly controlling corporate policy through ESG (Environmental, Social, and Governance) scores.
 
-### "You will own nothing and be happy"
-- **Gedocumenteerde Feiten**: Een uitspraak uit een video van het World Economic Forum (WEF) over de toekomstvisie voor 2030, waarin de overgang naar een deeleconomie (Product-as-a-Service) wordt geschetst.
-- **Narratief**: De vrees dat privé-eigendom volledig wordt uitgefaseerd en dat alles (van auto's tot woningen) gehuurd moet worden van een centrale macht, waardoor controle makkelijker wordt.
-- **Onderzoekspunten**: Strategische documenten over de "Circular Economy" en de shift naar abonnementsmodellen in alle sectoren.
+### Bank for International Settlements (BIS)
+- **Documented Facts**: The "Bank for Central Banks" in Basel, Switzerland. Facilitates global monetary cooperation.
+- **Narrative**: The apex of the global financial pyramid, operating outside national jurisdictions.
 
-### Algoritmische Enshittificatie
-- **Gedocumenteerde Feiten**: Het proces waarbij platforms (Google, Amazon, Social Media) eerst waarde leveren, maar daarna de kwaliteit verlagen om data te oogsten en advertentie-inkomsten te maximaliseren.
-- **Narratief**: Het doelbewust "stuk maken" van informatievoorziening om de publieke opinie makkelijker te kunnen sturen via algoritmes.
-- **Onderzoekspunten**: De werking van aanbevelingsalgoritmes en de afname van organisch bereik voor kritische geluiden.
+---
+
+## 🌲 Elite Networks & Secret Assemblies
+
+### Bilderberg Group
+- **Documented Facts**: Annual private conference of ~130 political and business leaders from Europe and North America.
+- **Narrative**: Secretive forum where global policy is decided behind closed doors.
+
+### Council on Foreign Relations (CFR)
+- **Documented Facts**: US think tank focusing on foreign policy. Very high percentage of cabinet members are CFR affiliates.
+- **Narrative**: The "actual" state department deciding US policy for decades.
+
+### Bohemian Grove
+- **Documented Facts**: 2,700-acre campground in California hosting a private two-week "encampment" for world leaders.
+- **Narrative**: Occult-themed ceremonies and unofficial policy drafting.

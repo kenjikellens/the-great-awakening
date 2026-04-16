@@ -1,78 +1,35 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Awakening Research - Intel Dashboard</title>
+    <title>The Great Awakening | Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts: Serif for titles, Sans-serif for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="dashboard-theme">
-    <nav class="sidebar">
-        <div class="logo">GA RESEARCH</div>
-        <ul class="nav-links">
-            <li><a href="#" class="active"><span class="icon">📊</span> Dashboard</a></li>
-            <li><a href="docs/items.md"><span class="icon">📂</span> Dossiers</a></li>
-            <li><a href="#"><span class="icon">⚖️</span> Wettelijke Kaders</a></li>
-            <li><a href="#"><span class="icon">🏢</span> Organisaties</a></li>
-            <li><a href="#"><span class="icon">🏛️</span> Archieven</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <p>V 1.0.4 - Intel Status: Active</p>
-        </div>
-    </nav>
+<body>
+    <header class="site-header">
+        <nav class="nav-container" style="justify-content: center;">
+            <ul class="header-links">
+                <li><a href="#home" data-route="home">Home</a></li>
+                <li><a href="#dossiers" data-route="dossiers">Dossiers</a></li>
+                <li><a href="#about" data-route="about">About</a></li>
+                <li><a href="#contact" data-route="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main class="content-area">
-        <header class="top-bar">
-            <h1>Onderzoeks Dashboard</h1>
-            <div class="search-box">
-                <input type="text" placeholder="Zoek dossier (bv. Agenda 2030)..." id="global-search">
-            </div>
-        </header>
+    <main id="content-shell" aria-live="polite"></main>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>Gedocumenteerde Items</h3>
-                <p class="stat-value">42</p>
-                <span class="trend positive">Verified</span>
-            </div>
-            <div class="stat-card">
-                <h3>Lopende Onderzoeken</h3>
-                <p class="stat-value">12</p>
-                <span class="trend warning">Checking Sources</span>
-            </div>
-            <div class="stat-card">
-                <h3>Theorieën/Narratieven</h3>
-                <p class="stat-value">156</p>
-                <span class="trend neutral">Categorized</span>
-            </div>
-        </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 The Great Awakening Research Project. All data is based on public records and factual documentation.</p>
+    </footer>
 
-        <section class="dossier-preview">
-            <div class="section-header">
-                <h2>Actuele Dossiers</h2>
-                <a href="docs/items.md" class="btn-link">Bekijk alle dossiers</a>
-            </div>
-            <div class="card-grid">
-                <div class="dossier-card">
-                    <div class="card-tag tag-fact">Bewezen</div>
-                    <h3>Agenda 2030</h3>
-                    <p>Feitelijke analyse van de 17 SDG's en hun implementatie in lokale overheden.</p>
-                </div>
-                <div class="dossier-card">
-                    <div class="card-tag tag-investigation">Onderzoek</div>
-                    <h3>WEF Great Reset</h3>
-                    <p>Mapping van lobby-invloeden en overheidskoppelingen via Young Global Leaders.</p>
-                </div>
-                <div class="dossier-card">
-                    <div class="card-tag tag-declassified">Gedecertificeerd</div>
-                    <h3>Project MK-Ultra</h3>
-                    <p>Analyse van CIA-documenten betreffende gedragsbeïnvloeding.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+    <script src="js/search.js"></script>
+    <script src="js/legend-search.js"></script>
+    <script src="js/router.js"></script>
 </body>
 </html>

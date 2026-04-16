@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier Database | The Great Awakening</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Google Fonts: Serif for titles, Sans-serif for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Dossier Legend Search Logic will be loaded at the end -->
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container" style="justify-content: center;">
+            <ul class="header-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="dossiers.html">Dossiers</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-section" style="margin-top: 3rem;">
+        <h1 style="font-family: 'Libre Baskerville', serif; text-align: center; margin-bottom: 2rem;">Research Database Overview</h1>
+        
+        <section style="background: white; border: 1px solid var(--border-light); padding: 3rem; margin-top: 2rem;">
+            <h2 class="section-title">Database Status</h2>
+            <p>The Great Awakening Research Project maintains a strictly documented database of geopolitical developments. This page serves as a live overview of our research metrics. All categorized sources are cross-referenced with primary documents, official government records, and declassified archives.</p>
+            
+            <div class="legend-section" style="margin-top: 3rem; border-top: 1px solid var(--border-light); padding-top: 2rem;">
+                <h2 class="section-title">Research Inventory (Legend)</h2>
+                
+                <div class="legend-search-box" style="margin-bottom: 2rem;">
+                    <input type="text" id="legend-search" placeholder="Filter inventory..." 
+                           style="width: 100%; max-width: 400px; padding: 0.5rem 1rem; border: 1px solid var(--border-light); font-family: 'Libre Baskerville', serif;">
+                </div>
+
+                <div id="dossier-legend" class="legend-list" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+                    <a href="dossiers/15-minute-cities.html" class="legend-item">15-Minute Cities</a>
+                    <a href="dossiers/agenda-2030.html" class="legend-item">Agenda 2030 (UN)</a>
+                    <a href="dossiers/algorithmic-enshittification.html" class="legend-item">Algorithmic Enshittification</a>
+                    <a href="dossiers/bis.html" class="legend-item">Bank for International Settlements (BIS)</a>
+                    <a href="dossiers/bilderberg.html" class="legend-item">Bilderberg Group</a>
+                    <a href="dossiers/blackrock-vanguard.html" class="legend-item">BlackRock, Vanguard & State Street</a>
+                    <a href="dossiers/bohemian-grove.html" class="legend-item">Bohemian Grove</a>
+                    <a href="dossiers/cbdc.html" class="legend-item">CBDC (Central Bank Digital Currency)</a>
+                    <a href="dossiers/club-of-rome.html" class="legend-item">Club of Rome</a>
+                    <a href="dossiers/cfr.html" class="legend-item">Council on Foreign Relations (CFR)</a>
+                    <a href="dossiers/davos-manifesto.html" class="legend-item">Davos Manifesto</a>
+                    <a href="dossiers/digital-id.html" class="legend-item">Digital ID (eIDAS)</a>
+                    <a href="dossiers/esg-scores.html" class="legend-item">ESG Scores</a>
+                    <a href="dossiers/event-201.html" class="legend-item">Event 201</a>
+                    <a href="dossiers/federal-reserve.html" class="legend-item">Federal Reserve (Fed)</a>
+                    <a href="dossiers/gulf-of-tonkin.html" class="legend-item">Gulf of Tonkin</a>
+                    <a href="dossiers/haarp.html" class="legend-item">HAARP</a>
+                    <a href="dossiers/id2020.html" class="legend-item">ID2020 Alliance</a>
+                    <a href="dossiers/imf-world-bank.html" class="legend-item">IMF & World Bank</a>
+                    <a href="dossiers/epstein-files.html" class="legend-item">Jeffrey Epstein Files</a>
+                    <a href="dossiers/mk-ultra.html" class="legend-item">MK-Ultra (CIA)</a>
+                    <a href="dossiers/neuralink.html" class="legend-item">Neuralink & Transhumanism</a>
+                    <a href="dossiers/operation-gladio.html" class="legend-item">Operation Gladio</a>
+                    <a href="dossiers/operation-mockingbird.html" class="legend-item">Operation Mockingbird</a>
+                    <a href="dossiers/operation-northwoods.html" class="legend-item">Operation Northwoods</a>
+                    <a href="dossiers/operation-paperclip.html" class="legend-item">Operation Paperclip</a>
+                    <a href="dossiers/panama-papers.html" class="legend-item">Panama & Pandora Papers</a>
+                    <a href="dossiers/pegasus-spyware.html" class="legend-item">Pegasus Spyware</a>
+                    <a href="dossiers/project-blue-beam.html" class="legend-item">Project Blue Beam</a>
+                    <a href="dossiers/mk-delta.html" class="legend-item">Project MK-Delta</a>
+                    <a href="dossiers/social-credit.html" class="legend-item">Social Credit Systems</a>
+                    <a href="dossiers/the-great-reset.html" class="legend-item">The Great Reset (WEF)</a>
+                    <a href="dossiers/trilateral-commission.html" class="legend-item">Trilateral Commission</a>
+                    <a href="dossiers/tuskegee.html" class="legend-item">Tuskegee Syphilis Study</a>
+                    <a href="dossiers/uap-disclosure.html" class="legend-item">UAP/UFO Disclosure</a>
+                    <a href="dossiers/uss-liberty.html" class="legend-item">USS Liberty Incident</a>
+                    <a href="dossiers/wef.html" class="legend-item">World Economic Forum (WEF)</a>
+                    <a href="dossiers/you-will-own-nothing.html" class="legend-item">"You will own nothing and be happy"</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; border-top: 1px solid var(--border-light); padding-top: 2rem;">
+                <h3 style="font-family: 'Libre Baskerville', serif; margin-bottom: 1rem;">Recent Database Updates</h3>
+                <ul style="font-size: 0.9rem; color: var(--text-muted); list-style: none;">
+                    <li style="margin-bottom: 10px;">- [2026-04-16] Added initial dossier for <b>Agenda 2030</b>.</li>
+                    <li style="margin-bottom: 10px;">- [2026-04-12] Updated source verification for <b>Technocracy</b> focus area.</li>
+                    <li style="margin-bottom: 10px;">- [2026-04-01] Global audit of 850+ categorized sources completed.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 The Great Awakening Research Project. Archive status: Synchronized.</p>
+    </footer>
+
+    <script src="../js/legend-search.js"></script>
+</body>
+</html>

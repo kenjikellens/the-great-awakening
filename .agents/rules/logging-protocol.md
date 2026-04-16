@@ -4,12 +4,10 @@ trigger: always_on
 
 # Logging Protocol: Changelog Management
 
-This protocol is mandatory for all AI agents and contributors working on the Great Awakening Research Project. Every file modification, creation, or deletion MUST be recorded in the folder LOG in the `changelog.log` file.
-
 ## 📝 Logging Rules
 
 ### 1. Timing
-The log entry must be created or updated immediately after the associated file operation is completed.
+The log entry must be created or updated immediately after the associated file operation is completed, ony file edits, additions or deletions. Git pulling or pushing does NOT need to be logged.
 
 ### 2. Format
 Each entry must occupy a single line and follow this exact timestamped format:
@@ -30,3 +28,5 @@ Each entry must occupy a single line and follow this exact timestamped format:
 2. Get current system timestamp.
 3. Append formatted line to `LOG/changelog.log`.
 4. Proceed to next task.
+
+DO NOT USE ECHO IN THIS FILE OR FOR THIS FILE!

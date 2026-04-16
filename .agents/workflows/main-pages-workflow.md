@@ -1,3 +1,7 @@
+---
+description: # Main Research Workflow (Mass Processing)
+---
+
 # Main Research Workflow (Mass Processing)
 
 This protocol is designated for sequential, bulk processing of all research topics identified in the `items.md` index. The agent is required to iterate through the entire index until all dossiers are completed.

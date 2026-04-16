@@ -1,3 +1,7 @@
+---
+description: # Single-Item Research Workflow (Update or Create)
+---
+
 # Single-Item Research Workflow (Update or Create)
 
 This protocol is intended for the focused development or update of a specific research dossier. Use this when adding a new one-off topic or revising an existing page.
