@@ -9,7 +9,7 @@ The log entry must be created or updated immediately after the associated file o
 
 ### 2. Format
 Each entry must occupy a single line and follow this exact timestamped format:
-`[HH:MM:SS DD/MM/YYYY] file.extension description_of_change`
+`[HH:MM:SS DD/MM/YYYY] file.extension - description_of_change`
 
 - **HH:MM:SS**: 24-hour timestamp (Current local time).
 - **DD/MM/YYYY**: Current date.
