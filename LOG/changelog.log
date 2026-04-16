@@ -1,0 +1,14 @@
+[11:37:40 16/04/2026] index.html Initial premium landing page creation
+[11:37:51 16/04/2026] style.css Initial premium styling with gradients and glassmorphism
+[11:37:56 16/04/2026] README.md Initial project documentation setup
+[11:39:19 16/04/2026] css/style.css Moved style.css to css directory
+[11:39:19 16/04/2026] index.html Updated link reference to css/style.css
+[11:43:23 16/04/2026] docs/items.md Created comprehensive topics list
+[12:04:39 16/04/2026] docs/items.md Restructured to Fact-Based Research Wiki format
+[12:04:57 16/04/2026] index.html Redesigned to Research Dashboard/Intel UI
+[12:05:30 16/04/2026] css/style.css Redesigned styling for Dashboard UI
+[12:07:54 16/04/2026] docs/items.md Added Enshittification and Rent-Seeking Economy section
+[12:16:42 16/04/2026] docs/main-workflow.md Created from workflow.md with bulk processing focus
+[12:16:56 16/04/2026] docs/single-item-workflow.md Created for individual dossier management
+[13:33:50 16/04/2026] docs/logging-protocol.md Created official logging instructions for AI agents
+[13:34:10 16/04/2026] changelog.log Initialized log file with project history
