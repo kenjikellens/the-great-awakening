@@ -6,8 +6,10 @@ trigger: always_on
 
 ## 📝 Logging Rules
 
-### 1. Timing
-The log entry must be created or updated immediately after the associated file operation is completed, ony file edits, additions or deletions. Git pulling or pushing does NOT need to be logged.
+### 1. Timing & Scope
+- **DO LOG**: Immediately after completing a local file operation (**Create, Edit, or Delete**).
+- **NEVER LOG**: Administrative or synchronization tasks. **Git pulling (pull), pushing (push), cloning, or branching MUST NEVER BE LOGGED.**
+- **NEVER LOG**: System commands, environment setup, or internal agent reasoning.
 
 ### 2. Format
 Each entry must occupy a single line and follow this exact timestamped format:
@@ -19,14 +21,15 @@ Each entry must occupy a single line and follow this exact timestamped format:
 - **description**: A concise summary of the specific changes made.
 
 ### 3. Granularity
-- One line per file.
-- If a single task involves 5 files, 5 separate lines must be added to the log.
-- Use a new line for each entry; do not overwrite previous logs.
+- **One line per file**: Even if multiple files are modified in a single task.
+- **Append only**: Always use a new line; never overwrite or delete previous history.
+- **No duplicates**: Do not log the same change multiple times.
 
 ## 🚀 Execution Logic
-1. Perform file operation (Create/Edit/Delete).
+1. Perform file operation (**Create/Edit/Delete**).
 2. Get current system timestamp.
 3. Append formatted line to `LOG/changelog.log`.
 4. Proceed to next task.
 
-DO NOT USE ECHO IN THIS FILE OR FOR THIS FILE!
+> [!IMPORTANT]
+> **DO NOT USE ECHO** to update this file via shell redirection, as it often causes encoding issues. Use file-writing tools instead.
