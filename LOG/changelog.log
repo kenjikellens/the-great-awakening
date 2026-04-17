@@ -3,3 +3,5 @@
 [14:29 17/04/2026] css/style.css - Implemented ChatGPT-style full-screen hero and search UI.
 [14:31 17/04/2026] css/style.css - Removed prohibited transforms on scroll-indicator hover and animation.
 [14:32 17/04/2026] css/style.css - Isolated scroll arrow animation using relative positioning to fix text jitter.
+[16:35 17/04/2026] .agents/rules/artefacts-system.md - Created explicit rule for handling and storing artefacts in the custom 'artefacts' folder.
+[16:36 17/04/2026] .agents/rules/planning-or-fast-mode.md - Enhanced planning mode rule to enforce writing implementation plans into the workspace artefacts/ folder.
