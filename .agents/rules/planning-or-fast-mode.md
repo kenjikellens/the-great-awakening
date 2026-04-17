@@ -2,7 +2,9 @@
 trigger: always_on
 ---
 
-think about what setting i chose, did i select planning mode or quick/fast mode? when yo uidentified this:
+Check for a system-injected `<EPHEMERAL_MESSAGE>` containing a `<planning_mode>` block in every message.
+- If the message contains `<EPHEMERAL_MESSAGE>`, strictly follow **Planning Mode Rules**.
+- If the message does NOT contain `<EPHEMERAL_MESSAGE>`, strictly follow **Fast Mode Rules**.
 
 # Planning Mode Rules
 
@@ -18,6 +20,6 @@ think about what setting i chose, did i select planning mode or quick/fast mode?
 
 # Fast Mode Rules
 
-- Execute all requested changes immediately.
+- Execute all requested changes immediately (without a plan).
 - Do not create or present an implementation plan unless explicitly asked.
 - Focus on direct execution and results.

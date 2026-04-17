@@ -76,3 +76,5 @@
 [22:15 16/04/2026] js/dossier-manager.js - Implemented automatic mega-menu categorization from data store
 [22:19 16/04/2026] data/dossiers.js - Finalized migration from JSON to JS to resolve local CORS restrictions
 [22:21 16/04/2026] js/dossier-manager.js - Fixed global variable detection for local file system compatibility
+[11:03 17/04/2026] README.md - Updated with comprehensive functional architecture overview and project documentation
+[11:12 17/04/2026] .agents/rules/planning-or-fast-mode.md - Updated to use system <EPHEMERAL_MESSAGE> for mode detection
