@@ -124,3 +124,4 @@
 [13:49 17/04/2026] Global - Purged all inline CSS styles (`style=`) from HTML and JS files, replacing them with a robust utility system in `style.css`
 [13:54 17/04/2026] css/style.css - Upgraded mega-menu aesthetics (glassmorphism, slide animation, and airier layout) for better header integration
 [13:57 17/04/2026] css/style.css - Reverted blue accent bar and implemented a true slide-down animation from behind the header for a more natural extension feel
+[14:10 17/04/2026] css/style.css - Fixed header transparency (background-color fix) and optimized layering (z-index) for the slide-down menu
