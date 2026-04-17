@@ -3,6 +3,25 @@
  */
 const DossierManager = (function () {
     let dossiersData = null;
+    let currentCategoryPage = 0;
+
+    /**
+     * Detects how many columns to show based on responsive breakpoints.
+     */
+    function getColumnsPerPage() {
+        const width = window.innerWidth;
+        if (width >= 1200) return 4;
+        if (width >= 768) return 3;
+        return 2;
+    }
+
+    /**
+     * Shifts the carousel page and re-renders.
+     */
+    function moveMegaMenu(direction) {
+        currentCategoryPage += direction;
+        renderMegaMenu();
+    }
 
     /**
      * Gets the dossier data from the global store.
@@ -33,7 +52,7 @@ const DossierManager = (function () {
             <div class="dossier-item" data-id="${item.id}">
                 <h3>${item.title}</h3>
                 <p>${item.summary}</p>
-                <a href="#dossier/${item.id}" class="card-link">View Dossier &rarr;</a>
+                <a href="#dossier/${item.id}" class="btn-action card-link">View Dossier <span class="icon-inline icon-right"></span></a>
             </div>
         `).join('');
     }
@@ -78,32 +97,47 @@ const DossierManager = (function () {
         const container = document.getElementById('mega-menu-dynamic-content');
         if (!container) return;
 
-        // Group by category
-        const categories = data.reduce((acc, item) => {
-            if (!acc[item.category]) acc[item.category] = [];
-            acc[item.category].push(item);
-            return acc;
-        }, {});
+        // Flatten and sort A-Z alphabetically
+        const sortedData = [...data].sort((a, b) => a.title.localeCompare(b.title));
+        
+        const columns = getColumnsPerPage();
+        const itemsPerPage = columns * 6; // User constraint: max 6 items per column
+        const totalPages = Math.ceil(sortedData.length / itemsPerPage);
 
-        // Sort categories
-        const sortedCategories = Object.keys(categories).sort();
+        // Clamp index
+        if (currentCategoryPage >= totalPages) currentCategoryPage = Math.max(0, totalPages - 1);
+        if (currentCategoryPage < 0) currentCategoryPage = 0;
 
-        container.innerHTML = sortedCategories.map(cat => `
-            <div class="mega-menu-category">
-                <h4>${cat.split('&')[0].trim()}</h4>
-                <ul class="mega-menu-list">
-                    ${categories[cat].sort((a, b) => a.title.localeCompare(b.title)).map(item => `
-                        <li><a href="#dossier/${item.id}">${item.title}</a></li>
-                    `).join('')}
-                </ul>
+        const startIdx = currentCategoryPage * itemsPerPage;
+        const pageItems = sortedData.slice(startIdx, startIdx + itemsPerPage);
+
+        const itemsHtml = pageItems.map(item => `
+            <div class="mega-menu-item-link">
+                <a href="#dossier/${item.id}">${item.title}</a>
             </div>
-        `).join('') + `
-            <div class="mega-menu-category">
-                <h4>Discovery</h4>
-                <ul class="mega-menu-list">
-                    <li><a href="#dossiers" class="view-all-link">→ View All Dossiers</a></li>
-                </ul>
+        `).join('');
+
+        const leftArrow = totalPages > 1 ? `
+            <button class="mega-menu-nav prev ${currentCategoryPage === 0 ? 'disabled' : ''}" 
+                    onclick="event.stopPropagation(); DossierManager.moveMegaMenu(-1)" 
+                    ${currentCategoryPage === 0 ? 'disabled' : ''}>
+                <span class="icon-left"></span>
+            </button>` : '';
+
+        const rightArrow = totalPages > 1 ? `
+            <button class="mega-menu-nav next ${currentCategoryPage === totalPages - 1 ? 'disabled' : ''}" 
+                    onclick="event.stopPropagation(); DossierManager.moveMegaMenu(1)" 
+                    ${currentCategoryPage === totalPages - 1 ? 'disabled' : ''}>
+                <span class="icon-right"></span>
+            </button>` : '';
+
+        container.innerHTML = `
+            ${leftArrow}
+            <div class="mega-menu-grid columns-${columns}">
+                ${itemsHtml}
             </div>
+            ${rightArrow}
+            <button onclick="location.hash='#dossiers'" class="btn-action mega-menu-more">more <span class="icon"></span></button>
         `;
     }
 
@@ -177,6 +211,7 @@ const DossierManager = (function () {
         renderHomeList,
         renderDossiersIndex,
         renderMegaMenu,
+        moveMegaMenu,
         executeSearch
     };
 })();
@@ -187,4 +222,11 @@ window.DossierManager = DossierManager;
 // Initialize global components
 document.addEventListener('DOMContentLoaded', () => {
     DossierManager.renderMegaMenu();
+});
+
+// Responsive re-rendering for mega-menu carousel
+window.addEventListener('resize', () => {
+    if (document.getElementById('mega-menu-dynamic-content')) {
+        DossierManager.renderMegaMenu();
+    }
 });

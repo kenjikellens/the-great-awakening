@@ -32,3 +32,6 @@ The agent MUST follow this loop for every item in the index:
 ### 5. PROGRESSION
 - Move to the next item in the index immediately after local file completion.
 - **Do NOT initiate any git push commands**. This workflow is for local file generation only.
+
+### INFO
+- NEVER use CSS in html file! edit style.css if you need to add a styling.

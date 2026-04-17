@@ -31,3 +31,5 @@ This protocol is intended for the focused development or update of a specific re
 - Perform a link check and a visual review against the global style system.
 - **Do NOT initiate any git push commands**. This workflow ends with local file completion.
 
+### INFO
+- NEVER use CSS in html file! edit style.css if you need to add a styling.

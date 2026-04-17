@@ -78,3 +78,46 @@
 [22:21 16/04/2026] js/dossier-manager.js - Fixed global variable detection for local file system compatibility
 [11:03 17/04/2026] README.md - Updated with comprehensive functional architecture overview and project documentation
 [11:12 17/04/2026] .agents/rules/planning-or-fast-mode.md - Updated to use system <EPHEMERAL_MESSAGE> for mode detection
+[11:37 17/04/2026] data/dossiers.js - Added metadata for 10 new research dossiers
+[11:37 17/04/2026] docs/items.md - Expanded Research Wiki with facts and narratives for 10 new topics
+[11:40 17/04/2026] pages/dossiers/esg-scores.html - Created dossier file using standard layout
+[11:40 17/04/2026] pages/dossiers/federal-reserve.html - Created dossier file using standard layout
+[11:40 17/04/2026] pages/dossiers/davos-manifesto.html - Created dossier file using standard layout
+[11:41 17/04/2026] pages/dossiers/imf-world-bank.html - Created dossier file using standard layout
+[11:41 17/04/2026] pages/dossiers/you-will-own-nothing.html - Created dossier file using standard layout
+[11:41 17/04/2026] pages/dossiers/trilateral-commission.html - Created dossier file using standard layout
+[11:41 17/04/2026] pages/dossiers/panama-papers.html - Created dossier file using standard layout
+[11:41 17/04/2026] pages/dossiers/gulf-of-tonkin.html - Created dossier file using standard layout
+[11:41 17/04/2026] pages/dossiers/haarp.html - Created dossier file using standard layout
+[11:41 17/04/2026] pages/dossiers/neuralink.html - Created dossier file using standard layout
+[11:42 17/04/2026] css/style.css - Expanded dossier-layout max-width to match site-wide 1400px container
+[11:44 17/04/2026] css/style.css - Compacted dossiers mega-menu (max-height 50vh, reduced text size/spacing)
+[11:45 17/04/2026] js/dossier-manager.js & css/style.css - Removed Discovery section and added minimal 'more ->' link to mega-menu
+[11:46 17/04/2026] css/style.css - Further compacted dossiers mega-menu to eliminate scrollbar overlap
+[11:47 17/04/2026] css/style.css - Enhanced mega-menu hover effects (underline + text-shadow)
+[11:48 17/04/2026] svg/arrow-right.svg - Created SVG icon folder and initial navigation asset
+[11:48 17/04/2026] js/dossier-manager.js & css/style.css - Linked SVG icon to mega-menu 'more' button
+[11:49 17/04/2026] js/dossier-manager.js & css/style.css - Converted 'more' link to a naked button element
+[11:51 17/04/2026] css/style.css - Implemented advanced hover state for 'more' button with arrow translation and dynamic coloring
+[12:05 17/04/2026] svg/arrow-left.svg - Created navigation asset for carousel
+[12:05 17/04/2026] js/dossier-manager.js & css/style.css - Implemented responsive carousel mega-menu with adaptive column counts (4, 3, 2)
+[12:05 17/04/2026] css/style.css - Added orientation:portrait rule to disable mega-menu extension
+[12:09 17/04/2026] js/dossier-manager.js - Fixed data loading bug and hardened carousel paging logic
+[12:10 17/04/2026] css/style.css - Centered 'more' button under the category grid in mega-menu
+[12:12 17/04/2026] css/style.css - Aggressively compacted mega-menu to eliminate scrollbar overlap (removed min-height, reduced padding/gaps)
+[12:15 17/04/2026] css/style.css - Redesigned 'more' button to match header nav links and applied maximum vertical compaction
+[12:24 17/04/2026] data/dossiers.js - Recategorized 30 dossiers into 11 granular classifications (max 6 items per cat)
+[12:24 17/04/2026] docs/items.md - Synchronized research wiki with new 11-category structure
+[12:29 17/04/2026] js/dossier-manager.js & css/style.css - Converted mega-menu to a flat alphabetical carousel (6 rows, responsive columns)
+[12:37 17/04/2026] css/style.css - Reoriented dossier grid to flow vertically (Top-to-Bottom) for better alphabetical legibility
+[12:38 17/04/2026] css/style.css - Applied extreme vertical compression to mega-menu items (1px padding, 0.15rem gap)
+[12:56 17/04/2026] css/style.css - Implemented responsive header scaling, hover-bridge stability fix, and carousel entry animations
+[13:02 17/04/2026] data/dossiers.js - Alphabetically sorted the internal database by title (A-Z)
+[13:08 17/04/2026] pages/dossiers/ - Populated 15 research dossiers (15-Minute Cities, BIS, Bilderberg, BlackRock, etc.) via @main-pages-workflow
+[13:30 17/04/2026] svg/arrow-up.svg - Created upward-pointing arrow navigation asset
+[13:30 17/04/2026] svg/arrow-down.svg - Created downward-pointing arrow navigation asset
+[13:38 17/04/2026] js/dossier-manager.js & css/style.css - Replaced 'View Dossier' HTML arrow with standardized SVG icon
+[13:41 17/04/2026] css/style.css - Synchronized dossier link hover effects (background reveal + arrow shift) with header style
+[13:42 17/04/2026] js/dossier-manager.js & css/style.css - Unified interactive links under shared .btn-action component for maintainability
+[13:43 17/04/2026] css/style.css - Added subtle borders to .btn-action components with dynamic hover states
+[13:45 17/04/2026] css/style.css - Aligned button borders with card text and refined internal padding for visual balance
