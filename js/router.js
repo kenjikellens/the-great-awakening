@@ -19,6 +19,18 @@
                 }
             }
         },
+        results: {
+            fragment: 'pages/fragments/results.html',
+            title: `${baseTitle} | Results`,
+            init: async (query = '') => {
+                document.title = query
+                    ? `${baseTitle} | Results | ${query}`
+                    : `${baseTitle} | Results`;
+                if (typeof window.initResultsSearch === 'function') {
+                    await window.initResultsSearch(query);
+                }
+            }
+        },
         dossiers: {
             fragment: 'pages/fragments/dossiers.html',
             title: `${baseTitle} | Dossiers`,
@@ -63,14 +75,14 @@
         return response.text();
     };
 
-    const renderStaticRoute = async (viewName) => {
+    const renderStaticRoute = async (viewName, param = '') => {
         const route = staticRoutes[viewName] || staticRoutes.home;
         clearDossierStyle();
         shell.innerHTML = await fetchText(route.fragment);
         document.title = route.title;
         setActiveNav(viewName);
         if (typeof route.init === 'function') {
-            route.init();
+            await route.init(param);
         }
     };
 
@@ -153,7 +165,7 @@
             }
 
             if (Object.prototype.hasOwnProperty.call(staticRoutes, segment)) {
-                await renderStaticRoute(segment);
+                await renderStaticRoute(segment, slug ? decodeURIComponent(slug) : '');
                 return;
             }
 

@@ -41,6 +41,76 @@ const DossierManager = (function () {
     }
 
     /**
+     * Normalizes a search query so matching stays consistent across views.
+     */
+    function normalizeSearchText(value) {
+        return String(value || '')
+            .normalize('NFKD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, ' ');
+    }
+
+    /**
+     * Gives each dossier a simple relevance score for the current query.
+     */
+    function scoreSearchMatch(item, query) {
+        const title = normalizeSearchText(item.title);
+        const summary = normalizeSearchText(item.summary);
+        const keywords = Array.isArray(item.keywords)
+            ? item.keywords.map(normalizeSearchText).filter(Boolean)
+            : [];
+
+        let score = 0;
+
+        if (title === query) score += 100;
+        else if (title.startsWith(query)) score += 80;
+        else if (title.includes(query)) score += 60;
+
+        if (summary.includes(query)) score += 25;
+
+        keywords.forEach((keyword) => {
+            if (keyword === query) score += 50;
+            else if (keyword.startsWith(query)) score += 40;
+            else if (keyword.includes(query)) score += 20;
+        });
+
+        return score;
+    }
+
+    /**
+     * Shared search helper used by suggestions and results rendering.
+     */
+    async function searchDossiers(query, options = {}) {
+        const data = await loadData();
+        const normalizedQuery = normalizeSearchText(query);
+        const includeEmpty = options.includeEmpty === true;
+        const limit = typeof options.limit === 'number' ? options.limit : null;
+
+        if (!normalizedQuery) {
+            const emptyResult = includeEmpty ? [...data] : [];
+            return limit ? emptyResult.slice(0, limit) : emptyResult;
+        }
+
+        const rankedResults = data
+            .map((item, index) => ({
+                item,
+                score: scoreSearchMatch(item, normalizedQuery),
+                index
+            }))
+            .filter((entry) => entry.score > 0)
+            .sort((a, b) => (
+                b.score - a.score
+                || a.item.title.localeCompare(b.item.title)
+                || a.index - b.index
+            ))
+            .map((entry) => entry.item);
+
+        return limit ? rankedResults.slice(0, limit) : rankedResults;
+    }
+
+    /**
      * Renders the simplified dossier list for the Home view.
      */
     async function renderHomeList() {
@@ -147,15 +217,7 @@ const DossierManager = (function () {
      * @param {string} mode 'home' or 'legend' to determine which UI to update.
      */
     async function executeSearch(query, mode = 'home') {
-        const data = await loadData();
-        const searchTerm = query.toLowerCase().trim();
-        
-        const results = data.filter(item => {
-            const inTitle = item.title.toLowerCase().includes(searchTerm);
-            const inSummary = item.summary.toLowerCase().includes(searchTerm);
-            const inKeywords = item.keywords.some(kw => kw.toLowerCase().includes(searchTerm));
-            return inTitle || inSummary || inKeywords;
-        });
+        const results = await searchDossiers(query, { includeEmpty: true });
 
         const resultIds = results.map(r => r.id);
         
@@ -208,6 +270,8 @@ const DossierManager = (function () {
 
     return {
         loadData,
+        normalizeSearchText,
+        searchDossiers,
         renderHomeList,
         renderDossiersIndex,
         renderMegaMenu,

@@ -2,10 +2,21 @@
     <div class="hero-content">
         <h1>The Great Awakening</h1>
         <p>An independent research platform dedicated to documenting global power structures, technocratic developments, and socio-economic transformations.</p>
-        
-        <div class="hero-search-wrapper">
-            <input type="text" id="dossier-search" class="search-input-pill" placeholder="Search for dossiers (e.g. Agenda 2030, WEF)...">
-        </div>
+    </div>
+
+    <div class="hero-search-wrapper">
+        <label class="u-sr-only" for="dossier-search">Search dossiers</label>
+        <input
+            type="text"
+            id="dossier-search"
+            class="search-input-pill"
+            placeholder="Search for dossiers (e.g. Agenda 2030, WEF)..."
+            autocomplete="off"
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-controls="home-search-suggestions"
+        >
+        <div id="home-search-suggestions" class="search-suggestions" hidden></div>
     </div>
 
     <div class="scroll-indicator">

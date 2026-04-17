@@ -1,0 +1,31 @@
+<main class="dashboard-section results-page u-mt-3">
+    <section class="content-card results-hero">
+        <div class="results-hero__intro">
+            <p class="results-kicker">Search Results</p>
+            <h1 class="u-font-serif u-mb-1">Results for <span id="results-query">Search</span></h1>
+            <p class="u-text-muted">The same dossier search engine is used here, matching titles, summaries, and keywords.</p>
+        </div>
+
+        <div class="results-search-panel">
+            <label class="u-sr-only" for="results-search">Search dossiers</label>
+            <input
+                type="text"
+                id="results-search"
+                class="search-input-pill"
+                placeholder="Search again..."
+                autocomplete="off"
+                aria-autocomplete="list"
+                aria-controls="results-search-suggestions"
+            >
+            <div id="results-search-suggestions" class="search-suggestions" hidden></div>
+        </div>
+    </section>
+
+    <section class="results-summary">
+        <div id="results-count" class="results-count">0 results</div>
+    </section>
+
+    <section id="results-list" class="results-list">
+        <!-- Populated by search.js -->
+    </section>
+</main>
