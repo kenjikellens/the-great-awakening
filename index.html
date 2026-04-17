@@ -19,18 +19,19 @@
                 <li><a href="#home" data-route="home">Home</a></li>
                 <li class="has-mega-menu">
                     <a href="#dossiers" data-route="dossiers">Dossiers</a>
-                    <div class="mega-menu">
-                        <div id="mega-menu-dynamic-content" class="mega-menu-content">
-                            <!-- Dynamically populated by DossierManager -->
-                        </div>
-                    </div>
                 </li>
-
                 <li><a href="#about" data-route="about">About</a></li>
                 <li><a href="#contact" data-route="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Placed outside the header for perfect layering -->
+    <div class="mega-menu">
+        <div id="mega-menu-dynamic-content" class="mega-menu-content">
+            <!-- Dynamically populated by DossierManager -->
+        </div>
+    </div>
 
     <main id="content-shell" aria-live="polite"></main>
 

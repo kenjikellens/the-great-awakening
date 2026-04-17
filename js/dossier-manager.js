@@ -137,7 +137,7 @@ const DossierManager = (function () {
                 ${itemsHtml}
             </div>
             ${rightArrow}
-            <button onclick="location.hash='#dossiers'" class="btn-action mega-menu-more">more <span class="icon"></span></button>
+            <button onclick="location.hash='#dossiers'" class="btn-action mega-menu-more">See All <span class="icon"></span></button>
         `;
     }
 

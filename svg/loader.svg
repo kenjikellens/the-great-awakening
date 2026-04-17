@@ -1,0 +1,33 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .loader-ring {
+            transform-origin: center;
+            animation: slow-rotate 2s linear infinite;
+            stroke: #1a1a1a;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            fill: none;
+        }
+        .loader-core {
+            fill: #0044cc;
+            opacity: 0.8;
+            animation: soft-pulse 2s ease-in-out infinite;
+        }
+        @keyframes slow-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes soft-pulse {
+            0%, 100% { transform: scale(0.95); opacity: 0.4; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+    </style>
+    <!-- Background circle for structure -->
+    <circle cx="24" cy="24" r="20" stroke="rgba(0,0,0,0.05)" stroke-width="2.5" fill="none" />
+    
+    <!-- Outer formal ring -->
+    <path class="loader-ring" d="M24 4C35.0457 4 44 12.9543 44 24" />
+    
+    <!-- Inner core pulse -->
+    <circle class="loader-core" cx="24" cy="24" r="4" />
+</svg>
