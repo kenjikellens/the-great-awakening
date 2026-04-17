@@ -1,5 +1,5 @@
 ---
-trigger: model_decision
+trigger: always_on
 description: When the user wants you to use dom (web browser) you may ignore this rule, else you should
 ---
 
