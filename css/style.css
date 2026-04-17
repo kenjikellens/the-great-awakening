@@ -731,7 +731,32 @@ body {
     Common layout and spacing controls.
 */
 .u-mt-3 { margin-top: 3rem !important; }
+.u-mt-1 { margin-top: 1rem !important; }
 .u-mb-2 { margin-bottom: 2rem !important; }
+.u-mb-2_5 { margin-bottom: 2.5rem !important; }
+.u-mb-1 { margin-bottom: 1rem !important; }
 .u-text-center { text-align: center !important; }
 .u-max-w-400 { width: 100%; max-width: 400px; }
 .u-font-serif { font-family: 'Libre Baskerville', serif !important; }
+.u-font-small { font-size: 0.9rem !important; }
+.u-text-muted { color: var(--text-muted) !important; }
+.u-list-none { list-style: none !important; }
+.u-p-3 { padding: 3rem !important; }
+.u-flex-column { display: flex; flex-direction: column; }
+.u-gap-8 { gap: 8px; }
+.u-border-top { border-top: 1px solid var(--border-light) !important; padding-top: 2rem !important; }
+.u-li-mb-10 li { margin-bottom: 10px !important; }
+.dossier-list-styled {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+.dossier-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 3rem;
+    border: 1px solid var(--border-light);
+}
+.u-bg-accent { background: #f8f9fa !important; }
+.u-bg-note { background: #fffcf0 !important; border: 1px solid #e6db55 !important; }
+.u-justify-center { justify-content: center !important; }

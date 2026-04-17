@@ -76,11 +76,11 @@ const DossierManager = (function () {
         const sortedCategories = Object.keys(categories).sort();
 
         container.innerHTML = sortedCategories.map(cat => `
-            <div class="category-block" style="margin-bottom: 2.5rem;">
-                <h3 class="section-title" style="font-size: 1.1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            <div class="category-block u-mb-2_5">
+                <h3 class="section-title u-font-small u-mb-1">
                     ${cat}
                 </h3>
-                <div class="legend-list" style="display: flex; flex-direction: column; gap: 8px;">
+                <div class="legend-list u-flex-column u-gap-8">
                     ${categories[cat].sort((a, b) => a.title.localeCompare(b.title)).map(item => `
                         <a href="#dossier/${item.id}" class="legend-item" data-id="${item.id}">${item.title}</a>
                     `).join('')}
@@ -195,8 +195,8 @@ const DossierManager = (function () {
                 noResults.style.textAlign = 'center';
                 noResults.style.padding = '3rem';
                 noResults.innerHTML = `
-                    <h3 style="font-family: 'Libre Baskerville', serif;">No dossiers found</h3>
-                    <p style="color: #54595d;">Try searching for a different keyword.</p>
+                    <h3 class="u-font-serif">No dossiers found</h3>
+                    <p class="u-text-muted">Try searching for a different keyword.</p>
                 `;
                 container.appendChild(noResults);
             }

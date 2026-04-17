@@ -110,9 +110,9 @@
     const renderNotFound = () => {
         clearDossierStyle();
         shell.innerHTML = `
-            <main class="dashboard-section" style="margin-top: 3rem;">
-                <section style="background: white; border: 1px solid var(--border-light); padding: 3rem;">
-                    <h1 style="font-family: 'Libre Baskerville', serif; margin-bottom: 1rem;">View Not Found</h1>
+            <main class="dashboard-section u-mt-3">
+                <section class="content-card">
+                    <h1 class="u-font-serif u-mb-1">View Not Found</h1>
                     <p>The requested section does not exist. Return to <a href="#home">Home</a>.</p>
                 </section>
             </main>
@@ -123,11 +123,11 @@
 
     const renderError = (message) => {
         shell.innerHTML = `
-            <main class="dashboard-section" style="margin-top: 3rem;">
-                <section style="background: white; border: 1px solid var(--border-light); padding: 3rem;">
-                    <h1 style="font-family: 'Libre Baskerville', serif; margin-bottom: 1rem;">Load Error</h1>
+            <main class="dashboard-section u-mt-3">
+                <section class="content-card">
+                    <h1 class="u-font-serif u-mb-1">Load Error</h1>
                     <p>${message}</p>
-                    <p style="margin-top: 1rem;">Try returning to <a href="#home">Home</a>.</p>
+                    <p class="u-mt-1">Try returning to <a href="#home">Home</a>.</p>
                 </section>
             </main>
         `;
