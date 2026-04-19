@@ -22,6 +22,11 @@
                 <li><a href="#about" data-route="about">About</a></li>
                 <li><a href="#contact" data-route="contact">Contact</a></li>
             </ul>
+
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span id="theme-icon-sun" class="theme-icon" style="display: none;"></span>
+                <span id="theme-icon-moon" class="theme-icon"></span>
+            </button>
         </nav>
     </header>
 
@@ -39,6 +44,7 @@
             documentation.</p>
     </footer>
 
+    <script src="js/theme-manager.js"></script>
     <script src="data/dossiers.js"></script>
     <script src="js/hero-canvas.js"></script>
     <script src="js/dossier-manager.js"></script>

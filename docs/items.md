@@ -31,6 +31,11 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Narrative**: Allegations that it served as a rehearsal for the subsequent COVID-19 pandemic.
 - **Size**: medium size
 
+### The Georgia Guidestones
+- **Documented Facts**: A granite monument in Georgia (1980–2022) commissioned by "R.C. Christian." The first of its ten guidelines called for maintaining the human population under 500,000,000. It was destroyed in an explosion in July 2022.
+- **Narrative**: Interpreted as a "New World Order" blueprint for global depopulation and a post-collapse society.
+- **Size**: small size
+
 ---
 
 ## 💳 Biometric & Social Control
@@ -157,6 +162,11 @@ This dossier is a comprehensive collection of documented information regarding t
 
 ### Operation Gladio
 - **Documented Facts**: NATO "stay-behind" clandestine armies in Europe during the Cold War; linked to domestic political violence.
+- **Status**: **FACT**.
+- **Size**: small size
+
+### Operation Sea-Spray
+- **Documented Facts**: A 1950 US Navy experiment where the bacteria *Serratia marcescens* and *Bacillus globigii* were sprayed over San Francisco to study the spread of biological agents. Resulted in at least one death and multiple hospitalizations.
 - **Status**: **FACT**.
 - **Size**: small size
 

@@ -268,5 +268,19 @@ const DOSSIER_DATA = [
     "summary": "Documentation on the 1967 attack on the USS Liberty and the subsequent investigation.",
     "keywords": ["1967", "Six-Day War", "Naval Attack", "Israel", "False Flag", "Mediterranean", "Intelligence"],
     "category": "Military & False Flags"
+  },
+  {
+    "id": "georgia-guidestones",
+    "title": "The Georgia Guidestones",
+    "summary": "Analysis of the granite monument's guidelines for a post-collapse society and its 2022 destruction.",
+    "keywords": ["R.C. Christian", "Population Control", "500 Million", "2022 Bombing", "Elberton", "New World Order"],
+    "category": "Global Governance Agendas"
+  },
+  {
+    "id": "operation-sea-spray",
+    "title": "Operation Sea-Spray",
+    "summary": "Declassified 1950 US Navy experiment involving the biological spraying of San Francisco.",
+    "keywords": ["San Francisco", "Biological Warfare", "1950", "Serratia marcescens", "Declassified", "US Navy"],
+    "category": "Intelligence & PsyOps"
   }
 ];

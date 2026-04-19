@@ -138,28 +138,36 @@ const DossierManager = (function () {
         const container = document.getElementById('dossier-legend-container');
         if (!container) return;
 
-        // Group by category
-        const categories = data.reduce((acc, item) => {
-            if (!acc[item.category]) acc[item.category] = [];
-            acc[item.category].push(item);
+        // Sort all dossiers alphabetically
+        const sortedData = [...data].sort((a, b) => a.title.localeCompare(b.title));
+
+        // Group by starting letter
+        const alphabetGroups = sortedData.reduce((acc, item) => {
+            const letter = item.title.charAt(0).toUpperCase();
+            if (!acc[letter]) acc[letter] = [];
+            acc[letter].push(item);
             return acc;
         }, {});
 
-        // Sort categories alphabetically
-        const sortedCategories = Object.keys(categories).sort();
+        const sortedLetters = Object.keys(alphabetGroups).sort();
 
-        container.innerHTML = sortedCategories.map(cat => `
-            <div class="category-block u-mb-2_5">
-                <h3 class="section-title u-font-small u-mb-1">
-                    ${cat}
-                </h3>
-                <div class="legend-list u-flex-column u-gap-8">
-                    ${categories[cat].sort((a, b) => a.title.localeCompare(b.title)).map(item => `
-                        <a href="#dossier/${item.id}" class="legend-item" data-id="${item.id}">${item.title}</a>
-                    `).join('')}
-                </div>
+        container.innerHTML = `
+            <div class="alphabet-index-container">
+                ${sortedLetters.map(letter => `
+                    <div class="alphabet-group category-block u-mb-2">
+                        <h3 class="section-title u-font-small u-mb-1">${letter}</h3>
+                        <div class="legend-list u-flex-column u-gap-8">
+                            ${alphabetGroups[letter].map(item => `
+                                <a href="#dossier/${item.id}" class="legend-item" data-id="${item.id}">
+                                    ${item.title}
+                                    <span class="u-text-muted u-font-xsmall u-ml-1">(${item.category})</span>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('')}
             </div>
-        `).join('');
+        `;
     }
 
     /**

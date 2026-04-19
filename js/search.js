@@ -239,7 +239,7 @@ const initHeroTransition = () => {
     const DASH_ENTER_MS = 550;
     const DASH_EXIT_MS = 400;
     const HERO_ENTER_MS = 500;
-    const CARD_STAGGER_MS = 70;
+    const CARD_STAGGER_MS = 35;
     const WHEEL_COOLDOWN_MS = 800;
 
     /**
