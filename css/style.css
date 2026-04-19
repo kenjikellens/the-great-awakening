@@ -1,13 +1,13 @@
 :root {
     --bg-page: #f0f2f5;
-    --bg-card: rgba(248, 249, 250, 0.8);
+    --bg-card: rgba(229, 231, 235, 0.85); /* Slightly darker gray-white, translucent */
     --text-main: #1a1a1a;
     --text-muted: #65676b;
     --accent-blue: #0044cc;
     --accent-gold: #c5a059;
     --border-light: rgba(0, 0, 0, 0.1);
     --header-height: 40px;
-    --glass-bg: rgba(248, 249, 250, 0.8);
+    --glass-bg: rgba(229, 231, 235, 0.85); /* Slightly darker gray-white, translucent */
     --glass-border: rgba(0, 0, 0, 0.1);
     --max-width: 1400px;
     --note-bg: #fffcf0;
@@ -18,12 +18,12 @@
 /* Dark Theme Overrides */
 :root.dark-theme {
     --bg-page: #0d1117;
-    --bg-card: rgba(22, 27, 34, 0.8);
+    --bg-card: rgba(13, 17, 23, 0.85); /* Deeper dark background, translucent */
     --text-main: #e6edf3;
     --text-muted: #8b949e;
     --accent-blue: #58a6ff;
     --border-light: rgba(255, 255, 255, 0.1);
-    --glass-bg: rgba(22, 27, 34, 0.8);
+    --glass-bg: rgba(13, 17, 23, 0.85); /* Deeper dark background, translucent */
     --glass-border: rgba(255, 255, 255, 0.1);
     --note-bg: rgba(230, 219, 85, 0.08);
     --note-border: rgba(230, 219, 85, 0.3);
