@@ -11,6 +11,13 @@ const DOSSIER_DATA = [
     "category": "Societal Transformation"
   },
   {
+    "id": "algorithmic-enshittification",
+    "title": "Algorithmic Enshittification",
+    "summary": "Analyzing the lifecycle of platform decay and its role in information control.",
+    "keywords": ["Platform Decay", "Cory Doctorow", "Shadowbanning", "Monetization", "Big Tech", "Digital Gulag"],
+    "category": "Societal Transformation"
+  },
+  {
     "id": "agenda-2030",
     "title": "Agenda 2030 (UN)",
     "summary": "Analysis of the 17 Sustainable Development Goals and their implementation within national governments.",
@@ -109,6 +116,13 @@ const DOSSIER_DATA = [
     "category": "Experimental technology"
   },
   {
+    "id": "project-blue-beam",
+    "title": "Project Blue Beam",
+    "summary": "Analyzing the theory of holographic global deception and psychological management.",
+    "keywords": ["Serge Monast", "Holography", "Global Deception", "Psychological Operations", "NASA", "Mind Control"],
+    "category": "Experimental technology"
+  },
+  {
     "id": "id2020",
     "title": "ID2020 Alliance",
     "summary": "Public-private partnership for universal biometric identification from birth.",
@@ -151,6 +165,13 @@ const DOSSIER_DATA = [
     "category": "Intelligence & PsyOps"
   },
   {
+    "id": "uap-disclosure",
+    "title": "UAP Disclosure",
+    "summary": "Tracking the shift in official government policy and reporting regarding Unidentified Anomalous Phenomena.",
+    "keywords": ["UFO", "UAP", "AARO", "Pentagon", "ODNI", "Transparency", "Space"],
+    "category": "Intelligence & PsyOps"
+  },
+  {
     "id": "operation-northwoods",
     "title": "Operation Northwoods",
     "summary": "The 1962 DoD plan for false flag attacks on US soil to justify war with Cuba.",
@@ -179,10 +200,31 @@ const DOSSIER_DATA = [
     "category": "Intelligence & PsyOps"
   },
   {
+    "id": "mk-delta",
+    "title": "Project MK-Delta",
+    "summary": "Successor to MK-Ultra focusing on the international application of biochemical covert operations.",
+    "keywords": ["CIA", "Biochemicals", "Covert Ops", "TSD", "Mind Control", "International Ops"],
+    "category": "Intelligence & PsyOps"
+  },
+  {
+    "id": "tuskegee",
+    "title": "Tuskegee Syphilis Study",
+    "summary": "Documentation on the 40-year unethical medical study conducted by the US Public Health Service.",
+    "keywords": ["Medical Ethics", "Untreated Syphilis", "Whistleblower", "Public Health", "CDC", "USPHS"],
+    "category": "Intelligence & PsyOps"
+  },
+  {
     "id": "social-credit",
     "title": "Social Credit Systems",
     "summary": "Investigation into algorithmic behavioral scoring systems and societal control.",
     "keywords": ["China", "Trust Score", "Sesame Credit", "Behavioral Engineering", "Dystopian Technology", "Algorithm", "Compliance"],
+    "category": "Biometric & Social Control"
+  },
+  {
+    "id": "pegasus-spyware",
+    "title": "Pegasus Spyware",
+    "summary": "Analysis of the NSO Group's advanced surveillance software and its use against global targets.",
+    "keywords": ["NSO Group", "Spyware", "Surveillance", "Zero-Click", "Cyber-Intelligence", "Mobile Security"],
     "category": "Biometric & Social Control"
   },
   {
@@ -200,6 +242,13 @@ const DOSSIER_DATA = [
     "category": "Global Governance Agendas"
   },
   {
+    "id": "wef",
+    "title": "World Economic Forum (WEF)",
+    "summary": "Institutional overview of the organization, its leadership, and its role in global policy coordination.",
+    "keywords": ["Davos", "Klaus Schwab", "Public-Private Cooperation", "Global Governance", "Stakeholder Capitalism"],
+    "category": "Global Governance Agendas"
+  },
+  {
     "id": "trilateral-commission",
     "title": "Trilateral Commission",
     "summary": "Strategic discussion group focused on global cooperation between North America, Europe, and Asia.",
@@ -212,5 +261,12 @@ const DOSSIER_DATA = [
     "summary": "Research into the 'sharing economy' narrative and the predicted end of personal property by 2030.",
     "keywords": ["Sharing Economy", "2030", "Private Property", "Circular Economy", "WEF", "Ida Auken"],
     "category": "Societal Transformation"
+  },
+  {
+    "id": "uss-liberty",
+    "title": "USS Liberty Incident",
+    "summary": "Documentation on the 1967 attack on the USS Liberty and the subsequent investigation.",
+    "keywords": ["1967", "Six-Day War", "Naval Attack", "Israel", "False Flag", "Mediterranean", "Intelligence"],
+    "category": "Military & False Flags"
   }
 ];

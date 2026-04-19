@@ -14,6 +14,10 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Documented Facts**: Launched in 2020 by Klaus Schwab. Focuses on restructuring global economies post-crisis.
 - **Narrative**: Undemocratic influence through the "Young Global Leaders" program.
 
+### World Economic Forum (WEF)
+- **Documented Facts**: Non-profit foundation established in 1971. Famous for its annual meeting in Davos, which gathers ~3,000 business leaders, international political leaders, economists, and celebrities.
+- **Narrative**: The apex organization for the "Shadow Government," coordinating the global transition to a technocratic, non-sovereign world order.
+
 ### The Davos Manifesto
 - **Documented Facts**: A set of ethical principles for companies released in 1973 and updated in 1920. Promotes "Stakeholder Capitalism".
 - **Narrative**: A mechanism to transition from consumer-driven markets to a managed economy where corporations dictate social policy.
@@ -37,6 +41,10 @@ This dossier is a comprehensive collection of documented information regarding t
 ### Social Credit Systems
 - **Documented Facts**: Operational in China; various "trust scores" used in Western insurance and finance.
 - **Narrative**: Method for total societal behavioral control.
+
+### Pegasus Spyware
+- **Documented Facts**: Developed by NSO Group. Advanced spyware capable of "zero-click" installation on iOS and Android devices, enabling total access to messages, calls, and location.
+- **Narrative**: A primary tool for the global surveillance of dissent and the enforcement of technocratic compliance.
 
 ### Neuralink & BCIs
 - **Documented Facts**: Elon Musk's neurotechnology company. Development of brain-computer interfaces for medical and cognitive enhancement.
@@ -106,9 +114,21 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Documented Facts**: CIA behavioral engineering program (1950s-70s) using drugs and psychological torture. Declassified by the Church Committee (1975).
 - **Status**: **FACT**.
 
+### Project MK-Delta
+- **Documented Facts**: Established in 1952 as a successor to MK-Ultra. Focused on the use of biochemicals for covert operations and mind control in international settings.
+- **Status**: **FACT**.
+
+### Tuskegee Syphilis Study
+- **Documented Facts**: A 40-year unethical medical study (1932-1972) by the US Public Health Service. African-American men were left untreated for syphilis to observe the natural progression of the disease, even after penicillin was available.
+- **Status**: **FACT**.
+
 ### Operation Mockingbird
 - **Documented Facts**: CIA campaign (1950s) to influence domestic and international media outlets and recruit journalists.
 - **Status**: **FACT**.
+
+### UAP Disclosure
+- **Documented Facts**: Increasing government transparency regarding Unidentified Anomalous Phenomena (UAP). Official reports from the ODNI (2021) and the establishment of AARO mark a shift in official policy from denial to managed acknowledgment.
+- **Narrative**: Analyzed as a potential distraction from terrestrial geopolitical agendas or as a preparatory phase for a simulated global event.
 
 ### Operation Gladio
 - **Documented Facts**: NATO "stay-behind" clandestine armies in Europe during the Cold War; linked to domestic political violence.
@@ -128,6 +148,10 @@ This dossier is a comprehensive collection of documented information regarding t
 
 ### Gulf of Tonkin Incident
 - **Documented Facts**: 1964 naval confrontation between US and North Vietnam. Declassified reports (2005) confirm the second "attack" never occurred.
+- **Status**: **FACT**.
+
+### USS Liberty Incident
+- **Documented Facts**: 1967 Israeli attack on a US Navy research ship. Resulted in 34 deaths and 171 injuries. Israel claimed it was a mistake; survivors and many researchers dispute this claim.
 - **Status**: **FACT**.
 
 ---
@@ -154,6 +178,10 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Documented Facts**: Urban planning concept where all necessities are within 15 minutes by foot or bike.
 - **Narrative**: Concerns about "climate lockdowns" and restrictions on freedom of movement via digital zoning.
 
+### Algorithmic Enshittification
+- **Documented Facts**: A pattern of platform decay where digital services systematically prioritize extraction of value over user experience. Key mechanisms include shadowbanning, algorithmic throttling, and the monetization of basic social interaction.
+- **Narrative**: Analyzed as the intentional degradation of the independent internet to force users into controlled, highly-monitored "super-apps."
+
 ### "You Will Own Nothing"
 - **Documented Facts**: Slogan from a 2016 WEF video/essay by Ida Auken regarding the "circular economy" and "as-a-service" models.
 - **Narrative**: The ultimate goal of stripping individual sovereignty and private property in favor of a permanent rental class.
@@ -165,3 +193,7 @@ This dossier is a comprehensive collection of documented information regarding t
 ### HAARP
 - **Documented Facts**: High-frequency Active Auroral Research Program in Alaska. Studies the ionosphere and radio communications.
 - **Narrative**: Alleged capability for weather modification, earthquake induction, and mass psychological influence.
+
+### Project Blue Beam
+- **Documented Facts**: Investigates historical theories regarding the use of advanced holographic projection and atmospheric resonance to simulate massive global psychological events.
+- **Narrative**: Proposed four-step plan to establish a centralized global religion and government via a "Great Deception."

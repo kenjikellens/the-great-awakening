@@ -5,3 +5,32 @@
 [14:32 17/04/2026] css/style.css - Isolated scroll arrow animation using relative positioning to fix text jitter.
 [16:35 17/04/2026] .agents/rules/artefacts-system.md - Created explicit rule for handling and storing artefacts in the custom 'artefacts' folder.
 [16:36 17/04/2026] .agents/rules/planning-or-fast-mode.md - Enhanced planning mode rule to enforce writing implementation plans into the workspace artefacts/ folder.
+[10:21 19/04/2026] pages/fragments/home.html - Added statistics bar placeholder to the home fragment.
+[10:21 19/04/2026] js/dossier-manager.js - Updated rendering to use .info-card and dynamic statistics.
+[10:21 19/04/2026] docs/items.md - Added USS Liberty Incident to the research index.
+[10:22 19/04/2026] pages/dossiers/uss-liberty.html - Populated the USS Liberty Incident dossier page.
+[10:22 19/04/2026] data/dossiers.js - Integrated USS Liberty Incident into the dossier data store.
+[10:22 19/04/2026] docs/items.md - Added Project MK-Delta to the research index.
+[10:22 19/04/2026] pages/dossiers/mk-delta.html - Populated the Project MK-Delta dossier page.
+[10:22 19/04/2026] data/dossiers.js - Integrated Project MK-Delta into the dossier data store.
+[10:22 19/04/2026] docs/items.md - Added Pegasus Spyware to the research index.
+[10:23 19/04/2026] pages/dossiers/pegasus-spyware.html - Populated the Pegasus Spyware dossier page.
+[10:23 19/04/2026] data/dossiers.js - Integrated Pegasus Spyware into the dossier data store.
+[10:23 19/04/2026] docs/items.md - Added Project Blue Beam to the research index.
+[10:23 19/04/2026] pages/dossiers/project-blue-beam.html - Populated the Project Blue Beam dossier page.
+[10:23 19/04/2026] data/dossiers.js - Integrated Project Blue Beam into the dossier data store.
+[10:24 19/04/2026] docs/items.md - Added Tuskegee Syphilis Study to the research index.
+[10:24 19/04/2026] pages/dossiers/tuskegee.html - Populated the Tuskegee Syphilis Study dossier page.
+[10:24 19/04/2026] data/dossiers.js - Integrated Tuskegee Syphilis Study into the dossier data store.
+[10:24 19/04/2026] docs/items.md - Added UAP Disclosure to the research index.
+[10:24 19/04/2026] pages/dossiers/uap-disclosure.html - Populated the UAP Disclosure dossier page.
+[10:24 19/04/2026] data/dossiers.js - Integrated UAP Disclosure into the dossier data store.
+[10:25 19/04/2026] docs/items.md - Added Algorithmic Enshittification to the research index.
+[10:25 19/04/2026] pages/dossiers/algorithmic-enshittification.html - Populated the Algorithmic Enshittification dossier page.
+[10:25 19/04/2026] data/dossiers.js - Integrated Algorithmic Enshittification into the dossier data store.
+[10:25 19/04/2026] docs/items.md - Added World Economic Forum (WEF) institutional dossier to the research index.
+[10:25 19/04/2026] pages/dossiers/wef.html - Populated the World Economic Forum institutional dossier page.
+[10:26 19/04/2026] data/dossiers.js - Integrated World Economic Forum institutional dossier into the dossier data store.
+[10:30 19/04/2026] pages/fragments/home.html - Removed the statistics bar.
+[10:30 19/04/2026] css/style.css - Increased side padding for the dashboard section.
+[10:30 19/04/2026] js/dossier-manager.js - Cleaned up statistics rendering logic.

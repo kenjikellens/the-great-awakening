@@ -118,8 +118,11 @@ const DossierManager = (function () {
         const container = document.getElementById('home-dossier-list');
         if (!container) return;
 
+        // Update container to use grid layout
+        container.className = 'card-grid';
+
         container.innerHTML = data.map(item => `
-            <div class="dossier-item" data-id="${item.id}">
+            <div class="info-card" data-id="${item.id}">
                 <h3>${item.title}</h3>
                 <p>${item.summary}</p>
                 <a href="#dossier/${item.id}" class="btn-action card-link">View Dossier <span class="icon-inline icon-right"></span></a>

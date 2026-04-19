@@ -486,10 +486,12 @@ body {
 .search-input-pill {
     width: 100%;
     padding: 1.1rem 2.35rem;
-    font-family: 'Noto Sans', sans-serif; /* Cleaner for search input */
+    font-family: 'Noto Sans', sans-serif;
+    /* Cleaner for search input */
     font-size: 1.08rem;
     border: 1px solid var(--border-light);
-    border-radius: 50px; /* Perfect pill shape */
+    border-radius: 50px;
+    /* Perfect pill shape */
     background-color: #ffffff;
     color: var(--text-main);
     outline: none;
@@ -578,7 +580,7 @@ body {
     outline: none;
 }
 
-.search-suggestion + .search-suggestion {
+.search-suggestion+.search-suggestion {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
@@ -623,7 +625,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Anchor for the top property movement */
+    position: relative;
+    /* Anchor for the top property movement */
     top: 0;
     animation: bounceIndicator 2s infinite;
 }
@@ -635,12 +638,20 @@ body {
 }
 
 @keyframes bounceIndicator {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         top: 0;
     }
+
     40% {
-        top: 8px; /* Downward bounce */
+        top: 8px;
+        /* Downward bounce */
     }
+
     60% {
         top: 4px;
     }
@@ -651,9 +662,11 @@ body {
     Layout for the dossier categories/cards.
 */
 .dashboard-section {
-    max-width: var(--max-width);
-    margin: 0 auto 4rem auto;
-    padding: 0 2rem;
+    width: 96%;
+    /* 2% margin on each side */
+    max-width: 1320px;
+    margin: 4rem auto;
+    padding: 0;
 }
 
 .results-page {
@@ -784,30 +797,9 @@ body {
     gap: 1rem;
 }
 
-/* .dossier-item: A single list entry with a border and subtle hover */
+/* .dossier-item: Legacy styles removed in favor of .info-card */
 .dossier-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    padding: 1.5rem;
-    transition: border-color 0.2s ease;
-}
-
-/* .dossier-item:hover: Highlight the item on focus/hover */
-.dossier-item:hover {
-    border-color: var(--accent-blue);
-}
-
-.dossier-item h3 {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.dossier-item p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
-    /* Reduced from 1rem to better match title/summary gap */
+    display: block;
 }
 
 .card-grid {
@@ -822,14 +814,25 @@ body {
 */
 .info-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    padding: 2rem;
-    transition: box-shadow 0.2s ease;
-}
-
-/* Subtle border color change for hover */
-.info-card:hover {
-    border-color: var(--accent-blue);
+    border: 1px solid #e1e4e8;
+    /* Cleaner modern border */
+    border-right: 2px solid #d1d5da;
+    /* Slightly stronger on the right for structure */
+    border-bottom: 2px solid #d1d5da;
+    /* Slightly stronger on the bottom */
+    padding: 2.5rem 2.25rem 5rem 2.25rem; /* Increased bottom padding for the button */
+    border-radius: 0 24px 0 0;
+    /* Modern distinct top-right radius */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    /* Modern soft shadow */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center children horizontally */
+    text-align: center;
+    /* Center text */
 }
 
 .info-card h3 {
@@ -846,13 +849,39 @@ body {
 }
 
 .card-link {
-    margin-left: 0;
-    /* Align the border box with the text above */
-    padding-left: 0.75rem;
-    /* Slightly tighter left padding for better alignment */
+    position: absolute;
+    bottom: 2rem; /* Fixed distance from bottom */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
     text-transform: none;
     letter-spacing: normal;
-    justify-content: flex-start;
+    
+    /* Ensure no background color obscures the animation */
+    background-color: transparent !important;
+    background-clip: padding-box;
+    
+    /* Center-expanding border effect */
+    background-image: linear-gradient(var(--accent-blue), var(--accent-blue));
+    background-size: 0 3px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    
+    /* Stronger base border */
+    border: 1px solid #b1b4b9;
+}
+
+.card-link:hover {
+    background-color: transparent !important;
+    background-image: linear-gradient(var(--accent-blue), var(--accent-blue)) !important;
+    background-repeat: no-repeat !important; /* Prevent tiling that fills the button */
+    background-position: center bottom !important;
+    background-size: 100% 3px !important;
+    border-bottom-color: var(--accent-blue) !important;
+    color: var(--accent-blue) !important;
 }
 
 /* 
