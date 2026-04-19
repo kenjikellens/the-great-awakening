@@ -271,9 +271,11 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    background-color: var(--bg-card);
+    background-color: var(--glass-bg); /* Use the specific glass variable */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border); /* Soft translucent boundary */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2); /* Soft shadow fade */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-100%);
