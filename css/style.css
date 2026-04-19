@@ -427,13 +427,7 @@ body {
     }
 }
 
-/* Breakpoint-specific auto-generation is now handled by JS slicing, 
-   but we keep the containers responsive */
-@media (max-width: 1200px) {
-    .mega-menu-grid {
-        /* Column count shifts automatically based on items */
-    }
-}
+
 
 .mega-menu-item-link a {
     text-decoration: none;
