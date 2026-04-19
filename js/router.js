@@ -7,7 +7,14 @@
     const routeLinks = document.querySelectorAll('[data-route]');
     const baseTitle = 'The Great Awakening';
     const globalFooter = document.querySelector('.site-footer');
+    const siteHeader = document.querySelector('.site-header');
     let activeDossierStyleTag = null;
+
+    const toggleHeroMode = (isHero) => {
+        if (siteHeader) {
+            siteHeader.classList.toggle('header-hero-mode', isHero);
+        }
+    };
 
     const toggleGlobalFooter = (hide) => {
         if (globalFooter) {
@@ -26,6 +33,9 @@
                 }
                 if (typeof window.initHeroTransition === 'function') {
                     window.initHeroTransition();
+                }
+                if (typeof window.initHeroCanvas === 'function') {
+                    window.initHeroCanvas();
                 }
             }
         },
@@ -96,9 +106,15 @@
             window.removeEventListener('scroll', window._lastHomeScrollHandler);
         }
 
+        // Cleanup hero canvas if navigating away from home
+        if (viewName !== 'home' && typeof window.stopHeroCanvas === 'function') {
+            window.stopHeroCanvas();
+        }
+
         shell.innerHTML = await fetchText(route.fragment);
         document.title = route.title;
         setActiveNav(viewName);
+        toggleHeroMode(viewName === 'home' || !viewName);
         if (typeof route.init === 'function') {
             await route.init(param);
         }
@@ -107,6 +123,7 @@
     const renderDossierRoute = async (slug) => {
         clearDossierStyle();
         toggleGlobalFooter(false);
+        toggleHeroMode(false);
         shell.innerHTML = await fetchText('pages/fragments/dossier-view.html');
         setActiveNav('dossiers');
 

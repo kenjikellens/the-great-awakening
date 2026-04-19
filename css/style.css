@@ -42,15 +42,17 @@ body {
     Redesigned for Premium SPA feel.
 */
 .site-header {
-    background-color: #ffffff !important;
-    border-bottom: 1px solid var(--border-light);
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: none;
     height: var(--header-height);
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -72,7 +74,8 @@ body {
     font-size: 1.25rem;
     font-weight: 800;
     text-decoration: none;
-    color: var(--text-main);
+    color: #000000;
+    transition: color 0.3s ease;
     letter-spacing: -0.5px;
     position: relative;
     padding-right: 2rem;
@@ -124,7 +127,7 @@ body {
 /* Base Link Styling - Clean and Minimal */
 .header-links>li>a {
     text-decoration: none;
-    color: var(--text-main);
+    color: rgba(0, 0, 0, 0.65);
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -144,12 +147,12 @@ body {
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--accent-blue);
-    transition: width 0.3s ease, left 0.3s ease;
+    background: #000000;
+    transition: width 0.3s ease, left 0.3s ease, background 0.3s ease;
 }
 
 .header-links>li>a:hover {
-    color: var(--text-main);
+    color: #000000;
 }
 
 .header-links>li>a:hover::after {
@@ -158,12 +161,33 @@ body {
 }
 
 .header-links>li>a.active {
-    color: var(--accent-blue);
+    color: #000000;
 }
 
 .header-links>li>a.active::after {
     width: 100%;
     left: 0;
+}
+
+/* Hero Mode: White text when on the home/hero view */
+.header-hero-mode .header-brand {
+    color: #ffffff;
+}
+
+.header-hero-mode .header-links>li>a {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.header-hero-mode .header-links>li>a::after {
+    background: #ffffff;
+}
+
+.header-hero-mode .header-links>li>a:hover {
+    color: #ffffff;
+}
+
+.header-hero-mode .header-links>li>a.active {
+    color: #ffffff;
 }
 
 /* 
@@ -178,22 +202,20 @@ body {
 .mega-menu {
     position: fixed;
     /* Relative to viewport */
-    top: var(--header-height);
+    top: 0;
     left: 0;
     width: 100vw;
     background-color: #ffffff;
-    border-bottom: 1px solid var(--border-light);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-100%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         opacity 0.2s ease,
         visibility 0.2s ease;
-    padding: 2.5rem 0;
-    z-index: 900;
-    /* Stacking order: Mega-menu (900) < Header (1000) */
-    max-height: 70vh;
+    padding: 0 0; /* Padding handled by content to account for header */
+    z-index: 950;
+    /* Stacking order: Mega-menu (950) < Header (1000) */
+    max-height: 80vh;
     overflow-y: auto;
 }
 
@@ -203,6 +225,27 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/* Mega-menu adaptive: force black text when white menu is open (overrides hero-mode) */
+.site-header:has(.has-mega-menu:hover) .header-brand,
+.site-header:has(+ .mega-menu:hover) .header-brand {
+    color: #000000;
+}
+
+.site-header:has(.has-mega-menu:hover) .header-links>li>a,
+.site-header:has(+ .mega-menu:hover) .header-links>li>a {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.site-header:has(.has-mega-menu:hover) .header-links>li>a:hover,
+.site-header:has(+ .mega-menu:hover) .header-links>li>a:hover {
+    color: #000000;
+}
+
+.site-header:has(.has-mega-menu:hover) .header-links>li>a::after,
+.site-header:has(+ .mega-menu:hover) .header-links>li>a::after {
+    background: #000000;
 }
 
 /* Portrait Orientation - Disable Mega Menu */
@@ -223,7 +266,7 @@ body {
     align-items: center;
     gap: 1.5rem;
     /* Better vertical spacing between title and grid */
-    padding: 0 4rem;
+    padding: calc(var(--header-height) + 3rem) 4rem 3rem 4rem;
     position: relative;
 }
 
@@ -449,7 +492,8 @@ body {
 .home-viewport {
     position: relative;
     width: 100%;
-    height: calc(100vh - var(--header-height));
+    height: 100vh;
+    margin-top: calc(var(--header-height) * -1);
     overflow: hidden;
 }
 
@@ -464,11 +508,22 @@ body {
 /* --- Hero Layer (default: visible) --- */
 .hero-layer {
     z-index: 2;
-    background-color: var(--bg-page);
+    background: radial-gradient(circle at center, #0a101a 0%, #020408 100%);
     text-align: center;
     padding: 0 2rem;
     transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1),
                 filter 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.6;
 }
 
 .hero-layer.is-exiting {
@@ -636,10 +691,12 @@ body {
     max-width: 900px;
     width: 100%;
     position: absolute;
-    top: clamp(12vh, 16vh, 18vh);
+    top: clamp(10vh, 14vh, 16vh);
+    /* Moved higher to avoid search bar overlap */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -647,13 +704,14 @@ body {
     font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--text-main);
+    color: #ffffff;
     letter-spacing: -1.5px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content p {
     font-size: clamp(0.86rem, 1.35vw, 1.05rem);
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 0;
     max-width: 620px;
     margin-left: auto;

@@ -278,6 +278,10 @@ const initHeroTransition = () => {
         if (isTransitioning || currentState === 'dashboard') return;
         isTransitioning = true;
 
+        // Turn header text to black
+        const siteHeader = document.querySelector('.site-header');
+        if (siteHeader) siteHeader.classList.remove('header-hero-mode');
+
         // 1. Hero exits (zoom out + blur + fade)
         heroLayer.classList.add('is-exiting');
 
@@ -308,6 +312,10 @@ const initHeroTransition = () => {
     const transitionToHero = () => {
         if (isTransitioning || currentState === 'hero') return;
         isTransitioning = true;
+
+        // Turn header text to white
+        const siteHeader = document.querySelector('.site-header');
+        if (siteHeader) siteHeader.classList.add('header-hero-mode');
 
         // 1. Dashboard exits (scale down + blur + fade)
         dashboardLayer.classList.remove('is-visible');
