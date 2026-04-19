@@ -1,14 +1,14 @@
 :root {
     --bg-page: #f0f2f5;
-    --bg-card: #ffffff;
+    --bg-card: #f9f9fb; /* Slightly darker off-white */
     --text-main: #1a1a1a;
     --text-muted: #65676b;
     --accent-blue: #0044cc;
     --accent-gold: #c5a059;
-    --border-light: rgba(0, 0, 0, 0.1);
+    --border-light: rgba(0, 0, 0, 0.08);
     --header-height: 40px;
-    --glass-bg: #ffffff;
-    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.4);
     --max-width: 1400px;
     --note-bg: #fffcf0;
     --note-border: #e6db55;
@@ -22,8 +22,8 @@
     --text-main: #e6edf3;
     --text-muted: #8b949e;
     --accent-blue: #58a6ff;
-    --border-light: rgba(255, 255, 255, 0.1);
-    --glass-bg: #161b22;
+    --border-light: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(22, 27, 34, 0.8);
     --glass-border: rgba(255, 255, 255, 0.1);
     --note-bg: rgba(230, 219, 85, 0.08);
     --note-border: rgba(230, 219, 85, 0.3);
@@ -267,11 +267,13 @@ body {
 
 .mega-menu {
     position: fixed;
-    /* Relative to viewport */
     top: 0;
     left: 0;
     width: 100vw;
-    background-color: var(--bg-card);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-100%);
@@ -1160,13 +1162,13 @@ body {
     Uses the clean, white, bordered look of Wikipedia widgets.
 */
 .info-card {
-    background: var(--bg-card);
-    border: 1px solid #e1e4e8;
-    border-right: 2px solid #d1d5da;
-    border-bottom: 2px solid #d1d5da;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
     padding: 2.5rem 2.25rem 5rem 2.25rem;
-    border-radius: 0 24px 0 0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
     display: flex;
