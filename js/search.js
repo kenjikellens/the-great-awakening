@@ -205,10 +205,179 @@ const initLegendSearch = () => {
     legendSearchInput.addEventListener('input', handleLegendSearch);
 };
 
+/**
+ * Cinematic Hero ↔ Dashboard transition system.
+ * Replaces the old scroll-based navigation with a state-machine layer switch.
+ * 
+ * States:
+ *   'hero'      — hero layer visible, dashboard hidden
+ *   'dashboard' — dashboard layer visible, hero hidden
+ * 
+ * Triggers:
+ *   hero → dashboard:  click "Explore Research" | wheel-down while in hero
+ *   dashboard → hero:  click "Back to overview" | wheel-up at scrollTop===0
+ */
+const initHeroTransition = () => {
+    const heroLayer = document.getElementById('hero-layer');
+    const dashboardLayer = document.getElementById('dashboard-layer');
+    const viewport = document.getElementById('home-viewport');
+    const clickTrigger = document.getElementById('home-scroll-trigger');
+    const backTrigger = document.getElementById('dashboard-back-trigger');
+
+    if (!heroLayer || !dashboardLayer || !viewport) return;
+
+    // Prevent double init on SPA re-navigation
+    if (viewport.dataset.transitionInit === 'true') return;
+    viewport.dataset.transitionInit = 'true';
+
+    let currentState = 'hero';
+    let isTransitioning = false;
+
+    // --- Timing constants ---
+    const HERO_EXIT_MS = 650;
+    const DASH_ENTER_DELAY_MS = 200;
+    const DASH_ENTER_MS = 550;
+    const DASH_EXIT_MS = 400;
+    const HERO_ENTER_MS = 500;
+    const CARD_STAGGER_MS = 70;
+    const WHEEL_COOLDOWN_MS = 800;
+
+    /**
+     * Applies the staggered card-reveal animation to each .info-card
+     */
+    const revealCards = () => {
+        const cards = dashboardLayer.querySelectorAll('.info-card');
+        cards.forEach((card, i) => {
+            card.classList.remove('card-reveal');
+            // Force reflow to restart animation
+            void card.offsetWidth;
+            setTimeout(() => {
+                card.classList.add('card-reveal');
+            }, i * CARD_STAGGER_MS);
+        });
+    };
+
+    /**
+     * Removes all reveal classes from cards (for re-entry)
+     */
+    const resetCards = () => {
+        const cards = dashboardLayer.querySelectorAll('.info-card');
+        cards.forEach(card => card.classList.remove('card-reveal'));
+    };
+
+    /**
+     * Cleans all transition classes from both layers
+     */
+    const cleanClasses = () => {
+        heroLayer.classList.remove('is-exiting', 'is-entering', 'is-hidden');
+        dashboardLayer.classList.remove('is-entering', 'is-visible', 'is-exiting');
+    };
+
+    // ------ TRANSITION: hero → dashboard ------
+    const transitionToDashboard = () => {
+        if (isTransitioning || currentState === 'dashboard') return;
+        isTransitioning = true;
+
+        // 1. Hero exits (zoom out + blur + fade)
+        heroLayer.classList.add('is-exiting');
+
+        // 2. After a short delay, dashboard enters
+        setTimeout(() => {
+            dashboardLayer.classList.add('is-entering');
+            // Scroll the dashboard to top in case it was scrolled before
+            dashboardLayer.scrollTop = 0;
+            revealCards();
+        }, DASH_ENTER_DELAY_MS);
+
+        // 3. After hero animation, hide it completely
+        setTimeout(() => {
+            heroLayer.classList.add('is-hidden');
+            heroLayer.classList.remove('is-exiting');
+        }, HERO_EXIT_MS);
+
+        // 4. After dashboard animation, lock it as visible
+        setTimeout(() => {
+            dashboardLayer.classList.remove('is-entering');
+            dashboardLayer.classList.add('is-visible');
+            currentState = 'dashboard';
+            isTransitioning = false;
+        }, DASH_ENTER_DELAY_MS + DASH_ENTER_MS);
+    };
+
+    // ------ TRANSITION: dashboard → hero ------
+    const transitionToHero = () => {
+        if (isTransitioning || currentState === 'hero') return;
+        isTransitioning = true;
+
+        // 1. Dashboard exits (scale down + blur + fade)
+        dashboardLayer.classList.remove('is-visible');
+        dashboardLayer.classList.add('is-exiting');
+
+        // 2. After a short delay, hero enters (reverse zoom)
+        setTimeout(() => {
+            heroLayer.classList.remove('is-hidden');
+            heroLayer.classList.add('is-entering');
+        }, 150);
+
+        // 3. After dashboard exit, hide it
+        setTimeout(() => {
+            dashboardLayer.classList.remove('is-exiting');
+            resetCards();
+        }, DASH_EXIT_MS);
+
+        // 4. After hero re-entry animation, clean up
+        setTimeout(() => {
+            heroLayer.classList.remove('is-entering');
+            cleanClasses();
+            currentState = 'hero';
+            isTransitioning = false;
+        }, 150 + HERO_ENTER_MS);
+    };
+
+    // --- Click Triggers ---
+    if (clickTrigger) {
+        clickTrigger.addEventListener('click', transitionToDashboard);
+    }
+    if (backTrigger) {
+        backTrigger.addEventListener('click', transitionToHero);
+    }
+
+    // --- Wheel Trigger ---
+    let lastWheelTime = 0;
+
+    viewport.addEventListener('wheel', (e) => {
+        const now = Date.now();
+        if (now - lastWheelTime < WHEEL_COOLDOWN_MS) return;
+
+        if (currentState === 'hero' && e.deltaY > 0) {
+            // Scrolling down in hero → go to dashboard
+            lastWheelTime = now;
+            transitionToDashboard();
+        } else if (currentState === 'dashboard' && e.deltaY < 0) {
+            // Scrolling up in dashboard — only trigger if at the very top
+            if (dashboardLayer.scrollTop <= 0) {
+                lastWheelTime = now;
+                transitionToHero();
+            }
+        }
+    }, { passive: true });
+
+    // --- Keyboard accessibility (Enter/Space on trigger) ---
+    if (clickTrigger) {
+        clickTrigger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                transitionToDashboard();
+            }
+        });
+    }
+};
+
 // Export to window
 window.initDossierSearch = initDossierSearch;
 window.initResultsSearch = initResultsSearch;
 window.initLegendSearch = initLegendSearch;
+window.initHeroTransition = initHeroTransition;
 
 // Try to initialize on load
 document.addEventListener('DOMContentLoaded', () => {

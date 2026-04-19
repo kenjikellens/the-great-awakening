@@ -24,12 +24,18 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: var(--header-height);
+}
+
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-page);
     color: var(--text-main);
     line-height: 1.6;
 }
+
+/* Snapping Utilities — DEPRECATED, replaced by home-viewport layer system */
 
 /* 
     Top Navigation Bar 
@@ -62,9 +68,9 @@ body {
 }
 
 .header-brand {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
     text-decoration: none;
     color: var(--text-main);
     letter-spacing: -0.5px;
@@ -394,8 +400,9 @@ body {
 /* Specific mega-menu-more override if needed */
 
 .mega-menu-category h4 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 0.9rem;
+    font-weight: 700;
     color: var(--text-main);
     margin-bottom: 0.25rem;
     padding-bottom: 0.2rem;
@@ -432,16 +439,199 @@ body {
     Hero & Search Redesign (ChatGPT-Style)
     Full-screen centered experience with a premium, minimal aesthetic.
 */
-.hero-fullscreen {
-    width: 100%;
-    min-height: calc(100vh - var(--header-height));
-    padding: 0 2rem;
+/* ============================================
+   Home Viewport Layer System
+   Two overlapping full-screen layers:
+   - .hero-layer:      the landing hero (default visible)
+   - .dashboard-layer: the dossier cards (default hidden)
+   Transition is triggered via JS class toggles.
+   ============================================ */
+.home-viewport {
     position: relative;
-    background-color: var(--bg-page);
-    text-align: center;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
     overflow: hidden;
 }
 
+.home-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: opacity, transform, filter;
+}
+
+/* --- Hero Layer (default: visible) --- */
+.hero-layer {
+    z-index: 2;
+    background-color: var(--bg-page);
+    text-align: center;
+    padding: 0 2rem;
+    transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                filter 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-layer.is-exiting {
+    opacity: 0;
+    filter: blur(8px);
+    pointer-events: none;
+    animation: heroZoomOut 650ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.hero-layer.is-hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.hero-layer.is-entering {
+    visibility: visible;
+    pointer-events: auto;
+    animation: heroZoomIn 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes heroZoomOut {
+    0% {
+        opacity: 1;
+        scale: 1;
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0;
+        scale: 1.15;
+        filter: blur(8px);
+    }
+}
+
+@keyframes heroZoomIn {
+    0% {
+        opacity: 0;
+        scale: 1.15;
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+        filter: blur(0);
+    }
+}
+
+/* --- Dashboard Layer (default: hidden) --- */
+.dashboard-layer {
+    z-index: 1;
+    background-color: var(--bg-page);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+                filter 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-layer.is-entering {
+    z-index: 3;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: dashboardReveal 550ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dashboard-layer.is-visible {
+    z-index: 3;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.dashboard-layer.is-exiting {
+    z-index: 3;
+    animation: dashboardExit 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    pointer-events: none;
+}
+
+@keyframes dashboardReveal {
+    0% {
+        opacity: 0;
+        scale: 0.93;
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes dashboardExit {
+    0% {
+        opacity: 1;
+        scale: 1;
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0;
+        scale: 0.93;
+        filter: blur(4px);
+    }
+}
+
+/* --- Card Stagger Reveal --- */
+.info-card {
+    opacity: 0;
+}
+
+.info-card.card-reveal {
+    animation: cardStaggerIn 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardStaggerIn {
+    0% {
+        opacity: 0;
+        scale: 0.96;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* --- Back-to-Hero Strip --- */
+.dashboard-back-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, color 0.2s ease;
+    width: fit-content;
+}
+
+.dashboard-back-strip:hover {
+    opacity: 1;
+    color: var(--text-main);
+}
+
+.back-arrow-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+    mask-image: url('../svg/arrow-left.svg');
+    -webkit-mask-image: url('../svg/arrow-left.svg');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+}
+
+/* --- Hero Content (inside hero-layer) --- */
 .hero-content {
     max-width: 900px;
     width: 100%;
@@ -453,12 +643,12 @@ body {
 }
 
 .hero-content h1 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: clamp(2.5rem, 8vw, 4rem);
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--text-main);
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
 }
 
 .hero-content p {
@@ -665,8 +855,8 @@ body {
     width: 96%;
     /* 2% margin on each side */
     max-width: 1320px;
-    margin: 4rem auto;
-    padding: 0;
+    margin: 2rem auto;
+    padding: 2rem 0 4rem 0;
 }
 
 .results-page {
@@ -722,10 +912,12 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
 }
 
 .search-result-card:hover {
-    border-color: var(--accent-blue);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .search-result-card__body {
@@ -734,8 +926,9 @@ body {
 }
 
 .search-result-title {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 1.15rem;
+    font-weight: 700;
     margin-bottom: 0.6rem;
 }
 
@@ -784,8 +977,9 @@ body {
 }
 
 .section-title {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--border-light);
 }
@@ -815,29 +1009,28 @@ body {
 .info-card {
     background: var(--bg-card);
     border: 1px solid #e1e4e8;
-    /* Cleaner modern border */
     border-right: 2px solid #d1d5da;
-    /* Slightly stronger on the right for structure */
     border-bottom: 2px solid #d1d5da;
-    /* Slightly stronger on the bottom */
-    padding: 2.5rem 2.25rem 5rem 2.25rem; /* Increased bottom padding for the button */
+    padding: 2.5rem 2.25rem 5rem 2.25rem;
     border-radius: 0 24px 0 0;
-    /* Modern distinct top-right radius */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    /* Modern soft shadow */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center children horizontally */
     text-align: center;
-    /* Center text */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.info-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .info-card h3 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     color: #000;
 }
@@ -907,7 +1100,7 @@ body {
 }
 
 .stat-item .value {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
 }
@@ -920,6 +1113,10 @@ body {
     font-size: 0.8rem;
     color: var(--text-muted);
     background: #fff;
+}
+
+.site-footer.is-hidden {
+    display: none !important;
 }
 
 /* 
@@ -947,8 +1144,9 @@ body {
 }
 
 .infobox-metadata h4 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 1rem;
+    font-weight: 700;
     border-bottom: 1px solid var(--border-light);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
@@ -990,8 +1188,9 @@ body {
 }
 
 .dossier-header h1 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 2.5rem;
+    font-weight: 800;
     border-bottom: 2px solid #000;
     padding-bottom: 0.5rem;
     margin: 0;
@@ -1011,7 +1210,8 @@ body {
 }
 
 .research-note h3 {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
@@ -1101,7 +1301,8 @@ body {
 }
 
 .u-font-serif {
-    font-family: 'Libre Baskerville', serif !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+    font-weight: 700 !important;
 }
 
 .u-font-small {

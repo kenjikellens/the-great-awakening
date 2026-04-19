@@ -34,3 +34,38 @@
 [10:30 19/04/2026] pages/fragments/home.html - Removed the statistics bar.
 [10:30 19/04/2026] css/style.css - Increased side padding for the dashboard section.
 [10:30 19/04/2026] js/dossier-manager.js - Cleaned up statistics rendering logic.
+[13:01 19/04/2026] index.html - Removed Google Fonts links in favor of Segoe UI system fonts.
+[13:02 19/04/2026] css/style.css - Switched all Serif/Libre Baskerville fonts to Segoe UI; implemented container shadows and hover effects.
+[13:03 19/04/2026] css/style.css - Removed unrequested blue borders on hover; kept shadows and Segoe UI font.
+[13:06 19/04/2026] pages/dossiers/epstein-files.html - Renamed to Epstein Files; updated content to reflect 2024 unsealed court records status; removed legacy fonts.
+[13:10 19/04/2026] pages/dossiers/epstein-files.html - Major update: Integrated 3.5 million page DOJ release from Jan 2026 under the Transparency Act.
+[13:12 19/04/2026] pages/dossiers/epstein-files.html - Cleaned up title; removed (2026 Archive) from h1.
+[13:01 19/04/2026] index.html - Removed Google Fonts links in favor of Segoe UI system fonts.
+[13:02 19/04/2026] css/style.css - Switched all Serif/Libre Baskerville fonts to Segoe UI; implemented container shadows and hover effects.
+[13:03 19/04/2026] css/style.css - Removed unrequested blue borders on hover; kept shadows and Segoe UI font.
+[13:06 19/04/2026] pages/dossiers/epstein-files.html - Renamed to Epstein Files; updated content to reflect 2024 unsealed court records status; removed legacy fonts.
+[13:10 19/04/2026] pages/dossiers/epstein-files.html - Major update: Integrated 3.5 million page DOJ release from Jan 2026 under the Transparency Act.
+[13:12 19/04/2026] pages/dossiers/epstein-files.html - Cleaned up title; removed (2026 Archive) from h1.
+[13:14 19/04/2026] pages/dossiers/epstein-files.html - Renamed section header to Sources for clarity.
+[13:33 19/04/2026] pages/dossiers/uss-liberty.html - Expanded dossier to 2000+ words with official sources.
+[13:33 19/04/2026] docs/items.md - Added content size labels (medium/small) to all research entries.
+[11:28 19/04/2026] pages/dossiers/bohemian-grove.html - Expanded dossier to 2000+ words with official sources.
+[11:29 19/04/2026] pages/dossiers/operation-paperclip.html - Expanded dossier to 2000+ words with official sources.
+[11:29 19/04/2026] pages/dossiers/operation-northwoods.html - Expanded dossier to 2000+ words with official sources.
+[11:30 19/04/2026] pages/dossiers/gulf-of-tonkin.html - Expanded dossier to 2000+ words with official sources.
+[13:51 19/04/2026] pages/fragments/home.html - Added IDs to scroll indicator and dashboard section for smooth scroll functionality.
+[13:52 19/04/2026] js/search.js - Implemented initHomeScroll function to handle smooth scrolling click events.
+[13:53 19/04/2026] js/router.js - Integrated initHomeScroll into the home route initialization.
+[13:55 19/04/2026] css/style.css - Implemented CSS Scroll Snap and global scroll-padding-top to fix sticky header offsets.
+[13:56 19/04/2026] js/router.js - Added dynamic scroll-snap class management to the root element.
+[14:02 19/04/2026] css/style.css - Implemented scroll-driven fade-out and blur animation for the hero section using CSS View Timelines.
+[14:05 19/04/2026] css/style.css - Reverted broken CSS animations; restored min-height and moved scroll-snap-type to body for stability.
+[14:06 19/04/2026] js/search.js - Implemented high-compatibility JS-based scroll fade and blur effect.
+[14:07 19/04/2026] js/router.js - Improved snap class management and integrated JS fade initialization.
+[14:32 19/04/2026] pages/fragments/home.html - Restructured home page with overlapping layers for cinematic zoom transition.
+[14:32 19/04/2026] css/style.css - Added cinematic zoom transition keyframes and layer styling.
+[14:32 19/04/2026] js/search.js - Replaced scroll navigation with state-machine layer switch.
+[14:32 19/04/2026] js/router.js - Updated to use Hero Transition and removed scroll snapping.
+[14:36 19/04/2026] css/style.css - Added .is-hidden utility class for the site footer.
+[14:36 19/04/2026] pages/fragments/home.html - Embedded site footer inside dashboard-layer to avoid double scrollbars.
+[14:36 19/04/2026] js/router.js - Added logic to hide global site footer on home route and show on other routes.

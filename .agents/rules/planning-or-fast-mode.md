@@ -9,7 +9,6 @@ Check for a system-injected `<EPHEMERAL_MESSAGE>` containing a `<planning_mode>`
 # Planning Mode Rules
 
 - ALWAYS create an implementation plan before making any changes, including bug fixes.
-- **IMPORTANT**: Implementation plans MUST be saved as standard markdown files in the `artefacts/` folder located in the root directory (e.g. `artefacts/implementation-plan.md`). DO NOT use the system default hidden artifact tool; set IsArtifact to false and use `write_to_file` to save to `artefacts/`.
 - There are NO exceptions. Even the smallest or “obvious” fix requires a plan.
 - Never assume a task is too simple to skip planning.
 - If the user requests immediate implementation while in Planning Mode:

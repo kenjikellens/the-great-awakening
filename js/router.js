@@ -6,7 +6,14 @@
     const shell = document.getElementById('content-shell');
     const routeLinks = document.querySelectorAll('[data-route]');
     const baseTitle = 'The Great Awakening';
+    const globalFooter = document.querySelector('.site-footer');
     let activeDossierStyleTag = null;
+
+    const toggleGlobalFooter = (hide) => {
+        if (globalFooter) {
+            globalFooter.classList.toggle('is-hidden', hide);
+        }
+    };
 
     const staticRoutes = {
         home: {
@@ -16,6 +23,9 @@
                 await DossierManager.renderHomeList();
                 if (typeof window.initDossierSearch === 'function') {
                     window.initDossierSearch();
+                }
+                if (typeof window.initHeroTransition === 'function') {
+                    window.initHeroTransition();
                 }
             }
         },
@@ -78,6 +88,14 @@
     const renderStaticRoute = async (viewName, param = '') => {
         const route = staticRoutes[viewName] || staticRoutes.home;
         clearDossierStyle();
+        
+        toggleGlobalFooter(viewName === 'home' || !viewName);
+        
+        // Handle old scroll listeners if any
+        if (viewName !== 'home' && typeof window._lastHomeScrollHandler === 'function') {
+            window.removeEventListener('scroll', window._lastHomeScrollHandler);
+        }
+
         shell.innerHTML = await fetchText(route.fragment);
         document.title = route.title;
         setActiveNav(viewName);
@@ -88,6 +106,7 @@
 
     const renderDossierRoute = async (slug) => {
         clearDossierStyle();
+        toggleGlobalFooter(false);
         shell.innerHTML = await fetchText('pages/fragments/dossier-view.html');
         setActiveNav('dossiers');
 
@@ -121,6 +140,7 @@
 
     const renderNotFound = () => {
         clearDossierStyle();
+        toggleGlobalFooter(false);
         shell.innerHTML = `
             <main class="dashboard-section u-mt-3">
                 <section class="content-card">
@@ -134,6 +154,7 @@
     };
 
     const renderError = (message) => {
+        toggleGlobalFooter(false);
         shell.innerHTML = `
             <main class="dashboard-section u-mt-3">
                 <section class="content-card">

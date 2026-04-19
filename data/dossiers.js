@@ -138,10 +138,10 @@ const DOSSIER_DATA = [
   },
   {
     "id": "epstein-files",
-    "title": "Jeffrey Epstein Files",
-    "summary": "Jeffrey Epstein's network, unsealed court documents, and flight logs analysis.",
-    "keywords": ["Ghislaine Maxwell", "Lolita Express", "Little St. James", "Blackmail", "Intelligence Agencies", "Kompromat", "2024 Unsealed", "Prince Andrew"],
-    "category": "Leaks & Exposure"
+    "title": "Epstein Files",
+    "summary": "3.5M+ pages of unsealed DOJ archives, 2,000+ videos, and 180,000 image files released under the 2026 Transparency Act.",
+    "keywords": ["Transparency Act 2026", "DOJ Archive", "Lolita Express", "Little St. James", "Blackmail", "Intelligence Agencies", "Kompromat", "3 Million Pages", "Prince Andrew"],
+    "category": "Elite Exposure & Corruption"
   },
   {
     "id": "neuralink",

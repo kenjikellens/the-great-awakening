@@ -1,34 +1,45 @@
-<section class="hero-fullscreen">
-    <div class="hero-content">
-        <h1>The Great Awakening</h1>
-        <p>An independent research platform dedicated to documenting global power structures, technocratic developments, and socio-economic transformations.</p>
-    </div>
-
-    <div class="hero-search-wrapper">
-        <label class="u-sr-only" for="dossier-search">Search dossiers</label>
-        <input
-            type="text"
-            id="dossier-search"
-            class="search-input-pill"
-            placeholder="Search for dossiers (e.g. Agenda 2030, WEF)..."
-            autocomplete="off"
-            aria-autocomplete="list"
-            aria-expanded="false"
-            aria-controls="home-search-suggestions"
-        >
-        <div id="home-search-suggestions" class="search-suggestions" hidden></div>
-    </div>
-
-    <div class="scroll-indicator">
-        <span class="scroll-text">Explore Research</span>
-        <div class="scroll-arrow">
-            <img src="svg/arrow-down.svg" alt="Scroll down" id="indicator-arrow">
+<div class="home-viewport" id="home-viewport">
+    <section class="home-layer hero-layer" id="hero-layer">
+        <div class="hero-content">
+            <h1>The Great Awakening</h1>
+            <p>An independent research platform dedicated to documenting global power structures, technocratic developments, and socio-economic transformations.</p>
         </div>
-    </div>
-</section>
 
-<main class="dashboard-section">
-    <div id="home-dossier-list" class="dossier-list">
-        <!-- Dynamically populated by DossierManager -->
-    </div>
-</main>
+        <div class="hero-search-wrapper">
+            <label class="u-sr-only" for="dossier-search">Search dossiers</label>
+            <input
+                type="text"
+                id="dossier-search"
+                class="search-input-pill"
+                placeholder="Search for dossiers (e.g. Agenda 2030, WEF)..."
+                autocomplete="off"
+                aria-autocomplete="list"
+                aria-expanded="false"
+                aria-controls="home-search-suggestions"
+            >
+            <div id="home-search-suggestions" class="search-suggestions" hidden></div>
+        </div>
+
+        <div class="scroll-indicator" id="home-scroll-trigger">
+            <span class="scroll-text">Explore Research</span>
+            <div class="scroll-arrow">
+                <img src="svg/arrow-down.svg" alt="Scroll down" id="indicator-arrow">
+            </div>
+        </div>
+    </section>
+
+    <section class="home-layer dashboard-layer" id="dashboard-layer">
+        <main class="dashboard-section" id="dashboard-section">
+            <div class="dashboard-back-strip" id="dashboard-back-trigger">
+                <span class="back-arrow-icon"></span>
+                <span>Back to overview</span>
+            </div>
+            <div id="home-dossier-list" class="dossier-list">
+                <!-- Dynamically populated by DossierManager -->
+            </div>
+        </main>
+        <footer class="site-footer">
+            <p>&copy; 2026 The Great Awakening Research Project. All data is based on public records and factual documentation.</p>
+        </footer>
+    </section>
+</div>
