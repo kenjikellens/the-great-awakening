@@ -751,24 +751,32 @@ body {
     -webkit-mask-size: contain;
 }
 
-/* --- Hero Content (inside hero-layer) --- */
-.hero-content {
-    max-width: 900px;
-    width: 100%;
+/* --- Hero Main Container (Unified layout) --- */
+.hero-main-container {
     position: absolute;
-    top: clamp(10vh, 14vh, 16vh);
-    /* Moved higher to avoid search bar overlap */
+    top: 42%; /* Centered vertically in the viewport */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 900px;
+    z-index: 950;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    width: 100%;
     text-align: center;
-    z-index: 2;
+    margin-bottom: 3.5rem; /* Flexible margin between title/text and search bar */
 }
 
 .hero-content h1 {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 700;
-    margin-bottom: 4rem; /* Increased from 1.5rem to push the paragraph lower */
+    margin-bottom: 1.5rem;
     color: #ffffff;
     letter-spacing: -1.5px;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
@@ -787,12 +795,7 @@ body {
 .hero-search-wrapper {
     width: 100%;
     max-width: 760px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: 0;
-    z-index: 950;
-    transform: translate(-50%, -50%);
+    position: relative; /* No longer absolute */
     overflow: visible;
 }
 
