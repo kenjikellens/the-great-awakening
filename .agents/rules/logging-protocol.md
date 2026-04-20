@@ -7,7 +7,8 @@ trigger: always_on
 ## 📝 Logging Rules
 
 ### 1. Timing & Scope
-- **DO LOG**: Immediately after completing a local file operation (**Create, Edit, or Delete**).
+- **DO LOG**: Immediately after completing a local file operation (**Create, Edit, or Delete**) ONLY IF the file is located within the current project/repository directory.
+- **NEVER LOG**: Files modified outside the current project directory (e.g., global configuration files in `.gemini`).
 - **NEVER LOG**: Administrative or synchronization tasks. **Git pulling (pull), pushing (push), cloning, or branching MUST NEVER BE LOGGED.**
 - **NEVER LOG**: System commands, environment setup, or internal agent reasoning.
 
