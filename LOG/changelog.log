@@ -115,3 +115,37 @@
 [20:27 19/04/2026] css/style.css - Disabled backdrop-filter blur on mega menu and restored opacity to 0.01 to debug browser opacity issue
 [20:28 19/04/2026] css/style.css - Moved mega-menu backdrop-filter to pseudo-element to fix Chromium opacity solid render bug
 [23:45 19/04/2026] css/style.css - Removed empty ruleset and media query at line 433.
+[13:06 20/04/2026] css/style.css - Aligned navigation links to the right using margin-left: auto.
+[13:14 20/04/2026] pages/fragments/about.html - Enhanced content with detailed mission and methodology.
+[13:15 20/04/2026] pages/fragments/contact.html - Implemented secure research channel and functional mailto form.
+[13:20 20/04/2026] css/style.css - Added page-specific layouts, form styling, and utility classes for About/Contact.
+[13:22 20/04/2026] pages/fragments/about.html - Reduced top margins for better vertical positioning.
+[13:22 20/04/2026] pages/fragments/contact.html - Reduced top margins and adjusted alignment.
+[13:31 20/04/2026] pages/fragments/contact.html - Restructured layout to move form parallel with section header.
+[13:32 20/04/2026] css/style.css - Refined vertical alignment and reduced card padding.
+[13:34 20/04/2026] pages/fragments/about.html - Compacted layout and content to fit on a single screen without scrolling.
+[13:34 20/04/2026] css/style.css - Added compact utility classes for padding, margins, and typography.
+[13:35 20/04/2026] pages/fragments/about.html - Optimized font sizes and content balance for improved readability within the compact layout.
+[13:36 20/04/2026] css/style.css - Implemented Flexbox-based sticky footer to ensure footer stays at the bottom on short pages.
+[13:56 20/04/2026] index.html - Redesigned footer content with Branding, Navigation, and consolidated notice.
+[13:56 20/04/2026] css/style.css - Implemented informative, floating footer with rounded corners and optimized height.
+[13:57 20/04/2026] css/style.css - Fixed sticky footer stability by switching to vh units and removing bottom margin.
+[14:04 20/04/2026] css/style.css - Optimized info-cards for Dark Mode with themed decorative borders and subtle light glows.
+[14:05 20/04/2026] js/search.js - Limited the number of search suggestions to 5 items for improved UI clarity.
+[14:08 20/04/2026] js/search.js - Implemented dynamic maxHeight for search suggestions with a 16px viewport safety margin.
+[14:08 20/04/2026] css/style.css - Added scrollbar support and overflow handling for the dynamic search suggestions dropdown.
+[14:10 20/04/2026] css/style.css - Compacted vertical spacing in cards and suggestions to prevent overflow without scrollbars.
+[14:11 20/04/2026] css/style.css - Fixed z-index conflict: moved 'Explore Research' indicator behind search results (z-index: 10).
+[14:14 20/04/2026] css/style.css - Restored centered search bar layout: Decoupled search input from hero text for independent positioning.
+[14:17 20/04/2026] css/style.css - Fixed hero layout: Anchored text to expand upwards from the search bar center, preventing all overlapping.
+[14:18 20/04/2026] css/style.css - Refined hero typography: reduced font sizes and tightened vertical spacing between title and subtitle.
+[14:19 20/04/2026] css/style.css - Themed the hero section: Hero background and text now dynamically adapt to Light and Dark modes.
+[14:20 20/04/2026] css/style.css - Refined light mode hero text to use a premium dark gray (#2d3436).
+[14:23 20/04/2026] css/style.css - Applied robust hero theme fix: used body .hero-layer specificity and fallback colors to override stale dark mode styles.
+[14:28 20/04/2026] css/style.css - Themed the hero header: Header links, branding, and toggle now correctly adapt to light/dark themes in hero mode.
+[14:32 20/04/2026] css/style.css - Architectural cleanup: Removed redundant specificity hacks and consolidated hero theme variables.
+[14:32 20/04/2026] js/theme-manager.js - Logic refactor: Removed manual inline style overrides in favor of a pure CSS-variable state management system.
+[14:35 20/04/2026] pages/fragments/dossiers.html - Alignment fix: Centered the Research Database Overview heading.
+[14:35 20/04/2026] css/style.css - Layout stability: Added scrollbar-gutter: stable to prevent logo jumping and refined header flex positioning.
+[14:36 20/04/2026] css/style.css - Header alignment: Restored right-alignment for navigation links by re-implementing margin-left: auto.
+[14:37 20/04/2026] css/style.css - Themed scroll indicator: Updated the Explore Research arrow to dynamically match the active theme (dark in light mode, white in dark mode).

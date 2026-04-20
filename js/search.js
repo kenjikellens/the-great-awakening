@@ -2,7 +2,7 @@
  * Search interactions for the Great Awakening Research Platform.
  * Home uses live suggestions; results uses the same search engine in a dedicated view.
  */
-const SEARCH_SUGGESTION_LIMIT = 6;
+const SEARCH_SUGGESTION_LIMIT = 5;
 
 const escapeHtml = (value) => String(value || '')
     .replace(/&/g, '&amp;')
@@ -111,6 +111,14 @@ const initDossierSearch = () => {
     const updateSuggestions = async () => {
         const query = searchInput.value;
         const matches = await DossierManager.searchDossiers(query, { limit: SEARCH_SUGGESTION_LIMIT });
+
+        // Dynamic height calculation
+        if (suggestionContainer) {
+            const rect = searchInput.getBoundingClientRect();
+            const spaceBelow = window.innerHeight - rect.bottom - 16;
+            suggestionContainer.style.maxHeight = `${Math.max(100, spaceBelow)}px`;
+        }
+
         renderSuggestionItems(suggestionContainer, matches, query);
         searchInput.setAttribute('aria-expanded', matches.length > 0 ? 'true' : 'false');
     };
@@ -164,7 +172,14 @@ const initResultsSearch = async (query = '') => {
         }
 
         if (suggestionContainer) {
+            const currentQuery = searchInput.value;
             const suggestionMatches = await DossierManager.searchDossiers(currentQuery, { limit: SEARCH_SUGGESTION_LIMIT });
+
+            // Dynamic height calculation
+            const rect = searchInput.getBoundingClientRect();
+            const spaceBelow = window.innerHeight - rect.bottom - 16;
+            suggestionContainer.style.maxHeight = `${Math.max(100, spaceBelow)}px`;
+
             renderSuggestionItems(suggestionContainer, suggestionMatches, currentQuery);
         }
     };

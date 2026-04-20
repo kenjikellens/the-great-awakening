@@ -25,10 +25,12 @@ Each entry must occupy a single line and follow this exact timestamped format:
 - **Append only**: Always use a new line; never overwrite or delete previous history.
 - **No duplicates**: Do not log the same change multiple times.
 
-## 🚀 Execution Logic
-1. Perform file operation (**Create/Edit/Delete**).
-2. Append the line to `LOG/changelog.log`.
-3. Proceed to next file.
+### 4. Precision & Tooling
+- **Use `replace_file_content`**: To consistently append lines, target the last valid entry in the log and replace it with itself PLUS the new entry on a new line.
+- **Clean Target Content**: When copy-pasting from a file view, ensure you strip any UI-injected line numbers (e.g., `118: `) from the `TargetContent`. The tool strictly matches text on disk.
 
-> [!IMPORTANT]
-> **DO NOT USE ECHO** to update this file via shell redirection, as it often causes encoding issues. Use file-writing tools instead.
+## Execution Logic
+1. Perform file operation (**Create/Edit/Delete**).
+2. **Read** the end of `LOG/changelog.log` to identify the current last entry.
+3. **Use `replace_file_content`** to target that last entry and append the new line below it.
+4. Proceed to the next file.

@@ -1,7 +1,46 @@
-<main class="dashboard-section u-mt-3">
+<main class="dashboard-section u-mt-1">
     <section class="content-card">
-        <h1 class="u-font-serif u-mb-2">Contact</h1>
-        <p class="u-mb-2">This section is a placeholder for submission channels, corrections, and research collaboration requests.</p>
-        <p>You can replace this content with the official contact workflow and disclosure policy.</p>
+        <div class="contact-layout">
+            <div class="contact-header-col">
+                <header class="section-header u-mb-3">
+                    <h1 class="u-font-serif u-mb-1">Secure Channel</h1>
+                    <p class="u-text-muted">Direct communication for inquiries, data submissions, and research collaboration.</p>
+                </header>
+
+                <div class="contact-info u-mb-3">
+                    <h2 class="u-font-serif u-mb-2">Get in Touch</h2>
+                    <p class="u-mb-2">
+                        For general inquiries or to submit documentation for review, please use the form below. 
+                        All submissions are handled with strict confidentiality.
+                    </p>
+                    <div class="security-card u-p-2 u-bg-surface-alt u-rounded u-mb-2">
+                        <h3 class="u-text-sm u-uppercase u-letter-spacing u-mb-1">Security Notice</h3>
+                        <p class="u-text-sm">
+                            This channel is monitored for general data transparency initiatives. 
+                            Sensitive documents should be summarized in the message initial query; 
+                            further secure transmission protocols will be provided upon verification.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="mailto:kenji.kellens@hotmail.com" method="get" enctype="text/plain" class="contact-form">
+                <div class="form-group u-mb-2">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" name="subject" placeholder="Enter your name" class="form-input" required>
+                </div>
+                <div class="form-group u-mb-2">
+                    <label for="email" class="form-label">Return Address</label>
+                    <input type="email" id="email" name="body" placeholder="your@email.com" class="form-input" required>
+                </div>
+                <div class="form-group u-mb-2">
+                    <label for="message" class="form-label">Inquiry / Submission Summary</label>
+                    <textarea id="message" name="body" rows="6" placeholder="Describe the data or inquiry..." class="form-input" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary u-w-full">
+                    <span>Transmit Message</span>
+                </button>
+            </form>
+        </div>
     </section>
 </main>

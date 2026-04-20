@@ -37,6 +37,10 @@
                 if (typeof window.initHeroCanvas === 'function') {
                     window.initHeroCanvas();
                 }
+                // Sync theme state to hero background after fragment load
+                if (window.ThemeManager && typeof window.ThemeManager.refreshHeroTheme === 'function') {
+                    window.ThemeManager.refreshHeroTheme();
+                }
             }
         },
         results: {

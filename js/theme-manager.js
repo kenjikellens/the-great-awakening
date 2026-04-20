@@ -13,9 +13,8 @@ const ThemeManager = (function () {
      */
     function init() {
         const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        if (savedTheme === 'dark') {
             applyTheme(true);
         } else {
             applyTheme(false);
@@ -26,6 +25,20 @@ const ThemeManager = (function () {
             document.addEventListener('DOMContentLoaded', setupToggle);
         } else {
             setupToggle();
+        }
+    }
+
+    /**
+     * Public method to manually re-apply or "nudge" the theme for dynamic elements.
+     * With clean CSS variables, this mostly ensures the browser re-evaluates
+     * the hero background context if needed after fragment loading.
+     */
+    function refreshHeroTheme() {
+        const heroLayer = document.getElementById('hero-layer');
+        if (heroLayer) {
+            // Just being present is enough for the CSS variables to take effect,
+            // but we can add a small class toggle here if needed to force a re-paint.
+            heroLayer.classList.add('theme-synced');
         }
     }
 
@@ -41,6 +54,8 @@ const ThemeManager = (function () {
             root.classList.remove(THEME_DARK);
             localStorage.setItem(THEME_STORAGE_KEY, 'light');
         }
+        
+        refreshHeroTheme();
         updateToggleIcons(isDark);
     }
 
@@ -81,7 +96,8 @@ const ThemeManager = (function () {
 
     return {
         init,
-        toggleTheme
+        toggleTheme,
+        refreshHeroTheme
     };
 })();
 
