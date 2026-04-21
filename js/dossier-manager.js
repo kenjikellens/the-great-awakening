@@ -132,6 +132,7 @@ const DossierManager = (function () {
 
     /**
      * Renders the categorized dossier index for the Dossiers view (Legend).
+     * Also populates the alphabet bar and category dropdown with available options.
      */
     async function renderDossiersIndex() {
         const data = await loadData();
@@ -151,23 +152,133 @@ const DossierManager = (function () {
 
         const sortedLetters = Object.keys(alphabetGroups).sort();
 
+        // Populate the alphabet bar with available letters
+        populateAlphabetBar(sortedLetters);
+
+        // Populate the category dropdown with unique categories
+        populateCategoryFilter(sortedData);
+
         container.innerHTML = `
-            <div class="alphabet-index-container">
-                ${sortedLetters.map(letter => `
-                    <div class="alphabet-group category-block u-mb-2">
-                        <h3 class="section-title u-font-small u-mb-1">${letter}</h3>
-                        <div class="legend-list u-flex-column u-gap-8">
-                            ${alphabetGroups[letter].map(item => `
-                                <a href="#dossier/${item.id}" class="legend-item" data-id="${item.id}">
-                                    ${item.title}
-                                    <span class="u-text-muted u-font-xsmall u-ml-1">(${item.category})</span>
-                                </a>
-                            `).join('')}
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
+            <table class="legend-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${sortedData.map(item => `
+                        <tr class="legend-item" data-id="${item.id}" data-category="${item.category}">
+                            <td><a href="#dossier/${item.id}" class="legend-link">${item.title}</a></td>
+                            <td class="legend-desc">${item.summary}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
         `;
+
+        // Attach filter event listeners
+        attachFilterListeners();
+    }
+
+    /**
+     * Populates the alphabet bar with A-Z buttons, marking letters with data as active.
+     */
+    function populateAlphabetBar(availableLetters) {
+        const bar = document.getElementById('alphabet-bar');
+        if (!bar) return;
+
+        const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+        bar.innerHTML = `<button class="alphabet-btn active" data-letter="ALL">ALL</button>` +
+            allLetters.map(letter => {
+                const hasData = availableLetters.includes(letter);
+                return `<button class="alphabet-btn${hasData ? '' : ' disabled'}" data-letter="${letter}">${letter}</button>`;
+            }).join('');
+    }
+
+    /**
+     * Populates the category dropdown with unique categories from the data.
+     */
+    function populateCategoryFilter(data) {
+        const select = document.getElementById('category-filter');
+        if (!select) return;
+
+        const categories = [...new Set(data.map(item => item.category))].sort();
+        select.innerHTML = `<option value="ALL">All Categories</option>` +
+            categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+    }
+
+    /**
+     * Attaches click/change/input listeners to the alphabet bar, category filter, and search input.
+     */
+    function attachFilterListeners() {
+        const bar = document.getElementById('alphabet-bar');
+        const categorySelect = document.getElementById('category-filter');
+        const searchInput = document.getElementById('legend-search');
+
+        if (bar) {
+            bar.addEventListener('click', (e) => {
+                const btn = e.target.closest('.alphabet-btn');
+                if (!btn || btn.classList.contains('disabled')) return;
+
+                // Toggle active state
+                bar.querySelectorAll('.alphabet-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                applyDossierFilters();
+            });
+        }
+
+        if (categorySelect) {
+            categorySelect.addEventListener('change', () => applyDossierFilters());
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', () => applyDossierFilters());
+        }
+    }
+
+    /**
+     * Applies combined filtering (letter + category + text search) to the dossier legend items.
+     */
+    function applyDossierFilters() {
+        const activeLetterBtn = document.querySelector('.alphabet-btn.active');
+        const activeLetter = activeLetterBtn ? activeLetterBtn.dataset.letter : 'ALL';
+        const categorySelect = document.getElementById('category-filter');
+        const activeCategory = categorySelect ? categorySelect.value : 'ALL';
+        const searchInput = document.getElementById('legend-search');
+        const searchQuery = normalizeSearchText(searchInput ? searchInput.value : '');
+
+        const items = document.querySelectorAll('.legend-item');
+        let visibleCount = 0;
+
+        items.forEach(item => {
+            const id = item.dataset.id;
+            const category = item.dataset.category || '';
+            const title = item.textContent.trim();
+            const firstLetter = title.charAt(0).toUpperCase();
+
+            let show = true;
+
+            // Letter filter
+            if (activeLetter !== 'ALL' && firstLetter !== activeLetter) {
+                show = false;
+            }
+
+            // Category filter
+            if (activeCategory !== 'ALL' && category !== activeCategory) {
+                show = false;
+            }
+
+            // Text search filter
+            if (searchQuery && !normalizeSearchText(title).includes(searchQuery)) {
+                show = false;
+            }
+
+            item.classList.toggle('hidden', !show);
+            if (show) visibleCount++;
+        });
+
+        toggleNoResults(visibleCount === 0, 'dossier-legend-container');
     }
 
     /**
@@ -244,13 +355,6 @@ const DossierManager = (function () {
             items.forEach(el => {
                 const id = el.dataset.id;
                 el.classList.toggle('hidden', !resultIds.includes(id));
-            });
-            
-            // Also toggle category headers if they have no visible children
-            const categoryBlocks = document.querySelectorAll('.category-block');
-            categoryBlocks.forEach(block => {
-                const visibleItems = block.querySelectorAll('.legend-item:not(.hidden)');
-                block.style.display = visibleItems.length > 0 ? 'block' : 'none';
             });
             toggleNoResults(results.length === 0, 'dossier-legend-container');
         }

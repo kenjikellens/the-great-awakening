@@ -8,7 +8,19 @@
         <div class="legend-section u-border-top u-mt-3">
             <h2 class="section-title">Research Inventory (Legend)</h2>
 
-            <div class="legend-search-box u-mb-2">
+            <!-- Alphabet quick-filter bar -->
+            <div id="alphabet-bar" class="alphabet-bar u-mb-1">
+                <button class="alphabet-btn active" data-letter="ALL">ALL</button>
+                <!-- Dynamically populated by DossierManager -->
+            </div>
+
+            <!-- Category dropdown filter -->
+            <div class="legend-filter-row u-mb-2">
+                <select id="category-filter" class="category-filter-select">
+                    <option value="ALL">All Categories</option>
+                    <!-- Dynamically populated by DossierManager -->
+                </select>
+
                 <input type="text" id="legend-search" placeholder="Filter inventory..."
                        class="search-input u-max-w-400 u-font-serif">
             </div>

@@ -6,9 +6,10 @@
     --accent-blue: #0044cc;
     --accent-gold: #c5a059;
     --border-light: rgba(0, 0, 0, 0.1);
-    --header-height: 40px;
-    --glass-bg: rgba(255, 255, 255, 0.4);
+    --header-height: 56px;
+    --glass-bg: rgba(255, 255, 255, 0.8);
     --glass-border: transparent;
+    --nav-button-border: rgba(0, 0, 0, 0.4);
     --mega-menu-bg: rgba(242, 244, 248, 0.01);
     --max-width: 1400px;
     --note-bg: #fffcf0;
@@ -16,6 +17,7 @@
     --accent-bg: #f8f9fa;
     --card-shadow: rgba(0, 0, 0, 0.06);
     --card-shadow-hover: rgba(0, 0, 0, 0.15);
+    --card-border-deco: rgba(0, 0, 0, 0.08);
     --search-border: #71767b; 
     /* Soft, neutral shadow for elegant elevation */
     --search-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
@@ -44,6 +46,7 @@
     --accent-bg: #21262d;
     --card-shadow: rgba(255, 255, 255, 0.05);
     --card-shadow-hover: rgba(255, 255, 255, 0.12);
+    --card-border-deco: rgba(255, 255, 255, 0.06);
     --search-border: rgba(255, 255, 255, 0.35); 
     /* Clear, atmospheric shadow for Dark Mode */
     --search-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
@@ -54,8 +57,9 @@
     --hero-shadow: rgba(0, 0, 0, 0.6);
     --hero-icon-filter: brightness(0) invert(1) opacity(0.8);
     --hero-particle-color: 197, 160, 89; /* Keep Gold in Dark Mode */
-    --glass-bg: rgba(22, 27, 34, 0.4);
+    --glass-bg: rgba(22, 27, 34, 0.8);
     --glass-border: transparent;
+    --nav-button-border: rgba(255, 255, 255, 0.4);
 }
 
 /* Base reset and typography */
@@ -100,10 +104,9 @@ body {
     Top Navigation Bar 
     Redesigned for Premium SPA feel.
 */
+/* Sticky navigation with feathered bottom edge */
 .site-header {
-    background-color: var(--glass-bg) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: transparent !important;
     border: none;
     height: var(--header-height);
     position: sticky;
@@ -111,7 +114,6 @@ body {
     z-index: 1000;
     display: flex;
     align-items: center;
-    /* Removed box-shadow for seamless integration (User Request) */
 }
 
 .nav-container {
@@ -133,7 +135,7 @@ body {
     font-size: 1.25rem;
     font-weight: 800;
     text-decoration: none;
-    color: #000000; /* Solid Neutral Black */
+    color: var(--text-main); /* Theme-aware brand color */
     transition: color 0.3s ease;
     letter-spacing: -0.5px;
     position: relative;
@@ -187,31 +189,49 @@ body {
 /* Base Link Styling - Clean and Minimal */
 .header-links>li>a {
     text-decoration: none;
-    color: #000000; /* Darker neutral color for glass visibility */
+    color: var(--text-main);
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 0 0;
-    height: var(--header-height);
-    line-height: var(--header-height);
+    padding: 6px 16px;
     display: block;
     position: relative;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1px solid var(--nav-button-border);
+    border-radius: 6px;
+    background: transparent;
+}
+
+/* Hover: subtle background tint for feedback */
+.header-links>li>a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode hover: lighter tint for contrast */
+.dark-theme .header-links>li>a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Active page indicator: underline on the button border */
+.header-links>li>a.active {
+    border-bottom: 2px solid var(--text-main);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
     background: none;
-    border: none;
+    border: 1px solid var(--nav-button-border);
     cursor: pointer;
     color: var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
     margin-left: 2rem;
 }
 
@@ -248,54 +268,25 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.header-links>li>a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--text-main);
-    transition: width 0.3s ease, left 0.3s ease, background 0.3s ease;
-}
-
-.header-links>li>a:hover {
-    color: var(--text-main);
-}
-
-.header-links>li>a:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-.header-links>li>a.active {
-    color: var(--text-main);
-}
-
-.header-links>li>a.active::after {
-    width: 100%;
-    left: 0;
-}
-
 /* Hero Mode: Themed text when on the home/hero view */
 .header-hero-mode .header-brand {
     color: var(--hero-text);
 }
 
+/* Hero mode nav links: use hero palette */
 .header-hero-mode .header-links>li>a {
     color: var(--hero-text-muted);
 }
 
-.header-hero-mode .header-links>li>a::after {
-    background: var(--hero-text);
-}
-
+/* Hero mode hover: brighten to full hero text */
 .header-hero-mode .header-links>li>a:hover {
     color: var(--hero-text);
 }
 
+/* Hero mode active indicator */
 .header-hero-mode .header-links>li>a.active {
     color: var(--hero-text);
+    border-bottom-color: var(--hero-text);
 }
 
 /* 
@@ -307,25 +298,21 @@ body {
     /* Allows menu to span full width of container if needed */
 }
 
+/* Solid professional dropdown panel */
 .mega-menu {
     position: fixed;
-    /* Relative to viewport */
     top: 0;
     left: 0;
     width: 100vw;
-    background-color: var(--mega-menu-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border); /* Soft translucent boundary */
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2); /* Soft shadow fade */
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--card-border-deco);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     opacity: 0;
     visibility: hidden;
-    /* Removed transform: translateY to fix Chromium blur rendering bug */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    will-change: opacity;
-    padding: 0 0; /* Padding handled by content to account for header */
+    /* Instant close, quick fade-in */
+    transition: opacity 0.15s ease, visibility 0s linear 0.15s;
+    padding: 0;
     z-index: 950;
-    /* Stacking order: Mega-menu (950) < Header (1000) */
     max-height: 80vh;
     overflow-y: auto;
 }
@@ -335,28 +322,11 @@ body {
 .mega-menu:hover {
     opacity: 1;
     visibility: visible;
+    /* Override: instant show, no delay */
+    transition: opacity 0.15s ease, visibility 0s linear 0s;
 }
 
-/* Mega-menu adaptive: force black text when white menu is open (overrides hero-mode) */
-.site-header:has(.has-mega-menu:hover) .header-brand,
-.site-header:has(+ .mega-menu:hover) .header-brand {
-    color: var(--text-main);
-}
 
-.site-header:has(.has-mega-menu:hover) .header-links>li>a,
-.site-header:has(+ .mega-menu:hover) .header-links>li>a {
-    color: var(--text-muted);
-}
-
-.site-header:has(.has-mega-menu:hover) .header-links>li>a:hover,
-.site-header:has(+ .mega-menu:hover) .header-links>li>a:hover {
-    color: var(--text-main);
-}
-
-.site-header:has(.has-mega-menu:hover) .header-links>li>a::after,
-.site-header:has(+ .mega-menu:hover) .header-links>li>a::after {
-    background: var(--text-main);
-}
 
 /* Portrait Orientation - Disable Mega Menu */
 @media (orientation: portrait) {
@@ -634,14 +604,15 @@ body {
     mix-blend-mode: overlay;
 }
 
+/* Interactive hero animation canvas — captures mouse for gravitational effect */
 .hero-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
-    pointer-events: none;
-    opacity: 0.6;
+    pointer-events: auto;
+    opacity: 0.8;
 }
 
 .hero-layer.is-exiting {
@@ -903,6 +874,158 @@ body {
 .search-input:focus {
     border-color: var(--accent-blue);
     box-shadow: 0 0 0 3px rgba(0, 68, 204, 0.1);
+}
+
+/* Alphabet quick-filter bar — horizontal row of A-Z buttons */
+.alphabet-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 0.5rem 0;
+}
+
+/* Individual letter button in the alphabet bar */
+.alphabet-btn {
+    background: transparent;
+    border: 1px solid var(--card-border-deco);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Alphabet button hover state */
+.alphabet-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-main);
+    border-color: var(--nav-button-border);
+}
+
+/* Dark theme alphabet hover */
+.dark-theme .alphabet-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Active/selected alphabet button */
+.alphabet-btn.active {
+    background-color: var(--text-main);
+    color: var(--bg-card);
+    border-color: var(--text-main);
+}
+
+/* Disabled alphabet button for missing letters */
+.alphabet-btn.disabled {
+    opacity: 0.25;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Horizontal filter row with category dropdown and search input */
+.legend-filter-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Category dropdown select */
+.category-filter-select {
+    padding: 0.8rem 1.25rem;
+    border: 2px solid var(--search-border);
+    border-radius: 8px;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    outline: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    min-width: 200px;
+    transition: border-color 0.2s ease;
+}
+
+/* Category select focus state */
+.category-filter-select:focus {
+    border-color: var(--accent-blue);
+}
+
+/* Inventory table — clean two-column layout */
+.legend-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--card-border-deco);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header row */
+.legend-table thead th {
+    text-align: left;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 2px solid var(--card-border-deco);
+}
+
+/* Dark theme table header */
+.dark-theme .legend-table thead th {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Table body rows */
+.legend-table tbody tr {
+    border-bottom: 1px solid var(--card-border-deco);
+}
+
+/* Remove border on last row */
+.legend-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Alternating row stripes for readability */
+.legend-table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.015);
+}
+
+/* Dark theme alternating stripes */
+.dark-theme .legend-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Table cells */
+.legend-table td {
+    padding: 0.65rem 1.2rem;
+    vertical-align: top;
+    font-size: 0.9rem;
+}
+
+/* Title column link — underlined on hover, neutral color */
+.legend-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Link hover underline */
+.legend-link:hover {
+    text-decoration: underline;
+}
+
+/* Description column — muted secondary text */
+.legend-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Hidden utility for filtered-out table rows */
+.legend-item.hidden {
+    display: none;
 }
 
 .search-input-pill::placeholder {
@@ -1198,19 +1321,6 @@ body {
     gap: 12px;
 }
 
-/* Alphabetical link item: Minimal, blue, and sober */
-.legend-item {
-    color: var(--accent-blue);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
-    width: fit-content;
-}
-
-.legend-item:hover {
-    text-decoration: underline;
-    color: var(--text-main);
-}
 
 .section-title {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -1244,7 +1354,7 @@ body {
 */
 .info-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--card-border-deco);
     border-right: 2px solid var(--card-border-deco);
     border-bottom: 2px solid var(--card-border-deco);
     padding: 1.5rem 1.5rem 4rem 1.5rem;

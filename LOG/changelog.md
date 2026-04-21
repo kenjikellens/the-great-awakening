@@ -171,3 +171,30 @@
 [23:48 21/04/2026] css/style.css - Defined --hero-particle-color variables for both Light and Dark themes.
 [23:49 21/04/2026] css/style.css - Implemented borderless glassmorphism for the site header by refining transparency and removing solid shadows.
 [23:53 21/04/2026] css/style.css - Neutralized all 'blue' tints in hero and header titles; Set high-visibility text to solid black (#000000) for maximum clarity against glass.
+[23:56 21/04/2026] css/style.css - Implemented a 'Bloom' shadow for the site header using the background color (var(--glass-bg)) to create a seamless overflow and eliminate hard border lines.
+[23:57 21/04/2026] css/style.css - Simplified header: Removed glassy blur effect and set background transparency to exactly 20% (rgba 0.2) for both Light and Dark themes.
+[00:00 22/04/2026] css/style.css - Implemented feathered header transition: increased opacity to 80% (rgba 0.8) and replaced solid background with a linear-gradient + deep bloom shadow to eliminate hard border lines.
+[00:05 22/04/2026] css/style.css - Corrected header transition to 'Outward Bloom': Reverted to solid background (0.8 opacity) and implemented centered, multi-layered bloom shadows (0 0 offset) to eliminate 'inner shadow' look and create seamless outward atmospheric glow.
+[00:07 22/04/2026] css/style.css - Replaced all box-shadow approaches with a ::after pseudo-element gradient strip that fades from the header color to transparent below the header, eliminating hard bottom edges.
+[00:09 22/04/2026] css/style.css - Moved navigation hover animation to the top edge; Transformed header links and theme toggle into outlined buttons with thin borders and light radii (6px) without background colors.
+[00:12 22/04/2026] css/style.css - Refined navigation: Removed top hover line animation; Added background color hover effect (darker in Light Mode, lighter in Dark Mode); Implemented a solid bottom-border indicator for the active/selected page.
+[00:14 22/04/2026] css/style.css - Increased header height from 40px to 56px for better visual balance and breathing room.
+[00:16 22/04/2026] css/style.css - Reinforced navigation button borders: Increased opacity to 0.5 (rgba) to ensure they are clearly visible against the header background.
+[00:17 22/04/2026] css/style.css - Fixed design idiocy: Implemented theme-aware borders for header buttons (Dark borders in Light Mode, Light borders in Dark Mode) to ensure high contrast and visibility across all themes.
+[00:19 22/04/2026] css/style.css - Fixed dark mode nav text: replaced hardcoded #000000 with var(--text-main); removed mega-menu hover color override system; fixed stray closing brace syntax error.
+[00:22 22/04/2026] css/style.css - Fixed white borders on info-cards in dark mode: defined --card-border-deco variable for both themes (subtle dark/light); replaced hardcoded --border-light on cards with theme-aware deco borders.
+[00:23 22/04/2026] css/style.css - Fixed header brand title going dark when scrolling in dark mode: replaced hardcoded #000000 with var(--text-main).
+[00:31 22/04/2026] css/style.css - Stripped header to fully transparent: removed background-color and ::after fade pseudo-element entirely.
+[00:31 22/04/2026] js/hero-canvas.js - Rebuilt hero animation: interactive neural constellation with mouse-reactive gravitational attraction, organic pulsing nodes, glowing connections, and radial cursor glow.
+[00:31 22/04/2026] css/style.css - Enabled pointer-events on hero-canvas and increased opacity to 0.8 for interactive mouse tracking.
+[00:40 22/04/2026] css/style.css - Replaced glassy mega-menu (backdrop-blur, translucent bg) with solid professional dropdown using var(--bg-card); removed fade-out transition for instant close on hover leave.
+[01:10 22/04/2026] pages/fragments/dossiers.html - Added alphabet quick-filter bar (A-Z buttons) and category dropdown filter above the existing search input for enhanced inventory browsing.
+[01:10 22/04/2026] js/dossier-manager.js - Implemented alphabet bar population, category dropdown population, and combined multi-filter logic (letter + category + text search) with filter event listeners.
+[01:10 22/04/2026] css/style.css - Added CSS for alphabet bar, alphabet buttons (hover/active/disabled states), category filter dropdown, and filter row layout.
+[01:22 22/04/2026] js/dossier-manager.js - Simplified dossier legend to a flat alphabetical list without category labels in parentheses; cleaned up stale category-block references.
+[01:22 22/04/2026] css/style.css - Added CSS for flat alphabetical list container, legend-item styling with hover feedback and hidden utility.
+[01:25 22/04/2026] css/style.css - Redesigned inventory list from raw links to a neutral table-like layout: bordered container, alternating row stripes, subtle separators, and proper text colors.
+[01:28 22/04/2026] js/dossier-manager.js - Rebuilt inventory as a proper HTML table with Title (link) and Description columns using semantic table elements.
+[01:28 22/04/2026] css/style.css - Replaced div-based list styles with full table CSS: header row, two-column layout, link styling, description muted text, zebra stripes, and row hover.
+[01:31 22/04/2026] css/style.css - Removed row hover background effect from inventory table; hover interaction now limited to link underline only.
+[01:33 22/04/2026] css/style.css - Eliminated hidden duplicate .legend-item:hover rules that were causing broad row underlining; now only the title link (<a>) underlines when focused directly.
