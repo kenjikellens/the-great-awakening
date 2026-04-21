@@ -25,6 +25,13 @@ const DOSSIER_DATA = [
     "category": "Global Governance Agendas"
   },
   {
+    "id": "bill-gates",
+    "title": "Bill Gates & Global Engineering",
+    "summary": "Analyzing multi-sector influence via the Gates Foundation and Breakthrough Energy, focusing on food systems and geoengineering.",
+    "keywords": ["Bill Gates", "Gates Foundation", "Breakthrough Energy", "Fabricated Meat", "Lab Meat", "SCoPEx", "Geoengineering", "Solar Dimming", "Farmland", "GAVI"],
+    "category": "Global Governance Agendas"
+  },
+  {
     "id": "bis",
     "title": "Bank for International Settlements (BIS)",
     "summary": "The \"Bank for Central Banks\" and its role in coordinating global monetary policy.",
@@ -268,6 +275,27 @@ const DOSSIER_DATA = [
     "summary": "Documentation on the 1967 attack on the USS Liberty and the subsequent investigation.",
     "keywords": ["1967", "Six-Day War", "Naval Attack", "Israel", "False Flag", "Mediterranean", "Intelligence"],
     "category": "Military & False Flags"
+  },
+  {
+    "id": "cyber-polygon",
+    "title": "Cyber Polygon (WEF)",
+    "summary": "Analysis of the WEF cyber pandemic simulations and anticipatory digital architectures.",
+    "keywords": ["Cyber Pandemic", "WEF", "BI.ZONE", "Interpol", "Supply Chain", "Digital Reset", "Simulation"],
+    "category": "Global Governance Agendas"
+  },
+  {
+    "id": "who-pandemic-treaty",
+    "title": "WHO Pandemic Agreement (CA+)",
+    "summary": "Documenting the creation of the global pandemic treaty, One Health, and the PABS system.",
+    "keywords": ["WHO", "Pandemic Emergency", "CA+", "One Health", "PABS System", "Lockdowns", "Medical Sovereignty", "IHR"],
+    "category": "Global Governance Agendas"
+  },
+  {
+    "id": "vault-7",
+    "title": "Vault 7 (CIA)",
+    "summary": "WikiLeaks disclosure of the CIA's domestic surveillance tools, zero-day exploits, and encryption bypass methods.",
+    "keywords": ["WikiLeaks", "Julian Assange", "Year Zero", "CIA", "CCI", "Weeping Angel", "Hacking", "Zero-day", "Surveillance"],
+    "category": "Leaks & Exposure"
   },
   {
     "id": "georgia-guidestones",

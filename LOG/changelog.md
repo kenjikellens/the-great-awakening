@@ -149,3 +149,25 @@
 [14:35 20/04/2026] css/style.css - Layout stability: Added scrollbar-gutter: stable to prevent logo jumping and refined header flex positioning.
 [14:36 20/04/2026] css/style.css - Header alignment: Restored right-alignment for navigation links by re-implementing margin-left: auto.
 [14:37 20/04/2026] css/style.css - Themed scroll indicator: Updated the Explore Research arrow to dynamically match the active theme (dark in light mode, white in dark mode).
+[19:07 21/04/2026] pages/dossiers/bill-gates.html - Created comprehensive dossier for Bill Gates & Global Engineering, focusing on synthetic food and geoengineering.
+[19:07 21/04/2026] data/dossiers.js - Integrated Bill Gates entry into the centralized research data store.
+[19:07 21/04/2026] pages/fragments/dossiers.html - Updated the Recent Database Updates list to include the Bill Gates dossier.
+[19:07 21/04/2026] docs/items.md - Added Bill Gates & Global Engineering to the Research Wiki index.
+[22:15 21/04/2026] pages/dossiers/cyber-polygon.html - Created dossier for WEF Cyber Polygon exercise.
+[22:15 21/04/2026] pages/dossiers/who-pandemic-treaty.html - Created dossier for WHO Pandemic Agreement (CA+).
+[22:15 21/04/2026] pages/dossiers/vault-7.html - Created dossier for WikiLeaks Vault 7 CIA hacking tools.
+[22:15 21/04/2026] docs/items.md - Added Cyber Polygon, WHO Pandemic Agreement, and Vault 7 to the Research Wiki index.
+[22:15 21/04/2026] data/dossiers.js - Integrated Cyber Polygon, WHO Pandemic Agreement, and Vault 7 into the database.
+[22:15 21/04/2026] pages/fragments/dossiers.html - Updated recent database updates list with the three newly processed entries.
+[23:16 21/04/2026] css/style.css - Enforced dark borders (#888) for the main search pill and inventory search input in Light Mode.
+[23:27 21/04/2026] css/style.css - Increased search border thickness to 2px, added depth with theme-responsive shadows, and darkened the Light Mode hero background.
+[23:34 21/04/2026] css/style.css - Implemented high-contrast 'Vignette' hero background (Light center to dark edges) and reinforced shadows for maximum search bar visibility.
+[23:38 21/04/2026] css/style.css - Upgraded to a gargantuan 5-layer shadow stack (150px range) and implemented 'High-Luminance' atmospheric vignettes for both Light and Dark modes.
+[23:40 21/04/2026] css/style.css - Corrected Hero aesthetics: Reverted search shadow to a light, subtle style; Sharpened background vignette transition (0-70% solid focus) for extreme fade effect.
+[23:45 21/04/2026] css/style.css - Fixed visibility: Reset hero background to 0-100% radial fade for full-surface vignette; Darkened search bar shadow (rgba 0.12) to ensure clarity against white center.
+[23:47 21/04/2026] css/style.css - Switched Light Mode background to a deep neutral gray fade (#404040 edges) to remove blue tint; Softened search shadows to 0.08 opacity.
+[23:47 21/04/2026] css/style.css - Adjusted Light Mode background fade to a more balanced neutral gray (#737373) for better visibility without being overbearingly dark.
+[23:48 21/04/2026] js/hero-canvas.js - Implemented theme-aware particles: switched from hardcoded gold to dynamic CSS-variable colors (Professional Blue in Light Mode, Gold in Dark Mode).
+[23:48 21/04/2026] css/style.css - Defined --hero-particle-color variables for both Light and Dark themes.
+[23:49 21/04/2026] css/style.css - Implemented borderless glassmorphism for the site header by refining transparency and removing solid shadows.
+[23:53 21/04/2026] css/style.css - Neutralized all 'blue' tints in hero and header titles; Set high-visibility text to solid black (#000000) for maximum clarity against glass.

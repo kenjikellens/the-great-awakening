@@ -31,6 +31,21 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Narrative**: Allegations that it served as a rehearsal for the subsequent COVID-19 pandemic.
 - **Size**: medium size
 
+### Bill Gates & Global Engineering
+- **Documented Facts**: Significant private ownership of US farmland (270k+ acres). Primary funder for the SCoPEx solar geoengineering project at Harvard. Leading investor in cultivated meat companies (UPSIDE Foods, Mosa Meat).
+- **Narrative**: Architect of a centralized life-support system where food production and atmospheric management are controlled by private philanthropic entities.
+- **Size**: large size
+
+### Cyber Polygon (WEF)
+- **Documented Facts**: A cyber pandemic simulation organized by the WEF and BI.ZONE in 2020/2021, focusing on supply chain collapse and digital resilience.
+- **Narrative**: Evaluated as an anticipatory architecture for the implementation of digital IDs and centralized internet control infrastructure.
+- **Size**: medium size
+
+### WHO Pandemic Agreement (CA+)
+- **Documented Facts**: A global health treaty adopted in 2025 integrating the One Health approach and the Pathogen Access and Benefit-Sharing (PABS) system.
+- **Narrative**: The mechanism for overstepping national sovereignty during declared emergencies, allowing the WHO to dictate global health and censorship policies.
+- **Size**: medium size
+
 ### The Georgia Guidestones
 - **Documented Facts**: A granite monument in Georgia (1980–2022) commissioned by "R.C. Christian." The first of its ten guidelines called for maintaining the human population under 500,000,000. It was destroyed in an explosion in July 2022.
 - **Narrative**: Interpreted as a "New World Order" blueprint for global depopulation and a post-collapse society.
@@ -201,6 +216,11 @@ This dossier is a comprehensive collection of documented information regarding t
 ### The Epstein Files
 - **Documented Facts**: Court documents unsealed in 2024 detailing Jeffrey Epstein's network of high-profile associates and safe houses.
 - **Narrative**: Operative involved in kompromat or intelligence gathering for various agencies.
+- **Size**: medium size
+
+### Vault 7 (CIA)
+- **Documented Facts**: WikiLeaks release (2017) of thousands of CIA documents exposing weaponized zero-day exploits, encryption bypasses, and smart-device monitoring tools.
+- **Narrative**: The definitive proof of the absolute total-surveillance state and the intrinsic danger of state-sponsored vulnerability hoarding.
 - **Size**: medium size
 
 ### Panama Papers

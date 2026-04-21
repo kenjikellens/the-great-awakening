@@ -56,7 +56,23 @@
         canvas.height = parent.clientHeight;
     }
 
-    function drawLines() {
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Read theme color from CSS variable
+        const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--hero-particle-color').trim() || '197, 160, 89';
+        
+        particles.forEach(p => {
+            p.update(canvas.width, canvas.height);
+            
+            // Draw node
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${particleColor}, 0.4)`;
+            ctx.fill();
+        });
+        
+        // Draw lines
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
@@ -67,24 +83,18 @@
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    const opacity = 1 - (distance / CONNECTION_DISTANCE);
-                    ctx.strokeStyle = `rgba(197, 160, 89, ${opacity * 0.2})`;
+                    const baseOpacity = 1 - (distance / CONNECTION_DISTANCE);
+                    
+                    const pulse = (Math.sin(Date.now() / 2000) * 0.1) + 0.9; 
+                    const finalOpacity = baseOpacity * 0.2 * pulse;
+                    
+                    ctx.strokeStyle = `rgba(${particleColor}, ${finalOpacity})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
             }
         }
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
         
-        particles.forEach(p => {
-            p.update(canvas.width, canvas.height);
-            p.draw(ctx);
-        });
-        
-        drawLines();
         animationId = requestAnimationFrame(animate);
     }
 

@@ -7,8 +7,8 @@
     --accent-gold: #c5a059;
     --border-light: rgba(0, 0, 0, 0.1);
     --header-height: 40px;
-    --glass-bg: #ffffff;
-    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: transparent;
     --mega-menu-bg: rgba(242, 244, 248, 0.01);
     --max-width: 1400px;
     --note-bg: #fffcf0;
@@ -16,12 +16,16 @@
     --accent-bg: #f8f9fa;
     --card-shadow: rgba(0, 0, 0, 0.06);
     --card-shadow-hover: rgba(0, 0, 0, 0.15);
-    /* Hero Section Variables (Light) */
-    --hero-bg: radial-gradient(circle at center, #ffffff 0%, #d1d9e6 100%);
-    --hero-text: #2d3436;
-    --hero-text-muted: #57606f;
+    --search-border: #71767b; 
+    /* Soft, neutral shadow for elegant elevation */
+    --search-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    /* Hero Section Variables (Light) - Neutral High-Contrast (No Blue) */
+    --hero-bg: radial-gradient(circle at 50% 45%, #ffffff 0%, #737373 100%);
+    --hero-text: #000000;
+    --hero-text-muted: #404040;
     --hero-shadow: rgba(0, 0, 0, 0.05);
     --hero-icon-filter: brightness(0) opacity(0.5);
+    --hero-particle-color: 0, 68, 204; /* Professional Blue in Light Mode */
 }
 
 /* Dark Theme Overrides */
@@ -40,12 +44,18 @@
     --accent-bg: #21262d;
     --card-shadow: rgba(255, 255, 255, 0.05);
     --card-shadow-hover: rgba(255, 255, 255, 0.12);
-    /* Hero Section Variables (Dark) */
-    --hero-bg: radial-gradient(circle at center, #0a101a 0%, #020408 100%);
+    --search-border: rgba(255, 255, 255, 0.35); 
+    /* Clear, atmospheric shadow for Dark Mode */
+    --search-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+    /* Hero Section Variables (Dark) - Restored Smooth 0-100% Atmospheric Fade */
+    --hero-bg: radial-gradient(circle at 50% 45%, #2d333b 0%, #0d1117 100%);
     --hero-text: #ffffff;
     --hero-text-muted: rgba(255, 255, 255, 0.7);
     --hero-shadow: rgba(0, 0, 0, 0.6);
     --hero-icon-filter: brightness(0) invert(1) opacity(0.8);
+    --hero-particle-color: 197, 160, 89; /* Keep Gold in Dark Mode */
+    --glass-bg: rgba(22, 27, 34, 0.4);
+    --glass-border: transparent;
 }
 
 /* Base reset and typography */
@@ -91,7 +101,7 @@ body {
     Redesigned for Premium SPA feel.
 */
 .site-header {
-    background-color: rgba(0, 0, 0, 0.15) !important;
+    background-color: var(--glass-bg) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: none;
@@ -101,7 +111,7 @@ body {
     z-index: 1000;
     display: flex;
     align-items: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    /* Removed box-shadow for seamless integration (User Request) */
 }
 
 .nav-container {
@@ -123,7 +133,7 @@ body {
     font-size: 1.25rem;
     font-weight: 800;
     text-decoration: none;
-    color: var(--text-main);
+    color: #000000; /* Solid Neutral Black */
     transition: color 0.3s ease;
     letter-spacing: -0.5px;
     position: relative;
@@ -177,7 +187,7 @@ body {
 /* Base Link Styling - Clean and Minimal */
 .header-links>li>a {
     text-decoration: none;
-    color: var(--text-muted);
+    color: #000000; /* Darker neutral color for glass visibility */
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -610,6 +620,20 @@ body {
     overflow: hidden;
 }
 
+/* Premium Noise Texture Overlay */
+.hero-layer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.04; /* Very subtle */
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+}
+
 .hero-canvas {
     position: absolute;
     inset: 0;
@@ -842,20 +866,43 @@ body {
     font-family: 'Noto Sans', sans-serif;
     /* Cleaner for search input */
     font-size: 1.08rem;
-    border: 1px solid var(--border-light);
+    border: 2px solid var(--search-border);
     border-radius: 50px;
     /* Perfect pill shape */
     background-color: var(--bg-card);
     color: var(--text-main);
     outline: none;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--search-shadow);
+    /* Subtle glow on hover to emphasize visibility */
+}
+
+.search-input-pill:hover {
+    box-shadow: var(--search-shadow), 0 0 15px rgba(0, 68, 204, 0.1);
 }
 
 .search-input-pill:focus {
     border-color: var(--accent-blue);
     box-shadow: 0 10px 30px rgba(0, 68, 204, 0.12);
     transform: scale(1.01);
+}
+
+/* Generic Search Input (Legend/Inventory) */
+.search-input {
+    width: 100%;
+    padding: 0.8rem 1.25rem;
+    border: 2px solid var(--search-border);
+    border-radius: 8px;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--search-shadow);
+}
+
+.search-input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(0, 68, 204, 0.1);
 }
 
 .search-input-pill::placeholder {
