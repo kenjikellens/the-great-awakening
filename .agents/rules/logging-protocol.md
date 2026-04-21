@@ -32,6 +32,6 @@ Each entry must occupy a single line and follow this exact timestamped format:
 
 ## Execution Logic
 1. Perform file operation (**Create/Edit/Delete**).
-2. **Read** the end of `LOG/changelog.log` to identify the current last entry.
+2. **Read** the end of `LOG/changelog.md` to identify the current last entry.
 3. **Use `replace_file_content`** to target that last entry and append the new line below it.
 4. Proceed to the next file.
