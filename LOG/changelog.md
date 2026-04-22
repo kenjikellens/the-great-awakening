@@ -202,3 +202,8 @@
 [15:10 22/04/2026] data/dossiers.js - Integrated Jekyll Island Meeting into the data store
 [15:15 22/04/2026] docs/items.md - Added Jekyll Island Meeting to the research index
 [15:18 22/04/2026] pages/fragments/dossiers.html - Updated the Recent Database Updates list to include the Jekyll Island dossier
+[15:20 22/04/2026] css/style.css - Implemented a custom, theme-aware scrollbar with a sleek, floating design.
+[15:22 22/04/2026] css/style.css - Fixed white side-strip in hero section by making scrollbar track transparent and removing gutter reservation.
+[15:23 22/04/2026] css/style.css - Enhanced scrollbar: increased width, added 100px radius, inset shadow, and accent-blue hover effect for premium visibility.
+[15:30 22/04/2026] css/style.css - Restored solid header background (theme-aware) and disabled sticky behavior per user request.
+[15:31 22/04/2026] css/style.css - Adjusted home-viewport to remove hero overlap with the now-solid header.

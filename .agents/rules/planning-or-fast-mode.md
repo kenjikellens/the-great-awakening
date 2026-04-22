@@ -1,10 +1,8 @@
 ---
-trigger: always_on
+trigger: model_decision
+description: Check for a system-injected `<EPHEMERAL_MESSAGE>` containing a `<planning_mode>` block in the LATEST message that got sent. - If the message contains `<EPHEMERAL_MESSAGE>`, strictly follow THIS RULE
 ---
 
-Check for a system-injected `<EPHEMERAL_MESSAGE>` containing a `<planning_mode>` block in the LATEST message that got sent.
-- If the message contains `<EPHEMERAL_MESSAGE>`, strictly follow **Planning Mode Rules**.
-- If the message does NOT contain `<EPHEMERAL_MESSAGE>`, strictly follow **Fast Mode Rules**.
 
 # Planning Mode Rules
 
@@ -18,9 +16,3 @@ Check for a system-injected `<EPHEMERAL_MESSAGE>` containing a `<planning_mode>`
 --- Provide the plan, or
 --- Wait for further instructions (without implementing).
 - if the user says that you may implement while the message also has the `<EPHEMERAL_MESSAGE>`, you may implement it!
-
-# Fast Mode Rules
-
-- Execute all requested changes immediately (without a plan).
-- Do not create or present an implementation plan unless explicitly asked.
-- Focus on direct execution and results.
