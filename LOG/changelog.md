@@ -431,3 +431,82 @@
 [17:29 22/04/2026] index.html & css/style.css - Removed TGA logo from footer and cleaned up associated styles.
 [17:31 22/04/2026] css/style.css - Tightened footer spacing and added a divider line between the slogan and navigation.
 [17:45 22/04/2026] pages/dossiers/*.html - Removed boilerplate sections (expanded-evidence, extended-narrative, methodology-note, official-sources-standardized) from all 48 dossier files for a cleaner UI.
+[18:27 22/04/2026] pages/dossiers/15-minute-cities.html - Backfilled Official Sources section to meet minimum 2-source research requirement.
+[18:27 22/04/2026] pages/dossiers/esg-scores.html - Added standardized official source citations (2 links) and preserved normalized dossier structure.
+[18:27 22/04/2026] pages/dossiers/georgia-guidestones.html - Added official source block entries to satisfy research-first citation gate.
+[18:27 22/04/2026] pages/dossiers/haarp.html - Added two institutional source references in standardized source-item format.
+[18:27 22/04/2026] pages/dossiers/iea-10-point-plan.html - Completed source minimum by adding IEA official report references.
+[18:27 22/04/2026] pages/dossiers/jekyll-island.html - Added Federal Reserve history and act references to Official Sources.
+[18:27 22/04/2026] pages/dossiers/mk-delta.html - Added CIA reading-room and Senate hearing references in normalized source format.
+[18:27 22/04/2026] pages/dossiers/mk-ultra.html - Added CIA archive and Senate hearing references to reach source minimum.
+[18:27 22/04/2026] pages/dossiers/my-carbon-wef.html - Added WEF primary publication references in Official Sources.
+[18:27 22/04/2026] pages/dossiers/operation-gladio.html - Added Council of Europe and NATO archive source links.
+[18:27 22/04/2026] pages/dossiers/operation-mockingbird.html - Added Church Committee and CIA archive references.
+[18:27 22/04/2026] pages/dossiers/operation-sea-spray.html - Added public-health archival sources in standardized citation block.
+[18:27 22/04/2026] pages/dossiers/panama-papers.html - Added ICIJ and OECD source references to satisfy research gate.
+[18:27 22/04/2026] pages/dossiers/project-blue-beam.html - Added official catalog/policy references in standardized source format.
+[18:27 22/04/2026] pages/dossiers/tuskegee.html - Added CDC and NLM official sources to Official Sources section.
+[18:27 22/04/2026] pages/dossiers/uap-disclosure.html - Added ODNI and DoD AARO official source references.
+[18:27 22/04/2026] pages/dossiers/vault-7.html - Added WikiLeaks archive and CIA statement archive references.
+[18:27 22/04/2026] pages/dossiers/wef.html - Added WEF institutional and reports references in source-item format.
+[18:27 22/04/2026] pages/dossiers/who-pandemic-treaty.html - Added WHO agreement and IHR references to Official Sources.
+[18:27 22/04/2026] pages/dossiers/you-will-own-nothing.html - Added WEF primary publications to satisfy 2-source minimum.
+[18:27 22/04/2026] docs/processing-checkpoints.md - Rebuilt sequential checkpoint table with updated source counts and gate statuses.
+[18:37 22/04/2026] pages/dossiers/agenda-2030.html - Expanded dossier to ~4x size with timeline, mechanisms, impacts, and 3 official sources.
+[18:37 22/04/2026] data/dossiers.js - Updated agenda-2030 summary to match expanded content.
+[18:39 22/04/2026] pages/dossiers/the-great-reset.html - Normalized and expanded dossier to align with standard format and add structural depth.
+[18:39 22/04/2026] data/dossiers.js - Updated the-great-reset summary to match normalized content.
+[18:40 22/04/2026] pages/dossiers/wef.html - Normalized and expanded dossier to ~4x size with timeline, actors, impacts, and 3 official sources.
+[18:40 22/04/2026] data/dossiers.js - Updated wef summary to match expanded content.
+[18:45 22/04/2026] css/style.css - Reduced AI chat widget dimensions and implemented pointer-events fix to prevent hover blocking on the mega-menu.
+
+
+
+
+[18:43 22/04/2026] pages/dossiers/trilateral-commission.html - Expanded and normalized dossier with source-verified institutional timeline, actors/mechanisms/impacts blocks, and official sources.
+[18:43 22/04/2026] pages/dossiers/bohemian-grove.html - Expanded and normalized dossier with archive-backed evidence sections and standardized official source blocks.
+[18:43 22/04/2026] pages/dossiers/mk-ultra.html - Rebuilt dossier into evidence-first structure using CIA and U.S. Senate oversight sources.
+[18:43 22/04/2026] pages/dossiers/mk-delta.html - Rebuilt dossier with constrained evidence framing and standardized source traceability.
+[18:43 22/04/2026] pages/dossiers/operation-mockingbird.html - Expanded dossier with Family Jewels and Church Committee evidence, separating documented facts from narrative claims.
+[18:43 22/04/2026] data/dossiers.js - Fixed syntax integrity and updated Operation Mockingbird summary to match expanded dossier content.
+[18:44 22/04/2026] pages/dossiers/operation-gladio.html - Expanded dossier one-by-one with source-constrained evidence, timeline blocks, and standardized official citations.
+[18:44 22/04/2026] data/dossiers.js - Updated Operation Gladio summary to reflect normalized evidence-first rewrite.
+[18:46 22/04/2026] pages/dossiers/operation-sea-spray.html - Rewritten one-by-one into evidence-first dossier with timeline/actors/mechanisms/impacts and standardized sources.
+[18:46 22/04/2026] data/dossiers.js - Updated Operation Sea-Spray summary to match expanded dossier content.
+[18:47 22/04/2026] pages/dossiers/uap-disclosure.html - Rewritten one-by-one with updated ODNI/DoD/NASA timeline and evidence-first structure.
+[18:47 22/04/2026] data/dossiers.js - Updated UAP Disclosure summary to reflect current institutional reporting focus.
+[19:03 22/04/2026] index.html - Added Site Index link to the footer navigation.
+[19:03 22/04/2026] js/router.js - Added Site Index route and initialization logic.
+[19:03 22/04/2026] pages/fragments/sitemap.html - Created Site Index fragment structure.
+[19:04 22/04/2026] js/dossier-manager.js - Implemented renderSitemap logic for dynamic index generation.
+[19:05 22/04/2026] css/style.css - Added hierarchical layout styles for the Site Index.
+[19:05 22/04/2026] pages/fragments/sitemap.html - Formalized index description; removed informal 'ecosystem' terminology.
+[19:08 22/04/2026] pages/dossiers/you-will-own-nothing.html - Fixed markdown bolding in HTML content.
+[19:10 22/04/2026] pages/dossiers/uss-liberty.html - Fixed markdown bolding in HTML content.
+[19:10 22/04/2026] pages/dossiers/pegasus-spyware.html - Fixed markdown bolding in HTML content.
+[19:10 22/04/2026] pages/dossiers/panama-papers.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/operation-paperclip.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/operation-northwoods.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/neuralink.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/imf-world-bank.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/id2020.html - Fixed markdown bolding in HTML content.
+[19:12 22/04/2026] pages/dossiers/haarp.html - Fixed markdown bolding in HTML content.
+[19:12 22/04/2026] pages/dossiers/gulf-of-tonkin.html - Fixed markdown bolding in HTML content.
+[19:12 22/04/2026] pages/dossiers/federal-reserve.html - Fixed markdown bolding in HTML content.
+[19:12 22/04/2026] pages/dossiers/event-201.html - Fixed markdown bolding in HTML content.
+[19:13 22/04/2026] pages/dossiers/epstein-files.html - Fixed markdown bolding in HTML content.
+[19:17 22/04/2026] css/style.css - Added scrollbar-gutter: stable to html to fix header shift between Home and other pages.
+[19:18 22/04/2026] js/hero-canvas.js - Removed all mouse/touch interactivity; background animation is now fully autonomous.
+[19:25 22/04/2026] css/style.css - Dossier typography refinement: smaller body text, tighter line-height, reduced heading sizes for institutional feel.
+[19:28 22/04/2026] css/style.css - Sources section: removed bullets, compact spacing, clean inline links (no icons), preserved yellow background.
+[19:28 22/04/2026] svg/link.svg - Created chain-link SVG icon (available for future use).
+[19:51 22/04/2026] css/style.css - Reorganized into logical modules with mandatory explanations and adherence to global rules; fixed misplaced items.
+[19:28 22/04/2026] css/style.css - Sources section: removed bullets, compact spacing, clean inline links (no icons), preserved yellow background.
+[19:28 22/04/2026] svg/link.svg - Created chain-link SVG icon (available for future use).
+[19:51 22/04/2026] css/style.css - Reorganized into logical modules with mandatory explanations and adherence to global rules; fixed misplaced items.
+[19:57 22/04/2026] css/style.css - Made dark mode hero background darker (#0d1117 to #000000 gradient).
+[19:57 22/04/2026] js/theme-manager.js - Fixed theme toggle icons by toggling .is-hidden class instead of overriding display style.
+[20:00 22/04/2026] css/style.css - Added display: block to .theme-icon so SVG masks render properly.
+[20:01 22/04/2026] js/theme-manager.js - Fixed syntax error where updateToggleIcons function was accidentally commented out.
+[20:05 22/04/2026] index.html & style.css - Replaced CSS mask-based theme icons with inline SVGs for bulletproof rendering in all modes.
+[20:08 22/04/2026] css/style.css - Added explicit display !important rules for .theme-icon to ensure SVGs don't collapse to 0.

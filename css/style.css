@@ -1,4 +1,17 @@
+/* 
+    ==========================================================================
+    THE GREAT AWAKENING - MASTER STYLESHEET
+    Organized by functional modules for maximum maintainability.
+    ========================================================================== 
+*/
+
+/* 
+    1. VARIABLES & THEMES 
+    Centralized design tokens for colors, spacing, and effects.
+*/
+
 :root {
+    /* Base Colors & Layout */
     --bg-page: #f0f2f5;
     --bg-card: #ffffff;
     --text-main: #1a1a1a;
@@ -7,30 +20,39 @@
     --accent-gold: #c5a059;
     --border-light: rgba(0, 0, 0, 0.1);
     --header-height: 56px;
+    --max-width: 1400px;
+
+    /* Glassmorphism & UI Accents */
     --glass-bg: rgba(255, 255, 255, 0.8);
     --glass-border: transparent;
     --nav-button-border: rgba(0, 0, 0, 0.4);
     --mega-menu-bg: rgba(242, 244, 248, 0.01);
-    --max-width: 1400px;
+    
+    /* Notification & Note Blocks */
     --note-bg: #fffcf0;
     --note-border: #e6db55;
     --accent-bg: #f8f9fa;
+
+    /* Shadows & Elevation */
     --card-shadow: rgba(0, 0, 0, 0.06);
     --card-shadow-hover: rgba(0, 0, 0, 0.15);
     --card-border-deco: rgba(0, 0, 0, 0.08);
     --search-border: #71767b; 
-    /* Soft, neutral shadow for elegant elevation */
     --search-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    /* Hero Section Variables (Light) - Neutral High-Contrast (No Blue) */
+
+    /* Hero Section Specifics (Light Mode) */
     --hero-bg: radial-gradient(circle at 50% 45%, #ffffff 0%, #737373 100%);
     --hero-text: #000000;
     --hero-text-muted: #404040;
     --hero-shadow: rgba(0, 0, 0, 0.05);
     --hero-icon-filter: brightness(0) opacity(0.5);
-    --hero-particle-color: 0, 68, 204; /* Professional Blue in Light Mode */
+    --hero-particle-color: 0, 68, 204;
 }
 
-/* Dark Theme Overrides */
+/* 
+    Dark Theme Overrides 
+    Global modifications for high-contrast dark mode.
+*/
 :root.dark-theme {
     --bg-page: #0d1117;
     --bg-card: #161b22;
@@ -38,9 +60,9 @@
     --text-muted: #8b949e;
     --accent-blue: #58a6ff;
     --border-light: rgba(255, 255, 255, 0.1);
-    --glass-bg: #161b22;
+    --glass-bg: rgba(22, 27, 34, 0.8);
     --mega-menu-bg: rgba(25, 30, 38, 0.01);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border: transparent;
     --note-bg: rgba(230, 219, 85, 0.08);
     --note-border: rgba(230, 219, 85, 0.3);
     --accent-bg: #21262d;
@@ -48,26 +70,20 @@
     --card-shadow-hover: rgba(255, 255, 255, 0.12);
     --card-border-deco: rgba(255, 255, 255, 0.06);
     --search-border: rgba(255, 255, 255, 0.35); 
-    /* Clear, atmospheric shadow for Dark Mode */
     --search-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
-    /* Hero Section Variables (Dark) - Restored Smooth 0-100% Atmospheric Fade */
-    --hero-bg: radial-gradient(circle at 50% 45%, #2d333b 0%, #0d1117 100%);
+    --hero-bg: radial-gradient(circle at 50% 45%, #0d1117 0%, #000000 100%);
     --hero-text: #ffffff;
     --hero-text-muted: rgba(255, 255, 255, 0.7);
     --hero-shadow: rgba(0, 0, 0, 0.6);
     --hero-icon-filter: brightness(0) invert(1) opacity(0.8);
-    --hero-particle-color: 197, 160, 89; /* Keep Gold in Dark Mode */
-    --glass-bg: rgba(22, 27, 34, 0.8);
-    --glass-border: transparent;
+    --hero-particle-color: 197, 160, 89;
     --nav-button-border: rgba(255, 255, 255, 0.4);
 }
 
-/* Base reset and typography */
-/* Utility Class: Hidden */
-.hidden,
-.is-hidden {
-    display: none !important;
-}
+/* 
+    2. BASE RESET & TYPOGRAPHY 
+    Foundational styles and cross-browser resets.
+*/
 
 * {
     margin: 0;
@@ -75,43 +91,20 @@
     box-sizing: border-box;
 }
 
+/* 
+    Html Base Configuration 
+    Sets up scroll padding and ensures the viewport is at least full height.
+*/
 html {
     scroll-padding-top: var(--header-height);
     min-height: 100vh;
+    scrollbar-gutter: stable;
 }
 
 /* 
-    Enhanced Custom Scrollbar Design
-    Provides a high-visibility, premium tactile feel with soft shadows and organic curves.
+    Body Layout 
+    Establishes the core typography and flexbox wrapper for sticky footers.
 */
-::-webkit-scrollbar {
-    width: 14px; /* Increased width for better accessibility and presence */
-    height: 14px; /* Matches vertical width for consistency */
-}
-
-::-webkit-scrollbar-track {
-    background: transparent; /* Maintains the seamless background integration */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--text-muted); /* More distinct default color for visibility */
-    border-radius: 100px; /* Maximum radius for a perfect pill shape */
-    border: 4px solid transparent; /* Increased gap to enhance the 'floating' elevation effect */
-    background-clip: content-box; /* Ensures the gap is maintained around the color */
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); /* Subtle inner shadow for depth and detail */
-    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--accent-blue); /* Highlights the thumb with the accent color on interaction */
-}
-
-/* Firefox Support: Closest approximation to the enhanced Webkit design */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--text-muted) transparent;
-}
-
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-page);
@@ -122,31 +115,86 @@ body {
     flex-direction: column;
 }
 
+/* 
+    Content Shell 
+    Main wrapper that expands to fill available space.
+*/
 #content-shell {
     flex: 1 0 auto;
 }
 
-/* Ensure non-home pages don't slide under the fixed header */
-body:not(.is-home) #content-shell {
-    padding-top: var(--header-height);
-}
-
-/* Prevent double scrollbar on home by locking body scroll */
+/* 
+    Home Scroll Lock 
+    Prevents scrolling on the home page when using the layer system.
+*/
 body.is-home {
     overflow: hidden;
 }
 
-.site-footer {
-    flex-shrink: 0;
+/* 
+    Inner Content Padding 
+    Ensures non-home pages don't slide under the fixed header.
+*/
+body:not(.is-home) #content-shell {
+    padding-top: var(--header-height);
 }
 
-/* Snapping Utilities — DEPRECATED, replaced by home-viewport layer system */
+/* 
+    Webkit Scrollbar 
+    Custom scrollbar styling for Chrome/Safari.
+*/
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
 
 /* 
-    Top Navigation Bar 
-    Redesigned for Premium SPA feel.
+    Webkit Scrollbar Track 
+    The background area of the scrollbar.
 */
-/* Non-sticky navigation with solid theme-aware background */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* 
+    Webkit Scrollbar Thumb 
+    The draggable handle of the scrollbar.
+*/
+::-webkit-scrollbar-thumb {
+    background-color: var(--text-muted);
+    border-radius: 100px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 
+    Webkit Scrollbar Thumb Hover 
+    Interactive state for the scrollbar handle.
+*/
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-blue);
+}
+
+/* 
+    Firefox Scrollbar Support 
+    Standard scrollbar properties for Firefox.
+*/
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-muted) transparent;
+}
+
+/* 
+    3. HEADER & NAVIGATION 
+    Main site navigation and theme management.
+*/
+
+/* 
+    Site Header 
+    Fixed top navigation bar with theme-aware transparency.
+*/
 .site-header {
     background-color: var(--bg-card);
     border-bottom: 1px solid var(--border-light);
@@ -161,6 +209,19 @@ body.is-home {
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/* 
+    Header Hero Mode 
+    Specific styling for the header when it overlaps the hero section.
+*/
+.header-hero-mode {
+    background-color: var(--bg-card);
+    border-bottom-color: var(--border-light);
+}
+
+/* 
+    Nav Container 
+    Centering wrapper for header content with responsive padding.
+*/
 .nav-container {
     width: 100%;
     max-width: var(--max-width);
@@ -171,21 +232,36 @@ body.is-home {
     padding: 0 3rem;
     position: relative;
     z-index: 10;
-    /* Above the sibling mega-menu */
 }
 
+/* 
+    Header Brand 
+    Logo/title area with bold typography.
+*/
 .header-brand {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     text-decoration: none;
-    color: var(--text-main); /* Theme-aware brand color */
+    color: var(--text-main);
     transition: color 0.3s ease;
     letter-spacing: -0.5px;
     position: relative;
     padding-right: 2rem;
 }
 
+/* 
+    Hero Mode Brand 
+    Overrides brand color in hero mode.
+*/
+.header-hero-mode .header-brand {
+    color: var(--hero-text);
+}
+
+/* 
+    Header Links List 
+    Unordered list containing the primary navigation items.
+*/
 .header-links {
     list-style: none;
     display: flex;
@@ -193,44 +269,10 @@ body.is-home {
     margin-left: auto;
 }
 
-/* Responsive Header Refinements */
-@media (max-width: 1100px) {
-    .header-links {
-        gap: 1.5rem;
-    }
-
-    .nav-container {
-        padding: 0 1.5rem;
-    }
-}
-
-@media (max-width: 800px) {
-    .header-links {
-        gap: 1rem;
-    }
-
-    .header-brand {
-        font-size: 1rem;
-        padding-right: 1rem;
-    }
-
-    .header-links>li>a {
-        font-size: 0.75rem;
-        letter-spacing: 0.5px;
-    }
-}
-
-@media (max-width: 650px) {
-    .header-links {
-        gap: 0.6rem;
-    }
-
-    .nav-container {
-        padding: 0 0.75rem;
-    }
-}
-
-/* Base Link Styling - Clean and Minimal */
+/* 
+    Nav Link Item 
+    Individual navigation link with pill-style borders.
+*/
 .header-links>li>a {
     text-decoration: none;
     color: var(--text-main);
@@ -247,20 +289,41 @@ body.is-home {
     background: transparent;
 }
 
-/* Hover: subtle background tint for feedback */
+/* 
+    Hero Mode Links 
+    Adjusts link colors for high-contrast hero backgrounds.
+*/
+.header-hero-mode .header-links>li>a {
+    color: var(--hero-text-muted);
+}
+
+/* 
+    Nav Link Hover 
+    Subtle background highlight on mouseover.
+*/
 .header-links>li>a:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Dark Mode hover: lighter tint for contrast */
+/* 
+    Dark Mode Nav Link Hover 
+    Specific hover tint for dark backgrounds.
+*/
 .dark-theme .header-links>li>a:hover {
     background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* 
-    Active page indicator: Premium pill-style fill 
-    Uses a soft tint of the accent color to provide clear, high-contrast feedback 
-    without relying on layout-shifting underlines.
+    Hero Mode Link Hover 
+    Brightens text on hover in hero mode.
+*/
+.header-hero-mode .header-links>li>a:hover {
+    color: var(--hero-text);
+}
+
+/* 
+    Active Nav Link 
+    Indicator for the currently selected page.
 */
 .header-links>li>a.active {
     background-color: rgba(0, 68, 204, 0.1);
@@ -268,14 +331,20 @@ body.is-home {
     border-color: var(--accent-blue);
 }
 
-/* Dark mode adjustment for active state visibility */
+/* 
+    Dark Mode Active Nav Link 
+    Adjusted contrast for active state in dark mode.
+*/
 .dark-theme .header-links>li>a.active {
     background-color: rgba(88, 166, 255, 0.15);
     color: var(--accent-blue);
     border-color: var(--accent-blue);
 }
 
-/* Theme Toggle Button */
+/* 
+    Theme Toggle Button 
+    Switcher for light/dark modes.
+*/
 .theme-toggle {
     background: none;
     border: 1px solid var(--nav-button-border);
@@ -290,31 +359,18 @@ body.is-home {
     margin-left: 2rem;
 }
 
+/* 
+    Theme Toggle Hover 
+    Interactive feedback for the toggle button.
+*/
 .theme-toggle:hover {
     background-color: var(--border-light);
 }
 
-.theme-toggle svg,
-.theme-toggle .theme-icon {
-    width: 20px;
-    height: 20px;
-    background-color: currentColor;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-size: contain;
-    -webkit-mask-size: contain;
-}
-
-#theme-icon-sun {
-    mask-image: url('../svg/sun.svg');
-    -webkit-mask-image: url('../svg/sun.svg');
-}
-
-#theme-icon-moon {
-    mask-image: url('../svg/moon.svg');
-    -webkit-mask-image: url('../svg/moon.svg');
-}
-
+/* 
+    Hero Mode Theme Toggle 
+    Contrast adjustments for the toggle button in hero mode.
+*/
 .header-hero-mode .theme-toggle {
     color: var(--hero-text);
 }
@@ -323,53 +379,36 @@ body.is-home {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Mode: Themed text when on the home/hero view */
-.header-hero-mode {
-    background-color: var(--bg-card);
-    border-bottom-color: var(--border-light);
-}
-
-.header-hero-mode .header-brand {
-    color: var(--hero-text);
-}
-
-/* Hero mode nav links: use hero palette */
-.header-hero-mode .header-links>li>a {
-    color: var(--hero-text-muted);
-}
-
-/* Hero mode hover: brighten to full hero text */
-.header-hero-mode .header-links>li>a:hover {
-    color: var(--hero-text);
-}
-
 /* 
-    Hero mode active indicator: Premium pill-style fill 
-    Updated to match the solid header design, ensuring the active state is 
-    clearly visible against the theme-aware background.
+    Theme Icon
 */
-.header-hero-mode .header-links>li>a.active {
-    background-color: rgba(0, 68, 204, 0.1);
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
+.theme-icon {
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
 }
 
-.dark-theme .header-hero-mode .header-links>li>a.active {
-    background-color: rgba(88, 166, 255, 0.15);
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
+.theme-icon.is-hidden {
+    display: none !important;
 }
 
 /* 
-    Mega Menu System 
-    Dropdown that appears on hover.
+    4. MEGA MENU SYSTEM 
+    Large multi-column dropdowns for detailed navigation.
+*/
+
+/* 
+    Mega Menu Trigger 
+    Identifies a nav item that contains a mega menu.
 */
 .has-mega-menu {
     position: static;
-    /* Allows menu to span full width of container if needed */
 }
 
-/* Solid professional dropdown panel */
+/* 
+    Mega Menu Panel 
+    Full-width dropdown container with visibility management.
+*/
 .mega-menu {
     position: fixed;
     top: 0;
@@ -380,7 +419,6 @@ body.is-home {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     opacity: 0;
     visibility: hidden;
-    /* Instant close, quick fade-in */
     transition: opacity 0.15s ease, visibility 0s linear 0.15s;
     padding: 0;
     z-index: 950;
@@ -388,27 +426,21 @@ body.is-home {
     overflow-y: auto;
 }
 
-/* Hover logic: Triggered when header dossier link is hovered OR when menu itself is hovered */
+/* 
+    Mega Menu Hover Logic 
+    Triggers display based on parent hover or menu hover.
+*/
 .site-header:has(.has-mega-menu:hover)+.mega-menu,
 .mega-menu:hover {
     opacity: 1;
     visibility: visible;
-    /* Override: instant show, no delay */
     transition: opacity 0.15s ease, visibility 0s linear 0s;
 }
 
-
-
-/* Portrait Orientation - Disable Mega Menu */
-@media (orientation: portrait) {
-    .mega-menu {
-        display: none !important;
-    }
-}
-
-/* Animation using opacity and visibility */
-/* Replaced by :has logic above */
-
+/* 
+    Mega Menu Content Wrapper 
+    Internal padding and centering for mega menu content.
+*/
 .mega-menu-content {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -416,100 +448,76 @@ body.is-home {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    /* Better vertical spacing between title and grid */
     padding: calc(var(--header-height) + 3rem) 4rem 3rem 4rem;
     position: relative;
 }
 
-/* Side Navigation Arrows */
+/* 
+    Mega Menu Navigation Arrows 
+    Interactive controls for switching between menu pages/categories.
+*/
 .mega-menu-nav {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* Vertical center only - allowed */
     background: none;
     border: none;
     cursor: pointer;
     color: var(--text-muted);
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: color 0.2s ease, padding 0.2s ease;
     padding: 1rem;
     z-index: 10001;
 }
 
-.mega-menu-nav.prev {
-    left: 0.5rem;
-}
+/* 
+    Mega Menu Nav Arrows (Prev/Next) 
+    Specific positioning for the directional arrows.
+*/
+.mega-menu-nav.prev { left: 0.5rem; }
+.mega-menu-nav.next { right: 0.5rem; }
 
-.mega-menu-nav.next {
-    right: 0.5rem;
-}
-
+/* 
+    Mega Menu Nav Hover 
+    Feedback on arrow interaction.
+*/
 .mega-menu-nav:hover:not(.disabled) {
     color: var(--text-main);
 }
 
-.mega-menu-nav.next:hover:not(.disabled) {
-    transform: translateY(-50%) translateX(3px);
-}
+/* 
+    Mega Menu Nav Arrow Hover Effects 
+    Uses margin/padding instead of translate for directional feedback.
+*/
+.mega-menu-nav.next:hover:not(.disabled) { padding-right: 1.25rem; }
+.mega-menu-nav.prev:hover:not(.disabled) { padding-left: 1.25rem; }
 
-.mega-menu-nav.prev:hover:not(.disabled) {
-    transform: translateY(-50%) translateX(-3px);
-}
-
+/* 
+    Disabled Nav Arrow 
+    Visual state for inactive controls.
+*/
 .mega-menu-nav.disabled {
     opacity: 0.1;
     cursor: default;
 }
 
-.icon-left,
-.icon-right {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background-color: currentColor;
-    mask-repeat: no-repeat;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-}
-
-.icon-left {
-    mask-image: url('../svg/arrow-left.svg');
-    -webkit-mask-image: url('../svg/arrow-left.svg');
-}
-
-.icon-right {
-    mask-image: url('../svg/arrow-right.svg');
-    -webkit-mask-image: url('../svg/arrow-right.svg');
-}
-
-/* Legacy icon inline removed, now handled by .btn-action */
-
+/* 
+    Mega Menu Grid 
+    Multi-column layout for organizing many links efficiently.
+*/
 .mega-menu-grid {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(6, auto);
     grid-auto-columns: minmax(200px, 1fr);
-    /* Ensure columns have enough width */
     gap: 0.5rem 3rem;
-    /* More spacing between items and columns */
     flex-grow: 1;
     width: 100%;
 }
 
-@keyframes megaMenuReveal {
-    from {
-        opacity: 0;
-        transform: translateY(4px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-
+/* 
+    Mega Menu Link Item 
+    Individual entry in the mega menu grid.
+*/
 .mega-menu-item-link a {
     text-decoration: none;
     color: var(--text-muted);
@@ -523,70 +531,20 @@ body.is-home {
     text-overflow: ellipsis;
 }
 
+/* 
+    Mega Menu Link Hover 
+    Focus effect for grid links.
+*/
 .mega-menu-item-link a:hover {
     color: var(--text-main);
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     text-decoration: underline;
 }
 
-/* Shared Action Link/Button Style */
-.btn-action {
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    padding: 0.35rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid var(--border-light);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    width: fit-content;
-}
-
-.btn-action:hover {
-    color: var(--accent-blue);
-    background: rgba(0, 68, 204, 0.05);
-    border-color: var(--accent-blue);
-    text-decoration: none;
-}
-
-.btn-action .icon,
-.btn-action .icon-inline {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    background-color: currentColor;
-    mask-repeat: no-repeat;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    transition: transform 0.2s ease;
-}
-
-.btn-action:hover .icon,
-.btn-action:hover .icon-inline {
-    transform: translateX(4px);
-}
-
-.btn-action .icon-right,
-.btn-action .icon {
-    mask-image: url('../svg/arrow-right.svg');
-    -webkit-mask-image: url('../svg/arrow-right.svg');
-}
-
-.mega-menu-more {
-    margin: 0.25rem auto 0 auto;
-}
-
-/* Specific mega-menu-more override if needed */
-
+/* 
+    Mega Menu Category 
+    Group header within the mega menu.
+*/
 .mega-menu-category h4 {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: 0.9rem;
@@ -599,6 +557,10 @@ body.is-home {
     letter-spacing: 1px;
 }
 
+/* 
+    Mega Menu List 
+    Simple vertical list for categorized links.
+*/
 .mega-menu-list {
     list-style: none;
     display: flex;
@@ -606,33 +568,32 @@ body.is-home {
     gap: 0.2rem;
 }
 
-.mega-menu-list a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    transition: color 0.2s ease;
-}
-
-.mega-menu-list a:hover {
-    color: var(--text-main);
-    text-decoration: underline;
+/* 
+    Mega Menu More Link 
+    Centering for 'view all' style buttons in menus.
+*/
+.mega-menu-more {
+    margin: 0.25rem auto 0 auto;
 }
 
 /* 
-    Search Section 
-    Centralized search area for finding dossiers.
+    Mega Menu Animation 
+    Reveal effect using opacity (no translate).
 */
+@keyframes megaMenuReveal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* 
-    Hero & Search Redesign (ChatGPT-Style)
-    Full-screen centered experience with a premium, minimal aesthetic.
+    5. HERO & HOME SYSTEM 
+    Full-screen experiential layouts for the landing page.
 */
-/* ============================================
-   Home Viewport Layer System
-   Two overlapping full-screen layers:
-   - .hero-layer:      the landing hero (default visible)
-   - .dashboard-layer: the dossier cards (default hidden)
-   Transition is triggered via JS class toggles.
-   ============================================ */
+
+/* 
+    Home Viewport Container 
+    The main container for the home page's layered architecture.
+*/
 .home-viewport {
     position: relative;
     width: 100%;
@@ -640,6 +601,10 @@ body.is-home {
     overflow: hidden;
 }
 
+/* 
+    Home Layer Base 
+    Shared properties for the hero and dashboard layers.
+*/
 .home-layer {
     position: absolute;
     inset: 0;
@@ -648,7 +613,10 @@ body.is-home {
     will-change: opacity, transform, filter;
 }
 
-/* --- Hero Layer (default: visible) --- */
+/* 
+    Hero Layer 
+    The primary landing section with background and interactive canvas.
+*/
 .hero-layer {
     z-index: 2;
     background: var(--hero-bg);
@@ -660,31 +628,37 @@ body.is-home {
     overflow: hidden;
 }
 
-/* Premium Noise Texture Overlay */
+/* 
+    Hero Layer Noise Overlay 
+    Subtle texture to add depth to the hero background.
+*/
 .hero-layer::before {
     content: "";
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
     z-index: 1;
-    opacity: 0.04; /* Very subtle */
+    opacity: 0.04;
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     mix-blend-mode: overlay;
 }
 
-/* Interactive hero animation canvas — captures mouse for gravitational effect */
+/* 
+    Hero Canvas 
+    Container for the interactive particle system.
+*/
 .hero-canvas {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
     z-index: 1;
     pointer-events: auto;
     opacity: 0.8;
 }
 
+/* 
+    Hero Layer Exit Animation 
+    Smoothly fades and blurs the hero when entering the dashboard.
+*/
 .hero-layer.is-exiting {
     opacity: 0;
     filter: blur(8px);
@@ -692,44 +666,82 @@ body.is-home {
     animation: heroZoomOut 650ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* 
+    Hero Layer Hide 
+    Complete removal from visibility.
+*/
 .hero-layer.is-hidden {
     visibility: hidden;
     pointer-events: none;
 }
 
+/* 
+    Hero Layer Entry Animation 
+    Reverse of the exit animation for returning to home.
+*/
 .hero-layer.is-entering {
     visibility: visible;
     pointer-events: auto;
     animation: heroZoomIn 500ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes heroZoomOut {
-    0% {
-        opacity: 1;
-        scale: 1;
-        filter: blur(0);
-    }
-    100% {
-        opacity: 0;
-        scale: 1.15;
-        filter: blur(8px);
-    }
+/* 
+    Hero Main Container 
+    Wrapper for centered text and search content in the hero.
+*/
+.hero-main-container {
+    position: absolute;
+    inset: 0;
+    z-index: 950;
+    pointer-events: none;
 }
 
-@keyframes heroZoomIn {
-    0% {
-        opacity: 0;
-        scale: 1.15;
-        filter: blur(8px);
-    }
-    100% {
-        opacity: 1;
-        scale: 1;
-        filter: blur(0);
-    }
+/* 
+    Hero Content 
+    Text block containing the main headline and subtext.
+*/
+.hero-content {
+    position: absolute;
+    bottom: calc(55% + 4rem);
+    left: 50%;
+    transform: translateX(-50%); /* Allowed for static centering */
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 0 2rem;
+    pointer-events: auto;
 }
 
-/* --- Dashboard Layer (default: hidden) --- */
+/* 
+    Hero Headline 
+    Main title with responsive sizing.
+*/
+.hero-content h1 {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--hero-text);
+    letter-spacing: -1.2px;
+    text-shadow: 0 4px 30px var(--hero-shadow);
+}
+
+/* 
+    Hero Paragraph 
+    Subtext describing the site's purpose.
+*/
+.hero-content p {
+    font-size: clamp(0.82rem, 1.2vw, 0.96rem);
+    color: var(--hero-text-muted);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* 
+    Dashboard Layer 
+    The secondary layer containing dossiers and main content.
+*/
 .dashboard-layer {
     z-index: 1;
     background-color: var(--bg-page);
@@ -742,6 +754,10 @@ body.is-home {
                 filter 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* 
+    Dashboard Layer Reveal 
+    Animation for transitioning into the dashboard view.
+*/
 .dashboard-layer.is-entering {
     z-index: 3;
     opacity: 1;
@@ -750,6 +766,10 @@ body.is-home {
     animation: dashboardReveal 550ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* 
+    Dashboard Visibility 
+    Static visible state.
+*/
 .dashboard-layer.is-visible {
     z-index: 3;
     opacity: 1;
@@ -757,59 +777,20 @@ body.is-home {
     pointer-events: auto;
 }
 
+/* 
+    Dashboard Exit Animation 
+    Smoothly hides the dashboard when returning to hero.
+*/
 .dashboard-layer.is-exiting {
     z-index: 3;
     animation: dashboardExit 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
     pointer-events: none;
 }
 
-@keyframes dashboardReveal {
-    0% {
-        opacity: 0;
-        scale: 0.93;
-        filter: blur(4px);
-    }
-    100% {
-        opacity: 1;
-        scale: 1;
-        filter: blur(0);
-    }
-}
-
-@keyframes dashboardExit {
-    0% {
-        opacity: 1;
-        scale: 1;
-        filter: blur(0);
-    }
-    100% {
-        opacity: 0;
-        scale: 0.93;
-        filter: blur(4px);
-    }
-}
-
-/* --- Card Stagger Reveal --- */
-.info-card {
-    opacity: 0;
-}
-
-.info-card.card-reveal {
-    animation: cardStaggerIn 225ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes cardStaggerIn {
-    0% {
-        opacity: 0;
-        scale: 0.96;
-    }
-    100% {
-        opacity: 1;
-        scale: 1;
-    }
-}
-
-/* --- Back-to-Hero Strip --- */
+/* 
+    Dashboard Back Strip 
+    Interactive link to return to the hero landing page.
+*/
 .dashboard-back-strip {
     display: flex;
     align-items: center;
@@ -832,92 +813,76 @@ body.is-home {
     color: var(--text-main);
 }
 
-.back-arrow-icon {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-color: currentColor;
-    mask-image: url('../svg/arrow-left.svg');
-    -webkit-mask-image: url('../svg/arrow-left.svg');
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-size: contain;
-    -webkit-mask-size: contain;
+/* 
+    Hero Zoom & Dashboard Transitions 
+    Scale-based animations for the home experience (allowed).
+*/
+@keyframes heroZoomOut {
+    0% { opacity: 1; scale: 1; filter: blur(0); }
+    100% { opacity: 0; scale: 1.15; filter: blur(8px); }
 }
 
-/* --- Hero Main Container (Unified wrapper but independent children) --- */
-.hero-main-container {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 950;
-    pointer-events: none;
+@keyframes heroZoomIn {
+    0% { opacity: 0; scale: 1.15; filter: blur(8px); }
+    100% { opacity: 1; scale: 1; filter: blur(0); }
 }
 
-.hero-content {
-    position: absolute;
-    /* Anchored relative to the search bar center (45%) */
-    /* 100% - 45% = 55%. We add a 4rem gap. */
-    bottom: calc(55% + 4rem);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-    padding: 0 2rem;
-    pointer-events: auto;
+@keyframes dashboardReveal {
+    0% { opacity: 0; scale: 0.93; filter: blur(4px); }
+    100% { opacity: 1; scale: 1; filter: blur(0); }
 }
 
-.hero-content h1 {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-size: clamp(2rem, 6vw, 3.25rem);
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: var(--hero-text);
-    letter-spacing: -1.2px;
-    text-shadow: 0 4px 30px var(--hero-shadow);
+@keyframes dashboardExit {
+    0% { opacity: 1; scale: 1; filter: blur(0); }
+    100% { opacity: 0; scale: 0.93; filter: blur(4px); }
 }
 
-.hero-content p {
-    font-size: clamp(0.82rem, 1.2vw, 0.96rem);
-    color: var(--hero-text-muted);
-    margin-bottom: 0;
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.4;
-}
+/* 
+    6. SEARCH & SUGGESTIONS 
+    Unified search interface for navigating the dossier database.
+*/
 
+/* 
+    Hero Search Wrapper 
+    Centralized positioning for the main search bar on the hero.
+*/
 .hero-search-wrapper {
     position: absolute;
-    top: 45%; /* THE CENTRAL ANCHOR */
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 760px;
     padding: 0 2rem;
     pointer-events: auto;
-    overflow: visible;
 }
 
+/* 
+    Search Input Pill 
+    Premium, rounded search input used on the hero page.
+*/
 .search-input-pill {
     width: 100%;
     padding: 1.1rem 2.35rem;
     font-family: 'Noto Sans', sans-serif;
-    /* Cleaner for search input */
     font-size: 1.08rem;
     border: 2px solid var(--search-border);
     border-radius: 50px;
-    /* Perfect pill shape */
     background-color: var(--bg-card);
     color: var(--text-main);
     outline: none;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: var(--search-shadow);
-    /* Subtle glow on hover to emphasize visibility */
 }
 
+.search-input-pill::placeholder {
+    color: #9ca3af;
+}
+
+/* 
+    Search Input Pill States 
+    Interactive feedback (Scale is allowed for tactile depth).
+*/
 .search-input-pill:hover {
     box-shadow: var(--search-shadow), 0 0 15px rgba(0, 68, 204, 0.1);
 }
@@ -925,10 +890,13 @@ body.is-home {
 .search-input-pill:focus {
     border-color: var(--accent-blue);
     box-shadow: 0 10px 30px rgba(0, 68, 204, 0.12);
-    transform: scale(1.01);
+    scale: 1.01;
 }
 
-/* Generic Search Input (Legend/Inventory) */
+/* 
+    Generic Search Input 
+    Standard squared input for inventory and legend pages.
+*/
 .search-input {
     width: 100%;
     padding: 0.8rem 1.25rem;
@@ -946,169 +914,15 @@ body.is-home {
     box-shadow: 0 0 0 3px rgba(0, 68, 204, 0.1);
 }
 
-/* Alphabet quick-filter bar — horizontal row of A-Z buttons */
-.alphabet-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    padding: 0.5rem 0;
-}
-
-/* Individual letter button in the alphabet bar */
-.alphabet-btn {
-    background: transparent;
-    border: 1px solid var(--card-border-deco);
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-    min-width: 30px;
-    text-align: center;
-}
-
-/* Alphabet button hover state */
-.alphabet-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: var(--text-main);
-    border-color: var(--nav-button-border);
-}
-
-/* Dark theme alphabet hover */
-.dark-theme .alphabet-btn:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-/* Active/selected alphabet button */
-.alphabet-btn.active {
-    background-color: var(--text-main);
-    color: var(--bg-card);
-    border-color: var(--text-main);
-}
-
-/* Disabled alphabet button for missing letters */
-.alphabet-btn.disabled {
-    opacity: 0.25;
-    cursor: default;
-    pointer-events: none;
-}
-
-/* Horizontal filter row with category dropdown and search input */
-.legend-filter-row {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-/* Category dropdown select */
-.category-filter-select {
-    padding: 0.8rem 1.25rem;
-    border: 2px solid var(--search-border);
-    border-radius: 8px;
-    background-color: var(--bg-card);
-    color: var(--text-main);
-    outline: none;
-    font-size: 0.9rem;
-    cursor: pointer;
-    min-width: 200px;
-    transition: border-color 0.2s ease;
-}
-
-/* Category select focus state */
-.category-filter-select:focus {
-    border-color: var(--accent-blue);
-}
-
-/* Inventory table — clean two-column layout */
-.legend-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid var(--card-border-deco);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* Table header row */
-.legend-table thead th {
-    text-align: left;
-    padding: 0.75rem 1.2rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-muted);
-    background-color: rgba(0, 0, 0, 0.03);
-    border-bottom: 2px solid var(--card-border-deco);
-}
-
-/* Dark theme table header */
-.dark-theme .legend-table thead th {
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-/* Table body rows */
-.legend-table tbody tr {
-    border-bottom: 1px solid var(--card-border-deco);
-}
-
-/* Remove border on last row */
-.legend-table tbody tr:last-child {
-    border-bottom: none;
-}
-
-/* Alternating row stripes for readability */
-.legend-table tbody tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.015);
-}
-
-/* Dark theme alternating stripes */
-.dark-theme .legend-table tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.02);
-}
-
-/* Table cells */
-.legend-table td {
-    padding: 0.65rem 1.2rem;
-    vertical-align: top;
-    font-size: 0.9rem;
-}
-
-/* Title column link — underlined on hover, neutral color */
-.legend-link {
-    color: var(--accent-blue);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* Link hover underline */
-.legend-link:hover {
-    text-decoration: underline;
-}
-
-/* Description column — muted secondary text */
-.legend-desc {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-}
-
-/* Hidden utility for filtered-out table rows */
-.legend-item.hidden {
-    display: none;
-}
-
-.search-input-pill::placeholder {
-    color: #9ca3af;
-    font-family: 'Noto Sans', sans-serif;
-}
-
+/* 
+    Search Suggestions Container 
+    Glassmorphic dropdown panel for real-time search results.
+*/
 .search-suggestions {
     position: absolute;
     top: calc(100% + 0.75rem);
     left: 0;
     right: 0;
-    margin-top: 0;
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -1118,44 +932,10 @@ body.is-home {
     overflow: hidden;
 }
 
-.search-suggestions-empty {
-    padding: 1rem 1.25rem;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-@media (max-width: 900px) {
-    .hero-content {
-        top: 14vh;
-        max-width: min(90vw, 720px);
-    }
-
-    .hero-search-wrapper {
-        width: min(90vw, 760px);
-        top: 46%;
-    }
-}
-
-@media (max-width: 640px) {
-    .hero-content {
-        top: 12vh;
-    }
-
-    .hero-search-wrapper {
-        top: 42%;
-        width: min(92vw, 760px);
-    }
-
-    .hero-content h1 {
-        margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-        max-width: 34rem;
-    }
-}
-
+/* 
+    Search Suggestion Item 
+    Individual interactive result within the suggestion list.
+*/
 .search-suggestion {
     appearance: none;
     width: 100%;
@@ -1185,84 +965,123 @@ body.is-home {
     font-size: 0.98rem;
 }
 
-/* Scroll Indicator System */
-.scroll-indicator {
-    position: absolute;
-    bottom: 3.5rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    cursor: pointer;
-    opacity: 0.9;
-    z-index: 10;
-    transition: opacity 0.3s ease;
-}
-
-.scroll-indicator:hover {
-    opacity: 1;
-    /* Removed all transforms for hover as per global rule */
-}
-
-.scroll-text {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 700;
-    color: var(--hero-text-muted);
-}
-
-.scroll-arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    /* Anchor for the top property movement */
-    top: 0;
-    animation: bounceIndicator 2s infinite;
-}
-
-.scroll-arrow img {
-    width: 28px;
-    height: 28px;
-    filter: var(--hero-icon-filter);
-}
-
-@keyframes bounceIndicator {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        top: 0;
-    }
-
-    40% {
-        top: 8px;
-        /* Downward bounce */
-    }
-
-    60% {
-        top: 4px;
-    }
+.search-suggestions-empty {
+    padding: 1rem 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
 /* 
-    Dashboard Grid 
-    Layout for the dossier categories/cards.
+    7. DASHBOARD & GRID 
+    Main layout systems for content browsing.
+*/
+
+/* 
+    Dashboard Section 
+    Large outer container for dossier cards and primary landing content.
 */
 .dashboard-section {
     width: 96%;
-    /* 2% margin on each side */
     max-width: 1320px;
     margin: 2rem auto;
     padding: 2rem 0 4rem 0;
 }
+
+/* 
+    Card Grid 
+    Responsive grid for displaying info cards across the dashboard.
+*/
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* 
+    Info Card 
+    Premium card component with unique rounded corners and hover elevation.
+*/
+.info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-deco);
+    border-right: 2px solid var(--card-border-deco);
+    border-bottom: 2px solid var(--card-border-deco);
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+    border-radius: 0 24px 0 0;
+    box-shadow: 0 8px 25px var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    opacity: 0; /* Default hidden for reveal animation */
+}
+
+/* 
+    Info Card Reveal 
+    Trigger class for the stagger-in animation.
+*/
+.info-card.card-reveal {
+    animation: cardStaggerIn 225ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardStaggerIn {
+    0% { opacity: 0; scale: 0.96; }
+    100% { opacity: 1; scale: 1; }
+}
+
+.info-card:hover {
+    box-shadow: 0 15px 40px var(--card-shadow-hover);
+}
+
+.info-card h3 {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* 
+    Card Link 
+    Centrally anchored action button within an info card.
+*/
+.card-link {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+    text-transform: none;
+    letter-spacing: normal;
+    background-color: transparent !important;
+    background-image: linear-gradient(var(--accent-blue), var(--accent-blue));
+    background-size: 0 3px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    border: 1px solid #b1b4b9;
+}
+
+.card-link:hover {
+    background-size: 100% 3px !important;
+    border-bottom-color: var(--accent-blue) !important;
+    color: var(--accent-blue) !important;
+}
+
+/* 
+    8. SEARCH RESULTS PAGE 
+    Specific layout for the dedicated search results view.
+*/
 
 .results-page {
     display: flex;
@@ -1290,7 +1109,6 @@ body.is-home {
     top: calc(var(--header-height) + 0.75rem);
     z-index: 940;
     padding-top: 0.25rem;
-    overflow: visible;
 }
 
 .results-summary {
@@ -1310,6 +1128,10 @@ body.is-home {
     gap: 1rem;
 }
 
+/* 
+    Search Result Card 
+    Horizontal layout for dossier results on the results page.
+*/
 .search-result-card {
     background: var(--bg-card);
     border: 1px solid var(--border-light);
@@ -1353,14 +1175,65 @@ body.is-home {
 }
 
 /* 
-    Legend Section (Inventory)
-    Text-based list of all research dossiers.
+    9. LEGEND & INVENTORY 
+    Comprehensive list and table views of the research database.
 */
+
 .legend-section {
     margin-top: 3rem;
 }
 
-/* Alphabetical Index Layout */
+/* 
+    Alphabet Bar 
+    Horizontal row of filter buttons for finding dossiers by initial letter.
+*/
+.alphabet-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 0.5rem 0;
+}
+
+.alphabet-btn {
+    background: transparent;
+    border: 1px solid var(--card-border-deco);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    min-width: 30px;
+    text-align: center;
+}
+
+.alphabet-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-main);
+    border-color: var(--nav-button-border);
+}
+
+.dark-theme .alphabet-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.alphabet-btn.active {
+    background-color: var(--text-main);
+    color: var(--bg-card);
+    border-color: var(--text-main);
+}
+
+.alphabet-btn.disabled {
+    opacity: 0.25;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* 
+    Alphabetical Index Container 
+    Multi-column layout for the legend listing.
+*/
 .alphabet-index-container {
     columns: 3;
     column-gap: 4rem;
@@ -1371,131 +1244,366 @@ body.is-home {
     margin-bottom: 2.5rem;
 }
 
-@media (max-width: 1100px) {
-    .alphabet-index-container {
-        columns: 2;
-    }
-}
-
-@media (max-width: 700px) {
-    .alphabet-index-container {
-        columns: 1;
-        column-gap: 0;
-    }
-}
-
-/* Container for the legend link list */
-.legend-list {
+/* 
+    Legend Filter Row 
+    Combines search and category filters for the inventory.
+*/
+.legend-filter-row {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-
-.section-title {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--border-light);
-}
-
-/* .dossier-list: Simple vertical container for dossier items */
-.dossier-list {
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
+    align-items: center;
 }
 
-/* .dossier-item: Legacy styles removed in favor of .info-card */
-.dossier-item {
-    display: block;
+.category-filter-select {
+    padding: 0.8rem 1.25rem;
+    border: 2px solid var(--search-border);
+    border-radius: 8px;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    outline: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    min-width: 200px;
+    transition: border-color 0.2s ease;
 }
 
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.category-filter-select:focus {
+    border-color: var(--accent-blue);
 }
 
 /* 
-    Minimal Card Styling 
-    Uses the clean, white, bordered look of Wikipedia widgets.
+    Legend Table 
+    Institutional-style table for displaying dossier metadata.
 */
-.info-card {
-    background: var(--bg-card);
+.legend-table {
+    width: 100%;
+    border-collapse: collapse;
     border: 1px solid var(--card-border-deco);
-    border-right: 2px solid var(--card-border-deco);
-    border-bottom: 2px solid var(--card-border-deco);
-    padding: 1.5rem 1.5rem 4rem 1.5rem;
-    border-radius: 0 24px 0 0;
-    box-shadow: 0 8px 25px var(--card-shadow);
-    position: relative;
+    border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.info-card:hover {
-    box-shadow: 0 15px 40px var(--card-shadow-hover);
-}
-
-.info-card h3 {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-size: 1.25rem;
+.legend-table thead th {
+    text-align: left;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 2px solid var(--card-border-deco);
 }
 
-.info-card p {
+.dark-theme .legend-table thead th {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.legend-table tbody tr {
+    border-bottom: 1px solid var(--card-border-deco);
+}
+
+.legend-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.legend-table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.015);
+}
+
+.dark-theme .legend-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.legend-table td {
+    padding: 0.65rem 1.2rem;
+    vertical-align: top;
     font-size: 0.9rem;
+}
+
+.legend-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.legend-link:hover {
+    text-decoration: underline;
+}
+
+.legend-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* 
+    10. DOSSIER DESIGN SYSTEM 
+    Specialized styles for individual research document pages.
+*/
+
+/* 
+    Dossier Layout 
+    The main container for a dossier page, mimicking an official document.
+*/
+.dossier-layout {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 2.25rem;
+    border: 1px solid var(--border-light);
+    margin-bottom: 3rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+/* 
+    Infobox Metadata 
+    Sidebar panel for key dossier facts (Wikipedia-style).
+*/
+.infobox-metadata {
+    float: right;
+    width: 280px;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-light);
+    padding: 0.85rem;
+    background: var(--bg-page);
+    font-size: 0.82rem;
+}
+
+.infobox-metadata h4 {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infobox-table {
+    width: 100%;
+    font-size: 0.8rem;
+    border-collapse: collapse;
+}
+
+.infobox-table th {
+    text-align: left;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-light);
+    width: 40%;
+}
+
+.infobox-table td {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* 
+    Dossier Header 
+    Title block for individual dossiers.
+*/
+.dossier-header {
+    margin-bottom: 1.5rem;
+}
+
+.dossier-header h1 {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    border-bottom: 2px solid var(--text-main);
+    color: var(--text-main);
+    padding-bottom: 0.4rem;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.dossier-header p {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+}
+
+/* 
+    Dossier Section Elements 
+    Sub-headings and typographic blocks for research text.
+*/
+.section-title {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0.3rem;
+    letter-spacing: -0.2px;
+}
+
+.dossier-subsection {
+    margin-top: 1rem;
+}
+
+.dossier-subsection h3 {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.1px;
+}
+
+/* 
+    Dossier Quotes 
+    Styled blockquotes for witness testimony or extracted text.
+*/
+.pillar-quote {
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 1rem;
+}
+
+.dossier-quote {
+    font-style: italic;
+    background: var(--bg-page);
+    padding: 1.5rem;
+    border-left: 5px solid #ccc;
+    margin: 1.5rem 0;
+}
+
+/* 
+    Dossier Sources 
+    Reference section at the bottom of dossier documents.
+*/
+.dossier-sources {
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    padding: 0.85rem 1rem;
+}
+
+.dossier-sources .section-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.dossier-sources > p {
+    font-size: 0.78rem;
     color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
 
-.card-link {
-    position: absolute;
-    bottom: 1.25rem; /* Fixed distance from bottom */
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: fit-content;
-    text-transform: none;
-    letter-spacing: normal;
-    
-    /* Ensure no background color obscures the animation */
-    background-color: transparent !important;
-    background-clip: padding-box;
-    
-    /* Center-expanding border effect */
-    background-image: linear-gradient(var(--accent-blue), var(--accent-blue));
-    background-size: 0 3px;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-clip: padding-box;
-    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
-    
-    /* Stronger base border */
-    border: 1px solid #b1b4b9;
+.source-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    padding: 0.55rem 0.7rem;
+    font-size: 0.78rem;
 }
 
-.card-link:hover {
-    background-color: transparent !important;
-    background-image: linear-gradient(var(--accent-blue), var(--accent-blue)) !important;
-    background-repeat: no-repeat !important; /* Prevent tiling that fills the button */
-    background-position: center bottom !important;
-    background-size: 100% 3px !important;
-    border-bottom-color: var(--accent-blue) !important;
-    color: var(--accent-blue) !important;
+.source-item p {
+    margin-bottom: 0.15rem;
+    line-height: 1.4;
 }
 
 /* 
-    Stats Overview 
-    A clean row of key metrics.
+    11. COMPONENTS & MODULES 
+    Reusable UI blocks used across various pages.
+*/
+
+/* 
+    Common Buttons 
+    Primary and interactive action controls.
+*/
+.btn {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #0033aa;
+}
+
+/* 
+    Action Button 
+    Used for secondary or inline actions (e.g., dossier links).
+*/
+.btn-action {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.35rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+
+.btn-action:hover {
+    color: var(--accent-blue);
+    background: rgba(0, 68, 204, 0.05);
+    border-color: var(--accent-blue);
+}
+
+/* 
+    Action Icon 
+    SVG mask icon with directional hover feedback (margin-based).
+*/
+.btn-action .icon,
+.btn-action .icon-inline {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: currentColor;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    transition: margin 0.2s ease;
+}
+
+.btn-action:hover .icon,
+.btn-action:hover .icon-inline {
+    margin-left: 4px;
+}
+
+/* 
+    Content Cards 
+    Modular blocks for secondary page content.
+*/
+.content-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    padding: 2rem;
+}
+
+/* 
+    Stats Bar 
+    Key metrics visualization.
 */
 .stats-bar {
     background-color: var(--glass-bg);
@@ -1521,394 +1629,10 @@ body.is-home {
     font-weight: 700;
 }
 
-/* Footer Styling */
-.site-footer {
-    border-top: 1px solid var(--border-light);
-    padding: 2rem 0 1.5rem 0; /* Reduced padding for a tighter layout */
-    background: var(--bg-card);
-    flex-shrink: 0;
-    width: 100%;
-    margin-top: auto;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.03);
-}
-
-.footer-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Central alignment for children by default */
-    gap: 1.5rem; /* Reduced gap between sections */
-}
-
-.footer-header {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-light); /* Added line between slogan and nav */
-}
-
-.footer-slogan {
-    font-size: 1rem; /* Slightly smaller for compactness */
-    font-weight: 500;
-    color: var(--text-main);
-    max-width: 600px;
-    line-height: 1.4;
-    margin: 0; /* Removed extra margins */
-}
-
-.footer-main {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center the nav container horizontally */
-}
-
-.footer-nav {
-    /* Aligns the vertical list to the left relative to its own container */
-    text-align: left;
-    min-width: 200px;
-}
-
-.footer-links-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem; /* Ultra-compact spacing */
-}
-
-.footer-links-vertical li a {
-    text-decoration: none;
-    color: var(--text-muted); /* Simple gray text */
-    font-size: 0.95rem;
-    font-weight: 500; /* Cleaner link feel */
-    transition: color 0.2s ease;
-    display: inline-block;
-    padding: 0; /* Removed padding to maximize compactness */
-}
-
-.footer-links-vertical li a:hover {
-    color: var(--text-main); /* Darker in Light Mode, Lighter in Dark Mode */
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    width: 100%;
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-light);
-    color: var(--text-muted);
-    font-size: 0.85rem;
-}
-
-@media (max-width: 800px) {
-    .footer-container {
-        padding: 0 2rem;
-        gap: 2rem;
-    }
-
-    .footer-slogan {
-        font-size: 1rem;
-    }
-
-    .footer-nav {
-        min-width: auto;
-    }
-}
-
-.u-flex-row {
-    display: flex !important;
-    flex-direction: row !important;
-}
-
-.u-gap-2 {
-    gap: 2rem !important;
-}
-
-.u-text-xs {
-    font-size: 0.75rem !important;
-}
-
-
-
 /* 
-    Dossier Design System
-    Centralized styles for all research dossiers.
+    Loaders 
+    Visual indicators for background operations.
 */
-.dossier-layout {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    background: var(--bg-card);
-    padding: 3rem;
-    border: 1px solid var(--border-light);
-    margin-bottom: 4rem;
-}
-
-.infobox-metadata {
-    float: right;
-    width: 300px;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-light);
-    padding: 1rem;
-    background: var(--bg-page);
-}
-
-.infobox-metadata h4 {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.infobox-table {
-    width: 100%;
-    font-size: 0.85rem;
-    border-collapse: collapse;
-}
-
-.infobox-table th {
-    text-align: left;
-    padding: 5px 0;
-    border-bottom: 1px solid var(--border-light);
-    width: 40%;
-}
-
-.infobox-table td {
-    padding: 5px 0;
-    border-bottom: 1px solid var(--border-light);
-}
-
-.cite-link {
-    font-size: 0.8rem;
-    display: block;
-    margin-top: 1rem;
-    color: var(--accent-blue);
-    text-decoration: none;
-}
-
-.cite-link:hover {
-    text-decoration: underline;
-}
-
-.dossier-header {
-    margin-bottom: 2rem;
-}
-
-.dossier-header h1 {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    border-bottom: 2px solid var(--text-main);
-    color: var(--text-main);
-    padding-bottom: 0.5rem;
-    margin: 0;
-}
-
-.dossier-header p {
-    color: var(--text-muted);
-    font-style: italic;
-    margin-top: 0.5rem;
-}
-
-.research-note {
-    background: var(--note-bg);
-    padding: 1.5rem;
-    border: 1px solid var(--note-border);
-    margin: 3rem 0;
-}
-
-.research-note h3 {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.research-note p {
-    font-size: 0.9rem;
-}
-
-.source-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    padding: 1rem;
-}
-
-.source-item p {
-    margin-bottom: 0.35rem;
-}
-
-.source-item p:last-child {
-    margin-bottom: 0;
-}
-
-.source-item a {
-    word-break: break-word;
-}
-
-.pillar-quote {
-    margin: 1.5rem 0;
-    border-left: 4px solid var(--accent-blue);
-    padding-left: 1rem;
-}
-
-.dossier-quote {
-    font-style: italic;
-    background: var(--bg-page);
-    padding: 1.5rem;
-    border-left: 5px solid #ccc;
-    margin: 1.5rem 0;
-}
-
-/* 
-    Content Cards 
-    Styles for SPA content modules.
-*/
-.content-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    padding: 3rem;
-}
-
-
-.view-all-link {
-    font-weight: 700;
-    color: var(--accent-blue);
-    margin-top: 0.5rem;
-    display: block;
-    transition: color 0.2s ease;
-}
-
-.view-all-link:hover {
-    color: var(--text-main);
-}
-
-/* 
-    Utilities
-    Common layout and spacing controls.
-*/
-.u-mt-3 {
-    margin-top: 3rem !important;
-}
-
-.u-mt-1 {
-    margin-top: 1rem !important;
-}
-
-.u-mb-2 {
-    margin-bottom: 2rem !important;
-}
-
-.u-mb-2_5 {
-    margin-bottom: 2.5rem !important;
-}
-
-.u-mb-1 {
-    margin-bottom: 1rem !important;
-}
-
-.u-sr-only {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-}
-
-.u-text-center {
-    text-align: center !important;
-}
-
-.u-text-right {
-    text-align: right !important;
-}
-
-.u-text-left {
-    text-align: left !important;
-}
-
-.u-max-w-400 {
-    width: 100%;
-    max-width: 400px;
-}
-
-.u-font-serif {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
-    font-weight: 700 !important;
-}
-
-.u-font-small {
-    font-size: 0.9rem !important;
-}
-
-.u-text-muted {
-    color: var(--text-muted) !important;
-}
-
-.u-list-none {
-    list-style: none !important;
-}
-
-.u-p-3 {
-    padding: 3rem !important;
-}
-
-.u-flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.u-gap-8 {
-    gap: 8px;
-}
-
-.u-border-top {
-    border-top: 1px solid var(--border-light) !important;
-    padding-top: 2rem !important;
-}
-
-.u-li-mb-10 li {
-    margin-bottom: 10px !important;
-}
-
-
-.dossier-list-styled {
-    margin: 1.5rem 0;
-    padding-left: 2rem;
-}
-
-.dossier-content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    background: var(--bg-card);
-    padding: 3rem;
-    border: 1px solid var(--border-light);
-}
-
-.u-bg-accent {
-    background: var(--accent-bg) !important;
-}
-
-.u-bg-note {
-    background: var(--note-bg) !important;
-    border: 1px solid var(--note-border) !important;
-}
-
-.u-justify-center {
-    justify-content: center !important;
-}
-
-/* Global Loader Component */
 .loader {
     width: 48px;
     height: 48px;
@@ -1924,7 +1648,13 @@ body.is-home {
 }
 
 /* 
-    Page-Specific Layouts (About & Contact)
+    12. PAGE-SPECIFIC LAYOUTS 
+    Specialized grid systems for secondary pages.
+*/
+
+/* 
+    About Page Grid 
+    Two-column layout for institutional information.
 */
 .about-grid {
     display: grid;
@@ -1933,6 +1663,10 @@ body.is-home {
     align-items: start;
 }
 
+/* 
+    Contact Page Layout 
+    Split layout for contact info and the feedback form.
+*/
 .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -1940,27 +1674,39 @@ body.is-home {
     align-items: start;
 }
 
-.contact-header-col .section-header {
-    margin-top: 0;
+/* 
+    Sitemap Grid 
+    Hierarchical display of all site content.
+*/
+.sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    align-items: start;
 }
 
-.contact-form {
-    margin-top: 0;
+.sitemap-category-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 0.25rem;
 }
 
-@media (max-width: 900px) {
-    .about-grid,
-    .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+.sitemap-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 }
 
-.content-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    padding: 2rem; /* Reduced from 3rem for tighter fit */
-}
+/* 
+    Form Styles 
+    Interactive elements for data entry.
+*/
 .form-group {
     display: flex;
     flex-direction: column;
@@ -1998,124 +1744,27 @@ textarea.form-input {
     min-height: 120px;
 }
 
-/* Buttons */
-.btn {
-    appearance: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
+/* 
+    13. AI CHAT WIDGET 
+    Floating assistant interface with glassmorphism.
+*/
 
-.btn-primary {
-    background-color: var(--accent-blue);
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    background-color: #0033aa;
-}
-
-.u-w-full {
-    width: 100% !important;
-}
-
-/* Additional Utilities */
-.u-mb-3 {
-    margin-bottom: 3rem !important;
-}
-
-.u-p-2 {
-    padding: 2rem !important;
-}
-
-.u-rounded {
-    border-radius: 8px !important;
-}
-
-.u-bg-surface-alt {
-    background-color: var(--accent-bg) !important;
-}
-
-.u-letter-spacing {
-    letter-spacing: 1px !important;
-}
-
-.u-p-1_5 {
-    padding: 1.5rem !important;
-}
-
-.u-mb-1_5 {
-    margin-bottom: 1.5rem !important;
-}
-
-.u-mb-0_5 {
-    margin-bottom: 0.5rem !important;
-}
-
-.u-align-start {
-    align-items: flex-start !important;
-}
-
-
-.u-text-sm {
-    font-size: 0.85rem !important;
-    line-height: 1.5 !important;
-}
-
-.u-uppercase {
-    text-transform: uppercase !important;
-}
-
-.u-list-custom {
-    list-style: none;
-    padding-left: 0;
-}
-
-.u-list-custom li {
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.u-list-custom li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--accent-blue);
-    font-weight: bold;
-}
-
-/* ==========================================================================
-   AI Chat Widget Component
-   A floating interface for users to interact with an AI assistant.
-   Features glassmorphism, responsive design, and smooth transitions.
-   ========================================================================== */
-
-/* Main widget container: fixed to the bottom right for consistent accessibility */
 .ai-chat-widget {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     z-index: 9999;
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-end;
-    gap: 1rem;
+    gap: 0.75rem;
+    pointer-events: none;
 }
 
-/* Toggle button: Redesigned to match the site's navigation and toggle style */
 .chat-toggle {
-    width: 50px;
-    height: 50px;
-    border-radius: 6px; /* Matches theme-toggle and nav links */
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
     background-color: var(--bg-card);
     border: 1px solid var(--nav-button-border);
     cursor: pointer;
@@ -2125,121 +1774,42 @@ textarea.form-input {
     box-shadow: var(--card-shadow);
     transition: all 0.3s ease;
     color: var(--text-main);
+    pointer-events: auto;
 }
 
-/* Hover state: matches the navigation link hover effect */
 .chat-toggle:hover {
     background-color: rgba(0, 0, 0, 0.05);
     border-color: var(--accent-blue);
     color: var(--accent-blue);
 }
 
-.dark-theme .chat-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-/* Active/click state: slight color change for tactile feel */
-.chat-toggle:active {
-    background-color: var(--border-light);
-}
-
-/* Icon container within the toggle button */
-.chat-icon {
-    width: 28px;
-    height: 28px;
-    background-color: currentColor;
-    mask-image: url('../svg/chat.svg');
-    -webkit-mask-image: url('../svg/chat.svg');
-    mask-repeat: no-repeat;
-    mask-size: contain;
-}
-
-/* Main chat window: uses glassmorphism for a premium, integrated aesthetic */
 .chat-window {
-    width: 380px;
-    height: 520px;
+    width: 320px;
+    height: 460px;
     max-height: calc(85vh - 100px);
     background-color: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-light);
-    border-radius: 16px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     transform-origin: bottom right;
-    transform: scale(0.9);
+    scale: 0.9; /* Allowed */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    pointer-events: auto;
 }
 
-/* Visible state: triggered via JS class toggle */
 .chat-window.is-open {
     opacity: 1;
     visibility: visible;
-    transform: scale(1);
+    scale: 1;
 }
 
-/* Dark theme overrides for the chat window */
-.dark-theme .chat-window {
-    background-color: rgba(22, 27, 34, 0.85);
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-
-/* Header section: identifies the assistant and provides close control */
-.chat-header {
-    padding: 1.25rem 1.5rem;
-    background-color: var(--bg-card);
-    border-bottom: 1px solid var(--border-light);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Info sub-container with online status indicator */
-.chat-header-info {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-/* Status dot: visual cue for AI availability */
-.chat-header-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #238636; /* Green status */
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(35, 134, 54, 0.5);
-}
-
-/* Header title styling */
-.chat-header h3 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    margin: 0;
-    color: var(--text-main);
-}
-
-/* Close button: minimal aesthetic for dismissive action */
-.chat-close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--text-muted);
-    cursor: pointer;
-    padding: 0.25rem;
-    line-height: 1;
-    transition: color 0.2s ease;
-}
-
-.chat-close:hover {
-    color: var(--text-main);
-}
-
-/* Messages container: handles vertical scroll and message spacing */
 .chat-messages {
     flex: 1;
     padding: 1.5rem;
@@ -2247,10 +1817,8 @@ textarea.form-input {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    scrollbar-width: thin;
 }
 
-/* Base message bubble styling */
 .message {
     max-width: 85%;
     padding: 0.75rem 1rem;
@@ -2260,7 +1828,6 @@ textarea.form-input {
     word-wrap: break-word;
 }
 
-/* AI-specific message styling: distinct color and alignment */
 .ai-message {
     background-color: var(--bg-page);
     color: var(--text-main);
@@ -2269,7 +1836,6 @@ textarea.form-input {
     border: 1px solid var(--border-light);
 }
 
-/* User-specific message styling: uses accent color for brand alignment */
 .user-message {
     background-color: var(--accent-blue);
     color: #ffffff;
@@ -2278,80 +1844,122 @@ textarea.form-input {
     box-shadow: 0 4px 12px rgba(0, 68, 204, 0.15);
 }
 
-/* Input container: fixed at the bottom of the chat window */
-.chat-input-area {
-    padding: 1.25rem 1.5rem;
-    background-color: var(--bg-card);
+/* 
+    14. FOOTER 
+    Global site footer and link hierarchies.
+*/
+
+.site-footer {
     border-top: 1px solid var(--border-light);
-    display: flex;
-    gap: 0.75rem;
-}
-
-/* Text input: styled for clarity and focus visibility */
-.chat-input-area input {
-    flex: 1;
-    background-color: var(--bg-page);
-    border: 1px solid var(--border-light);
-    border-radius: 20px;
-    padding: 0.6rem 1.25rem;
-    font-family: inherit;
-    font-size: 0.9rem;
-    color: var(--text-main);
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.chat-input-area input:focus {
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(0, 68, 204, 0.1);
-}
-
-/* Send button: updated to match action button style */
-.chat-send {
-    width: 36px;
-    height: 36px;
-    border-radius: 4px;
-    background-color: transparent;
-    border: 1px solid var(--border-light);
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    padding: 2rem 0 1.5rem 0;
+    background: var(--bg-card);
     flex-shrink: 0;
+    width: 100%;
+    margin-top: auto;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.03);
 }
 
-.chat-send:hover {
-    background-color: rgba(0, 68, 204, 0.05);
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.chat-send:active {
-    background-color: rgba(0, 68, 204, 0.1);
+.footer-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
 }
 
-/* Icon within the send button */
-.send-icon {
-    width: 18px;
-    height: 18px;
-    background-color: currentColor;
-    mask-image: url('../svg/send.svg');
-    -webkit-mask-image: url('../svg/send.svg');
-    mask-repeat: no-repeat;
-    mask-size: contain;
+.footer-slogan {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-main);
+    max-width: 600px;
+    line-height: 1.4;
+    margin: 0;
 }
 
-/* Responsive adjustments for mobile devices */
-@media (max-width: 500px) {
-    .ai-chat-widget {
-        bottom: 1rem;
-        right: 1rem;
-    }
-    
-    .chat-window {
-        width: calc(100vw - 2rem);
-        height: calc(100vh - 100px);
-    }
+.footer-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    list-style: none;
+}
+
+.footer-links-vertical li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* 
+    15. UTILITIES 
+    Global helper classes for common layout needs.
+*/
+
+.hidden, .is-hidden { display: none !important; }
+
+.u-mt-3 { margin-top: 3rem !important; }
+.u-mt-1 { margin-top: 1rem !important; }
+.u-mb-2 { margin-bottom: 2rem !important; }
+.u-mb-1 { margin-bottom: 1rem !important; }
+
+.u-text-center { text-align: center !important; }
+.u-text-muted { color: var(--text-muted) !important; }
+.u-font-serif { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important; font-weight: 700 !important; }
+.u-uppercase { text-transform: uppercase !important; }
+
+.u-flex-column { display: flex; flex-direction: column; }
+.u-justify-center { justify-content: center !important; }
+.u-align-start { align-items: flex-start !important; }
+.u-w-full { width: 100% !important; }
+
+/* 
+    Responsive Breakpoints 
+    Adjustments for smaller screens across all modules.
+*/
+
+@media (max-width: 1100px) {
+    .nav-container { padding: 0 1.5rem; }
+    .header-links { gap: 1.5rem; }
+    .alphabet-index-container { columns: 2; }
+}
+
+@media (max-width: 900px) {
+    .hero-content { bottom: 60%; }
+    .hero-search-wrapper { width: 90vw; }
+    .about-grid, .contact-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 650px) {
+    .header-links { gap: 0.6rem; }
+    .header-brand { font-size: 1rem; }
+    .header-links>li>a { font-size: 0.75rem; padding: 4px 8px; }
+    .footer-container { padding: 0 2rem; }
 }

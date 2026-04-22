@@ -81,6 +81,15 @@
         contact: {
             fragment: 'pages/fragments/contact.html',
             title: `${baseTitle} | Contact`
+        },
+        sitemap: {
+            fragment: 'pages/fragments/sitemap.html',
+            title: `${baseTitle} | Site Index`,
+            init: async () => {
+                if (typeof DossierManager.renderSitemap === 'function') {
+                    await DossierManager.renderSitemap();
+                }
+            }
         }
     };
 

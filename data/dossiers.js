@@ -6,24 +6,25 @@ const DOSSIER_DATA = [
   {
     "id": "15-minute-cities",
     "title": "15-Minute Cities",
-    "summary": "Analyzing urban development policies and their impact on movement freedom. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Article-style review of the 15-minute city model, covering its planning origins, climate-policy framing, implementation tools, and the surveillance and mobility-control fears attached to local enforcement.",
     "keywords": ["Carlos Moreno", "C40 Cities", "Oxford", "Movement Restriction", "Digital Zoning", "Climate Lockdown", "Urban Planning"],
     "category": "Societal Transformation"
   },
   {
     "id": "algorithmic-enshittification",
     "title": "Algorithmic Enshittification",
-    "summary": "Analyzing the lifecycle of platform decay and its role in information control. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Long-form analysis of how dominant digital platforms degrade through lock-in, ranking control, and two-sided market extraction, linking user frustration to competition and governance failures.",
     "keywords": ["Platform Decay", "Cory Doctorow", "Shadowbanning", "Monetization", "Big Tech", "Digital Gulag"],
     "category": "Societal Transformation"
   },
   {
     "id": "agenda-2030",
     "title": "Agenda 2030 (UN)",
-    "summary": "Analysis of the 17 Sustainable Development Goals and their implementation within national governments. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Analysis of the 17 Sustainable Development Goals (SDGs), their massive implementation costs, and their role as a global framework for centralized societal and environmental governance.",
     "keywords": ["Sustainable Development Goals", "SDGs", "Resolution 70/1", "UN Agenda", "2030", "Global Goals"],
     "category": "Global Governance Agendas"
   },
+
   {
     "id": "bill-gates",
     "title": "Bill Gates & Global Engineering",
@@ -34,7 +35,7 @@ const DOSSIER_DATA = [
   {
     "id": "bis",
     "title": "Bank for International Settlements (BIS)",
-    "summary": "The \ Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison."Bank for Central Banks\" and its role in coordinating global monetary policy.",
+    "summary": "The 'Bank for Central Banks' and its role in coordinating global monetary policy.",
     "keywords": ["Basel", "Central Banking", "Monetary Cooperation", "Global Finance", "Sovereignty", "Apex Bank"],
     "category": "Monetary & Financial Apex"
   },
@@ -48,14 +49,14 @@ const DOSSIER_DATA = [
   {
     "id": "blackrock-vanguard",
     "title": "BlackRock & Vanguard",
-    "summary": "The \ Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison."Big Three\" investment groups and their influence on global corporate policy.",
+    "summary": "The 'Big Three' investment groups and their influence on global corporate policy.",
     "keywords": ["Larry Fink", "ESG", "Monopoly", "Asset Management", "State Street", "Corporate Governance", "Institutional Shareholders"],
     "category": "Corporate Monopoly & ESG"
   },
   {
     "id": "bohemian-grove",
     "title": "Bohemian Grove",
-    "summary": "Private encampment for world leaders and its unofficial policy drafting rituals. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Archive-based dossier on Bohemian Grove as a private elite retreat, focusing on institutional continuity, ritual culture, and its role in sustaining off-record social networks among influential actors.",
     "keywords": ["California", "Cremation of Care", "Secret Societies", "Elite Retreat", "Occult Rituals", "Owl Shrine", "Power Brokerage"],
     "category": "Secret Societies & Encampments"
   },
@@ -69,7 +70,7 @@ const DOSSIER_DATA = [
   {
     "id": "club-of-rome",
     "title": "Club of Rome",
-    "summary": "Analyzing the \ Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison."Limits to Growth\" and the foundations of global ecological governance.",
+    "summary": "Expanded review of the Club of Rome as a systems-thinking policy network, tracing how its reports on ecological limits shaped later sustainability and technocratic governance debates.",
     "keywords": ["Aurelio Peccei", "Alexander King", "Limits to Growth", "Common Enemy of Humanity", "The First Global Revolution", "Population Control", "1968"],
     "category": "Societal Transformation"
   },
@@ -160,21 +161,21 @@ const DOSSIER_DATA = [
   {
     "id": "operation-gladio",
     "title": "Operation Gladio",
-    "summary": "NATO stay-behind clandestine armies and domestic political violence in Europe. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Structured review of European stay-behind network disclosures, distinguishing confirmed clandestine structures from contested allegations about domestic interference.",
     "keywords": ["NATO", "Stay-Behind", "Cold War", "Italy", "Years of Lead", "Psychological Warfare", "Secret Armies"],
     "category": "Intelligence & PsyOps"
   },
   {
     "id": "operation-mockingbird",
     "title": "Operation Mockingbird",
-    "summary": "CIA campaign to influence international and domestic media outlets. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Evidence-led analysis of CIA media influence records, combining Family Jewels disclosures with Church Committee oversight findings and timeline-anchored documentation.",
     "keywords": ["Media Manipulation", "CIA", "Propaganda", "Journalists", "Cold War", "Mainstream Media", "Influence"],
     "category": "Intelligence & PsyOps"
   },
   {
     "id": "uap-disclosure",
     "title": "UAP Disclosure",
-    "summary": "Tracking the shift in official government policy and reporting regarding Unidentified Anomalous Phenomena. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Tracking the formal U.S. UAP reporting architecture across ODNI, DoD/AARO, and NASA, with timeline-based analysis of disclosure procedures and data-quality constraints.",
     "keywords": ["UFO", "UAP", "AARO", "Pentagon", "ODNI", "Transparency", "Space"],
     "category": "Intelligence & PsyOps"
   },
@@ -202,14 +203,14 @@ const DOSSIER_DATA = [
   {
     "id": "mk-ultra",
     "title": "Project MK-Ultra",
-    "summary": "The CIA's declassified mind control and behavior modification program records. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Expanded dossier on MK-Ultra as a Cold War behavioral program, covering its origins, subproject structure, records destruction, and the oversight failures exposed by Senate investigations.",
     "keywords": ["CIA", "Mind Control", "LSD", "Sidney Gottlieb", "Church Committee", "Behavioral Engineering", "Human Experimentation"],
     "category": "Intelligence & PsyOps"
   },
   {
     "id": "mk-delta",
     "title": "Project MK-Delta",
-    "summary": "Successor to MK-Ultra focusing on the international application of biochemical covert operations. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Evidence-constrained reconstruction of MK-DELTA, emphasizing its fragmentary archive, its connection to the wider MK program family, and the documented link to operational use of special materials abroad.",
     "keywords": ["CIA", "Biochemicals", "Covert Ops", "TSD", "Mind Control", "International Ops"],
     "category": "Intelligence & PsyOps"
   },
@@ -244,17 +245,19 @@ const DOSSIER_DATA = [
   {
     "id": "the-great-reset",
     "title": "The Great Reset (WEF)",
-    "summary": "Mapping lobby influences and government links through international think tanks and the World Economic Forum. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Analyzing the World Economic Forum's strategic initiative to restructure the global economic and social contract through technological integration and stakeholder capitalism.",
     "keywords": ["Klaus Schwab", "Davos", "World Economic Forum", "WEF", "Stakeholder Capitalism", "ESG", "Fourth Industrial Revolution", "Building Back Better", "Prince Charles"],
     "category": "Global Governance Agendas"
   },
+
   {
     "id": "wef",
     "title": "World Economic Forum (WEF)",
-    "summary": "Institutional overview of the organization, its leadership, and its role in global policy coordination. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Institutional overview of the WEF, analyzing its history, its structure as a platform for public-private cooperation, and its role as the central networking hub for global governance.",
     "keywords": ["Davos", "Klaus Schwab", "Public-Private Cooperation", "Global Governance", "Stakeholder Capitalism"],
     "category": "Global Governance Agendas"
   },
+
   {
     "id": "trilateral-commission",
     "title": "Trilateral Commission",
@@ -314,7 +317,7 @@ const DOSSIER_DATA = [
   {
     "id": "operation-sea-spray",
     "title": "Operation Sea-Spray",
-    "summary": "Declassified 1950 US Navy experiment involving the biological spraying of San Francisco. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
+    "summary": "Evidence-first review of the 1950 San Francisco aerosol test, combining Senate oversight disclosures, litigation history, and uncertainty-aware health impact assessment.",
     "keywords": ["San Francisco", "Biological Warfare", "1950", "Serratia marcescens", "Declassified", "US Navy"],
     "category": "Intelligence & PsyOps"
   },

@@ -89,8 +89,13 @@ const ThemeManager = (function () {
         const moonIcon = document.getElementById('theme-icon-moon');
         
         if (sunIcon && moonIcon) {
-            sunIcon.style.display = isDark ? 'block' : 'none';
-            moonIcon.style.display = isDark ? 'none' : 'block';
+            if (isDark) {
+                sunIcon.classList.remove('is-hidden');
+                moonIcon.classList.add('is-hidden');
+            } else {
+                sunIcon.classList.add('is-hidden');
+                moonIcon.classList.remove('is-hidden');
+            }
         }
     }
 

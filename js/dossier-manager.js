@@ -360,27 +360,54 @@ const DossierManager = (function () {
         }
     }
 
-    function toggleNoResults(show, containerId) {
-        const container = document.getElementById(containerId);
+    /**
+     * Renders a comprehensive Site Index (Sitemap).
+     * Lists static pages and all dossiers grouped by category.
+     */
+    async function renderSitemap() {
+        const data = await loadData();
+        const container = document.getElementById('sitemap-container');
         if (!container) return;
-        
-        let noResults = document.getElementById(`no-results-${containerId}`);
-        if (show) {
-            if (!noResults) {
-                noResults = document.createElement('div');
-                noResults.id = `no-results-${containerId}`;
-                noResults.style.textAlign = 'center';
-                noResults.style.padding = '3rem';
-                noResults.innerHTML = `
-                    <h3 class="u-font-serif">No dossiers found</h3>
-                    <p class="u-text-muted">Try searching for a different keyword.</p>
-                `;
-                container.appendChild(noResults);
-            }
-            noResults.style.display = 'block';
-        } else if (noResults) {
-            noResults.style.display = 'none';
-        }
+
+        // Group dossiers by category
+        const groups = data.reduce((acc, item) => {
+            if (!acc[item.category]) acc[item.category] = [];
+            acc[item.category].push(item);
+            return acc;
+        }, {});
+
+        const sortedCategories = Object.keys(groups).sort();
+
+        // Main Sections
+        const staticSections = `
+            <section class="sitemap-section">
+                <h2 class="sitemap-category-title">Core Sections</h2>
+                <ul class="sitemap-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#dossiers">Research Database (Index)</a></li>
+                    <li><a href="#about">About the Project</a></li>
+                    <li><a href="#contact">Contact & Research Submission</a></li>
+                    <li><a href="#sitemap">Site Index (Sitemap)</a></li>
+                </ul>
+            </section>
+        `;
+
+        // Dossier Sections
+        const dossierSections = sortedCategories.map(cat => {
+            const items = groups[cat].sort((a, b) => a.title.localeCompare(b.title));
+            return `
+                <section class="sitemap-section">
+                    <h2 class="sitemap-category-title">${cat}</h2>
+                    <ul class="sitemap-list">
+                        ${items.map(item => `
+                            <li><a href="#dossier/${item.id}">${item.title}</a></li>
+                        `).join('')}
+                    </ul>
+                </section>
+            `;
+        }).join('');
+
+        container.innerHTML = staticSections + dossierSections;
     }
 
     return {
@@ -391,7 +418,8 @@ const DossierManager = (function () {
         renderDossiersIndex,
         renderMegaMenu,
         moveMegaMenu,
-        executeSearch
+        executeSearch,
+        renderSitemap
     };
 })();
 

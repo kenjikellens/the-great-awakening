@@ -24,8 +24,8 @@
             </ul>
 
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <span id="theme-icon-sun" class="theme-icon is-hidden"></span>
-                <span id="theme-icon-moon" class="theme-icon"></span>
+                <svg id="theme-icon-sun" class="theme-icon is-hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <svg id="theme-icon-moon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </button>
         </nav>
     </header>
@@ -44,7 +44,7 @@
             <div class="footer-header">
                 <p class="footer-slogan">Preserving factual accountability for a transparent future.</p>
             </div>
-            
+
             <div class="footer-main">
                 <nav class="footer-nav">
                     <ul class="u-list-none footer-links-vertical">
@@ -52,13 +52,16 @@
                         <li><a href="#dossiers" data-route="dossiers">Dossiers</a></li>
                         <li><a href="#about" data-route="about">About</a></li>
                         <li><a href="#contact" data-route="contact">Contact</a></li>
+                        <li><a href="#sitemap" data-route="sitemap">Site Index</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 The Great Awakening. All data verified against public records and institutional reports.</p>
-                <p class="u-text-sm u-text-muted">[2026-04-22] Mass-processing pass completed: dossier template normalization, source-format standardization, and dashboard sync validation.</p>
+                <p>&copy; 2026 The Great Awakening. All data verified against public records and institutional reports.
+                </p>
+                <p class="u-text-sm u-text-muted">[2026-04-22] Mass-processing pass completed: dossier template
+                    normalization, source-format standardization, and dashboard sync validation.</p>
             </div>
         </div>
     </footer>
@@ -68,7 +71,7 @@
         <button id="chat-toggle" class="chat-toggle" aria-label="Open AI Assistant">
             <span class="chat-icon"></span>
         </button>
-        
+
         <div id="chat-window" class="chat-window">
             <div class="chat-header">
                 <div class="chat-header-info">
@@ -77,13 +80,13 @@
                 </div>
                 <button id="chat-close" class="chat-close" aria-label="Close chat">&times;</button>
             </div>
-            
+
             <div id="chat-messages" class="chat-messages">
                 <div class="message ai-message">
                     Hello! I am your TGA Assistant. How can I help you today?
                 </div>
             </div>
-            
+
             <div class="chat-input-area">
                 <input type="text" id="chat-input" placeholder="Ask a question..." aria-label="Message input">
                 <button id="chat-send" class="chat-send" aria-label="Send message">
@@ -102,4 +105,5 @@
     <script src="js/router.js"></script>
     <script src="js/ai-chat.js"></script>
 </body>
+
 </html>
