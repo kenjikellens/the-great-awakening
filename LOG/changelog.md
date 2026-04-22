@@ -430,3 +430,4 @@
 [17:28 22/04/2026] css/style.css - Minimized footer link spacing (gap 0.15rem, padding 0).
 [17:29 22/04/2026] index.html & css/style.css - Removed TGA logo from footer and cleaned up associated styles.
 [17:31 22/04/2026] css/style.css - Tightened footer spacing and added a divider line between the slogan and navigation.
+[17:45 22/04/2026] pages/dossiers/*.html - Removed boilerplate sections (expanded-evidence, extended-narrative, methodology-note, official-sources-standardized) from all 48 dossier files for a cleaner UI.

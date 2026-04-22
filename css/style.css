@@ -1734,6 +1734,24 @@ body.is-home {
     font-size: 0.9rem;
 }
 
+.source-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    padding: 1rem;
+}
+
+.source-item p {
+    margin-bottom: 0.35rem;
+}
+
+.source-item p:last-child {
+    margin-bottom: 0;
+}
+
+.source-item a {
+    word-break: break-word;
+}
+
 .pillar-quote {
     margin: 1.5rem 0;
     border-left: 4px solid var(--accent-blue);
@@ -2336,4 +2354,4 @@ textarea.form-input {
         width: calc(100vw - 2rem);
         height: calc(100vh - 100px);
     }
-}
+}
