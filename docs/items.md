@@ -94,6 +94,11 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Narrative**: A non-governmental hybrid entity that issues debt-based currency, ensuring permanent national indebtedness.
 - **Size**: medium size
 
+### Jekyll Island Meeting (1910)
+- **Documented Facts**: A secret summit of elite bankers and politicians at the Jekyll Island Club. Drafted the Aldrich Plan, which became the Federal Reserve Act of 1913.
+- **Narrative**: The decisive moment when private banking interests successfully captured the American monetary system.
+- **Size**: small size
+
 ### IMF & World Bank
 - **Documented Facts**: Transnational financial institutions created at Bretton Woods (1944) to manage global monetary order.
 - **Narrative**: Tools for "Debt Trap Diplomacy," forcing developing nations to accept structural reforms and resource privatization.

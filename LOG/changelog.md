@@ -198,3 +198,7 @@
 [01:28 22/04/2026] css/style.css - Replaced div-based list styles with full table CSS: header row, two-column layout, link styling, description muted text, zebra stripes, and row hover.
 [01:31 22/04/2026] css/style.css - Removed row hover background effect from inventory table; hover interaction now limited to link underline only.
 [01:33 22/04/2026] css/style.css - Eliminated hidden duplicate .legend-item:hover rules that were causing broad row underlining; now only the title link (<a>) underlines when focused directly.
+[15:07 22/04/2026] pages/dossiers/jekyll-island.html - Created research dossier for Jekyll Island Meeting (1910)
+[15:10 22/04/2026] data/dossiers.js - Integrated Jekyll Island Meeting into the data store
+[15:15 22/04/2026] docs/items.md - Added Jekyll Island Meeting to the research index
+[15:18 22/04/2026] pages/fragments/dossiers.html - Updated the Recent Database Updates list to include the Jekyll Island dossier

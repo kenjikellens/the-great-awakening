@@ -305,6 +305,13 @@ const DOSSIER_DATA = [
     "category": "Global Governance Agendas"
   },
   {
+    "id": "jekyll-island",
+    "title": "Jekyll Island Meeting (1910)",
+    "summary": "The secret 1910 meeting of elite bankers where the plan for the Federal Reserve System was conceived.",
+    "keywords": ["Federal Reserve", "1910", "Nelson Aldrich", "Paul Warburg", "Frank Vanderlip", "Secret Meeting", "Central Banking", "Jekyll Island Club"],
+    "category": "Monetary & Financial Apex"
+  },
+  {
     "id": "operation-sea-spray",
     "title": "Operation Sea-Spray",
     "summary": "Declassified 1950 US Navy experiment involving the biological spraying of San Francisco.",
