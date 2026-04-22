@@ -77,7 +77,7 @@
 
 html {
     scroll-padding-top: var(--header-height);
-    height: 100%;
+    min-height: 100vh;
 }
 
 /* 
@@ -1524,84 +1524,97 @@ body.is-home {
 /* Footer Styling */
 .site-footer {
     border-top: 1px solid var(--border-light);
-    border-left: 1px solid var(--border-light);
-    border-right: 1px solid var(--border-light);
-    padding: 1rem 0; /* Vertically thinner */
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-muted);
+    padding: 2rem 0 1.5rem 0; /* Reduced padding for a tighter layout */
     background: var(--bg-card);
     flex-shrink: 0;
-    
-    /* Floating / Open Sides */
-    width: min(94%, 1320px);
-    margin: 0 auto;
-    
-    /* Corner Radius */
-    border-radius: 12px 12px 0 0;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    margin-top: auto;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .footer-container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: center; /* Central alignment for children by default */
+    gap: 1.5rem; /* Reduced gap between sections */
 }
 
-.footer-branding {
+.footer-header {
+    text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    text-align: left;
-    max-width: 300px;
+    width: 100%;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light); /* Added line between slogan and nav */
 }
 
-.footer-logo {
-    font-weight: 800;
+.footer-slogan {
+    font-size: 1rem; /* Slightly smaller for compactness */
+    font-weight: 500;
     color: var(--text-main);
-    letter-spacing: 1px;
-    border: 1.5px solid var(--text-main);
-    padding: 2px 5px;
-    font-size: 0.75rem;
+    max-width: 600px;
+    line-height: 1.4;
+    margin: 0; /* Removed extra margins */
 }
 
-.footer-nav ul {
-    list-style: none;
+.footer-main {
+    width: 100%;
     display: flex;
-    gap: 1.5rem;
+    justify-content: center; /* Center the nav container horizontally */
 }
 
-.footer-nav a {
+.footer-nav {
+    /* Aligns the vertical list to the left relative to its own container */
+    text-align: left;
+    min-width: 200px;
+}
+
+.footer-links-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem; /* Ultra-compact spacing */
+}
+
+.footer-links-vertical li a {
     text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 600;
+    color: var(--text-muted); /* Simple gray text */
+    font-size: 0.95rem;
+    font-weight: 500; /* Cleaner link feel */
     transition: color 0.2s ease;
+    display: inline-block;
+    padding: 0; /* Removed padding to maximize compactness */
 }
 
-.footer-nav a:hover {
-    color: var(--accent-blue);
+.footer-links-vertical li a:hover {
+    color: var(--text-main); /* Darker in Light Mode, Lighter in Dark Mode */
+    text-decoration: underline;
 }
 
-.footer-legal {
-    text-align: right;
-    max-width: 400px;
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
     .footer-container {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
+        padding: 0 2rem;
+        gap: 2rem;
     }
-    
-    .footer-branding, .footer-legal {
-        max-width: 100%;
-        text-align: center;
-        justify-content: center;
+
+    .footer-slogan {
+        font-size: 1rem;
+    }
+
+    .footer-nav {
+        min-width: auto;
     }
 }
 
@@ -1618,9 +1631,7 @@ body.is-home {
     font-size: 0.75rem !important;
 }
 
-.site-footer.is-hidden {
-    display: none !important;
-}
+
 
 /* 
     Dossier Design System
@@ -2036,9 +2047,6 @@ textarea.form-input {
     align-items: flex-start !important;
 }
 
-.u-text-xs {
-    font-size: 0.75rem !important;
-}
 
 .u-text-sm {
     font-size: 0.85rem !important;

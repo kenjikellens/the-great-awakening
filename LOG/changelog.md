@@ -419,3 +419,14 @@
 [17:05 22/04/2026] pages/dossiers/uss-liberty.html - Switched to 1400px layout and normalized structure.
 [17:05 22/04/2026] pages/dossiers/vault-7.html - Switched to 1400px layout and normalized structure.
 [17:06 22/04/2026] pages/dossiers/who-pandemic-treaty.html - Switched to 1400px layout and normalized structure.
+[17:11 22/04/2026] pages/fragments/home.html - Removed redundant internal footer.
+[17:12 22/04/2026] js/router.js - Removed footer visibility toggling; global footer is now always visible.
+[17:12 22/04/2026] css/style.css - Cleaned up redundant utility classes and removed unused footer hiding rules.
+[17:16 22/04/2026] js/router.js - Implemented dynamic DOM placement for the global footer to prevent overlap with the Hero viewport.
+[17:16 22/04/2026] css/style.css - Replaced html height 100% with min-height 100vh to fix flexbox scrolling issues for the sticky footer.
+[17:19 22/04/2026] index.html & css/style.css - Redesigned footer to a larger, vertical layout with centered slogans/legal and left-aligned vertical navigation.
+[17:25 22/04/2026] css/style.css - Removed prohibited translateX transform from footer links to comply with global styling rules.
+[17:27 22/04/2026] css/style.css - Refined footer links for a more compact, classic link feel with reduced gap and hover underline.
+[17:28 22/04/2026] css/style.css - Minimized footer link spacing (gap 0.15rem, padding 0).
+[17:29 22/04/2026] index.html & css/style.css - Removed TGA logo from footer and cleaned up associated styles.
+[17:31 22/04/2026] css/style.css - Tightened footer spacing and added a divider line between the slogan and navigation.

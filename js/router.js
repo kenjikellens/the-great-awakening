@@ -17,9 +17,17 @@
         document.body.classList.toggle('is-home', isHero);
     };
 
-    const toggleGlobalFooter = (hide) => {
-        if (globalFooter) {
-            globalFooter.classList.toggle('is-hidden', hide);
+    const placeGlobalFooter = (isHome) => {
+        if (!globalFooter) return;
+        if (isHome) {
+            const dashLayer = document.getElementById('dashboard-layer');
+            if (dashLayer) {
+                dashLayer.appendChild(globalFooter);
+            }
+        } else {
+            if (globalFooter.parentNode !== document.body) {
+                document.body.insertBefore(globalFooter, shell.nextSibling);
+            }
         }
     };
 
@@ -104,7 +112,7 @@
         const route = staticRoutes[viewName] || staticRoutes.home;
         clearDossierStyle();
         
-        toggleGlobalFooter(viewName === 'home' || !viewName);
+        
         
         // Handle old scroll listeners if any
         if (viewName !== 'home' && typeof window._lastHomeScrollHandler === 'function') {
@@ -119,7 +127,9 @@
         shell.innerHTML = await fetchText(route.fragment);
         document.title = route.title;
         setActiveNav(viewName);
-        toggleHeroMode(viewName === 'home' || !viewName);
+        const isHome = (viewName === 'home' || !viewName);
+        toggleHeroMode(isHome);
+        placeGlobalFooter(isHome);
         if (typeof route.init === 'function') {
             await route.init(param);
         }
@@ -127,10 +137,10 @@
 
     const renderDossierRoute = async (slug) => {
         clearDossierStyle();
-        toggleGlobalFooter(false);
         toggleHeroMode(false);
         shell.innerHTML = await fetchText('pages/fragments/dossier-view.html');
         setActiveNav('dossiers');
+        placeGlobalFooter(false);
 
         const host = document.getElementById('dossier-fragment-host');
         if (!host) {
@@ -162,7 +172,6 @@
 
     const renderNotFound = () => {
         clearDossierStyle();
-        toggleGlobalFooter(false);
         shell.innerHTML = `
             <main class="dashboard-section u-mt-3">
                 <section class="content-card">
@@ -176,7 +185,6 @@
     };
 
     const renderError = (message) => {
-        toggleGlobalFooter(false);
         shell.innerHTML = `
             <main class="dashboard-section u-mt-3">
                 <section class="content-card">
