@@ -7,25 +7,8 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav-container">
-            <a href="../../index.html" class="header-brand">THE GREAT AWAKENING</a>
-            <ul class="header-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="#dossiers">Dossiers</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="dashboard-section u-mt-3">
-        <div class="dossier-content-wrapper">
-            <header class="u-mb-2">
-                <h1 class="u-font-serif u-mb-1">IMF & World Bank</h1>
-                <p class="u-text-muted u-mt-1">Dossier Identifier: <b>BRET-GLB-FIN-2026</b> | Classification: <b>Transnational Financial Regulators</b></p>
-            </header>
-
+    <main>
+        <div class="dossier-layout">
             <aside class="infobox-metadata">
                 <h4>Institutional Metadata</h4>
                 <table class="infobox-table">
@@ -35,8 +18,12 @@
                     <tr><th>Primary Tool</th><td>Special Drawing Rights (SDR)</td></tr>
                     <tr><th>Current Strategy</th><td>CBDC Virtual Handbook / ID4D</td></tr>
                 </table>
-                <a href="https://www.imf.org" target="_blank" class="cite-link">Official IMF Portal &nearr;</a>
             </aside>
+
+            <header class="dossier-header">
+                <h1>IMF & World Bank</h1>
+                <p>Analyzing the global financial regulators, their debt-based governance models, and the transition toward centralized digital economic standards.</p>
+            </header>
 
             <!-- EXECUTIVE SUMMARY -->
             <section id="executive-summary">
@@ -68,7 +55,7 @@
                 </p>
                 <ul class="dossier-list-styled">
                     <li><b>Austerity Mandates:</b> Drastic cuts to public spending on education, healthcare, and infrastructure to ensure debt repayment.</li>
-                    <li><b>Privatization:</b> The sale of state-owned resources (water, energy, telecommunications) to transnational corporations (often member partners of the WEF).</li>
+                    <li><b>Privatization:</b> The sale of state-owned resources (water, energy, telecommunications) to transnational corporations.</li>
                     <li><b>Trade Liberalization:</b> The removal of tariffs and local protectionist policies, making local agrarian and industrial sectors dependent on global supply chains.</li>
                 </ul>
                 <p>
@@ -107,13 +94,13 @@
                 <div class="research-note">
                     <h3>Node A: The "Green Conditionality" Audit</h3>
                     <p>
-                        Tracking the integration of carbon-emissions targets into World Bank loan agreements. At what point does a sovereign nation lose its funding for failing to meet Paris Agreement quotas?
+                        Tracking the integration of carbon-emissions targets into World Bank loan agreements.
                     </p>
                 </div>
                 <div class="research-note u-mt-1">
                     <h3>Node B: Regional Digital Identity Pilots</h3>
                     <p>
-                        Mapping the flow of World Bank ID4D funding into private biometric technology providers (Thales, NEC, Idemia) to identify the specific corporate interests benefiting from the global identity rollout.
+                        Mapping the flow of World Bank ID4D funding into private biometric technology providers to identify the specific corporate interests benefiting from the global identity rollout.
                     </p>
                 </div>
             </section>
@@ -121,21 +108,17 @@
             <!-- SOURCES -->
             <section id="sources" class="u-mt-3 u-bg-note u-p-3">
                 <h2 class="section-title">Sources</h2>
-                <p class="u-mb-1 u-font-small">The following links point directly to official IMF and World Bank strategy papers, meeting transcripts, and project registries. Verification via primary source documentation is a mandatory research protocol.</p>
+                <p class="u-mb-1 u-font-small">The following links point directly to official IMF and World Bank strategy papers and project registries.</p>
                 <ul class="u-font-small u-li-mb-10">
-                    <li><b>IMF: Central Bank Digital Currency (CBDC) Virtual Handbook (2026 Update)</b>: <a href="https://www.imf.org/en/Publications/CBDC-Virtual-Handbook" class="cite-link">imf.org/cbdc-handbook</a></li>
-                    <li><b>World Bank: Identification for Development (ID4D) Global Dataset</b>: <a href="https://www.worldbank.org/en/programs/id4d/data" class="cite-link">worldbank.org/id4d-data</a></li>
-                    <li><b>Special Drawing Rights (SDR) Factsheet & Allocation History</b>: <a href="https://www.imf.org/en/About/Factsheets/Sheets/2023/special-drawing-rights-sdr" class="cite-link">imf.org/sdr-factsheet</a></li>
-                    <li><b>World Bank ID4D: Building Statelessness-Sensitive ID Systems (Feb 2026)</b>: <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099355102232530182/p17452601955fb0a7082350ef95b706f9d3" class="cite-link">worldbank.org/stateless-id-guidance</a></li>
-                    <li><b>Sovereign Debt Statistics: IMF Global Debt Database</b>: <a href="https://www.imf.org/external/datamapper/datasets/GDD" class="cite-link">imf.org/global-debt-database</a></li>
-                    <li><b>Bretton Woods Conference Proceedings (1944 Historical Archive)</b>: <a href="https://fraser.stlouisfed.org/title/proceedings-documents-united-nations-monetary-financial-conference-bretton-woods-new-hampshire-july-1-22-1944-124" class="cite-link">stlouisfed.org/bretton-woods-archives</a></li>
+                    <li><b>IMF: CBDC Virtual Handbook (2026 Update)</b>: <a href="https://www.imf.org/en/Publications/CBDC-Virtual-Handbook" class="cite-link">imf.org/cbdc-handbook</a></li>
+                    <li><b>World Bank: ID4D Global Dataset</b>: <a href="https://www.worldbank.org/en/programs/id4d/data" class="cite-link">worldbank.org/id4d-data</a></li>
+                    <li><b>Special Drawing Rights (SDR) Factsheet</b>: <a href="https://www.imf.org/en/About/Factsheets/Sheets/2023/special-drawing-rights-sdr" class="cite-link">imf.org/sdr-factsheet</a></li>
+                    <li><b>World Bank ID4D: Building Statelessness-Sensitive ID Systems</b>: <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099355102232530182/p17452601955fb0a7082350ef95b706f9d3" class="cite-link">worldbank.org/stateless-id-guidance</a></li>
+                    <li><b>IMF Global Debt Database</b>: <a href="https://www.imf.org/external/datamapper/datasets/GDD" class="cite-link">imf.org/global-debt-database</a></li>
+                    <li><b>Bretton Woods Conference Proceedings (1944 Archive)</b>: <a href="https://fraser.stlouisfed.org/title/proceedings-documents-united-nations-monetary-financial-conference-bretton-woods-new-hampshire-july-1-22-1944-124" class="cite-link">stlouisfed.org/bretton-woods-archives</a></li>
                 </ul>
             </section>
         </div>
     </main>
-
-    <footer class="site-footer">
-        <p>&copy; 2026 The Great Awakening Research Project. Factual data derived from official IMF policy handbooks and World Bank developmental archives.</p>
-    </footer>
 </body>
 </html>

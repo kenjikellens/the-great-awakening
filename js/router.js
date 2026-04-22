@@ -14,6 +14,7 @@
         if (siteHeader) {
             siteHeader.classList.toggle('header-hero-mode', isHero);
         }
+        document.body.classList.toggle('is-home', isHero);
     };
 
     const toggleGlobalFooter = (hide) => {

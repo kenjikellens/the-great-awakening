@@ -64,7 +64,8 @@
 
 /* Base reset and typography */
 /* Utility Class: Hidden */
-.hidden {
+.hidden,
+.is-hidden {
     display: none !important;
 }
 
@@ -125,6 +126,16 @@ body {
     flex: 1 0 auto;
 }
 
+/* Ensure non-home pages don't slide under the fixed header */
+body:not(.is-home) #content-shell {
+    padding-top: var(--header-height);
+}
+
+/* Prevent double scrollbar on home by locking body scroll */
+body.is-home {
+    overflow: hidden;
+}
+
 .site-footer {
     flex-shrink: 0;
 }
@@ -140,10 +151,14 @@ body {
     background-color: var(--bg-card);
     border-bottom: 1px solid var(--border-light);
     height: var(--header-height);
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
     display: flex;
     align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-container {
@@ -242,11 +257,22 @@ body {
     background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Active page indicator: underline on the button border */
+/* 
+    Active page indicator: Premium pill-style fill 
+    Uses a soft tint of the accent color to provide clear, high-contrast feedback 
+    without relying on layout-shifting underlines.
+*/
 .header-links>li>a.active {
-    border-bottom: 2px solid var(--text-main);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    background-color: rgba(0, 68, 204, 0.1);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+/* Dark mode adjustment for active state visibility */
+.dark-theme .header-links>li>a.active {
+    background-color: rgba(88, 166, 255, 0.15);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
 }
 
 /* Theme Toggle Button */
@@ -298,6 +324,11 @@ body {
 }
 
 /* Hero Mode: Themed text when on the home/hero view */
+.header-hero-mode {
+    background-color: var(--bg-card);
+    border-bottom-color: var(--border-light);
+}
+
 .header-hero-mode .header-brand {
     color: var(--hero-text);
 }
@@ -312,10 +343,21 @@ body {
     color: var(--hero-text);
 }
 
-/* Hero mode active indicator */
+/* 
+    Hero mode active indicator: Premium pill-style fill 
+    Updated to match the solid header design, ensuring the active state is 
+    clearly visible against the theme-aware background.
+*/
 .header-hero-mode .header-links>li>a.active {
-    color: var(--hero-text);
-    border-bottom-color: var(--hero-text);
+    background-color: rgba(0, 68, 204, 0.1);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+.dark-theme .header-hero-mode .header-links>li>a.active {
+    background-color: rgba(88, 166, 255, 0.15);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
 }
 
 /* 
@@ -2023,4 +2065,267 @@ textarea.form-input {
     left: 0;
     color: var(--accent-blue);
     font-weight: bold;
+}
+
+/* ==========================================================================
+   AI Chat Widget Component
+   A floating interface for users to interact with an AI assistant.
+   Features glassmorphism, responsive design, and smooth transitions.
+   ========================================================================== */
+
+/* Main widget container: fixed to the bottom right for consistent accessibility */
+.ai-chat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+/* Toggle button: Redesigned to match the site's navigation and toggle style */
+.chat-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px; /* Matches theme-toggle and nav links */
+    background-color: var(--bg-card);
+    border: 1px solid var(--nav-button-border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    color: var(--text-main);
+}
+
+/* Hover state: matches the navigation link hover effect */
+.chat-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.dark-theme .chat-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Active/click state: slight color change for tactile feel */
+.chat-toggle:active {
+    background-color: var(--border-light);
+}
+
+/* Icon container within the toggle button */
+.chat-icon {
+    width: 28px;
+    height: 28px;
+    background-color: currentColor;
+    mask-image: url('../svg/chat.svg');
+    -webkit-mask-image: url('../svg/chat.svg');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+}
+
+/* Main chat window: uses glassmorphism for a premium, integrated aesthetic */
+.chat-window {
+    width: 380px;
+    height: 520px;
+    max-height: calc(85vh - 100px);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transform-origin: bottom right;
+    transform: scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+}
+
+/* Visible state: triggered via JS class toggle */
+.chat-window.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* Dark theme overrides for the chat window */
+.dark-theme .chat-window {
+    background-color: rgba(22, 27, 34, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Header section: identifies the assistant and provides close control */
+.chat-header {
+    padding: 1.25rem 1.5rem;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Info sub-container with online status indicator */
+.chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Status dot: visual cue for AI availability */
+.chat-header-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #238636; /* Green status */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(35, 134, 54, 0.5);
+}
+
+/* Header title styling */
+.chat-header h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-main);
+}
+
+/* Close button: minimal aesthetic for dismissive action */
+.chat-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.chat-close:hover {
+    color: var(--text-main);
+}
+
+/* Messages container: handles vertical scroll and message spacing */
+.chat-messages {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    scrollbar-width: thin;
+}
+
+/* Base message bubble styling */
+.message {
+    max-width: 85%;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* AI-specific message styling: distinct color and alignment */
+.ai-message {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    border: 1px solid var(--border-light);
+}
+
+/* User-specific message styling: uses accent color for brand alignment */
+.user-message {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 68, 204, 0.15);
+}
+
+/* Input container: fixed at the bottom of the chat window */
+.chat-input-area {
+    padding: 1.25rem 1.5rem;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Text input: styled for clarity and focus visibility */
+.chat-input-area input {
+    flex: 1;
+    background-color: var(--bg-page);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 0.6rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-input-area input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(0, 68, 204, 0.1);
+}
+
+/* Send button: updated to match action button style */
+.chat-send {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.chat-send:hover {
+    background-color: rgba(0, 68, 204, 0.05);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.chat-send:active {
+    background-color: rgba(0, 68, 204, 0.1);
+}
+
+/* Icon within the send button */
+.send-icon {
+    width: 18px;
+    height: 18px;
+    background-color: currentColor;
+    mask-image: url('../svg/send.svg');
+    -webkit-mask-image: url('../svg/send.svg');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 500px) {
+    .ai-chat-widget {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .chat-window {
+        width: calc(100vw - 2rem);
+        height: calc(100vh - 100px);
+    }
 }

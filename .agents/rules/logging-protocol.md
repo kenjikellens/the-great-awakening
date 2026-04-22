@@ -2,7 +2,7 @@
 trigger: always_on
 ---
 
-# Logging Protocol: Changelog Management
+# Logging Protocol: Changelog Management ALWAYS FOLLOW THIS RULE
 
 ## 📝 Logging Rules
 
@@ -22,13 +22,9 @@ Each entry must occupy a single line and follow this exact timestamped format:
 - **description**: A concise summary of the specific changes made.
 
 ### 3. Granularity
-- **One line per file**: Even if multiple files are modified in a single task.
+- **One line per file**.
 - **Append only**: Always use a new line; never overwrite or delete previous history.
 - **No duplicates**: Do not log the same change multiple times.
-
-### 4. Precision & Tooling
-- **Use `replace_file_content`**: To consistently append lines, target the last valid entry in the log and replace it with itself PLUS the new entry on a new line.
-- **Clean Target Content**: When copy-pasting from a file view, ensure you strip any UI-injected line numbers (e.g., `118: `) from the `TargetContent`. The tool strictly matches text on disk.
 
 ## Execution Logic
 1. Perform file operation (**Create/Edit/Delete**).

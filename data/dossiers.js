@@ -317,5 +317,26 @@ const DOSSIER_DATA = [
     "summary": "Declassified 1950 US Navy experiment involving the biological spraying of San Francisco.",
     "keywords": ["San Francisco", "Biological Warfare", "1950", "Serratia marcescens", "Declassified", "US Navy"],
     "category": "Intelligence & PsyOps"
+  },
+  {
+    "id": "my-carbon-wef",
+    "title": "WEF: 'My Carbon' & COVID Test",
+    "summary": "Analyzing the WEF proposal for individual carbon tracking and the perspective on pandemic social compliance.",
+    "keywords": ["My Carbon", "WEF", "Kunal Kumar", "Social Responsibility", "Carbon Footprint", "Compliance", "COVID Test"],
+    "category": "Global Governance Agendas"
+  },
+  {
+    "id": "iea-10-point-plan",
+    "title": "IEA: 10-Point Plan to Cut Oil Use",
+    "summary": "Emergency measures proposed by the IEA to manage energy crises through societal behavioral changes.",
+    "keywords": ["IEA", "Oil Demand", "10-Point Plan", "Demand Restraint", "Energy Crisis", "Car-Free Sundays"],
+    "category": "Societal Transformation"
+  },
+  {
+    "id": "local-climate-mandates",
+    "title": "Local Climate Mandates & Enforcement",
+    "summary": "Tracking municipal restrictions on energy use, mobility, and private consumption across Europe.",
+    "keywords": ["ULEZ", "London", "Brussels", "LEZ", "Zero-Emission", "EnSikuMaV", "Germany", "Climate Mandate"],
+    "category": "Societal Transformation"
   }
 ];

@@ -21,6 +21,11 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Narrative**: The apex organization for the "Shadow Government," coordinating the global transition to a technocratic, non-sovereign world order.
 - **Size**: small size
 
+### WEF: 'My Carbon' & COVID Test
+- **Documented Facts**: 2022 WEF article proposing personal carbon footprint tracking. Cited COVID-19 as a "test" for social responsibility and compliance with restrictions.
+- **Narrative**: Proof that pandemic management was a trial run for climate-based behavioral control and individual carbon quotas.
+- **Size**: small size
+
 ### The Davos Manifesto
 - **Documented Facts**: A set of ethical principles for companies released in 1973 and updated in 1920. Promotes "Stakeholder Capitalism".
 - **Narrative**: A mechanism to transition from consumer-driven markets to a managed economy where corporations dictate social policy.
@@ -250,6 +255,16 @@ This dossier is a comprehensive collection of documented information regarding t
 ### Algorithmic Enshittification
 - **Documented Facts**: A pattern of platform decay where digital services systematically prioritize extraction of value over user experience. Key mechanisms include shadowbanning, algorithmic throttling, and the monetization of basic social interaction.
 - **Narrative**: Analyzed as the intentional degradation of the independent internet to force users into controlled, highly-monitored "super-apps."
+- **Size**: small size
+
+### IEA: 10-Point Plan to Cut Oil Use
+- **Documented Facts**: March 2022 IEA report recommending emergency measures like car-free Sundays, speed limit reductions, and remote work (3 days/week) to manage supply crises.
+- **Narrative**: The blueprint for normalizing "climate lockdowns" and state-mandated demand restraint.
+- **Size**: small size
+
+### Local Climate Mandates & Enforcement
+- **Documented Facts**: Implementation of ULEZ (London), LEZ (Brussels), and Zero-Emission zones (Netherlands). German EnSikuMaV (2022) mandated indoor temp limits and lighting bans.
+- **Narrative**: The granular enforcement of the Great Reset at the municipal level through fines and surveillance.
 - **Size**: small size
 
 ### "You Will Own Nothing"

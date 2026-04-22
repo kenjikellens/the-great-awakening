@@ -61,6 +61,36 @@
         </div>
     </footer>
 
+    <!-- AI Chat Widget -->
+    <div id="ai-chat-widget" class="ai-chat-widget">
+        <button id="chat-toggle" class="chat-toggle" aria-label="Open AI Assistant">
+            <span class="chat-icon"></span>
+        </button>
+        
+        <div id="chat-window" class="chat-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="chat-header-dot"></span>
+                    <h3>AI Assistant</h3>
+                </div>
+                <button id="chat-close" class="chat-close" aria-label="Close chat">&times;</button>
+            </div>
+            
+            <div id="chat-messages" class="chat-messages">
+                <div class="message ai-message">
+                    Hello! I am your TGA Assistant. How can I help you today?
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Ask a question..." aria-label="Message input">
+                <button id="chat-send" class="chat-send" aria-label="Send message">
+                    <span class="send-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/theme-manager.js"></script>
     <script src="data/dossiers.js"></script>
     <script src="js/hero-canvas.js"></script>
@@ -68,5 +98,6 @@
     <script src="js/search.js"></script>
     <script src="js/legend-search.js"></script>
     <script src="js/router.js"></script>
+    <script src="js/ai-chat.js"></script>
 </body>
 </html>
