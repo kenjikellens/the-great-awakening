@@ -84,6 +84,7 @@ const renderResultsList = (container, items, query) => {
     container.innerHTML = items.map((item) => `
         <article class="search-result-card">
             <div class="search-result-card__body">
+                <span class="archive-card-category">${escapeHtml(item.category || 'Archive Record')}</span>
                 <h2 class="search-result-title">${escapeHtml(item.title)}</h2>
                 <p class="search-result-summary">${escapeHtml(item.summary)}</p>
             </div>
@@ -240,6 +241,7 @@ const initHeroTransition = () => {
     const backTrigger = document.getElementById('dashboard-back-trigger');
 
     if (!heroLayer || !dashboardLayer || !viewport) return;
+    if (viewport.dataset.staticArchive === 'true') return;
 
     // Prevent double init on SPA re-navigation
     if (viewport.dataset.transitionInit === 'true') return;

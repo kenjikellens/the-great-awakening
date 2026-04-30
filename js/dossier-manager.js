@@ -121,8 +121,11 @@ const DossierManager = (function () {
         // Update container to use grid layout
         container.className = 'card-grid';
 
-        container.innerHTML = data.map(item => `
+        const previewItems = data.slice(0, 12);
+
+        container.innerHTML = previewItems.map(item => `
             <div class="info-card" data-id="${item.id}">
+                <span class="archive-card-category">${item.category || 'Archive Record'}</span>
                 <h3>${item.title}</h3>
                 <p>${item.summary}</p>
                 <a href="#dossier/${item.id}" class="btn-action card-link">View Dossier <span class="icon-inline icon-right"></span></a>
@@ -163,6 +166,7 @@ const DossierManager = (function () {
                 <thead>
                     <tr>
                         <th>Title</th>
+                        <th>Category</th>
                         <th>Description</th>
                     </tr>
                 </thead>
@@ -170,6 +174,7 @@ const DossierManager = (function () {
                     ${sortedData.map(item => `
                         <tr class="legend-item" data-id="${item.id}" data-category="${item.category}">
                             <td><a href="#dossier/${item.id}" class="legend-link">${item.title}</a></td>
+                            <td><span class="legend-category">${item.category || 'Uncategorized'}</span></td>
                             <td class="legend-desc">${item.summary}</td>
                         </tr>
                     `).join('')}

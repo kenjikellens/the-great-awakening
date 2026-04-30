@@ -510,3 +510,11 @@
 [20:01 22/04/2026] js/theme-manager.js - Fixed syntax error where updateToggleIcons function was accidentally commented out.
 [20:05 22/04/2026] index.html & style.css - Replaced CSS mask-based theme icons with inline SVGs for bulletproof rendering in all modes.
 [20:08 22/04/2026] css/style.css - Added explicit display !important rules for .theme-icon to ensure SVGs don't collapse to 0.
+[22:37 30/04/2026] pages/fragments/home.html - Reworked home fragment into a static Premium Archive front desk with search, metadata highlights, and preview records.
+[22:37 30/04/2026] pages/fragments/dossiers.html - Refined dossier index copy and header structure for a curated catalog experience.
+[22:37 30/04/2026] js/dossier-manager.js - Added category metadata to archive cards and legend rows while limiting home preview records.
+[22:37 30/04/2026] js/search.js - Added category metadata to search results and bypassed cinematic transitions for the static archive home.
+[22:37 30/04/2026] css/style.css - Added Premium Archive design system overrides for tokens, navigation, home, index, dossier pages, chat, footer, and responsive states.
+[22:58 30/04/2026] css/style.css - Fixed Premium Archive mobile header wrapping and dossier infobox text overflow.
+[22:58 30/04/2026] css/style.css - Strengthened mobile dossier wrapping for metadata tables, paragraphs, and list content.
+[22:59 30/04/2026] css/style.css - Restored home archive item grid visibility after disabling the old reveal transition.

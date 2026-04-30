@@ -1,10 +1,11 @@
-<div class="home-viewport" id="home-viewport">
-    <section class="home-layer hero-layer" id="hero-layer">
+<div class="home-viewport archive-home" id="home-viewport" data-static-archive="true">
+    <section class="home-layer hero-layer archive-frontdesk" id="hero-layer">
         <canvas id="hero-canvas" class="hero-canvas"></canvas>
         <div class="hero-main-container">
             <div class="hero-content">
+                <span class="archive-kicker">Independent Research Archive</span>
                 <h1>The Great Awakening</h1>
-                <p>An independent research platform dedicated to documenting global power structures, technocratic developments, and socio-economic transformations.</p>
+                <p>A curated public-record index for institutional reports, declassified files, geopolitical dossiers, and source-traceable research notes.</p>
             </div>
 
             <div class="hero-search-wrapper">
@@ -21,21 +22,36 @@
                 >
                 <div id="home-search-suggestions" class="search-suggestions" hidden></div>
             </div>
-        </div>
 
-        <div class="scroll-indicator" id="home-scroll-trigger">
-            <span class="scroll-text">Explore Research</span>
-            <div class="scroll-arrow">
-                <img src="svg/arrow-down.svg" alt="Scroll down" id="indicator-arrow">
+            <div class="archive-frontdesk-meta" aria-label="Archive highlights">
+                <div>
+                    <span class="meta-label">Collection</span>
+                    <strong>Research Dossiers</strong>
+                </div>
+                <div>
+                    <span class="meta-label">Method</span>
+                    <strong>Primary-source index</strong>
+                </div>
+                <div>
+                    <span class="meta-label">Access</span>
+                    <strong>Open archive</strong>
+                </div>
             </div>
         </div>
+
+        <a class="scroll-indicator archive-jump-link" id="home-scroll-trigger" href="#dossiers">
+            <span class="scroll-text">Open full index</span>
+            <div class="scroll-arrow">
+                <img src="svg/arrow-down.svg" alt="" id="indicator-arrow">
+            </div>
+        </a>
     </section>
 
-    <section class="home-layer dashboard-layer" id="dashboard-layer">
+    <section class="home-layer dashboard-layer archive-preview-layer" id="dashboard-layer">
         <main class="dashboard-section" id="dashboard-section">
             <div class="dashboard-back-strip" id="dashboard-back-trigger">
                 <span class="back-arrow-icon"></span>
-                <span>Back to overview</span>
+                <span>Featured archive records</span>
             </div>
             <div id="home-dossier-list" class="dossier-list">
                 <!-- Dynamically populated by DossierManager -->
