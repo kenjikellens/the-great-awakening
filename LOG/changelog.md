@@ -530,3 +530,5 @@
 [20:03 17/05/2026] svg/close.svg - Created a premium, clean geometric close cross SVG asset.
 [20:04 17/05/2026] index.html - Replaced the raw text close entity with a close-icon span in the chat widget header.
 [20:05 17/05/2026] css/style.css - Appended gorgeous, fully commented glassmorphic chat widget styles and SVG mask rules for the chat, send, and close icons.
+[20:07 17/05/2026] js/ai-chat.js - Implemented high-performance local client-side semantic and keyword dossiers NLP search engine (Mini-RAG).
+[20:09 17/05/2026] js/ai-chat.js - Integrated a secure, lightweight client-side Markdown parser for rendering bold, italic, and inline link elements in chat bubbles.
