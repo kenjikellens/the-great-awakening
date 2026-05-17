@@ -536,3 +536,4 @@
 [20:13 17/05/2026] index.html - Integrated a chat-gpu-toggle button and chat-header-actions container inside the chat widget header.
 [20:14 17/05/2026] css/style.css - Added styling selectors and SVG mask rules for the chat-gpu-toggle and chat-header-actions components.
 [20:15 17/05/2026] js/ai-chat.js - Implemented dynamic WebLLM import, WebGPU capabilities detection, and local generative neural network inference toggle.
+[20:16 17/05/2026] js/ai-chat.js - Overhauled response templates and system prompts to use clean professional terminology (Category, Summary, Keywords) and block dramatic sci-fi jargon.

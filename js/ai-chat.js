@@ -162,11 +162,12 @@ class AiChatWidget {
         if (this.gpuEnabled && this.webllmEngine) {
             try {
                 // Synthesize strict dossier boundaries context in system prompt
-                const systemPrompt = `You are the Great Awakening AI Assistant, a local neutral generative Large Language Model. 
-You must answer the user's questions utilizing ONLY the facts, details, and summaries present in this research dossier database: ${JSON.stringify(DOSSIER_DATA)}.
+                const systemPrompt = `You are the Great Awakening AI Assistant, a professional, objective research database assistant. 
+You must answer the user's questions utilizing ONLY the facts, details, and summaries present in this research database of dossiers: ${JSON.stringify(DOSSIER_DATA)}.
 If a query is unrelated to the dossiers database, state politely that it goes beyond the archive's scope.
-Keep your answer concise (2-4 sentences max), factual, and atmospheric.
-Format your output using standard markdown: bold (**), italics (*), and clickable links referencing the hash format, e.g. [Jekyll Island](#dossier/jekyll-island) or [MK-Ultra](#dossier/mk-ultra).`;
+Keep your answer concise (2-4 sentences max), factual, objective, and scholarly.
+Avoid dramatic sci-fi or roleplay terms like "classification", "intel", "operational vectors", or dramatic spy styling.
+Format your output using standard markdown: bold (**), italics (*), and clickable links referencing the hash format, e.g. [Jekyll Island](#dossier/jekyll-island) or [MK-Ultra](#dossier/mk-ultra). Use the terms "Category" and "Summary" to frame any dossier structures.`;
 
                 const messages = [
                     { role: "system", content: systemPrompt },
@@ -379,14 +380,14 @@ Format your output using standard markdown: bold (**), italics (*), and clickabl
             const related = DOSSIER_DATA.filter(d => d.id !== bestMatch.id && d.category === bestMatch.category).slice(0, 2);
             let relatedText = "";
             if (related.length > 0) {
-                relatedText = `<br><br>**Related Intelligence Files:**<br>` + 
+                relatedText = `<br><br>**Related Dossiers:**<br>` + 
                               related.map(r => `• <a href="#dossier/${r.id}" class="chat-link-inline">${r.title}</a>`).join('<br>');
             }
 
-            return `📁 **Dossier Located: <a href="#dossier/${bestMatch.id}" class="chat-link-inline">${bestMatch.title}</a>**<br><br>` +
-                   `**Classification**: *${bestMatch.category}*<br>` +
-                   `**Executive Summary**: ${bestMatch.summary}<br><br>` +
-                   `**Key Tracked Vectors**: ${bestMatch.keywords.slice(0, 5).join(', ')}.` +
+            return `📄 **Dossier: <a href="#dossier/${bestMatch.id}" class="chat-link-inline">${bestMatch.title}</a>**<br><br>` +
+                   `**Category**: *${bestMatch.category}*<br>` +
+                   `**Summary**: ${bestMatch.summary}<br><br>` +
+                   `**Keywords**: ${bestMatch.keywords.slice(0, 5).join(', ')}.` +
                    relatedText;
         }
 
