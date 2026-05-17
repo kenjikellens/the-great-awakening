@@ -10,12 +10,18 @@ class AiChatWidget {
         this.toggleBtn = document.getElementById('chat-toggle');
         this.chatWindow = document.getElementById('chat-window');
         this.closeBtn = document.getElementById('chat-close');
+        this.gpuToggle = document.getElementById('chat-gpu-toggle');
         this.messagesContainer = document.getElementById('chat-messages');
         this.inputField = document.getElementById('chat-input');
         this.sendBtn = document.getElementById('chat-send');
 
         this.isOpen = false;
         this.isTyping = false;
+
+        // WebGPU Local LLM state variables
+        this.gpuEnabled = false;
+        this.gpuLoading = false;
+        this.webllmEngine = null;
 
         this.init();
     }
@@ -29,6 +35,11 @@ class AiChatWidget {
         // Toggle chat window visibility
         this.toggleBtn.addEventListener('click', () => this.toggleChat());
         this.closeBtn.addEventListener('click', () => this.toggleChat(false));
+
+        // Toggle local WebGPU neural engine
+        if (this.gpuToggle) {
+            this.gpuToggle.addEventListener('click', () => this.toggleGpuEngine());
+        }
 
         // Handle message sending
         this.sendBtn.addEventListener('click', () => this.handleSend());
@@ -130,11 +141,12 @@ class AiChatWidget {
     }
 
     /**
-     * Simulates an AI assistant thinking delay, retrieves the synthesized local 
-     * semantic response, and adds it to the chat thread.
-     * @param {string} userQuery - The raw question or message sent by the user.
+     * Triggers the AI reply. If WebGPU mode is enabled, it delegates generation 
+     * to the locally running generative LLM; otherwise, it falls back to the 
+     * ultra-fast local keyword & RAG indexing engine.
+     * @param {string} userQuery - The message sent by the user.
      */
-    simulateAiResponse(userQuery) {
+    async simulateAiResponse(userQuery) {
         this.isTyping = true;
         
         // Show typing indicator
@@ -146,7 +158,46 @@ class AiChatWidget {
         this.messagesContainer.appendChild(typingDiv);
         this.scrollToBottom();
 
-        // Delayed response to mimic network/processing latency (1200ms)
+        // 1. WebGPU Local LLM Mode
+        if (this.gpuEnabled && this.webllmEngine) {
+            try {
+                // Synthesize strict dossier boundaries context in system prompt
+                const systemPrompt = `You are the Great Awakening AI Assistant, a local neutral generative Large Language Model. 
+You must answer the user's questions utilizing ONLY the facts, details, and summaries present in this research dossier database: ${JSON.stringify(DOSSIER_DATA)}.
+If a query is unrelated to the dossiers database, state politely that it goes beyond the archive's scope.
+Keep your answer concise (2-4 sentences max), factual, and atmospheric.
+Format your output using standard markdown: bold (**), italics (*), and clickable links referencing the hash format, e.g. [Jekyll Island](#dossier/jekyll-island) or [MK-Ultra](#dossier/mk-ultra).`;
+
+                const messages = [
+                    { role: "system", content: systemPrompt },
+                    { role: "user", content: userQuery }
+                ];
+
+                const reply = await this.webllmEngine.chat.completions.create({ messages });
+                const answer = reply.choices[0].message.content;
+
+                // Remove typing indicator
+                const indicator = document.getElementById(typingId);
+                if (indicator) indicator.remove();
+
+                this.addMessage(answer, false);
+            } catch (err) {
+                console.error("Local LLM inference error:", err);
+                
+                // Fallback to high-speed index on failure
+                const indicator = document.getElementById(typingId);
+                if (indicator) indicator.remove();
+
+                const fallbackAnswer = "⚠️ **Local LLM Inference Error.** Reverting to standard high-speed local indexing mode.\n\n" + 
+                                       this.generateLocalResponse(userQuery);
+                this.addMessage(fallbackAnswer, false);
+            } finally {
+                this.isTyping = false;
+            }
+            return;
+        }
+
+        // 2. Standard Mode Fallback (Local Index / Mini-RAG)
         setTimeout(() => {
             // Remove typing indicator
             const indicator = document.getElementById(typingId);
@@ -158,6 +209,84 @@ class AiChatWidget {
             
             this.isTyping = false;
         }, 1200);
+    }
+
+    /**
+     * Toggles the state of the local WebGPU LLM engine.
+     * Handles browser capability detection (navigator.gpu), dynamic CDN module imports, 
+     * progress-report updates, UI loading animations, and cache checks.
+     */
+    async toggleGpuEngine() {
+        if (this.gpuLoading) return;
+
+        // 1. Deactivate if already active
+        if (this.gpuEnabled) {
+            this.gpuEnabled = false;
+            this.gpuToggle.classList.remove('is-active');
+            this.addMessage("⚡ **Local WebGPU Mode deactivated.** Reverted to standard high-speed search index.", false);
+            return;
+        }
+
+        // 2. Hardware Capability check
+        if (!navigator.gpu) {
+            this.addMessage("⚠️ **WebGPU is not supported by your browser or hardware.**\n\nWebGPU is required to run generative neural networks locally. We recommend modern Google Chrome, Microsoft Edge, or Firefox on desktop. Reverted to standard high-speed search index mode.", false);
+            return;
+        }
+
+        this.gpuLoading = true;
+        this.gpuToggle.classList.add('is-loading');
+        
+        // Spawn status bubbles in the thread
+        this.addMessage("⚡ **Initializing local WebGPU neural engine...**\n\nLoading the generative model weights (Qwen2-0.5B-Instruct, ~350MB). Weights will be cached in your browser so future visits load instantly. Please keep this panel open.", false);
+        
+        const progressId = 'gpu-loading-progress';
+        const progressDiv = document.createElement('div');
+        progressDiv.id = progressId;
+        progressDiv.className = 'message ai-message';
+        progressDiv.innerHTML = '📥 **Status: Connecting to weight repositories...**';
+        this.messagesContainer.appendChild(progressDiv);
+        this.scrollToBottom();
+
+        try {
+            // 3. Dynamic ESM module import (Lazy loading WebLLM only when requested)
+            const webllm = await import("https://esm.run/@mlc-ai/web-llm");
+
+            const selectedModel = "Qwen2-0.5B-Instruct-q4f16_1-MLC";
+            
+            // 4. Create WebGPU LLM Engine instance
+            this.webllmEngine = await webllm.CreateEngine(selectedModel, {
+                initProgressCallback: (report) => {
+                    const bubble = document.getElementById(progressId);
+                    if (bubble) {
+                        // Dynamically update the in-chat download progress block
+                        bubble.innerHTML = `📥 **Status**: *${report.text}*`;
+                        this.scrollToBottom();
+                    }
+                }
+            });
+
+            // Loading complete success state
+            const bubble = document.getElementById(progressId);
+            if (bubble) bubble.remove();
+
+            this.gpuEnabled = true;
+            this.gpuLoading = false;
+            this.gpuToggle.classList.remove('is-loading');
+            this.gpuToggle.classList.add('is-active');
+
+            this.addMessage("✅ **Local LLM Online!**\n\nAlibaba Qwen-0.5B-Instruct is fully loaded and accelerated by your WebGPU card. Ask me any question, and I will generate contextual generative replies entirely offline!", false);
+
+        } catch (err) {
+            console.error("Failed to initialize WebGPU LLM:", err);
+            
+            const bubble = document.getElementById(progressId);
+            if (bubble) bubble.remove();
+
+            this.gpuLoading = false;
+            this.gpuToggle.classList.remove('is-loading');
+
+            this.addMessage("❌ **Initialization Failure.**\n\nAn error occurred while downloading or building the local WebGPU model. Reverting to standard high-speed search index mode.", false);
+        }
     }
 
     /**

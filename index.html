@@ -89,7 +89,12 @@
                     <span class="chat-header-dot"></span>
                     <h3>AI Assistant</h3>
                 </div>
-                <button id="chat-close" class="chat-close" aria-label="Close chat"><span class="close-icon"></span></button>
+                <div class="chat-header-actions">
+                    <button id="chat-gpu-toggle" class="chat-gpu-toggle" title="Load local WebGPU neural network (Qwen-0.5B)" aria-label="Load Local LLM">
+                        <span class="gpu-icon"></span>
+                    </button>
+                    <button id="chat-close" class="chat-close" aria-label="Close chat"><span class="close-icon"></span></button>
+                </div>
             </div>
 
             <div id="chat-messages" class="chat-messages">

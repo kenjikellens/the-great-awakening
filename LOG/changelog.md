@@ -532,3 +532,7 @@
 [20:05 17/05/2026] css/style.css - Appended gorgeous, fully commented glassmorphic chat widget styles and SVG mask rules for the chat, send, and close icons.
 [20:07 17/05/2026] js/ai-chat.js - Implemented high-performance local client-side semantic and keyword dossiers NLP search engine (Mini-RAG).
 [20:09 17/05/2026] js/ai-chat.js - Integrated a secure, lightweight client-side Markdown parser for rendering bold, italic, and inline link elements in chat bubbles.
+[20:12 17/05/2026] svg/energy.svg - Created a clean vector stroke energy lightning icon for the WebGPU AI toggle.
+[20:13 17/05/2026] index.html - Integrated a chat-gpu-toggle button and chat-header-actions container inside the chat widget header.
+[20:14 17/05/2026] css/style.css - Added styling selectors and SVG mask rules for the chat-gpu-toggle and chat-header-actions components.
+[20:15 17/05/2026] js/ai-chat.js - Implemented dynamic WebLLM import, WebGPU capabilities detection, and local generative neural network inference toggle.
