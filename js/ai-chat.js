@@ -10,18 +10,12 @@ class AiChatWidget {
         this.toggleBtn = document.getElementById('chat-toggle');
         this.chatWindow = document.getElementById('chat-window');
         this.closeBtn = document.getElementById('chat-close');
-        this.gpuToggle = document.getElementById('chat-gpu-toggle');
         this.messagesContainer = document.getElementById('chat-messages');
         this.inputField = document.getElementById('chat-input');
         this.sendBtn = document.getElementById('chat-send');
 
         this.isOpen = false;
         this.isTyping = false;
-
-        // WebGPU Local LLM state variables
-        this.gpuEnabled = false;
-        this.gpuLoading = false;
-        this.webllmEngine = null;
 
         this.init();
     }
@@ -35,11 +29,6 @@ class AiChatWidget {
         // Toggle chat window visibility
         this.toggleBtn.addEventListener('click', () => this.toggleChat());
         this.closeBtn.addEventListener('click', () => this.toggleChat(false));
-
-        // Toggle local WebGPU neural engine
-        if (this.gpuToggle) {
-            this.gpuToggle.addEventListener('click', () => this.toggleGpuEngine());
-        }
 
         // Handle message sending
         this.sendBtn.addEventListener('click', () => this.handleSend());
@@ -141,12 +130,10 @@ class AiChatWidget {
     }
 
     /**
-     * Triggers the AI reply. If WebGPU mode is enabled, it delegates generation 
-     * to the locally running generative LLM; otherwise, it falls back to the 
-     * ultra-fast local keyword & RAG indexing engine.
-     * @param {string} userQuery - The message sent by the user.
+     * Triggers the simulated AI reply using our local, typo-tolerant search engine.
+     * @param {string} userQuery - The question or search term entered by the user.
      */
-    async simulateAiResponse(userQuery) {
+    simulateAiResponse(userQuery) {
         this.isTyping = true;
         
         // Show typing indicator
@@ -158,47 +145,7 @@ class AiChatWidget {
         this.messagesContainer.appendChild(typingDiv);
         this.scrollToBottom();
 
-        // 1. WebGPU Local LLM Mode
-        if (this.gpuEnabled && this.webllmEngine) {
-            try {
-                // Synthesize strict dossier boundaries context in system prompt
-                const systemPrompt = `You are the Great Awakening AI Assistant, a professional, objective research database assistant. 
-You must answer the user's questions utilizing ONLY the facts, details, and summaries present in this research database of dossiers: ${JSON.stringify(DOSSIER_DATA)}.
-If a query is unrelated to the dossiers database, state politely that it goes beyond the archive's scope.
-Keep your answer concise (2-4 sentences max), factual, objective, and scholarly.
-Avoid dramatic sci-fi or roleplay terms like "classification", "intel", "operational vectors", or dramatic spy styling.
-Format your output using standard markdown: bold (**), italics (*), and clickable links referencing the hash format, e.g. [Jekyll Island](#dossier/jekyll-island) or [MK-Ultra](#dossier/mk-ultra). Use the terms "Category" and "Summary" to frame any dossier structures.`;
-
-                const messages = [
-                    { role: "system", content: systemPrompt },
-                    { role: "user", content: userQuery }
-                ];
-
-                const reply = await this.webllmEngine.chat.completions.create({ messages });
-                const answer = reply.choices[0].message.content;
-
-                // Remove typing indicator
-                const indicator = document.getElementById(typingId);
-                if (indicator) indicator.remove();
-
-                this.addMessage(answer, false);
-            } catch (err) {
-                console.error("Local LLM inference error:", err);
-                
-                // Fallback to high-speed index on failure
-                const indicator = document.getElementById(typingId);
-                if (indicator) indicator.remove();
-
-                const fallbackAnswer = "⚠️ **Local LLM Inference Error.** Reverting to standard high-speed local indexing mode.\n\n" + 
-                                       this.generateLocalResponse(userQuery);
-                this.addMessage(fallbackAnswer, false);
-            } finally {
-                this.isTyping = false;
-            }
-            return;
-        }
-
-        // 2. Standard Mode Fallback (Local Index / Mini-RAG)
+        // 1200ms delay to make it feel natural and deliberate
         setTimeout(() => {
             // Remove typing indicator
             const indicator = document.getElementById(typingId);
@@ -213,91 +160,55 @@ Format your output using standard markdown: bold (**), italics (*), and clickabl
     }
 
     /**
-     * Toggles the state of the local WebGPU LLM engine.
-     * Handles browser capability detection (navigator.gpu), dynamic CDN module imports, 
-     * progress-report updates, UI loading animations, and cache checks.
+     * Calculates the Levenshtein edit distance between two strings.
+     * Used to correct spelling typos (e.g. eppstein -> epstein).
+     * @param {string} a - First string.
+     * @param {string} b - Second string.
+     * @returns {number} The Levenshtein distance.
      */
-    async toggleGpuEngine() {
-        if (this.gpuLoading) return;
-
-        // 1. Deactivate if already active
-        if (this.gpuEnabled) {
-            this.gpuEnabled = false;
-            this.gpuToggle.classList.remove('is-active');
-            this.addMessage("⚡ **Local WebGPU Mode deactivated.** Reverted to standard high-speed search index.", false);
-            return;
+    levenshteinDistance(a, b) {
+        const matrix = [];
+        for (let i = 0; i <= b.length; i++) {
+            matrix[i] = [i];
         }
-
-        // 2. Hardware Capability check
-        if (!navigator.gpu) {
-            this.addMessage("⚠️ **WebGPU is not supported by your browser or hardware.**\n\nWebGPU is required to run generative neural networks locally. We recommend modern Google Chrome, Microsoft Edge, or Firefox on desktop. Reverted to standard high-speed search index mode.", false);
-            return;
+        for (let j = 0; j <= a.length; j++) {
+            matrix[0][j] = j;
         }
-
-        this.gpuLoading = true;
-        this.gpuToggle.classList.add('is-loading');
-        
-        // Spawn status bubbles in the thread
-        this.addMessage("⚡ **Initializing local WebGPU neural engine...**\n\nLoading the generative model weights (Qwen2-0.5B-Instruct, ~350MB). Weights will be cached in your browser so future visits load instantly. Please keep this panel open.", false);
-        
-        const progressId = 'gpu-loading-progress';
-        const progressDiv = document.createElement('div');
-        progressDiv.id = progressId;
-        progressDiv.className = 'message ai-message';
-        progressDiv.innerHTML = '📥 **Status: Connecting to weight repositories...**';
-        this.messagesContainer.appendChild(progressDiv);
-        this.scrollToBottom();
-
-        try {
-            // 3. Dynamic ESM module import (Lazy loading WebLLM only when requested)
-            const webllm = await import("https://esm.run/@mlc-ai/web-llm");
-
-            const selectedModel = "Qwen2-0.5B-Instruct-q4f16_1-MLC";
-            
-            // 4. Create WebGPU LLM Engine instance
-            this.webllmEngine = await webllm.CreateEngine(selectedModel, {
-                initProgressCallback: (report) => {
-                    const bubble = document.getElementById(progressId);
-                    if (bubble) {
-                        // Dynamically update the in-chat download progress block
-                        bubble.innerHTML = `📥 **Status**: *${report.text}*`;
-                        this.scrollToBottom();
-                    }
+        for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j - 1] + 1, // substitution
+                        matrix[i][j - 1] + 1,     // insertion
+                        matrix[i - 1][j] + 1      // deletion
+                    );
                 }
-            });
-
-            // Loading complete success state
-            const bubble = document.getElementById(progressId);
-            if (bubble) bubble.remove();
-
-            this.gpuEnabled = true;
-            this.gpuLoading = false;
-            this.gpuToggle.classList.remove('is-loading');
-            this.gpuToggle.classList.add('is-active');
-
-            this.addMessage("✅ **Local LLM Online!**\n\nAlibaba Qwen-0.5B-Instruct is fully loaded and accelerated by your WebGPU card. Ask me any question, and I will generate contextual generative replies entirely offline!", false);
-
-        } catch (err) {
-            console.error("Failed to initialize WebGPU LLM:", err);
-            
-            const bubble = document.getElementById(progressId);
-            if (bubble) bubble.remove();
-
-            this.gpuLoading = false;
-            this.gpuToggle.classList.remove('is-loading');
-
-            this.addMessage("❌ **Initialization Failure.**\n\nAn error occurred while downloading or building the local WebGPU model. Reverting to standard high-speed search index mode.", false);
+            }
         }
+        return matrix[b.length][a.length];
+    }
+
+    /**
+     * Cleans a string to allow exact spaceless matches for spacing typos (e.g. epsteinfiles -> epstein files).
+     * @param {string} str - The target string to normalize.
+     * @returns {string} The lowercase string with all spaces and non-alphanumeric chars removed.
+     */
+    cleanString(str) {
+        return (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     }
 
     /**
      * Analyzes the user query and matches it semantically against title, keywords, 
      * category, and summary fields in DOSSIER_DATA, returning a rich HTML response.
+     * Integrates advanced typo-tolerance and spacing correction for robust search.
      * @param {string} userQuery - The query entered by the user.
      * @returns {string} The rich synthesized HTML response message with direct navigation links.
      */
     generateLocalResponse(userQuery) {
         const query = userQuery.toLowerCase().trim();
+        const cleanQuery = this.cleanString(query);
 
         // 1. Check for standard greetings
         const greetings = ['hello', 'hi', 'hey', 'greetings', 'welcome', 'yo', 'good morning', 'good afternoon'];
@@ -341,30 +252,61 @@ Format your output using standard markdown: bold (**), italics (*), and clickabl
             const titleLower = dossier.title.toLowerCase();
             const summaryLower = dossier.summary.toLowerCase();
             
-            // Matches dossier title (high weight)
-            if (query.includes(titleLower) || titleLower.includes(query)) {
-                score += 18;
+            const cleanTitle = this.cleanString(dossier.title);
+            const cleanId = this.cleanString(dossier.id);
+
+            // A. Spaceless title or ID match (corrects spacing typos like "epsteinfiles" or "mkultra")
+            if (cleanQuery.includes(cleanTitle) || cleanTitle.includes(cleanQuery) ||
+                cleanQuery.includes(cleanId) || cleanId.includes(cleanQuery)) {
+                score += 22; // Huge boost for accurate keyword match!
             }
 
-            // Matches specific dossier keywords
+            // B. Matches specific dossier keywords (both normal and spaceless)
             dossier.keywords.forEach(keyword => {
                 const kwLower = keyword.toLowerCase();
-                if (query.includes(kwLower)) {
+                const cleanKw = this.cleanString(keyword);
+                
+                if (query.includes(kwLower) || cleanQuery.includes(cleanKw)) {
                     score += 12;
                 }
             });
 
-            // Matches dossier category
+            // C. Matches dossier category
             if (query.includes(dossier.category.toLowerCase())) {
                 score += 6;
             }
 
-            // Word-level match in title or summary
-            const words = query.split(/\s+/);
-            words.forEach(word => {
-                if (word.length > 3) {
-                    if (titleLower.includes(word)) score += 4;
-                    if (summaryLower.includes(word)) score += 1.5;
+            // D. Fuzzy word-level spelling typo matches (using Levenshtein distance)
+            const queryWords = query.split(/\s+/);
+            const titleWords = titleLower.split(/\s+/);
+            const kwWords = dossier.keywords.flatMap(kw => kw.toLowerCase().split(/\s+/));
+
+            queryWords.forEach(qWord => {
+                if (qWord.length > 3) {
+                    // Check exact word matches
+                    if (titleLower.includes(qWord)) score += 4;
+                    if (summaryLower.includes(qWord)) score += 1.5;
+
+                    // Typo tolerance: check Levenshtein distance against title words
+                    titleWords.forEach(tWord => {
+                        if (tWord.length > 3) {
+                            const distance = this.levenshteinDistance(qWord, tWord);
+                            // If distance is 1 (or 2 for long words), it's a spelling typo!
+                            if (distance === 1 || (qWord.length >= 6 && distance <= 2)) {
+                                score += 8; // spelling match boost!
+                            }
+                        }
+                    });
+
+                    // Typo tolerance: check Levenshtein distance against keywords words
+                    kwWords.forEach(kWord => {
+                        if (kWord.length > 3) {
+                            const distance = this.levenshteinDistance(qWord, kWord);
+                            if (distance === 1 || (qWord.length >= 6 && distance <= 2)) {
+                                score += 6;
+                            }
+                        }
+                    });
                 }
             });
 

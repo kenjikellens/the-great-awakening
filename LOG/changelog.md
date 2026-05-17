@@ -537,3 +537,7 @@
 [20:14 17/05/2026] css/style.css - Added styling selectors and SVG mask rules for the chat-gpu-toggle and chat-header-actions components.
 [20:15 17/05/2026] js/ai-chat.js - Implemented dynamic WebLLM import, WebGPU capabilities detection, and local generative neural network inference toggle.
 [20:16 17/05/2026] js/ai-chat.js - Overhauled response templates and system prompts to use clean professional terminology (Category, Summary, Keywords) and block dramatic sci-fi jargon.
+[20:17 17/05/2026] index.html - Removed the experimental chat-gpu-toggle button and header actions layout container from the chat window header.
+[20:18 17/05/2026] css/style.css - Cleaned up and removed the WebGPU toggle, spinner keyframe, and SVG mask styling rules.
+[20:19 17/05/2026] js/ai-chat.js - Completely removed WebGPU dependencies, toggle listeners, and status state variables, refactoring the RAG search index to be typo-tolerant via Levenshtein Distance.
+[20:20 17/05/2026] svg/energy.svg - Deleted the obsolete vector lightning SVG asset.
