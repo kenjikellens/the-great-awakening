@@ -543,3 +543,26 @@
 [20:20 17/05/2026] svg/energy.svg - Deleted the obsolete vector lightning SVG asset.
 [20:21 17/05/2026] css/style.css - Redefined the primary .dashboard-back-strip styling rule, converting the featured records header to a static, enlarged, gold-accented title.
 [20:22 17/05/2026] pages/fragments/home.html - Removed the back arrow icon and interactive trigger ID from the featured archive records header.
+[21:56 17/05/2026] js/ai-chat.js - Upgraded offline search widget with semantic synonyms, stop words filters, active page context awareness, and fuzzy 'Did you mean?' recommendations.
+[21:59 17/05/2026] js/ai-chat.js - Refactored greeting and fallback text blocks to use formal, dry institutional phrasing, removing all casual roleplay terminology.
+[21:59 17/05/2026] index.html - Updated static assistant welcome message to use formal, dry phrasing, and documented the component comment.
+[22:00 17/05/2026] pages/dossiers/jekyll-island.html - Converted heading from 'The Conspiracy of Secrecy' to 'Secrecy Protocols' to maintain dry, institutional language.
+[22:02 17/05/2026] pages/fragments/home.html - Converted inconsistent lowercase metadata and scroll triggers to proper Title Case, ensuring premium visual consistency.
+[22:05 17/05/2026] index.html - Replaced all sci-fi roleplay footer links (Home Portal, Verification, Submit Evidence, etc.) with standard Wikipedia-like labels (Main Page, Sitemap, Contact Us).
+[22:05 17/05/2026] pages/fragments/home.html - Replaced front page titles and triggers with academic, Wikipedia-like vocabulary (Dossier Database, Open Access, View All Articles, Featured Articles).
+[22:05 17/05/2026] js/ai-chat.js - Changed chat category index link label from 'Dossiers Portal' to 'Dossier Index' to maintain dry, institutional terminology.
+[22:06 17/05/2026] pages/fragments/about.html - Completely redesigned into an official Editorial Standards & Verification page with rigorous peer-review methodologies.
+[22:06 17/05/2026] pages/fragments/contact.html - Completely redesigned into a professional Contact & Submissions portal, removing the goofy 'Secure Channel' roleplay naming.
+[22:08 17/05/2026] pages/fragments/about.html - Rewrote page content in simple, clear, plain English, stripping away stiff declassified and legal jargon.
+[22:08 17/05/2026] pages/fragments/contact.html - Rewrote form fields and submission guidelines in plain English to match standard, highly accessible encyclopedic vocabulary.
+[22:09 17/05/2026] pages/fragments/contact.html - Integrated a beautifully styled, theme-aware file upload input field to support primary source document submissions.
+[22:10 17/05/2026] pages/fragments/contact.html - Overhauled native browser file input to a custom, dashboard-style upload zone card with inline SVG and dynamic name feedback.
+[22:10 17/05/2026] pages/fragments/contact.html - Fixed single/double quote rendering conflict in file upload zone by inlining the SVG element natively.
+[22:12 17/05/2026] js/dossier-manager.js - Aligned renderSitemap static link labels to match standard Wikipedia-style vocabulary.
+[22:12 17/05/2026] pages/fragments/sitemap.html - Redesigned sitemap to render sections and category indexes in a vertical column stack (each section below the other).
+[22:13 17/05/2026] pages/fragments/sitemap.html - Applied custom Wikipedia link styling to sitemap navigation links (blue text with underlines, removing underline on hover).
+[22:13 17/05/2026] css/style.css - Centralized all sitemap stacked layouts, reversed sitemap hover-underlined links, and custom file upload styling rules.
+[22:13 17/05/2026] pages/fragments/sitemap.html - Removed all block and inline styles, delegating styling entirely to centralized style.css.
+[22:13 17/05/2026] pages/fragments/contact.html - Cleaned up form inputs and select elements by stripping all inline style attributes and centralizing them.
+[22:14 17/05/2026] js/dossier-manager.js - Added sitemap-dossier-list class to dossier listings to enable distinct font scaling in the Site Index.
+[22:15 17/05/2026] css/style.css - Implemented slightly darker blue for sitemap links, restored regular accent blue and underlines on hover, and scaled dossier links to 0.92rem.

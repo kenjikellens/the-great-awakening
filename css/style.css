@@ -18,6 +18,7 @@
     --text-main: #1a1a1a;
     --text-muted: #65676b;
     --accent-blue: #0044cc;
+    --accent-blue-dark: #0033aa;
     --accent-gold: #c5a059;
     --border-light: rgba(0, 0, 0, 0.1);
     --header-height: 56px;
@@ -60,6 +61,7 @@
     --text-main: #e6edf3;
     --text-muted: #8b949e;
     --accent-blue: #58a6ff;
+    --accent-blue-dark: #388bfd;
     --border-light: rgba(255, 255, 255, 0.1);
     --glass-bg: rgba(22, 27, 34, 0.8);
     --mega-menu-bg: rgba(25, 30, 38, 0.01);
@@ -4201,3 +4203,134 @@ h3,
         padding-top: 1.5rem;
     }
 }
+
+/* 
+    ==========================================================================
+    9. SITEMAP NAVIGATION & INDEX STYLES
+    Centralized styles for sitemap linear stacking and Wikipedia link design.
+    ========================================================================== 
+*/
+
+/* 
+    .sitemap-list-stack Selector
+    Controls vertical stacking order for linear Site Index scanning.
+*/
+.sitemap-list-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* 
+    .sitemap-list a Selector
+    Applies Wikipedia-style darker blue text color in normal state, with no underlines.
+*/
+.sitemap-list a {
+    color: var(--accent-blue-dark);
+    text-decoration: none;
+}
+
+/* 
+    .sitemap-list a:hover Selector
+    Flashes original accent-blue and underline emphasis strictly on cursor hover focus.
+*/
+.sitemap-list a:hover {
+    color: var(--accent-blue);
+    text-decoration: underline;
+}
+
+/* 
+    .sitemap-dossier-list a Selector
+    Decreases the font size of dynamic dossier links slightly to build hierarchy.
+*/
+.sitemap-dossier-list a {
+    font-size: 0.92rem;
+}
+
+
+/* 
+    ==========================================================================
+    10. CONTACT FORM ELEMENTS & PREMIUM UPLOAD ZONE
+    Styling rules for customizable inquiry selects and drop zone components.
+    ========================================================================== 
+*/
+
+/* 
+    .contact-inquiry-select Selector
+    Formats the subject selection inputs to align with standard inputs.
+*/
+.contact-inquiry-select {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* 
+    .custom-file-upload-zone Selector
+    Styles custom upload card container with dashed borders, padding, and smooth transitions.
+*/
+.custom-file-upload-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--border-light);
+    border-radius: 6px;
+    padding: 25px 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    background-color: var(--accent-bg);
+}
+
+/* 
+    .custom-file-upload-zone:hover Selector
+    Illuminates active border and background when cursor hovers over card container.
+*/
+.custom-file-upload-zone:hover {
+    background-color: var(--border-light);
+    border-color: var(--accent-blue);
+}
+
+/* 
+    .custom-file-upload-zone svg Selector
+    Sizes and colors the drag-and-drop icon elements.
+*/
+.custom-file-upload-zone svg {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+/* 
+    .custom-file-upload-zone .upload-text Selector
+    Formats primary file selection message text.
+*/
+.custom-file-upload-zone .upload-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* 
+    .custom-file-upload-zone .upload-hint Selector
+    Renders descriptive supported extension text underneath.
+*/
+.custom-file-upload-zone .upload-hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* 
+    .file-upload-input-hidden Selector
+    Hides native, browser-default file selection input button.
+*/
+.file-upload-input-hidden {
+    display: none;
+}

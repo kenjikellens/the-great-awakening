@@ -388,11 +388,11 @@ const DossierManager = (function () {
             <section class="sitemap-section">
                 <h2 class="sitemap-category-title">Core Sections</h2>
                 <ul class="sitemap-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#dossiers">Research Database (Index)</a></li>
-                    <li><a href="#about">About the Project</a></li>
-                    <li><a href="#contact">Contact & Research Submission</a></li>
-                    <li><a href="#sitemap">Site Index (Sitemap)</a></li>
+                    <li><a href="#home">Main Page</a></li>
+                    <li><a href="#dossiers">Dossier Index</a></li>
+                    <li><a href="#about">Editorial Standards</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#sitemap">Sitemap</a></li>
                 </ul>
             </section>
         `;
@@ -403,7 +403,7 @@ const DossierManager = (function () {
             return `
                 <section class="sitemap-section">
                     <h2 class="sitemap-category-title">${cat}</h2>
-                    <ul class="sitemap-list">
+                    <ul class="sitemap-list sitemap-dossier-list">
                         ${items.map(item => `
                             <li><a href="#dossier/${item.id}">${item.title}</a></li>
                         `).join('')}

@@ -1,46 +1,79 @@
-<main class="dashboard-section u-mt-1">
-    <section class="content-card">
+<!-- 
+    Contact & Submissions Page
+    Provides a simple submission form for users to suggest primary sources 
+    or contact the editors. Contains plain English submission rules.
+-->
+<main class="dashboard-section u-mt-3">
+    <header class="archive-page-header u-mb-3">
+        <span class="archive-kicker">Contribute</span>
+        <h1>Contact & Submissions</h1>
+        <p class="u-text-muted">Suggest new sources, report errors, or get in touch with our team.</p>
+    </header>
+
+    <div class="content-card u-p-3">
         <div class="contact-layout">
             <div class="contact-header-col">
-                <header class="section-header u-mb-3">
-                    <h1 class="u-font-serif u-mb-1">Secure Channel</h1>
-                    <p class="u-text-muted">Direct communication for inquiries, data submissions, and research collaboration.</p>
-                </header>
-
                 <div class="contact-info u-mb-3">
-                    <h2 class="u-font-serif u-mb-2">Get in Touch</h2>
+                    <h2 class="u-font-serif u-mb-1_5">How to Contribute</h2>
                     <p class="u-mb-2">
-                        For general inquiries or to submit documentation for review, please use the form below. 
-                        All submissions are handled with strict confidentiality.
+                        We welcome public contributions of declassified documents, official government transcripts, and historical records. Use the form to suggest new sources or let us know about any mistakes in our articles.
                     </p>
+
                     <div class="security-card u-p-2 u-bg-surface-alt u-rounded u-mb-2">
-                        <h3 class="u-text-sm u-uppercase u-letter-spacing u-mb-1">Security Notice</h3>
-                        <p class="u-text-sm">
-                            This channel is monitored for general data transparency initiatives. 
-                            Sensitive documents should be summarized in the message initial query; 
-                            further secure transmission protocols will be provided upon verification.
-                        </p>
+                        <h3 class="u-text-sm u-uppercase u-letter-spacing u-mb-1">Submission Guidelines</h3>
+                        <ul class="u-list-custom u-text-sm u-mt-0_5">
+                            <li class="u-mb-0_5"><strong>Provide Original Sources:</strong> All submissions must include direct links or scanned copies of original public records, government papers, or official transcripts.</li>
+                            <li class="u-mb-0_5"><strong>Keep it Neutral:</strong> Avoid personal opinions, gossip, or speculation. We only publish verified, objective facts.</li>
+                            <li><strong>Review Process:</strong> Our volunteer team reviews every suggestion. Approved records are usually formatted and added to the database within a few days.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <form action="mailto:kenji.kellens@hotmail.com" method="get" enctype="text/plain" class="contact-form">
                 <div class="form-group u-mb-2">
-                    <label for="name" class="form-label">Full Name</label>
-                    <input type="text" id="name" name="subject" placeholder="Enter your name" class="form-input" required>
+                    <label for="name" class="form-label">Full Name or Alias</label>
+                    <input type="text" id="name" name="subject" placeholder="Enter your name or alias" class="form-input" required>
                 </div>
                 <div class="form-group u-mb-2">
-                    <label for="email" class="form-label">Return Address</label>
+                    <label for="email" class="form-label">Email Address</label>
                     <input type="email" id="email" name="body" placeholder="your@email.com" class="form-input" required>
                 </div>
                 <div class="form-group u-mb-2">
-                    <label for="message" class="form-label">Inquiry / Submission Summary</label>
-                    <textarea id="message" name="body" rows="6" placeholder="Describe the data or inquiry..." class="form-input" required></textarea>
+                    <label for="inquiry-type" class="form-label">Subject</label>
+                    <select id="inquiry-type" class="form-input u-font-serif contact-inquiry-select">
+                        <option value="documentation">Suggest a New Source</option>
+                        <option value="verification">Request a Fact Check</option>
+                        <option value="correction">Report an Error or Correction</option>
+                        <option value="general">General Question</option>
+                    </select>
+                </div>
+                <div class="form-group u-mb-2">
+                    <label for="message" class="form-label">Message or Source Link</label>
+                    <textarea id="message" name="body" rows="6" placeholder="Paste links to official sources or describe your suggestion..." class="form-input" required></textarea>
+                </div>
+                <!-- 
+                    Custom Premium File Upload Zone
+                    Hides the ugly native browser file input and replaces it with a beautiful, 
+                    dashboard-style drag-and-drop dotted card. All layout is structured in style.css.
+                -->
+                <div class="form-group u-mb-2">
+                    <label class="form-label">Attach Document (Optional)</label>
+                    <label for="source-file" class="custom-file-upload-zone">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span class="upload-text">Choose a file or drag it here</span>
+                        <span class="upload-hint">Supports PDF, TXT, DOC, DOCX, PNG, or JPG</span>
+                    </label>
+                    <input type="file" id="source-file" accept=".pdf,.txt,.doc,.docx,.png,.jpg,.jpeg" class="file-upload-input-hidden" onchange="document.querySelector('.upload-text').innerText = this.files[0] ? this.files[0].name : 'Choose a file or drag it here'; document.querySelector('.custom-file-upload-zone').style.borderColor = 'var(--accent-blue)';">
                 </div>
                 <button type="submit" class="btn btn-primary u-w-full">
-                    <span>Transmit Message</span>
+                    <span>Send Message</span>
                 </button>
             </form>
         </div>
-    </section>
+    </div>
 </main>

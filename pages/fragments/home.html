@@ -23,34 +23,43 @@
                 <div id="home-search-suggestions" class="search-suggestions" hidden></div>
             </div>
 
+            <!-- 
+                Archive Highlights Information Panel
+                Displays institutional database metrics and operational metadata 
+                regarding the current intelligence collection and standard index methods.
+            -->
             <div class="archive-frontdesk-meta" aria-label="Archive highlights">
                 <div>
                     <span class="meta-label">Collection</span>
-                    <strong>Research Dossiers</strong>
+                    <strong>Dossier Database</strong>
                 </div>
                 <div>
                     <span class="meta-label">Method</span>
-                    <strong>Primary-source index</strong>
+                    <strong>Primary-Source Index</strong>
                 </div>
                 <div>
                     <span class="meta-label">Access</span>
-                    <strong>Open archive</strong>
+                    <strong>Open Access</strong>
                 </div>
             </div>
         </div>
 
         <a class="scroll-indicator archive-jump-link" id="home-scroll-trigger" href="#dossiers">
-            <span class="scroll-text">Open full index</span>
+            <span class="scroll-text">View All Articles</span>
             <div class="scroll-arrow">
                 <img src="svg/arrow-down.svg" alt="" id="indicator-arrow">
             </div>
         </a>
     </section>
 
+    <!-- 
+        Featured Records Layer
+        Renders a dynamically populated grid preview of high-priority index dossiers.
+    -->
     <section class="home-layer dashboard-layer archive-preview-layer" id="dashboard-layer">
         <main class="dashboard-section" id="dashboard-section">
             <div class="dashboard-back-strip">
-                <span>Featured archive records</span>
+                <span>Featured Articles</span>
             </div>
             <div id="home-dossier-list" class="dossier-list">
                 <!-- Dynamically populated by DossierManager -->

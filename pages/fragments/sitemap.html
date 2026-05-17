@@ -1,13 +1,25 @@
+<!-- 
+    Sitemap Page (Site Index)
+    Renders all main sections and database articles vertically below one another, 
+    forming a highly accessible, complete directory.
+    All sitemap and link styling is centralized in css/style.css.
+-->
 <main class="dashboard-section u-mt-3">
-    <header class="section-header u-mb-2">
-        <h1 class="u-font-serif">Site Index</h1>
-        <p class="u-text-muted">Comprehensive index of all available research dossiers and navigational sections within the archive.</p>
+    <header class="archive-page-header u-mb-3">
+        <span class="archive-kicker">Navigation Directory</span>
+        <h1>Sitemap</h1>
+        <p class="u-text-muted">A complete vertical index of all sections and articles available in the archive database.</p>
     </header>
 
-    <div id="sitemap-container" class="sitemap-grid">
+    <!-- 
+        Sitemap Vertical Stack Container
+        Displays each category and index section directly below one another
+        for straightforward linear scanning. Styled entirely in css/style.css.
+    -->
+    <div id="sitemap-container" class="sitemap-list-stack">
         <!-- Dynamically populated by DossierManager.renderSitemap() -->
         <div class="u-text-center u-p-3">
-            <p>Loading site index...</p>
+            <p>Loading sitemap index...</p>
         </div>
     </div>
 </main>
