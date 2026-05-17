@@ -541,3 +541,5 @@
 [20:18 17/05/2026] css/style.css - Cleaned up and removed the WebGPU toggle, spinner keyframe, and SVG mask styling rules.
 [20:19 17/05/2026] js/ai-chat.js - Completely removed WebGPU dependencies, toggle listeners, and status state variables, refactoring the RAG search index to be typo-tolerant via Levenshtein Distance.
 [20:20 17/05/2026] svg/energy.svg - Deleted the obsolete vector lightning SVG asset.
+[20:21 17/05/2026] css/style.css - Redefined the primary .dashboard-back-strip styling rule, converting the featured records header to a static, enlarged, gold-accented title.
+[20:22 17/05/2026] pages/fragments/home.html - Removed the back arrow icon and interactive trigger ID from the featured archive records header.
