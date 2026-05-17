@@ -4,6 +4,7 @@
     Organized by functional modules for maximum maintainability.
     ========================================================================== 
 */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* 
     1. VARIABLES & THEMES 
@@ -27,7 +28,7 @@
     --glass-border: transparent;
     --nav-button-border: rgba(0, 0, 0, 0.4);
     --mega-menu-bg: rgba(242, 244, 248, 0.01);
-    
+
     /* Notification & Note Blocks */
     --note-bg: #fffcf0;
     --note-border: #e6db55;
@@ -37,7 +38,7 @@
     --card-shadow: rgba(0, 0, 0, 0.06);
     --card-shadow-hover: rgba(0, 0, 0, 0.15);
     --card-border-deco: rgba(0, 0, 0, 0.08);
-    --search-border: #71767b; 
+    --search-border: #71767b;
     --search-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 
     /* Hero Section Specifics (Light Mode) */
@@ -69,7 +70,7 @@
     --card-shadow: rgba(255, 255, 255, 0.05);
     --card-shadow-hover: rgba(255, 255, 255, 0.12);
     --card-border-deco: rgba(255, 255, 255, 0.06);
-    --search-border: rgba(255, 255, 255, 0.35); 
+    --search-border: rgba(255, 255, 255, 0.35);
     --search-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
     --hero-bg: radial-gradient(circle at 50% 45%, #0d1117 0%, #000000 100%);
     --hero-text: #ffffff;
@@ -459,7 +460,8 @@ body:not(.is-home) #content-shell {
 .mega-menu-nav {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%); /* Vertical center only - allowed */
+    transform: translateY(-50%);
+    /* Vertical center only - allowed */
     background: none;
     border: none;
     cursor: pointer;
@@ -473,8 +475,13 @@ body:not(.is-home) #content-shell {
     Mega Menu Nav Arrows (Prev/Next) 
     Specific positioning for the directional arrows.
 */
-.mega-menu-nav.prev { left: 0.5rem; }
-.mega-menu-nav.next { right: 0.5rem; }
+.mega-menu-nav.prev {
+    left: 0.5rem;
+}
+
+.mega-menu-nav.next {
+    right: 0.5rem;
+}
 
 /* 
     Mega Menu Nav Hover 
@@ -488,8 +495,13 @@ body:not(.is-home) #content-shell {
     Mega Menu Nav Arrow Hover Effects 
     Uses margin/padding instead of translate for directional feedback.
 */
-.mega-menu-nav.next:hover:not(.disabled) { padding-right: 1.25rem; }
-.mega-menu-nav.prev:hover:not(.disabled) { padding-left: 1.25rem; }
+.mega-menu-nav.next:hover:not(.disabled) {
+    padding-right: 1.25rem;
+}
+
+.mega-menu-nav.prev:hover:not(.disabled) {
+    padding-left: 1.25rem;
+}
 
 /* 
     Disabled Nav Arrow 
@@ -581,8 +593,13 @@ body:not(.is-home) #content-shell {
     Reveal effect using opacity (no translate).
 */
 @keyframes megaMenuReveal {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* 
@@ -623,8 +640,8 @@ body:not(.is-home) #content-shell {
     text-align: center;
     padding: 0 2rem;
     transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1),
-                filter 600ms cubic-bezier(0.4, 0, 0.2, 1),
-                background 0.3s ease;
+        filter 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.3s ease;
     overflow: hidden;
 }
 
@@ -704,7 +721,8 @@ body:not(.is-home) #content-shell {
     position: absolute;
     bottom: calc(55% + 4rem);
     left: 50%;
-    transform: translateX(-50%); /* Allowed for static centering */
+    transform: translateX(-50%);
+    /* Allowed for static centering */
     width: 100%;
     max-width: 900px;
     text-align: center;
@@ -751,7 +769,7 @@ body:not(.is-home) #content-shell {
     overflow-y: auto;
     overflow-x: hidden;
     transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
-                filter 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        filter 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 
@@ -818,23 +836,59 @@ body:not(.is-home) #content-shell {
     Scale-based animations for the home experience (allowed).
 */
 @keyframes heroZoomOut {
-    0% { opacity: 1; scale: 1; filter: blur(0); }
-    100% { opacity: 0; scale: 1.15; filter: blur(8px); }
+    0% {
+        opacity: 1;
+        scale: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        scale: 1.15;
+        filter: blur(8px);
+    }
 }
 
 @keyframes heroZoomIn {
-    0% { opacity: 0; scale: 1.15; filter: blur(8px); }
-    100% { opacity: 1; scale: 1; filter: blur(0); }
+    0% {
+        opacity: 0;
+        scale: 1.15;
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+        filter: blur(0);
+    }
 }
 
 @keyframes dashboardReveal {
-    0% { opacity: 0; scale: 0.93; filter: blur(4px); }
-    100% { opacity: 1; scale: 1; filter: blur(0); }
+    0% {
+        opacity: 0;
+        scale: 0.93;
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+        filter: blur(0);
+    }
 }
 
 @keyframes dashboardExit {
-    0% { opacity: 1; scale: 1; filter: blur(0); }
-    100% { opacity: 0; scale: 0.93; filter: blur(4px); }
+    0% {
+        opacity: 1;
+        scale: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        scale: 0.93;
+        filter: blur(4px);
+    }
 }
 
 /* 
@@ -1016,7 +1070,8 @@ body:not(.is-home) #content-shell {
     align-items: center;
     text-align: center;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    opacity: 0; /* Default hidden for reveal animation */
+    opacity: 0;
+    /* Default hidden for reveal animation */
 }
 
 /* 
@@ -1028,8 +1083,15 @@ body:not(.is-home) #content-shell {
 }
 
 @keyframes cardStaggerIn {
-    0% { opacity: 0; scale: 0.96; }
-    100% { opacity: 1; scale: 1; }
+    0% {
+        opacity: 0;
+        scale: 0.96;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
 }
 
 .info-card:hover {
@@ -1487,7 +1549,7 @@ body:not(.is-home) #content-shell {
     margin-bottom: 0.5rem;
 }
 
-.dossier-sources > p {
+.dossier-sources>p {
     font-size: 0.78rem;
     color: var(--text-muted);
     margin-bottom: 0.5rem;
@@ -1589,6 +1651,16 @@ body:not(.is-home) #content-shell {
 .btn-action:hover .icon,
 .btn-action:hover .icon-inline {
     margin-left: 4px;
+}
+
+/* 
+    Action Button Arrow Icon Mask
+    Applies the mask image pointing to the arrow-right SVG for buttons.
+*/
+.btn-action .icon-right,
+.btn-action .icon {
+    mask-image: url('../svg/arrow-right.svg');
+    -webkit-mask-image: url('../svg/arrow-right.svg');
 }
 
 /* 
@@ -1797,7 +1869,8 @@ textarea.form-input {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     transform-origin: bottom right;
-    scale: 0.9; /* Allowed */
+    scale: 0.9;
+    /* Allowed */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
@@ -1923,22 +1996,60 @@ textarea.form-input {
     Global helper classes for common layout needs.
 */
 
-.hidden, .is-hidden { display: none !important; }
+.hidden,
+.is-hidden {
+    display: none !important;
+}
 
-.u-mt-3 { margin-top: 3rem !important; }
-.u-mt-1 { margin-top: 1rem !important; }
-.u-mb-2 { margin-bottom: 2rem !important; }
-.u-mb-1 { margin-bottom: 1rem !important; }
+.u-mt-3 {
+    margin-top: 3rem !important;
+}
 
-.u-text-center { text-align: center !important; }
-.u-text-muted { color: var(--text-muted) !important; }
-.u-font-serif { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important; font-weight: 700 !important; }
-.u-uppercase { text-transform: uppercase !important; }
+.u-mt-1 {
+    margin-top: 1rem !important;
+}
 
-.u-flex-column { display: flex; flex-direction: column; }
-.u-justify-center { justify-content: center !important; }
-.u-align-start { align-items: flex-start !important; }
-.u-w-full { width: 100% !important; }
+.u-mb-2 {
+    margin-bottom: 2rem !important;
+}
+
+.u-mb-1 {
+    margin-bottom: 1rem !important;
+}
+
+.u-text-center {
+    text-align: center !important;
+}
+
+.u-text-muted {
+    color: var(--text-muted) !important;
+}
+
+.u-font-serif {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+    font-weight: 700 !important;
+}
+
+.u-uppercase {
+    text-transform: uppercase !important;
+}
+
+.u-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.u-justify-center {
+    justify-content: center !important;
+}
+
+.u-align-start {
+    align-items: flex-start !important;
+}
+
+.u-w-full {
+    width: 100% !important;
+}
 
 /* 
     Responsive Breakpoints 
@@ -1946,98 +2057,206 @@ textarea.form-input {
 */
 
 @media (max-width: 1100px) {
-    .nav-container { padding: 0 1.5rem; }
-    .header-links { gap: 1.5rem; }
-    .alphabet-index-container { columns: 2; }
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+
+    .header-links {
+        gap: 1.5rem;
+    }
+
+    .alphabet-index-container {
+        columns: 2;
+    }
 }
 
 @media (max-width: 900px) {
-    .hero-content { bottom: 60%; }
-    .hero-search-wrapper { width: 90vw; }
-    .about-grid, .contact-layout { grid-template-columns: 1fr; }
+    .hero-content {
+        bottom: 60%;
+    }
+
+    .hero-search-wrapper {
+        width: 90vw;
+    }
+
+    .about-grid,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 650px) {
-    .header-links { gap: 0.6rem; }
-    .header-brand { font-size: 1rem; }
-    .header-links>li>a { font-size: 0.75rem; padding: 4px 8px; }
-    .footer-container { padding: 0 2rem; }
+    .header-links {
+        gap: 0.6rem;
+    }
+
+    .header-brand {
+        font-size: 1rem;
+    }
+
+    .header-links>li>a {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    .footer-container {
+        padding: 0 2rem;
+    }
 }
 
 /* 
-    16. PREMIUM ARCHIVE REDESIGN
-    Quiet editorial archive layer. This section intentionally overrides earlier
-    dashboard-era styling while preserving the existing SPA contracts and IDs.
+    16. PREMIUM ARCHIVE REDESIGN (THE ORACLE CYBER-GLASSMORPHIC PORTAL)
+    This section completely overrides earlier dashboard-era and legacy vintage styling.
+    It builds an ultra-premium, high-contrast, modern glassmorphic intelligence HUD interface
+    while maintaining full compatibility with the existing single page application (SPA) routing, 
+    ids, and classes.
 */
 
+/*
+    :root Selector (Light Theme Design Tokens)
+    Establishes the design tokens, fonts, spacing values, glass effect properties,
+    and light mode color palette using professional slate, neon royal blue, and gold accents.
+*/
 :root {
-    --bg-page: #f4f1ea;
-    --bg-card: #fffdf8;
-    --text-main: #211f1a;
-    --text-muted: #6f6a60;
-    --accent-blue: #334f3e;
-    --accent-gold: #9b6b2f;
-    --border-light: rgba(58, 49, 36, 0.16);
-    --card-border-deco: rgba(58, 49, 36, 0.2);
-    --glass-bg: rgba(255, 253, 248, 0.94);
-    --nav-button-border: rgba(58, 49, 36, 0.22);
-    --note-bg: #fff7df;
-    --note-border: #d8b365;
-    --accent-bg: #ebe6dc;
-    --card-shadow: rgba(58, 49, 36, 0.06);
-    --card-shadow-hover: rgba(58, 49, 36, 0.12);
-    --search-border: rgba(58, 49, 36, 0.35);
-    --search-shadow: 0 16px 38px rgba(58, 49, 36, 0.08);
-    --hero-bg: linear-gradient(180deg, #fbf8f0 0%, #efe8da 100%);
-    --hero-text: #211f1a;
-    --hero-text-muted: #5f594f;
-    --hero-shadow: rgba(58, 49, 36, 0.08);
-    --hero-particle-color: 155, 107, 47;
-    --archive-paper: #fffdf8;
-    --archive-ink-soft: #3f3a31;
-    --archive-rule: rgba(58, 49, 36, 0.18);
+    /* Premium Modern Typography Families */
+    --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+    /* Base Colors & Layout */
+    --bg-page: #f8fafc;
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --accent-blue: #2563eb;
+    --accent-gold: #b45309;
+    --border-light: rgba(15, 23, 42, 0.08);
+    --header-height: 64px;
+    --max-width: 1200px;
+
+    /* Glassmorphism & UI Accents */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --nav-button-border: rgba(15, 23, 42, 0.12);
+    --mega-menu-bg: rgba(248, 250, 252, 0.98);
+
+    /* Notification & Note Blocks */
+    --note-bg: rgba(245, 158, 11, 0.05);
+    --note-border: rgba(245, 158, 11, 0.25);
+    --accent-bg: #f1f5f9;
+
+    /* Shadows, Elevation & Glowing Accents */
+    --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    --card-shadow-hover: 0 20px 40px rgba(37, 99, 235, 0.08), 0 0 20px rgba(37, 99, 235, 0.05);
+    --card-border-deco: rgba(37, 99, 235, 0.12);
+    --search-border: rgba(15, 23, 42, 0.18);
+    --search-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
+
+    /* Hero Section Specifics (Light Mode) */
+    --hero-bg: radial-gradient(circle at 50% 50%, #ffffff 0%, #f1f5f9 100%);
+    --hero-text: #0f172a;
+    --hero-text-muted: #475569;
+    --hero-shadow: rgba(15, 23, 42, 0.05);
+    --hero-particle-color: 37, 99, 235;
+
+    /* Semantic Redesign Tokens */
+    --archive-paper: rgba(255, 255, 255, 0.75);
+    --archive-ink-soft: #334155;
+    --archive-rule: rgba(15, 23, 42, 0.08);
+    --accent-cyan: #0284c7;
+    --glow-color: rgba(37, 99, 235, 0.15);
+    --glass-blur: 24px;
 }
 
+/*
+    :root.dark-theme Selector (Dark Theme Design Tokens)
+    Overrides design tokens for dark theme to implement the premium, high-tech,
+    glowing obsidian intelligence portal aesthetic with neon electric cyan and amber accents.
+*/
 :root.dark-theme {
-    --bg-page: #11100d;
-    --bg-card: #1a1814;
-    --text-main: #eee7dc;
-    --text-muted: #aaa194;
-    --accent-blue: #a4c2a8;
-    --accent-gold: #d5a85c;
-    --border-light: rgba(238, 231, 220, 0.14);
-    --card-border-deco: rgba(238, 231, 220, 0.18);
-    --glass-bg: rgba(26, 24, 20, 0.94);
-    --nav-button-border: rgba(238, 231, 220, 0.24);
-    --note-bg: rgba(213, 168, 92, 0.1);
-    --note-border: rgba(213, 168, 92, 0.42);
-    --accent-bg: #242119;
-    --card-shadow: rgba(0, 0, 0, 0.25);
-    --card-shadow-hover: rgba(0, 0, 0, 0.34);
-    --search-border: rgba(238, 231, 220, 0.24);
-    --search-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
-    --hero-bg: linear-gradient(180deg, #171511 0%, #0f0e0b 100%);
-    --hero-text: #f4eee5;
-    --hero-text-muted: #b7ad9f;
-    --hero-shadow: rgba(0, 0, 0, 0.35);
-    --hero-particle-color: 213, 168, 92;
-    --archive-paper: #1a1814;
-    --archive-ink-soft: #d4cabd;
-    --archive-rule: rgba(238, 231, 220, 0.16);
+    /* Base Colors & Layout */
+    --bg-page: #030712;
+    --bg-card: rgba(15, 23, 42, 0.65);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-blue: #00f0ff;
+    --accent-gold: #fbbf24;
+    --border-light: rgba(255, 255, 255, 0.08);
+
+    /* Glassmorphism & UI Accents */
+    --glass-bg: rgba(15, 23, 42, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --nav-button-border: rgba(255, 255, 255, 0.12);
+    --mega-menu-bg: rgba(3, 7, 18, 0.98);
+
+    /* Notification & Note Blocks */
+    --note-bg: rgba(251, 191, 36, 0.08);
+    --note-border: rgba(251, 191, 36, 0.3);
+    --accent-bg: #0f172a;
+
+    /* Shadows, Elevation & Glowing Accents */
+    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --card-shadow-hover: 0 20px 50px rgba(0, 240, 255, 0.18), 0 0 25px rgba(0, 240, 255, 0.08);
+    --card-border-deco: rgba(0, 240, 255, 0.15);
+    --search-border: rgba(255, 255, 255, 0.12);
+    --search-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+
+    /* Hero Section Specifics (Dark Mode) */
+    --hero-bg: radial-gradient(circle at 50% 50%, #0d1224 0%, #030712 100%);
+    --hero-text: #ffffff;
+    --hero-text-muted: #94a3b8;
+    --hero-shadow: rgba(0, 0, 0, 0.6);
+    --hero-particle-color: 0, 240, 255;
+
+    /* Semantic Redesign Tokens */
+    --archive-paper: rgba(15, 23, 42, 0.65);
+    --archive-ink-soft: #cbd5e1;
+    --archive-rule: rgba(255, 255, 255, 0.08);
+    --accent-cyan: #00f0ff;
+    --glow-color: rgba(0, 240, 255, 0.2);
+    --glass-blur: 24px;
 }
 
+/*
+    body Selector (Global Layout and Background)
+    Applies the modern geometric body font, baseline line-height, is-home behavior,
+    and paints a gorgeous futuristic cybernetic grid line pattern on the page background.
+*/
 body {
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body);
     background:
-        linear-gradient(90deg, rgba(58, 49, 36, 0.035) 1px, transparent 1px) 0 0 / 48px 48px,
+        linear-gradient(90deg, rgba(37, 99, 235, 0.012) 1px, transparent 1px) 0 0 / 32px 32px,
+        linear-gradient(0deg, rgba(37, 99, 235, 0.012) 1px, transparent 1px) 0 0 / 32px 32px,
         var(--bg-page);
     color: var(--text-main);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
+/*
+    .dark-theme body Selector (Dark Mode Background Override)
+    Enhances the cybernetic grid transparency and visibility to contrast perfectly
+    against the obsidian space dark background of the dark theme.
+*/
+.dark-theme body {
+    background:
+        linear-gradient(90deg, rgba(0, 240, 255, 0.008) 1px, transparent 1px) 0 0 / 32px 32px,
+        linear-gradient(0deg, rgba(0, 240, 255, 0.008) 1px, transparent 1px) 0 0 / 32px 32px,
+        var(--bg-page);
+}
+
+/*
+    body.is-home Selector (Home Page Body Override)
+    Ensures that when on the home view, the body is scrollable organically
+    in the single-page scroll layout.
+*/
 body.is-home {
     overflow: auto;
 }
 
+/*
+    h1, h2, h3, .u-font-serif, .section-title, .dossier-header h1, .header-brand Selector
+    Applies the Space Grotesk modernist sans-serif heading font to all titles,
+    adding a sharp, structured, and authoritative technical feel.
+*/
 h1,
 h2,
 h3,
@@ -2045,49 +2264,115 @@ h3,
 .section-title,
 .dossier-header h1,
 .header-brand {
-    font-family: Georgia, "Times New Roman", serif !important;
-    letter-spacing: 0;
+    font-family: var(--font-heading) !important;
+    letter-spacing: -0.02em;
+    font-weight: 700;
 }
 
+/*
+    .site-header and .header-hero-mode Selector
+    Styles the fixed top header with a sleek glassmorphic container, applying
+    a modern border, low opacity background, and heavy backdrop blur.
+*/
 .site-header,
 .header-hero-mode {
-    background: color-mix(in srgb, var(--bg-card) 94%, transparent);
-    border-bottom: 1px solid var(--archive-rule);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--border-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    height: var(--header-height);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
+/*
+    .header-brand and .header-hero-mode .header-brand Selector
+    Styles the main portal branding logo, using the tech font, bold weight,
+    and a subtle spacing layout.
+*/
 .header-brand,
 .header-hero-mode .header-brand {
     color: var(--text-main);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    letter-spacing: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
+/*
+    .header-links Selector
+    Arranges navigation items inside the header flex container with a clean gap.
+*/
 .header-links {
-    gap: 1.5rem;
+    gap: 0.75rem;
+    align-items: center;
 }
 
+/*
+    .header-links>li>a and .header-hero-mode .header-links>li>a Selector
+    Formats the nav items as modern capsule outline pills, applying an elegant transition,
+    semi-transparent text, and clear borders.
+*/
 .header-links>li>a,
 .header-hero-mode .header-links>li>a {
-    border: 0;
-    border-radius: 0;
-    padding: 0.3rem 0;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
     color: var(--text-muted);
     background: transparent;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
 }
 
-.header-links>li>a:hover,
+/*
+    .header-links>li>a:hover Selector (Nav Link Hover State)
+    Transforms the nav link background on mouseover to a soft frosted pill
+    without using any prohibited translate transforms.
+*/
+.header-links>li>a:hover {
+    color: var(--text-main);
+    background: rgba(37, 99, 235, 0.05);
+    border-color: rgba(37, 99, 235, 0.1);
+}
+
+/*
+    .dark-theme .header-links>li>a:hover Selector (Dark Nav Link Hover)
+    Adjusts the hover background highlight to fit perfectly with the glowing dark theme.
+*/
+.dark-theme .header-links>li>a:hover {
+    color: var(--text-main);
+    background: rgba(0, 240, 255, 0.08);
+    border-color: rgba(0, 240, 255, 0.15);
+}
+
+/*
+    .header-links>li>a.active and .dark-theme .header-links>li>a.active Selector
+    Highlights the currently selected nav route as a gorgeous glowing colored pill.
+*/
 .header-links>li>a.active,
 .dark-theme .header-links>li>a.active {
-    color: var(--text-main);
-    background: transparent;
-    border-color: transparent;
-    box-shadow: inset 0 -2px 0 var(--accent-gold);
+    color: var(--accent-blue) !important;
+    background: rgba(37, 99, 235, 0.08);
+    border-color: rgba(37, 99, 235, 0.2);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.05);
 }
 
+/*
+    .dark-theme .header-links>li>a.active Selector (Dark Active Nav Link)
+    Theme override for active link state in dark mode to apply the cyber cyan glow.
+*/
+.dark-theme .header-links>li>a.active {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.1);
+}
+
+/*
+    .theme-toggle, .chat-toggle, .btn, .btn-action, .category-filter-select, .search-input, .search-input-pill Selector
+    Standardizes borders, border radii, and outline shapes for all interactive control elements.
+*/
 .theme-toggle,
 .chat-toggle,
 .btn,
@@ -2095,43 +2380,100 @@ h3,
 .category-filter-select,
 .search-input,
 .search-input-pill {
-    border-radius: 6px;
+    border-radius: 12px;
 }
 
+/*
+    .theme-toggle Selector (Light Mode Toggle Button)
+    Styles the theme manager toggle control with a clean border, no background, and easy scaling.
+*/
 .theme-toggle {
     background: transparent;
-    border-color: var(--archive-rule);
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    transition: all 0.25s ease;
 }
 
+/*
+    .theme-toggle:hover Selector (Theme Toggle Hover State)
+    Applies interactive feedback on mouseover using borders, background tint,
+    and a subtle scale change (no prohibited translate).
+*/
+.theme-toggle:hover {
+    background: rgba(37, 99, 235, 0.05);
+    border-color: var(--accent-blue);
+    scale: 1.05;
+}
+
+/*
+    .dark-theme .theme-toggle:hover Selector (Dark Theme Toggle Hover)
+    Adjusts the hover glow and background for the dark mode toggle control.
+*/
+.dark-theme .theme-toggle:hover {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: var(--accent-blue);
+}
+
+/*
+    .mega-menu Selector
+    Formats the dynamic SPA dossier menu panel with modern glassmorphism,
+    thick border separation, and clean floating shadows.
+*/
 .mega-menu {
-    background: var(--bg-card);
-    border-bottom-color: var(--archive-rule);
-    box-shadow: 0 18px 42px rgba(58, 49, 36, 0.12);
+    background: var(--mega-menu-bg);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
+/*
+    .mega-menu-content Selector
+    Overwrites the category grid container padding and aligns it perfectly.
+*/
 .mega-menu-content {
     align-items: stretch;
-    padding: calc(var(--header-height) + 2rem) 4rem 2.25rem;
+    padding: calc(var(--header-height) + 2rem) 4rem 2rem;
 }
 
+/*
+    .mega-menu-grid Selector
+    Reduces spacing and configures columns inside the mega menu grid system.
+*/
 .mega-menu-grid {
-    gap: 0.35rem 2.25rem;
+    gap: 0.5rem 2rem;
 }
 
+/*
+    .mega-menu-item-link a Selector (Mega Menu List Links)
+    Styles the list entries inside the mega menu with a clean body font,
+    muted color, and bottom separator line.
+*/
 .mega-menu-item-link a {
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     padding: 0.25rem 0;
     border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 
+/*
+    .mega-menu-item-link a:hover Selector (Mega Menu Link Hover)
+    Highlights links in the mega menu on hover using underlines, text weight,
+    and color shifts without translate Y/X.
+*/
 .mega-menu-item-link a:hover {
-    color: var(--text-main);
+    color: var(--accent-blue);
     text-decoration: none;
-    border-bottom-color: var(--archive-rule);
+    border-bottom-color: var(--accent-blue);
     text-shadow: none;
 }
 
+/*
+    .archive-home and .home-viewport Selector
+    Restructures the SPA Home page viewport to act as a smooth, continuous,
+    non-overlapping single scroll interface.
+*/
 .archive-home,
 .home-viewport {
     height: auto;
@@ -2139,6 +2481,11 @@ h3,
     overflow: visible;
 }
 
+/*
+    .archive-home .home-layer, .archive-home .hero-layer, .archive-home .dashboard-layer Selector
+    Deactivates legacy CSS transition animations, making sections appear
+    instantly and scroll organically.
+*/
 .archive-home .home-layer,
 .archive-home .hero-layer,
 .archive-home .dashboard-layer {
@@ -2153,363 +2500,1279 @@ h3,
     animation: none;
 }
 
+/*
+    .archive-frontdesk Selector (Hero Center Desk)
+    Redesigns the main landing section, applying a radiant gradient, deep breathing space,
+    and a clean visual layout.
+*/
 .archive-frontdesk {
-    min-height: 74vh;
+    min-height: 70vh;
     display: grid;
     align-items: center;
-    padding: calc(var(--header-height) + 4rem) 2rem 4rem;
+    position: relative;
+    padding: calc(var(--header-height) + 5rem) 2rem 5rem;
     background: var(--hero-bg);
-    border-bottom: 1px solid var(--archive-rule);
+    border-bottom: 1px solid var(--border-light);
 }
 
+/*
+    .archive-frontdesk::after Selector (Hero Edge Fade Overlay)
+    Adds a subtle dark/light visual gradient strip over the hero area
+    for deep atmospheric integration.
+*/
 .archive-frontdesk::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(180deg, transparent 0%, rgba(58, 49, 36, 0.04) 100%);
+    background: linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.02) 100%);
     z-index: 1;
 }
 
+/*
+    .hero-canvas Selector (Constellation Canvas)
+    Reduces raw canvas opacity to fit perfectly with clean typography.
+*/
 .hero-canvas {
-    opacity: 0.18;
+    opacity: 0.45;
 }
 
+/*
+    .hero-main-container Selector
+    Centers the primary text, metadata, and search command pill inside the hero.
+*/
 .hero-main-container {
     position: relative;
     inset: auto;
     z-index: 3;
-    width: min(980px, 100%);
+    width: min(900px, 100%);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 2rem;
     align-items: center;
 }
 
+/*
+    .hero-content Selector
+    Removes fixed absolute coordinates, switching content to static flex flow.
+*/
 .hero-content {
     position: static;
     transform: none;
     padding: 0;
-    max-width: 760px;
+    max-width: 800px;
 }
 
+/*
+    .archive-kicker, .archive-card-category, .results-kicker Selector
+    Formats meta categories and kickers with uppercase bold lettering,
+    small fonts, and theme accent gold color.
+*/
 .archive-kicker,
 .archive-card-category,
 .results-kicker {
     display: inline-flex;
+    align-items: center;
     color: var(--accent-gold);
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
+
+
+/*
+    .hero-content h1 Selector (Main Headline Title)
+    Maximizes headline layout with large, clean typography and tight letter spacing.
+*/
 .hero-content h1 {
-    font-size: clamp(2.4rem, 5vw, 4.75rem);
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     font-weight: 700;
-    letter-spacing: 0;
-    margin: 0.35rem 0 0.85rem;
+    letter-spacing: -0.03em;
+    margin: 0.5rem 0 1rem;
+    line-height: 1.1;
+    color: var(--hero-text);
 }
 
+/*
+    .hero-content p Selector (Landing Subtext)
+    Optimizes reading spacing and limits text density on the landing page.
+*/
 .hero-content p {
-    max-width: 660px;
-    font-size: 1.02rem;
+    max-width: 620px;
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--hero-text-muted);
 }
 
+/*
+    .hero-search-wrapper Selector
+    Formats the center search area, removing absolute coordinates.
+*/
 .hero-search-wrapper {
     position: relative;
     top: auto;
     left: auto;
     transform: none;
-    width: min(760px, 100%);
+    width: min(640px, 100%);
 }
 
+/*
+    .search-input-pill Selector (Command Bar Input)
+    Upgrades the main search input to an ultra-modern command HUD bar,
+    applying a beautiful frame border, deep shadows, and slate background.
+*/
 .search-input-pill {
-    padding: 1rem 1.1rem;
+    padding: 1.1rem 1.5rem;
     border: 1px solid var(--search-border);
     background: var(--bg-card);
     box-shadow: var(--search-shadow);
     font-family: inherit;
     font-size: 1rem;
+    color: var(--text-main);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/*
+    .search-input-pill:focus Selector (Command Bar Focus State)
+    Creates a brilliant cyan/blue neon glowing halo around the input on focus
+    without using unrequested transforms.
+*/
 .search-input-pill:focus {
     scale: 1;
     outline: none;
-    border-color: var(--accent-gold);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-gold) 20%, transparent), var(--search-shadow);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15), var(--search-shadow);
 }
 
+/*
+    .dark-theme .search-input-pill:focus Selector (Dark Command Bar Focus)
+    Theme override to apply the hyper cyber-cyan outline glow in dark mode.
+*/
+.dark-theme .search-input-pill:focus {
+    box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.2), var(--search-shadow);
+}
+
+/*
+    .search-suggestions Selector
+    Styles the live suggestion dropdown list, using a clean border radius,
+    frosty backdrop filter, and elevated glass panel.
+*/
 .search-suggestions {
-    border-radius: 8px;
-    border-color: var(--archive-rule);
-    background: var(--bg-card);
-    box-shadow: 0 18px 40px rgba(58, 49, 36, 0.12);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    background: var(--glass-bg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
+/*
+    .search-suggestion Selector (Suggestion Row)
+    Formats rows inside the suggestion container with light borders.
+*/
 .search-suggestion {
-    border-bottom: 1px solid var(--archive-rule);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.85rem 1.25rem;
+    transition: background 0.2s ease;
 }
 
+/*
+    .search-suggestion:hover, .search-suggestion:focus-visible Selector (Suggestion Row Hover)
+    Highlights rows on hover using the primary accent color tint.
+*/
+.search-suggestion:hover,
+.search-suggestion:focus-visible {
+    background: rgba(37, 99, 235, 0.05);
+}
+
+/*
+    .dark-theme .search-suggestion:hover Selector (Dark Suggestion Hover)
+    Cyan highlights for dark mode search suggestion list hover.
+*/
+.dark-theme .search-suggestion:hover {
+    background: rgba(0, 240, 255, 0.06);
+}
+
+/*
+    .archive-frontdesk-meta Selector (Hero Highlights Panel)
+    Lays out the highlights metadata grid with a sleek grid border,
+    semi-translucent container, and a technical HUD aesthetic.
+*/
 .archive-frontdesk-meta {
-    width: min(760px, 100%);
+    width: min(640px, 100%);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border: 1px solid var(--archive-rule);
-    background: color-mix(in srgb, var(--bg-card) 74%, transparent);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: hidden;
 }
 
-.archive-frontdesk-meta > div {
-    padding: 0.9rem 1rem;
-    border-right: 1px solid var(--archive-rule);
+/*
+    .dark-theme .archive-frontdesk-meta Selector (Dark Highlights Panel)
+    Adapts the highlights metadata grid background to dark theme opacity variables.
+*/
+.dark-theme .archive-frontdesk-meta {
+    background: rgba(15, 23, 42, 0.3);
+}
+
+/*
+    .archive-frontdesk-meta > div Selector (Highlights Column)
+    Styles each metadata unit inside the highlights panel with fine separator borders.
+*/
+.archive-frontdesk-meta>div {
+    padding: 0.9rem 1.2rem;
+    border-right: 1px solid var(--border-light);
     text-align: left;
 }
 
-.archive-frontdesk-meta > div:last-child {
+/*
+    .archive-frontdesk-meta > div:last-child Selector (Highlights Last Column)
+    Removes separator border from the final metadata column.
+*/
+.archive-frontdesk-meta>div:last-child {
     border-right: 0;
 }
 
+/*
+    .meta-label Selector (Metadata Kicker Label)
+    Formats label headers in columns using the primary body font and small letters.
+*/
 .meta-label {
     display: block;
     color: var(--text-muted);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
+    margin-bottom: 0.15rem;
 }
 
+/*
+    .archive-jump-link Selector (Scroll Jump Indicator)
+    Styles the anchor indicator that scrolls down, formatting it with clean colors.
+*/
 .archive-jump-link {
     position: relative;
     left: auto;
     bottom: auto;
     transform: none;
-    margin: 0 auto;
+    margin: 1.5rem auto 0;
     width: fit-content;
     color: var(--text-muted);
     text-decoration: none;
     z-index: 3;
+    transition: color 0.2s ease;
 }
 
+/*
+    .archive-jump-link:hover Selector (Scroll Indicator Hover)
+    Brightens the text color of the scroll indicator on mouseover.
+*/
+.archive-jump-link:hover {
+    color: var(--text-main);
+}
+
+/*
+    .archive-preview-layer Selector
+    Paints the container of the dossier cards layer with a sleek solid theme color.
+*/
 .archive-preview-layer {
     background: var(--bg-page);
 }
 
+/*
+    .dashboard-section Selector
+    Applies margins, maximum width limits, and consistent padding for main dashboard views.
+*/
 .dashboard-section {
     width: min(1180px, calc(100% - 3rem));
     max-width: none;
     margin: 0 auto;
-    padding: 3rem 0 4rem;
+    padding: 4rem 0;
 }
 
+/*
+    .dashboard-back-strip Selector (Featured Header Bar)
+    Formats the subtitle strip above cards, applying a clean color and border-bottom.
+*/
 .dashboard-back-strip {
     cursor: default;
     color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
     opacity: 1;
-    border-bottom: 1px solid var(--archive-rule);
+    border-bottom: 1px solid var(--border-light);
     width: 100%;
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
 }
 
+/*
+    .card-grid Selector (Grid Layout)
+    Defines a clean, responsive layout grid for archive record cards.
+*/
 .card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
+/*
+    .info-card Selector (Futuristic Glass Record Card)
+    Completely transforms the dossier cards into premium glassmorphic HUD capsules,
+    applying a frosted background, accent top border, rounded corners, and glowing shadows.
+*/
 .info-card {
     align-items: flex-start;
-    min-height: 260px;
-    padding: 1.2rem 1.2rem 4rem;
-    border: 1px solid var(--archive-rule);
-    border-radius: 8px;
-    box-shadow: 0 6px 20px var(--card-shadow);
+    min-height: 280px;
+    padding: 1.75rem 1.75rem 4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-top: 3px solid var(--accent-blue);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
     text-align: left;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/*
+    .archive-home .info-card Selector (Home Cards Display override)
+    Forces opacity visibility for all item cards loaded on the home list.
+*/
 .archive-home .info-card {
     opacity: 1;
 }
 
+/*
+    .info-card:hover Selector (HUD Card Hover State)
+    Applies a spectacular ambient color glow, brightens borders, and slightly scales
+    the card to produce a high-end dynamic hover response (no prohibited translates).
+*/
 .info-card:hover {
-    box-shadow: 0 12px 28px var(--card-shadow-hover);
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: var(--card-shadow-hover);
+    scale: 1.02;
 }
 
+/*
+    .dark-theme .info-card:hover Selector (Dark HUD Card Hover)
+    Adjusts the neon glow border color on hover in dark mode.
+*/
+.dark-theme .info-card:hover {
+    border-color: rgba(0, 240, 255, 0.3);
+}
+
+/*
+    .info-card h3 Selector (Card Title)
+    Styles titles in cards using a bold weight, space-grotesk font, and tight margins.
+*/
 .info-card h3 {
-    font-size: 1.15rem;
-    margin: 0.45rem 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0.65rem 0 0.5rem;
+    line-height: 1.3;
+    color: var(--text-main);
 }
 
+/*
+    .info-card p Selector (Card Description)
+    Styles body description text inside cards with comfortable slate text colors.
+*/
 .info-card p {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 0;
 }
 
+/*
+    .card-link Selector (Card Button Link)
+    Converts the footer link inside cards into a modern outlined pill button,
+    anchoring it at the bottom left with a smooth background fill hover.
+*/
 .card-link {
-    left: 1.2rem;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.75rem;
     right: auto;
     margin: 0;
-    border-color: var(--archive-rule);
-    background-size: 0 2px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+    color: var(--text-muted) !important;
+    background: transparent !important;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.25s ease;
 }
 
+/*
+    .info-card:hover .card-link Selector (Card Hover Link Accent)
+    Highlights the card action button on hover with direct theme accent colors.
+*/
+.info-card:hover .card-link {
+    color: var(--accent-blue) !important;
+    border-color: var(--accent-blue);
+    background: rgba(37, 99, 235, 0.05) !important;
+}
+
+/*
+    .dark-theme .info-card:hover .card-link Selector (Dark Card Hover Link)
+    Adjusts the cyber cyan background fill inside the button in dark mode.
+*/
+.dark-theme .info-card:hover .card-link {
+    background: rgba(0, 240, 255, 0.08) !important;
+}
+
+/*
+    .archive-page-header Selector (Sub-Page Header Section)
+    Centers the titles, kickers, and summaries on all search and database overview pages.
+*/
 .archive-page-header {
-    max-width: 760px;
-    margin: 0 auto 2rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
     text-align: center;
 }
 
+/*
+    .archive-page-header h1 Selector
+    Applies massive typography layouts for database catalog heading titles.
+*/
 .archive-page-header h1 {
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    margin: 0.35rem 0 0.65rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin: 0.5rem 0 0.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
+/*
+    .archive-page-header p Selector
+    Styles the subpage header descriptions with a muted grey color.
+*/
 .archive-page-header p {
     color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
+/*
+    .content-card Selector
+    Redesigns structural cards, applying clean borders, rounded frames, and subtle shadows.
+*/
 .content-card {
-    border: 1px solid var(--archive-rule);
-    border-radius: 8px;
-    box-shadow: 0 8px 26px var(--card-shadow);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    background: var(--bg-card);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    padding: 2.5rem;
 }
 
+/*
+    .section-title Selector
+    Applies a sleek linear-gradient bottom rule that fades out to the right
+    to produce a modern technical separator.
+*/
 .section-title {
-    border-bottom-color: var(--archive-rule);
-    font-size: 1.25rem;
+    border-bottom: 0;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-size: 1.35rem;
+    color: var(--text-main);
 }
 
+/*
+    .section-title::after Selector (Section Title Gradient Separator Line)
+    Applies the custom accent-to-transparent gradient line under section headings.
+*/
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue) 0%, transparent 100%);
+}
+
+/*
+    .legend-filter-row Selector (Inventory Controls Panel)
+    Paints the background of the filter toolbar with a slate accent backing,
+    applying rounded parameters and comfortable padding.
+*/
 .legend-filter-row {
     align-items: stretch;
-    padding: 1rem;
-    border: 1px solid var(--archive-rule);
-    border-radius: 8px;
+    padding: 1.25rem;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
     background: var(--accent-bg);
 }
 
+/*
+    .alphabet-bar Selector
+    Lays out alphabet button capsules with optimized gaps.
+*/
 .alphabet-bar {
     gap: 0.35rem;
+    margin-bottom: 1.5rem !important;
 }
 
+/*
+    .alphabet-btn Selector (Alphabet Filter Capsule)
+    Styles filter letter capsules with small fonts, precise borders, and quick sizing.
+*/
 .alphabet-btn {
-    border-color: var(--archive-rule);
-    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    padding: 6px 10px;
+    min-width: 34px;
+    transition: all 0.2s ease;
 }
 
-.alphabet-btn.active {
-    background: var(--accent-blue);
-    color: var(--bg-card);
+/*
+    .alphabet-btn:hover Selector (Alphabet Filter Hover)
+    Highlights letter capsules on hover using the main accent background color tint.
+*/
+.alphabet-btn:hover {
+    color: var(--text-main);
+    background: rgba(37, 99, 235, 0.05);
     border-color: var(--accent-blue);
 }
 
+/*
+    .dark-theme .alphabet-btn:hover Selector (Dark Alphabet Hover)
+    Adjusts hover backgrounds inside alphabet buttons in dark mode.
+*/
+.dark-theme .alphabet-btn:hover {
+    background: rgba(0, 240, 255, 0.08);
+}
+
+/*
+    .alphabet-btn.active Selector (Alphabet Filter Active State)
+    Highlights the currently selected letter filter as a glowing active badge.
+*/
+.alphabet-btn.active {
+    background: var(--accent-blue);
+    color: var(--bg-page) !important;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+}
+
+/*
+    .category-filter-select and .search-input Selector
+    Adjusts frames and borders for the filter dropdowns and legend search bar.
+*/
 .category-filter-select,
 .search-input {
-    border-width: 1px;
+    border: 1px solid var(--border-light);
     background: var(--bg-card);
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    transition: all 0.25s ease;
 }
 
+/*
+    .category-filter-select:focus, .search-input:focus Selector
+    Applies neon borders on focus for filters and inputs inside the legend page.
+*/
+.category-filter-select:focus,
+.search-input:focus {
+    border-color: var(--accent-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/*
+    .legend-table Selector
+    Styles the main database table, formatting border lines and rounding frames.
+*/
 .legend-table {
-    border-color: var(--archive-rule);
-    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
+/*
+    .legend-table thead th Selector
+    Applies a clean slate backing, uppercase bold weight, and separator rules
+    for inventory table column headers.
+*/
 .legend-table thead th {
     background: var(--accent-bg);
-    border-bottom-color: var(--archive-rule);
-}
-
-.legend-table td {
-    padding: 0.85rem 1rem;
-}
-
-.legend-category {
-    display: inline-flex;
-    max-width: 220px;
-    color: var(--accent-gold);
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    line-height: 1.25;
+    border-bottom: 1px solid var(--border-light);
+    padding: 1rem 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
+/*
+    .legend-table td Selector
+    Provides spacious padding values inside table data cells.
+*/
+.legend-table td {
+    padding: 1rem 1.25rem;
+}
+
+/*
+    .legend-category Selector (Table Category Capsule)
+    Converts category badges inside the table into a sleek outline label capsule.
+*/
+.legend-category {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+
+/*
+    .dossier-layout Selector (Intelligence File Layout Redesign)
+    Overhauls dossier document pages to resemble high-profile intelligence reports,
+    applying a beautiful frame width, modern padding, border lines, and floating shadows.
+*/
 .dossier-layout {
-    max-width: 1080px;
-    padding: clamp(1.25rem, 4vw, 3rem);
-    border-color: var(--archive-rule);
-    border-radius: 8px;
-    box-shadow: 0 10px 32px var(--card-shadow);
+    max-width: 1000px;
+    padding: clamp(1.5rem, 5vw, 3.5rem);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    background: var(--bg-card);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     font-size: 0.95rem;
     line-height: 1.7;
 }
 
+/*
+    .dossier-header Selector (Document Heading Area)
+    Separates the headline area of dossier files with a thick obsidian bottom rule.
+*/
 .dossier-header {
     border-bottom: 2px solid var(--text-main);
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
 }
 
+/*
+    .dossier-header h1 Selector
+    Applies dense modern typography scales for the main dossier headline.
+*/
 .dossier-header h1 {
     border-bottom: 0;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     padding-bottom: 0;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
+/*
+    .infobox-metadata Selector (Intelligence Summary Box)
+    Transforms dossier infoboxes into sleek technical telemetry HUD tables,
+    applying a beautiful backing, rounded frames, and clean borders.
+*/
 .infobox-metadata {
-    border-color: var(--archive-rule);
-    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
     background: var(--accent-bg);
+    padding: 1.25rem;
 }
 
+/*
+    .infobox-metadata h4, .infobox-table th, .infobox-table td Selector
+    Ensures separator lines inside infobox metadata tables align perfectly
+    with theme glass borders.
+*/
 .infobox-metadata h4,
 .infobox-table th,
 .infobox-table td {
-    border-bottom-color: var(--archive-rule);
+    border-bottom-color: var(--border-light);
 }
 
+/*
+    .infobox-metadata h4 Selector
+    Formats infobox headers with bold tech font weights and uppercase letters.
+*/
+.infobox-metadata h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+}
+
+/*
+    .pillar-quote and .dossier-quote Selector (Document Blockquotes)
+    Formats extract blockquotes with a technical amber/cyan left-border accent bar
+    and a neat translucent slate background container.
+*/
 .pillar-quote,
 .dossier-quote {
-    border-left-color: var(--accent-gold);
+    border-left: 3px solid var(--accent-gold);
     background: var(--accent-bg);
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem;
+    margin: 2rem 0;
 }
 
+/*
+    .dossier-sources Selector (Document Sources Section)
+    Updates source containers with rounded parameters and elegant border-light frames.
+*/
 .dossier-sources {
-    border-color: var(--note-border);
-    border-radius: 8px;
+    border: 1px solid var(--note-border);
+    background: var(--note-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
 }
 
+/*
+    .source-item Selector (Source Link Pill)
+    Converts list entries inside sources into outlined capsules with circular radii.
+*/
 .source-item {
-    border-color: var(--archive-rule);
-    border-radius: 6px;
-}
-
-.search-result-card {
-    border-color: var(--archive-rule);
-    border-radius: 8px;
-    box-shadow: 0 6px 20px var(--card-shadow);
-}
-
-.chat-window {
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     background: var(--bg-card);
-    border-color: var(--archive-rule);
-    box-shadow: 0 18px 44px rgba(58, 49, 36, 0.18);
+    padding: 0.75rem 1rem;
 }
 
+/*
+    .search-result-card Selector (Search Results Page Card)
+    Updates dedicate search result items with clean borders, rounded frames,
+    and elevated glass panels.
+*/
+.search-result-card {
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    background: var(--bg-card);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    padding: 1.75rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/*
+    .search-result-card:hover Selector (Result Card Hover State)
+    Highlights search result panels on hover using soft scaling and glowing borders.
+*/
+.search-result-card:hover {
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: var(--card-shadow-hover);
+    scale: 1.01;
+}
+
+/*
+    .dark-theme .search-result-card:hover Selector (Dark Result Card Hover)
+    Adjusts the glow border color for results page cards in dark mode.
+*/
+.dark-theme .search-result-card:hover {
+    border-color: rgba(0, 240, 255, 0.3);
+}
+
+/*
+    .chat-window Selector (AI Telemetry HUD Window)
+    Completely restyles the floating assistant panel into a sleek technical HUD,
+    applying solid obsidian backing, sharp border radii, and elevated glass shadows.
+*/
+.chat-window {
+    border-radius: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.85rem 1.25rem;
+}
+
+/*
+    .chat-header h3 Selector (Chat Header Title)
+    Formats the chat title using the space-grotesk modernist header font.
+*/
+.chat-header h3 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+/*
+    .chat-toggle Selector (Theme Toggle Partner Bubble)
+    Styles the bubble trigger with a circular radius, outline border, and scale shifts.
+*/
+.chat-toggle {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--border-light);
+    background: var(--bg-card);
+    transition: all 0.25s ease;
+}
+
+/*
+    .chat-toggle:hover Selector (Chat Toggle Hover State)
+    Applies outline glow color feedback on bubble trigger mouseover.
+*/
+.chat-toggle:hover {
+    scale: 1.08;
+    border-color: var(--accent-blue);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+/*
+    .dark-theme .chat-toggle:hover Selector (Dark Chat Toggle Hover)
+    Adjusts hover backgrounds inside the chat toggle button in dark mode.
+*/
+.dark-theme .chat-toggle:hover {
+    background: rgba(0, 240, 255, 0.08);
+}
+
+/*
+    .message Selector (Chat Bubble Base)
+    Applies standard border radii and compact text formatting for chat entries.
+*/
 .message {
-    border-radius: 8px;
+    border-radius: 12px;
+    font-size: 0.88rem;
 }
 
+/*
+    .ai-message Selector (AI Telemetry Bubble)
+    Formats AI assistant bubble feeds with clean theme slate colors
+    and sharp left-hand visual shapes.
+*/
+.ai-message {
+    background: var(--accent-bg);
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    border-bottom-left-radius: 2px;
+}
+
+/*
+    .user-message Selector (User Bubble)
+    Formats human user bubble feeds with high-profile glowing blue backgrounds
+    and comfortable text layouts.
+*/
 .user-message {
     background: var(--accent-blue);
+    color: #ffffff;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
 }
 
+/*
+    .dark-theme .user-message Selector (Dark User Message)
+    Adjusts text and box shadows for the user message bubble in dark theme.
+*/
+.dark-theme .user-message {
+    color: #030712;
+    box-shadow: 0 4px 12px rgba(0, 240, 255, 0.2);
+}
+
+/*
+    .chat-icon Selector (Chat Toggle Icon SVG Mask)
+    Applies the mask image pointing to the chat SVG for the floating toggle button.
+*/
+.chat-toggle .chat-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: currentColor;
+    mask-image: url('../svg/chat.svg');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-image: url('../svg/chat.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    transition: transform 0.25s ease;
+}
+
+/*
+    .chat-header-info Selector (Chat Header Layout)
+    Aligns the header label and status dot horizontally with clear gaps.
+*/
+.chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/*
+    .chat-header-dot Selector (Active Indicator Dot)
+    Injects a realistic pulsating emerald online indicator next to the chat header text.
+*/
+.chat-header-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    animation: chatPulse 2s infinite ease-in-out;
+}
+
+@keyframes chatPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/*
+    .chat-close Selector (Chat Header Close Button)
+    Converts close triggers to a highly responsive glass bubble containing the close SVG mask.
+*/
+.chat-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.chat-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    scale: 1.08;
+}
+
+.dark-theme .chat-close:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/*
+    .chat-close .close-icon Selector (Close SVG Mask)
+    Applies the mask image pointing to the close SVG for the header exit button.
+*/
+.chat-close .close-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: currentColor;
+    mask-image: url('../svg/close.svg');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-image: url('../svg/close.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+}
+
+/*
+    .chat-input-area Selector (Chat Bottom Input Capsule)
+    Styles the input section as a unified frosted capsule that floats elegantly.
+*/
+.chat-input-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--border-light);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/*
+    .chat-input Selector (Borderless Input Field)
+    Overhauls textboxes to be clean, borderless, and perfectly matched to typography.
+*/
+.chat-input,
+.chat-input-area input[type="text"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    padding: 4px 0;
+}
+
+.chat-input::placeholder,
+.chat-input-area input[type="text"]::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/*
+    .chat-send Selector (Transparent Send Button)
+    Converts action bubbles to a responsive circular layout containing the paper plane SVG mask.
+*/
+.chat-send {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    padding: 0;
+}
+
+.chat-send:hover {
+    color: var(--accent-blue);
+    background: rgba(37, 99, 235, 0.05);
+    scale: 1.08;
+}
+
+.dark-theme .chat-send:hover {
+    color: var(--accent-blue);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+/*
+    .chat-send .send-icon Selector (Send SVG Mask)
+    Applies the mask image pointing to the send SVG for the submit action.
+*/
+.chat-send .send-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+    mask-image: url('../svg/send.svg');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-image: url('../svg/send.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+}
+
+/*
+    .site-footer Selector (Sticky Glassmorphic Footer)
+    Styles the footer container with a glassmorphic look, high backdrop blur,
+    sleek top border, and comfortable spacing.
+*/
 .site-footer {
-    background: var(--bg-card);
-    border-top-color: var(--archive-rule);
-    box-shadow: none;
+    background: var(--glass-bg);
+    border-top: 1px solid var(--border-light);
+    box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 5rem 0 3rem;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
+/*
+    .footer-container Selector (Sizing Wrapper)
+    Controls the horizontal margin margins and centers content boundaries.
+*/
+.footer-container {
+    width: min(var(--max-width), calc(100% - 3rem));
+    margin: 0 auto;
+}
+
+/*
+    .footer-columns Selector (Flexible 3-Column Grid)
+    Lays out the three columns inside the footer using a modern grid with responsive wrapping,
+    matching the column widths perfectly.
+*/
+.footer-columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+/*
+    .footer-column Selector (Baseline Column Stack)
+    Creates a flexible flex column layout for every footer column module.
+*/
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/*
+    .footer-column.brand-column Selector (Brand Column Override)
+    Sets visual alignments and a specific gap spacing for the main brand column.
+*/
+.footer-column.brand-column {
+    gap: 0.85rem;
+}
+
+/*
+    .footer-brand Selector (Branding Logo)
+    Styles the branding text with geometric font weights, uppercase text, and letter spacing.
+*/
+.site-footer .footer-brand {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+/*
+    .footer-slogan Selector (Slogan Tagline)
+    Styles the tagline paragraph text with muted gray colors and easy legibility.
+*/
+.footer-slogan {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 320px;
+}
+
+/*
+    .footer-version-tag Selector (Clean Build Tag)
+    Displays the current database version metadata under the logo with high-contrast, simple layout.
+*/
+.footer-version-tag {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    letter-spacing: 0.02em;
+    background: rgba(37, 99, 235, 0.05);
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-top: 0.25rem;
+}
+
+/*
+    .dark-theme .footer-version-tag Selector (Dark Clean Build Tag)
+    Adapts tag borders and neon cyan colors to match the dark theme.
+*/
+.dark-theme .footer-version-tag {
+    color: var(--accent-blue);
+    background: rgba(0, 240, 255, 0.04);
+    border-color: rgba(0, 240, 255, 0.15);
+}
+
+/*
+    .footer-column-title Selector (Column Header Titles)
+    Styles subcolumn section labels using uppercase, bold technical typography.
+*/
+.footer-column-title {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem 0;
+    position: relative;
+    padding-bottom: 0.35rem;
+}
+
+/*
+    .footer-column-title::after Selector (Subcolumn Separator line)
+    Paints a tiny, clean underline under footer section headers.
+*/
+.footer-column-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+    height: 1.5px;
+    background-color: var(--accent-gold);
+}
+
+/*
+    .footer-links-list Selector (Directory Link list)
+    Spaces link entries cleanly inside the subcolumn.
+*/
+.footer-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    .footer-links-list a Selector (Footer Links)
+    Styles links using a clean size, muted tone, and easy transition.
+*/
+.footer-links-list a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/*
+    .footer-links-list a:hover Selector (Footer Link Hover state)
+    Highlights directory links on hover with primary accent colors.
+*/
+.footer-links-list a:hover {
+    color: var(--accent-blue);
+}
+
+/*
+    .footer-bottom Selector (Bottom Disclaimer Section)
+    Paints a top border divider line and sets visual alignments for footnotes.
+*/
+.site-footer .footer-bottom {
+    border-top: 1px solid var(--border-light);
+    padding-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/*
+    .footer-bottom p Selector (Bottom Disclaimer Paragraph)
+    Styles disclaimer text paragraphs using default body weights and colors.
+*/
+.site-footer .footer-bottom p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/*
+    .u-sr-only Selector
+    Utility class to hide label items visually while preserving them for screen readers.
+*/
 .u-sr-only {
     position: absolute !important;
     width: 1px !important;
@@ -2522,92 +3785,234 @@ h3,
     border: 0 !important;
 }
 
+/*
+    .u-border-top Selector
+    Utility class to apply standard separator rules above specific page blocks.
+*/
 .u-border-top {
-    border-top: 1px solid var(--archive-rule);
+    border-top: 1px solid var(--border-light);
     padding-top: 1.5rem;
 }
 
+/*
+    .u-max-w-400 Selector
+    Utility class to lock specific containers to 400px maximum width.
+*/
 .u-max-w-400 {
     max-width: 400px;
 }
 
+/*
+    .u-font-small and .u-text-sm Selector
+    Utility class to scale specific labels to neat, small text sizing.
+*/
 .u-font-small,
 .u-text-sm {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
 }
 
+/*
+    .u-list-none Selector
+    Utility class to remove list formatting bullets.
+*/
 .u-list-none {
     list-style: none;
 }
 
+/*
+    .u-li-mb-10 li Selector
+    Utility class to add spacing below lists of items.
+*/
 .u-li-mb-10 li {
     margin-bottom: 0.65rem;
 }
 
-.u-p-1_5 { padding: 1.5rem; }
-.u-p-2 { padding: 2rem; }
-.u-mb-0_5 { margin-bottom: 0.5rem; }
-.u-mb-3 { margin-bottom: 3rem; }
-.u-bg-surface-alt { background: var(--accent-bg); }
-.u-rounded { border-radius: 8px; }
-.u-letter-spacing { letter-spacing: 0.08em; }
-.u-list-custom { padding-left: 1.2rem; }
+/*
+    .u-p-1_5 Selector
+    Utility class to apply 1.5rem internal padding boundaries.
+*/
+.u-p-1_5 {
+    padding: 1.5rem;
+}
 
+/*
+    .u-p-2 Selector
+    Utility class to apply 2rem internal padding boundaries.
+*/
+.u-p-2 {
+    padding: 2rem;
+}
+
+/*
+    .u-mb-0_5 Selector
+    Utility class to apply 0.5rem margin bottom spacing.
+*/
+.u-mb-0_5 {
+    margin-bottom: 0.5rem;
+}
+
+/*
+    .u-mb-3 Selector
+    Utility class to apply 3rem margin bottom spacing.
+*/
+.u-mb-3 {
+    margin-bottom: 3rem;
+}
+
+/*
+    .u-bg-surface-alt Selector
+    Utility class to paint element backgrounds using the theme accent-bg token.
+*/
+.u-bg-surface-alt {
+    background: var(--accent-bg);
+}
+
+/*
+    .u-rounded Selector
+    Utility class to round specific images or panels to 12px.
+*/
+.u-rounded {
+    border-radius: 12px;
+}
+
+/*
+    .u-letter-spacing Selector
+    Utility class to apply generous line gaps and spacing between letters.
+*/
+.u-letter-spacing {
+    letter-spacing: 0.08em;
+}
+
+/*
+    .u-list-custom Selector
+    Utility class to space custom list items cleanly.
+*/
+.u-list-custom {
+    padding-left: 1.2rem;
+}
+
+/*
+    Responsive Breakpoints (max-width: 900px)
+    Adapts columns, layouts, filters, tables, and widgets to smaller mobile screens.
+*/
 @media (max-width: 900px) {
+
+    /*
+        .archive-frontdesk Selector (Mobile Hero Layout)
+        Adjusts padding and fits dimensions for compact smartphone display screens.
+    */
     .archive-frontdesk {
         min-height: auto;
-        padding: calc(var(--header-height) + 3rem) 1.5rem 3rem;
+        padding: calc(var(--header-height) + 3rem) 1.5rem 3.5rem;
     }
 
+    /*
+        .archive-frontdesk-meta Selector (Mobile highlights Panel)
+        Collapses highlights columns into a unified vertical list block.
+    */
     .archive-frontdesk-meta {
         grid-template-columns: 1fr;
     }
 
-    .archive-frontdesk-meta > div {
+    /*
+        .archive-frontdesk-meta > div Selector (Mobile highlights Column)
+        Switches separator borders from right side to bottom side.
+    */
+    .archive-frontdesk-meta>div {
         border-right: 0;
-        border-bottom: 1px solid var(--archive-rule);
+        border-bottom: 1px solid var(--border-light);
     }
 
-    .archive-frontdesk-meta > div:last-child {
+    /*
+        .archive-frontdesk-meta > div:last-child Selector (Mobile highlights Last Column)
+        Removes separator border from the final list element.
+    */
+    .archive-frontdesk-meta>div:last-child {
         border-bottom: 0;
     }
 
+    /*
+        .legend-filter-row Selector (Mobile Inventory Controls)
+        Arranges controls vertically on medium screen widths.
+    */
     .legend-filter-row {
         flex-direction: column;
     }
 
+    /*
+        .category-filter-select and .u-max-w-400 Selector
+        Stretches selection elements and search bars to 100% viewport width.
+    */
     .category-filter-select,
     .u-max-w-400 {
         max-width: none;
         width: 100%;
     }
 
+    /*
+        .search-result-card Selector (Mobile Search Result Card)
+        Rearranges horizontal result cards into a standard vertical flow.
+    */
     .search-result-card {
         flex-direction: column;
     }
 
+    /*
+        .search-result-card__actions .card-link Selector
+        Frees result buttons to align cleanly inside vertical parent modules.
+    */
     .search-result-card__actions .card-link {
         position: static;
     }
 
+    /*
+        .infobox-metadata Selector (Mobile Infobox Summary)
+        Disables floats to center summaries above dossier headers on mobile screens.
+    */
     .infobox-metadata {
         float: none;
         width: 100%;
         margin: 0 0 1.5rem;
     }
+
+    /*
+        .footer-columns Selector (Mobile 900px Footer Columns)
+        Changes the 4-column grid into a highly balanced 2x2 grid layout on tablet viewports.
+    */
+    .footer-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
 }
 
+/*
+    Responsive Breakpoints (max-width: 650px)
+    Refines header heights, brand scales, letter lists, and tables for extra small screens.
+*/
 @media (max-width: 650px) {
+
+    /*
+        :root Selector (Mobile Header Height Tokens)
+        Expands header heights to fit dual-layered mobile layouts.
+    */
     :root {
-        --header-height: 92px;
+        --header-height: 96px;
     }
 
+    /*
+        .site-header Selector (Mobile Header Height Overwrite)
+        Allows header to expand vertically to hold wrapped items.
+    */
     .site-header {
         min-height: var(--header-height);
         height: auto;
         align-items: flex-start;
     }
 
+    /*
+        .nav-container Selector (Mobile Nav Alignments)
+        Wraps navigation items, logo, and theme buttons safely within the header.
+    */
     .nav-container {
         padding: 0 1rem;
         min-height: var(--header-height);
@@ -2617,6 +4022,10 @@ h3,
         row-gap: 0.35rem;
     }
 
+    /*
+        .header-brand Selector (Mobile Logo Title Scale)
+        Centers and wraps logo titles on extra small mobile interfaces.
+    */
     .header-brand {
         flex: 0 0 100%;
         padding-right: 0;
@@ -2625,18 +4034,30 @@ h3,
         line-height: 1.1;
     }
 
+    /*
+        .header-links Selector (Mobile Navigation Flex Links)
+        Centers wrapped pills inside the subnav area of the mobile header.
+    */
     .header-links {
         width: auto;
-        gap: 0.75rem;
+        gap: 0.5rem;
         margin-left: 0;
         justify-content: center;
     }
 
+    /*
+        .header-links>li>a Selector (Mobile Navigation Pills Scale)
+        Tightens font sizes and margins inside menu links for narrow screen widths.
+    */
     .header-links>li>a {
-        font-size: 0.68rem;
-        padding: 0.25rem 0;
+        font-size: 0.65rem;
+        padding: 4px 10px;
     }
 
+    /*
+        .theme-toggle Selector (Mobile Theme manager Trigger)
+        Locks theme managers in a fixed floating corner to prevent overlap.
+    */
     .theme-toggle {
         position: absolute;
         right: 0.75rem;
@@ -2645,15 +4066,27 @@ h3,
         padding: 0.35rem;
     }
 
+    /*
+        .dashboard-section Selector (Mobile Dashboard Width limits)
+        Expands dashboard container widths to utilize full mobile screens.
+    */
     .dashboard-section {
         width: min(100% - 1.5rem, 1180px);
-        padding: 2rem 0 3rem;
+        padding: 2.5rem 0;
     }
 
+    /*
+        .content-card Selector (Mobile card spacing override)
+        Compacts card padding on mobile screens.
+    */
     .content-card {
-        padding: 1.25rem;
+        padding: 1.5rem;
     }
 
+    /*
+        .legend-table, .legend-table thead, .legend-table tbody, .legend-table tr, .legend-table th, .legend-table td Selector
+        Transforms table systems into a responsive list of stacked detail fields on smartphones.
+    */
     .legend-table,
     .legend-table thead,
     .legend-table tbody,
@@ -2663,28 +4096,52 @@ h3,
         display: block;
     }
 
+    /*
+        .legend-table thead Selector (Mobile Table Headers Hiding)
+        Hides table headers on screen sizes below 650px.
+    */
     .legend-table thead {
         display: none;
     }
 
+    /*
+        .legend-table tr Selector (Mobile Table Rows Separator)
+        Adds clean visual separator boxes between data table records on mobile.
+    */
     .legend-table tr {
-        border-bottom: 1px solid var(--archive-rule);
-        padding: 0.95rem;
+        border-bottom: 1px solid var(--border-light);
+        padding: 1rem;
     }
 
+    /*
+        .legend-table td Selector (Mobile Table Cell Padding)
+        Removes default cell padding to prevent layout shifts.
+    */
     .legend-table td {
         padding: 0.25rem 0;
     }
 
+    /*
+        .chat-window Selector (Mobile AI Chat Window Dimensions)
+        Locks floating assistant HUD panels to maximum available mobile screen bounds.
+    */
     .chat-window {
         width: calc(100vw - 2rem);
         height: min(460px, calc(100vh - 7rem));
     }
 
+    /*
+        .infobox-table Selector (Mobile Infobox layout)
+        Forces infobox tables to stack cleanly without columns on mobile interfaces.
+    */
     .infobox-table {
         table-layout: fixed;
     }
 
+    /*
+        .infobox-table th, .infobox-table td, .dossier-layout p, .dossier-layout li, .dossier-layout Selector
+        Enforces clean text wrapping boundaries to eliminate overflow on mobile views.
+    */
     .infobox-table th,
     .infobox-table td,
     .dossier-layout p,
@@ -2694,6 +4151,10 @@ h3,
         word-break: normal;
     }
 
+    /*
+        .infobox-table tr, .infobox-table th, .infobox-table td Selector
+        Ensures infobox elements display as block sections.
+    */
     .infobox-table tr,
     .infobox-table th,
     .infobox-table td {
@@ -2701,12 +4162,37 @@ h3,
         width: 100%;
     }
 
+    /*
+        .infobox-table th Selector (Mobile Infobox Label cell)
+        Tops label cells with breathing space, separating them from data cells.
+    */
     .infobox-table th {
         padding-bottom: 0.1rem;
         border-bottom: 0;
     }
 
+    /*
+        .infobox-table td Selector (Mobile Infobox Data cell)
+        Removes top boundaries inside detail rows to stack cleanly under label headings.
+    */
     .infobox-table td {
         padding-top: 0;
+    }
+
+    /*
+        .footer-columns Selector (Mobile 650px Footer Columns)
+        Collapses the grid into a single responsive column on compact smartphone screens.
+    */
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /*
+        .site-footer .footer-bottom Selector (Mobile Footer Bottom)
+        Adjusts padding and spacing on compact mobile screens.
+    */
+    .site-footer .footer-bottom {
+        padding-top: 1.5rem;
     }
 }

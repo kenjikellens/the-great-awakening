@@ -41,27 +41,38 @@
 
     <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-header">
-                <p class="footer-slogan">Preserving factual accountability for a transparent future.</p>
-            </div>
+            <div class="footer-columns">
+                <!-- Column 1: Branding, Slogan and Archive Build info -->
+                <div class="footer-column brand-column">
+                    <span class="footer-brand">THE GREAT AWAKENING</span>
+                    <p class="footer-slogan">Preserving factual accountability and data integrity for a transparent future.</p>
+                    <span class="footer-version-tag">Archive v1.4.2 • Updated May 2026</span>
+                </div>
 
-            <div class="footer-main">
-                <nav class="footer-nav">
-                    <ul class="u-list-none footer-links-vertical">
-                        <li><a href="#home" data-route="home">Home</a></li>
-                        <li><a href="#dossiers" data-route="dossiers">Dossiers</a></li>
-                        <li><a href="#about" data-route="about">About</a></li>
-                        <li><a href="#contact" data-route="contact">Contact</a></li>
-                        <li><a href="#sitemap" data-route="sitemap">Site Index</a></li>
+                <!-- Column 2: Directories Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Directories</h4>
+                    <ul class="u-list-none footer-links-list">
+                        <li><a href="#home" data-route="home">Home Portal</a></li>
+                        <li><a href="#dossiers" data-route="dossiers">Research Dossiers</a></li>
+                        <li><a href="#sitemap" data-route="sitemap">Archive Index</a></li>
                     </ul>
-                </nav>
+                </div>
+
+                <!-- Column 3: Verification Integrity links -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Verification</h4>
+                    <ul class="u-list-none footer-links-list">
+                        <li><a href="#about" data-route="about">Methodology</a></li>
+                        <li><a href="#contact" data-route="contact">Submit Evidence</a></li>
+                        <li><a href="https://github.com" target="_blank" rel="noopener">Open Source Repo</a></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 The Great Awakening. All data verified against public records and institutional reports.
-                </p>
-                <p class="u-text-sm u-text-muted">[2026-04-22] Mass-processing pass completed: dossier template
-                    normalization, source-format standardization, and dashboard sync validation.</p>
+                <p>&copy; 2026 The Great Awakening. All data verified against public records and institutional reports.</p>
+                <p class="u-text-sm u-text-muted">[2026-05-17] Mass-processing pass completed: dossier template normalization, source-format standardization, and dashboard sync validation.</p>
             </div>
         </div>
     </footer>
@@ -78,7 +89,7 @@
                     <span class="chat-header-dot"></span>
                     <h3>AI Assistant</h3>
                 </div>
-                <button id="chat-close" class="chat-close" aria-label="Close chat">&times;</button>
+                <button id="chat-close" class="chat-close" aria-label="Close chat"><span class="close-icon"></span></button>
             </div>
 
             <div id="chat-messages" class="chat-messages">
