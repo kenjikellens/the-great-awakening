@@ -57,16 +57,16 @@ class AiChatWidget {
          */
         this.thematicMatrix = [
             {
-                ids: ['jekyll-island', 'federal-reserve', 'bis', 'imf-world-bank'],
-                keywords: ['monetary', 'banking', 'inflation', 'money', 'central bank', 'interest rate', 'currency', 'federal reserve', 'jekyll island', 'reserve', 'banker', 'bankers', 'gold standard', 'fractional', 'fiat', 'warburg', 'aldrich', 'vanderlip']
+                ids: ['jekyll-island', 'federal-reserve', 'bis', 'imf-world-bank', 'project-agora', 'project-mariana'],
+                keywords: ['monetary', 'banking', 'inflation', 'money', 'central bank', 'interest rate', 'currency', 'federal reserve', 'jekyll island', 'reserve', 'banker', 'bankers', 'gold standard', 'fractional', 'fiat', 'warburg', 'aldrich', 'vanderlip', 'agora', 'tokenization', 'mariana', 'amm', 'automated market maker']
             },
             {
-                ids: ['15-minute-cities', 'my-carbon-wef', 'iea-10-point-plan', 'local-climate-mandates', 'agenda-2030'],
-                keywords: ['climate', 'carbon', 'mandate', 'ulez', 'energy', 'lockdown', 'car-free', '15-minute', 'environmental', 'sustainable', 'sdgs', 'greenhouse', 'pollution', 'warming', 'mobility', 'restrictions', 'net zero']
+                ids: ['15-minute-cities', 'my-carbon-wef', 'iea-10-point-plan', 'local-climate-mandates', 'agenda-2030', 'carbon-cbam', 'crowdstrike-outage'],
+                keywords: ['climate', 'carbon', 'mandate', 'ulez', 'energy', 'lockdown', 'car-free', '15-minute', 'environmental', 'sustainable', 'sdgs', 'greenhouse', 'pollution', 'warming', 'mobility', 'restrictions', 'net zero', 'cbam', 'carbon border', 'carbon tariff', 'emissions tracking', 'crowdstrike', 'outage', 'blue screen', 'bsod', 'cyber-polygon']
             },
             {
-                ids: ['wef', 'the-great-reset', 'davos-manifesto', 'bilderberg', 'trilateral-commission'],
-                keywords: ['schwab', 'davos', 'world economic forum', 'bilderberg', 'trilateral', 'stakeholder capitalism', 'globalist', 'globalists', 'elite', 'elites', 'great reset', 'manifesto', 'private policy', 'young global leaders', 'fourth industrial']
+                ids: ['wef', 'the-great-reset', 'davos-manifesto', 'bilderberg', 'trilateral-commission', 'un-pact-for-the-future', 'wef-global-risks-2026'],
+                keywords: ['schwab', 'davos', 'world economic forum', 'bilderberg', 'trilateral', 'stakeholder capitalism', 'globalist', 'globalists', 'elite', 'elites', 'great reset', 'manifesto', 'private policy', 'young global leaders', 'fourth industrial', 'pact for the future', 'digital compact', 'un pact', 'global risks', 'disinformation', 'emergency platform']
             },
             {
                 ids: ['mk-ultra', 'mk-delta', 'operation-mockingbird', 'operation-gladio', 'operation-sea-spray'],
@@ -81,8 +81,8 @@ class AiChatWidget {
                 keywords: ['leak', 'leaks', 'panama', 'epstein', 'unsealed', 'court files', 'kompromat', 'blackmail', 'assange', 'wikileaks', 'vault 7', 'hacking', 'zero-day', 'surveillance', 'pegasus', 'nso group', 'spyware', 'cyber-intelligence', 'wiretap']
             },
             {
-                ids: ['social-credit', 'digital-id', 'id2020', 'neuralink'],
-                keywords: ['social credit', 'sesame', 'digital id', 'eidas', 'biometrics', 'biometric', 'id2020', 'neuralink', 'bci', 'musk', 'brain chip', 'surveillance state', 'digital wallet', 'identity framework', 'universal id']
+                ids: ['social-credit', 'digital-id', 'id2020', 'neuralink', 'eu-ai-act', 'us-ai-executive-order', 'fisa-702-reauthorization', 'worldcoin-world-id'],
+                keywords: ['social credit', 'sesame', 'digital id', 'eidas', 'biometrics', 'biometric', 'id2020', 'neuralink', 'bci', 'musk', 'brain chip', 'surveillance state', 'digital wallet', 'identity framework', 'universal id', 'ai act', 'artificial intelligence', 'fisa', 'section 702', 'warrantless', 'worldcoin', 'world id', 'orb', 'iris scan', 'sam altman', 'proof of personhood', 'executive order 14110', 'ai safety', 'watermarking', 'content provenance', 'c2pa']
             }
         ];
 

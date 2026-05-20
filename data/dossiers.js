@@ -341,5 +341,75 @@ const DOSSIER_DATA = [
     "summary": "Tracking municipal restrictions on energy use, mobility, and private consumption across Europe. Includes institutional context, key timeline checkpoints, and source-traceable documentation nodes for cross-dossier comparison.",
     "keywords": ["ULEZ", "London", "Brussels", "LEZ", "Zero-Emission", "EnSikuMaV", "Germany", "Climate Mandate"],
     "category": "Societal Transformation"
+  },
+  {
+    "id": "un-pact-for-the-future",
+    "title": "UN Pact for the Future",
+    "summary": "Documenting the September 2024 United Nations resolution establishing the Global Digital Compact and the emergency platform framework for global crises.",
+    "keywords": ["UN", "United Nations", "General Assembly", "Pact for the Future", "Global Digital Compact", "Emergency Platform", "Governance", "Global Summit"],
+    "category": "Global Governance Agendas"
+  },
+  {
+    "id": "eu-ai-act",
+    "title": "EU AI Act",
+    "summary": "An analysis of the European Union's 2024 Artificial Intelligence Act, tracing its phased implementation, prohibited systems, and biometric profiling bans.",
+    "keywords": ["AI Act", "European Union", "EU", "Artificial Intelligence", "Biometric Categorization", "Social Scoring", "Regulation", "Compliance"],
+    "category": "Biometric & Social Control"
+  },
+  {
+    "id": "crowdstrike-outage",
+    "title": "2024 CrowdStrike IT Outage",
+    "summary": "Investigating the July 19, 2024 global IT crash triggered by a faulty kernel-level CrowdStrike update, demonstrating infrastructure vulnerability and supply chain dependency.",
+    "keywords": ["CrowdStrike", "Outage", "Falcon Sensor", "Microsoft", "Windows", "Blue Screen", "BSOD", "Single Point of Failure", "Cyber Polygon"],
+    "category": "Societal Transformation"
+  },
+  {
+    "id": "project-agora",
+    "title": "Project Agorá (BIS Tokenization)",
+    "summary": "Reviewing the BIS-led public-private initiative launched in April 2024 to tokenize cross-border wholesale banking and CBDC systems.",
+    "keywords": ["Project Agora", "Agora", "BIS", "Bank for International Settlements", "Tokenization", "CBDC", "Unified Ledger", "Commercial Banks"],
+    "category": "Monetary & Financial Apex"
+  },
+  {
+    "id": "us-ai-executive-order",
+    "title": "US AI Executive Order 14110",
+    "summary": "Analyzing the White House Executive Order 14110 signed in late 2023 and enforced through 2024-2025, coordinating AI safety standards and synthetic content watermarking.",
+    "keywords": ["Executive Order 14110", "AI Executive Order", "Biden", "Defense Production Act", "NIST", "Watermarking", "Provenance", "Synthetic Media"],
+    "category": "Biometric & Social Control"
+  },
+  {
+    "id": "fisa-702-reauthorization",
+    "title": "FISA Section 702 Reauthorization",
+    "summary": "Documenting the legislative debate, reauthorization, and expansion of warrantless surveillance powers under Section 702 in April 2024.",
+    "keywords": ["FISA", "Section 702", "Surveillance", "Warrantless", "NSA", "Intelligence Agencies", "Privacy", "Reauthorization"],
+    "category": "Biometric & Social Control"
+  },
+  {
+    "id": "wef-global-risks-2026",
+    "title": "WEF Global Risks (2024-2026)",
+    "summary": "Tracing the World Economic Forum's risk analyses from 2024 to 2026, focusing on AI-driven disinformation, cyber warfare, and critical infrastructure resilience.",
+    "keywords": ["WEF", "World Economic Forum", "Global Risks", "Davos", "Disinformation", "Cyber Pandemic", "Rebuilding Trust"],
+    "category": "Global Governance Agendas"
+  },
+  {
+    "id": "worldcoin-world-id",
+    "title": "Worldcoin & World ID",
+    "summary": "Investigating Sam Altman's biometric proof-of-personhood project, its orb-based iris scanning network, and privacy investigations globally.",
+    "keywords": ["Worldcoin", "World ID", "Sam Altman", "Orb", "Iris Scan", "Biometrics", "Proof of Personhood", "Privacy Commissioner"],
+    "category": "Biometric & Social Control"
+  },
+  {
+    "id": "project-mariana",
+    "title": "Project Mariana (BIS AMM)",
+    "summary": "Exploring the 2023-2024 BIS experiment testing Automated Market Makers (AMMs) in foreign exchange markets using wholesale CBDCs.",
+    "keywords": ["Project Mariana", "Mariana", "BIS", "AMM", "Automated Market Maker", "CBDC", "DeFi", "Central Banking"],
+    "category": "Monetary & Financial Apex"
+  },
+  {
+    "id": "carbon-cbam",
+    "title": "Carbon Border Adjustment Mechanism (CBAM)",
+    "summary": "Analyzing the implementation of the European Union's CBAM carbon tariff beginning in 2024 and its impact on global trade and emissions reporting.",
+    "keywords": ["CBAM", "Carbon Border Adjustment", "Carbon Tariff", "EU", "Green Deal", "Emissions Tracking", "Global Trade"],
+    "category": "Societal Transformation"
   }
 ];

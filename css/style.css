@@ -4,7 +4,7 @@
     Organized by functional modules for maximum maintainability.
     ========================================================================== 
 */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 /* 
     1. VARIABLES & THEMES 
@@ -2122,101 +2122,101 @@ textarea.form-input {
 */
 :root {
     /* Premium Modern Typography Families */
-    --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
     /* Base Colors & Layout */
-    --bg-page: #f8fafc;
-    --bg-card: rgba(255, 255, 255, 0.75);
-    --text-main: #0f172a;
-    --text-muted: #475569;
-    --accent-blue: #2563eb;
+    --bg-page: #fbfaf7;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent-blue: #1e3a8a;
     --accent-gold: #b45309;
-    --border-light: rgba(15, 23, 42, 0.08);
+    --border-light: rgba(30, 41, 59, 0.1);
     --header-height: 64px;
     --max-width: 1200px;
 
     /* Glassmorphism & UI Accents */
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.4);
-    --nav-button-border: rgba(15, 23, 42, 0.12);
-    --mega-menu-bg: rgba(248, 250, 252, 0.98);
+    --glass-bg: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(30, 41, 59, 0.1);
+    --nav-button-border: rgba(30, 41, 59, 0.12);
+    --mega-menu-bg: rgba(251, 250, 247, 0.98);
 
     /* Notification & Note Blocks */
-    --note-bg: rgba(245, 158, 11, 0.05);
-    --note-border: rgba(245, 158, 11, 0.25);
+    --note-bg: rgba(180, 83, 9, 0.05);
+    --note-border: rgba(180, 83, 9, 0.25);
     --accent-bg: #f1f5f9;
 
     /* Shadows, Elevation & Glowing Accents */
-    --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    --card-shadow-hover: 0 20px 40px rgba(37, 99, 235, 0.08), 0 0 20px rgba(37, 99, 235, 0.05);
-    --card-border-deco: rgba(37, 99, 235, 0.12);
-    --search-border: rgba(15, 23, 42, 0.18);
-    --search-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
+    --card-shadow: 0 4px 12px rgba(30, 41, 59, 0.04);
+    --card-shadow-hover: 0 12px 24px rgba(30, 41, 59, 0.08);
+    --card-border-deco: rgba(30, 41, 59, 0.12);
+    --search-border: rgba(30, 41, 59, 0.18);
+    --search-shadow: 0 12px 36px rgba(30, 41, 59, 0.06);
 
     /* Hero Section Specifics (Light Mode) */
-    --hero-bg: radial-gradient(circle at 50% 50%, #ffffff 0%, #f1f5f9 100%);
-    --hero-text: #0f172a;
-    --hero-text-muted: #475569;
-    --hero-shadow: rgba(15, 23, 42, 0.05);
-    --hero-particle-color: 37, 99, 235;
+    --hero-bg: linear-gradient(180deg, #fbfaf7 0%, #f0ede4 100%);
+    --hero-text: #1e293b;
+    --hero-text-muted: #64748b;
+    --hero-shadow: rgba(30, 41, 59, 0.05);
+    --hero-particle-color: 180, 83, 9;
 
     /* Semantic Redesign Tokens */
-    --archive-paper: rgba(255, 255, 255, 0.75);
+    --archive-paper: #ffffff;
     --archive-ink-soft: #334155;
-    --archive-rule: rgba(15, 23, 42, 0.08);
-    --accent-cyan: #0284c7;
-    --glow-color: rgba(37, 99, 235, 0.15);
-    --glass-blur: 24px;
+    --archive-rule: rgba(30, 41, 59, 0.1);
+    --accent-cyan: #0369a1;
+    --glow-color: transparent;
+    --glass-blur: 8px;
 }
 
 /*
     :root.dark-theme Selector (Dark Theme Design Tokens)
-    Overrides design tokens for dark theme to implement the premium, high-tech,
-    glowing obsidian intelligence portal aesthetic with neon electric cyan and amber accents.
+    Overrides design tokens for dark theme to implement the premium, scholarly,
+    warm dark-room institutional archive aesthetic.
 */
 :root.dark-theme {
     /* Base Colors & Layout */
-    --bg-page: #030712;
-    --bg-card: rgba(15, 23, 42, 0.65);
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --accent-blue: #00f0ff;
-    --accent-gold: #fbbf24;
-    --border-light: rgba(255, 255, 255, 0.08);
+    --bg-page: #11100d;
+    --bg-card: #1a1814;
+    --text-main: #eee7dc;
+    --text-muted: #aaa194;
+    --accent-blue: #a4c2a8;
+    --accent-gold: #d5a85c;
+    --border-light: rgba(238, 231, 220, 0.12);
 
     /* Glassmorphism & UI Accents */
-    --glass-bg: rgba(15, 23, 42, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --nav-button-border: rgba(255, 255, 255, 0.12);
-    --mega-menu-bg: rgba(3, 7, 18, 0.98);
+    --glass-bg: rgba(26, 24, 20, 0.94);
+    --glass-border: rgba(238, 231, 220, 0.12);
+    --nav-button-border: rgba(238, 231, 220, 0.24);
+    --mega-menu-bg: rgba(17, 16, 13, 0.98);
 
     /* Notification & Note Blocks */
-    --note-bg: rgba(251, 191, 36, 0.08);
-    --note-border: rgba(251, 191, 36, 0.3);
-    --accent-bg: #0f172a;
+    --note-bg: rgba(213, 168, 92, 0.1);
+    --note-border: rgba(213, 168, 92, 0.42);
+    --accent-bg: #242119;
 
     /* Shadows, Elevation & Glowing Accents */
-    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    --card-shadow-hover: 0 20px 50px rgba(0, 240, 255, 0.18), 0 0 25px rgba(0, 240, 255, 0.08);
-    --card-border-deco: rgba(0, 240, 255, 0.15);
-    --search-border: rgba(255, 255, 255, 0.12);
-    --search-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    --card-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    --card-shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.35);
+    --card-border-deco: rgba(238, 231, 220, 0.16);
+    --search-border: rgba(238, 231, 220, 0.24);
+    --search-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
 
     /* Hero Section Specifics (Dark Mode) */
-    --hero-bg: radial-gradient(circle at 50% 50%, #0d1224 0%, #030712 100%);
-    --hero-text: #ffffff;
-    --hero-text-muted: #94a3b8;
-    --hero-shadow: rgba(0, 0, 0, 0.6);
-    --hero-particle-color: 0, 240, 255;
+    --hero-bg: linear-gradient(180deg, #171511 0%, #0f0e0b 100%);
+    --hero-text: #f4eee5;
+    --hero-text-muted: #b7ad9f;
+    --hero-shadow: rgba(0, 0, 0, 0.35);
+    --hero-particle-color: 213, 168, 92;
 
     /* Semantic Redesign Tokens */
-    --archive-paper: rgba(15, 23, 42, 0.65);
-    --archive-ink-soft: #cbd5e1;
-    --archive-rule: rgba(255, 255, 255, 0.08);
-    --accent-cyan: #00f0ff;
-    --glow-color: rgba(0, 240, 255, 0.2);
-    --glass-blur: 24px;
+    --archive-paper: #1a1814;
+    --archive-ink-soft: #d4cabd;
+    --archive-rule: rgba(238, 231, 220, 0.16);
+    --accent-cyan: #a4c2a8;
+    --glow-color: transparent;
+    --glass-blur: 8px;
 }
 
 /*
@@ -2224,26 +2224,17 @@ textarea.form-input {
     Applies the modern geometric body font, baseline line-height, is-home behavior,
     and paints a gorgeous futuristic cybernetic grid line pattern on the page background.
 */
+/* Styles the global document body to set standard typography and default background color. */
 body {
     font-family: var(--font-body);
-    background:
-        linear-gradient(90deg, rgba(37, 99, 235, 0.012) 1px, transparent 1px) 0 0 / 32px 32px,
-        linear-gradient(0deg, rgba(37, 99, 235, 0.012) 1px, transparent 1px) 0 0 / 32px 32px,
-        var(--bg-page);
+    background: var(--bg-page);
     color: var(--text-main);
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/*
-    .dark-theme body Selector (Dark Mode Background Override)
-    Enhances the cybernetic grid transparency and visibility to contrast perfectly
-    against the obsidian space dark background of the dark theme.
-*/
+/* Styles the global document body in dark mode to apply the dark theme background. */
 .dark-theme body {
-    background:
-        linear-gradient(90deg, rgba(0, 240, 255, 0.008) 1px, transparent 1px) 0 0 / 32px 32px,
-        linear-gradient(0deg, rgba(0, 240, 255, 0.008) 1px, transparent 1px) 0 0 / 32px 32px,
-        var(--bg-page);
+    background: var(--bg-page);
 }
 
 /*
@@ -2255,11 +2246,7 @@ body.is-home {
     overflow: auto;
 }
 
-/*
-    h1, h2, h3, .u-font-serif, .section-title, .dossier-header h1, .header-brand Selector
-    Applies the Space Grotesk modernist sans-serif heading font to all titles,
-    adding a sharp, structured, and authoritative technical feel.
-*/
+/* Styles headings, branded elements, and title selectors with the authoritative serif font family. */
 h1,
 h2,
 h3,
@@ -2315,10 +2302,11 @@ h3,
     Formats the nav items as modern capsule outline pills, applying an elegant transition,
     semi-transparent text, and clear borders.
 */
+/* Styles the base state of navigation links in the header. */
 .header-links>li>a,
 .header-hero-mode .header-links>li>a {
     border: 1px solid transparent;
-    border-radius: 20px;
+    border-radius: 4px;
     padding: 6px 16px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -2329,53 +2317,31 @@ h3,
     transition: all 0.25s ease;
 }
 
-/*
-    .header-links>li>a:hover Selector (Nav Link Hover State)
-    Transforms the nav link background on mouseover to a soft frosted pill
-    without using any prohibited translate transforms.
-*/
+/* Styles the hover state of navigation links in light mode. */
 .header-links>li>a:hover {
     color: var(--text-main);
-    background: rgba(37, 99, 235, 0.05);
-    border-color: rgba(37, 99, 235, 0.1);
+    background: rgba(30, 41, 59, 0.05);
+    border-color: rgba(30, 41, 59, 0.1);
 }
 
-/*
-    .dark-theme .header-links>li>a:hover Selector (Dark Nav Link Hover)
-    Adjusts the hover background highlight to fit perfectly with the glowing dark theme.
-*/
+/* Styles the hover state of navigation links in dark mode. */
 .dark-theme .header-links>li>a:hover {
     color: var(--text-main);
-    background: rgba(0, 240, 255, 0.08);
-    border-color: rgba(0, 240, 255, 0.15);
+    background: rgba(238, 231, 220, 0.06);
+    border-color: rgba(238, 231, 220, 0.12);
 }
 
-/*
-    .header-links>li>a.active and .dark-theme .header-links>li>a.active Selector
-    Highlights the currently selected nav route as a gorgeous glowing colored pill.
-*/
+/* Styles the active state of navigation links to apply a clean bottom underline. */
 .header-links>li>a.active,
 .dark-theme .header-links>li>a.active {
-    color: var(--accent-blue) !important;
-    background: rgba(37, 99, 235, 0.08);
-    border-color: rgba(37, 99, 235, 0.2);
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.05);
+    color: var(--text-main) !important;
+    background: transparent;
+    border-color: transparent;
+    border-radius: 0;
+    box-shadow: inset 0 -2px 0 var(--accent-gold);
 }
 
-/*
-    .dark-theme .header-links>li>a.active Selector (Dark Active Nav Link)
-    Theme override for active link state in dark mode to apply the cyber cyan glow.
-*/
-.dark-theme .header-links>li>a.active {
-    background: rgba(0, 240, 255, 0.1);
-    border-color: rgba(0, 240, 255, 0.25);
-    box-shadow: 0 0 12px rgba(0, 240, 255, 0.1);
-}
-
-/*
-    .theme-toggle, .chat-toggle, .btn, .btn-action, .category-filter-select, .search-input, .search-input-pill Selector
-    Standardizes borders, border radii, and outline shapes for all interactive control elements.
-*/
+/* Standardizes borders and sharp border radii for all interactive dashboard controls. */
 .theme-toggle,
 .chat-toggle,
 .btn,
@@ -2383,13 +2349,10 @@ h3,
 .category-filter-select,
 .search-input,
 .search-input-pill {
-    border-radius: 12px;
+    border-radius: 6px;
 }
 
-/*
-    .theme-toggle Selector (Light Mode Toggle Button)
-    Styles the theme manager toggle control with a clean border, no background, and easy scaling.
-*/
+/* Styles the theme toggle switcher button container. */
 .theme-toggle {
     background: transparent;
     border: 1px solid var(--border-light);
@@ -2397,23 +2360,16 @@ h3,
     transition: all 0.25s ease;
 }
 
-/*
-    .theme-toggle:hover Selector (Theme Toggle Hover State)
-    Applies interactive feedback on mouseover using borders, background tint,
-    and a subtle scale change (no prohibited translate).
-*/
+/* Styles the hover state of the theme toggle switcher button in light mode. */
 .theme-toggle:hover {
-    background: rgba(37, 99, 235, 0.05);
+    background: rgba(30, 41, 59, 0.05);
     border-color: var(--accent-blue);
     scale: 1.05;
 }
 
-/*
-    .dark-theme .theme-toggle:hover Selector (Dark Theme Toggle Hover)
-    Adjusts the hover glow and background for the dark mode toggle control.
-*/
+/* Styles the hover state of the theme toggle switcher button in dark mode. */
 .dark-theme .theme-toggle:hover {
-    background: rgba(0, 240, 255, 0.08);
+    background: rgba(238, 231, 220, 0.06);
     border-color: var(--accent-blue);
 }
 
@@ -2645,76 +2601,53 @@ h3,
     Creates a brilliant cyan/blue neon glowing halo around the input on focus
     without using unrequested transforms.
 */
+/* Styles the focused state of the search input bar. */
 .search-input-pill:focus {
     scale: 1;
     outline: none;
     border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15), var(--search-shadow);
+    box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1), var(--search-shadow);
 }
 
-/*
-    .dark-theme .search-input-pill:focus Selector (Dark Command Bar Focus)
-    Theme override to apply the hyper cyber-cyan outline glow in dark mode.
-*/
+/* Styles the focused state of the search input bar in dark mode. */
 .dark-theme .search-input-pill:focus {
-    box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.2), var(--search-shadow);
+    box-shadow: 0 0 0 3px rgba(238, 231, 220, 0.15), var(--search-shadow);
 }
 
-/*
-    .search-suggestions Selector
-    Styles the live suggestion dropdown list, using a clean border radius,
-    frosty backdrop filter, and elevated glass panel.
-*/
+/* Styles the floating search suggestions dropdown container. */
 .search-suggestions {
-    border-radius: 12px;
+    border-radius: 6px;
     border: 1px solid var(--border-light);
-    background: var(--glass-bg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: var(--bg-card);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
 }
 
-/*
-    .search-suggestion Selector (Suggestion Row)
-    Formats rows inside the suggestion container with light borders.
-*/
+/* Styles individual rows in the search suggestions dropdown. */
 .search-suggestion {
     border-bottom: 1px solid var(--border-light);
     padding: 0.85rem 1.25rem;
     transition: background 0.2s ease;
 }
 
-/*
-    .search-suggestion:hover, .search-suggestion:focus-visible Selector (Suggestion Row Hover)
-    Highlights rows on hover using the primary accent color tint.
-*/
+/* Styles the hover state of a search suggestion row in light mode. */
 .search-suggestion:hover,
 .search-suggestion:focus-visible {
-    background: rgba(37, 99, 235, 0.05);
+    background: rgba(30, 41, 59, 0.05);
 }
 
-/*
-    .dark-theme .search-suggestion:hover Selector (Dark Suggestion Hover)
-    Cyan highlights for dark mode search suggestion list hover.
-*/
+/* Styles the hover state of a search suggestion row in dark mode. */
 .dark-theme .search-suggestion:hover {
-    background: rgba(0, 240, 255, 0.06);
+    background: rgba(238, 231, 220, 0.06);
 }
 
-/*
-    .archive-frontdesk-meta Selector (Hero Highlights Panel)
-    Lays out the highlights metadata grid with a sleek grid border,
-    semi-translucent container, and a technical HUD aesthetic.
-*/
+/* Styles the metadata information grid container in the hero banner. */
 .archive-frontdesk-meta {
     width: min(640px, 100%);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border: 1px solid var(--border-light);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    border-radius: 6px;
+    background: var(--bg-card);
     overflow: hidden;
 }
 
@@ -2836,55 +2769,43 @@ h3,
     Completely transforms the dossier cards into premium glassmorphic HUD capsules,
     applying a frosted background, accent top border, rounded corners, and glowing shadows.
 */
+/* Styles the main archive dossier records preview cards with a gold top border. */
 .info-card {
     align-items: flex-start;
     min-height: 280px;
     padding: 1.75rem 1.75rem 4rem;
     background: var(--bg-card);
     border: 1px solid var(--border-light);
-    border-top: 3px solid var(--accent-blue);
-    border-radius: 16px;
+    border-top: 3px solid var(--accent-gold);
+    border-radius: 6px;
     box-shadow: var(--card-shadow);
     text-align: left;
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.25s ease;
 }
 
-/*
-    .archive-home .info-card Selector (Home Cards Display override)
-    Forces opacity visibility for all item cards loaded on the home list.
-*/
+/* Forces preview cards to be visible on the home screen layout. */
 .archive-home .info-card {
     opacity: 1;
 }
 
-/*
-    .info-card:hover Selector (HUD Card Hover State)
-    Applies a spectacular ambient color glow, brightens borders, and slightly scales
-    the card to produce a high-end dynamic hover response (no prohibited translates).
-*/
+/* Styles the hover state of the archive dossier card in light mode. */
 .info-card:hover {
     border-color: var(--accent-blue);
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 20px 40px rgba(0, 68, 204, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
-    scale: 1.02;
+    box-shadow: var(--card-shadow-hover);
 }
 
+/* Styles the hover state of the archive dossier card in dark mode. */
 .dark-theme .info-card:hover {
-    border-color: var(--accent-blue);
-    background: rgba(22, 27, 34, 0.98);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 15px rgba(88, 166, 255, 0.06);
+    border-color: var(--accent-gold);
+    box-shadow: var(--card-shadow-hover);
 }
 
+/* Styles the dossier card title on hover. */
 .info-card:hover h3 {
     color: var(--accent-blue);
 }
 
-/*
-    .info-card h3 Selector (Card Title)
-    Styles titles in cards using a bold weight, space-grotesk font, and tight margins.
-*/
+/* Styles the dossier card title typography and default margins. */
 .info-card h3 {
     font-size: 1.2rem;
     font-weight: 600;
@@ -2893,10 +2814,7 @@ h3,
     color: var(--text-main);
 }
 
-/*
-    .info-card p Selector (Card Description)
-    Styles body description text inside cards with comfortable slate text colors.
-*/
+/* Styles the description text paragraphs within the dossier cards. */
 .info-card p {
     font-size: 0.88rem;
     line-height: 1.5;
@@ -2904,11 +2822,7 @@ h3,
     margin-bottom: 0;
 }
 
-/*
-    .card-link Selector (Card Button Link)
-    Converts the footer link inside cards into a modern outlined pill button,
-    anchoring it at the bottom left with a smooth background fill hover.
-*/
+/* Styles the action button link at the bottom of dossier cards. */
 .card-link {
     position: absolute;
     bottom: 1.5rem;
@@ -2916,7 +2830,7 @@ h3,
     right: auto;
     margin: 0;
     padding: 6px 16px;
-    border-radius: 20px;
+    border-radius: 4px;
     border: 1px solid var(--border-light);
     color: var(--text-muted) !important;
     background: transparent !important;
@@ -2924,21 +2838,19 @@ h3,
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
 }
 
-/*
-    .info-card:hover .card-link Selector (Card Hover Link Accent)
-    Highlights the card action button on hover with direct theme accent colors.
-*/
+/* Styles the hover state of the dossier card action button in light mode. */
 .info-card:hover .card-link {
     color: #ffffff !important;
     border-color: var(--accent-blue);
     background: var(--accent-blue) !important;
 }
 
+/* Styles the hover state of the dossier card action button in dark mode. */
 .dark-theme .info-card:hover .card-link {
-    color: #0d1117 !important;
+    color: #1a1814 !important;
     border-color: var(--accent-blue);
     background: var(--accent-blue) !important;
 }
@@ -3040,6 +2952,7 @@ h3,
     .alphabet-btn Selector (Alphabet Filter Capsule)
     Styles filter letter capsules with small fonts, precise borders, and quick sizing.
 */
+/* Styles the individual letter filter buttons in the index catalog alphabet bar. */
 .alphabet-btn {
     border: 1px solid var(--border-light);
     border-radius: 6px;
@@ -3051,39 +2964,27 @@ h3,
     transition: all 0.2s ease;
 }
 
-/*
-    .alphabet-btn:hover Selector (Alphabet Filter Hover)
-    Highlights letter capsules on hover using the main accent background color tint.
-*/
+/* Styles the hover state of the alphabet filter button in light mode. */
 .alphabet-btn:hover {
     color: var(--text-main);
-    background: rgba(37, 99, 235, 0.05);
+    background: rgba(30, 41, 59, 0.05);
     border-color: var(--accent-blue);
 }
 
-/*
-    .dark-theme .alphabet-btn:hover Selector (Dark Alphabet Hover)
-    Adjusts hover backgrounds inside alphabet buttons in dark mode.
-*/
+/* Styles the hover state of the alphabet filter button in dark mode. */
 .dark-theme .alphabet-btn:hover {
-    background: rgba(0, 240, 255, 0.08);
+    background: rgba(238, 231, 220, 0.06);
 }
 
-/*
-    .alphabet-btn.active Selector (Alphabet Filter Active State)
-    Highlights the currently selected letter filter as a glowing active badge.
-*/
+/* Styles the active selected state of the alphabet filter button. */
 .alphabet-btn.active {
     background: var(--accent-blue);
     color: var(--bg-page) !important;
     border-color: var(--accent-blue);
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-/*
-    .category-filter-select and .search-input Selector
-    Adjusts frames and borders for the filter dropdowns and legend search bar.
-*/
+/* Styles the category selectors and search input fields in the library catalog. */
 .category-filter-select,
 .search-input {
     border: 1px solid var(--border-light);
@@ -3094,24 +2995,24 @@ h3,
     transition: all 0.25s ease;
 }
 
-/*
-    .category-filter-select:focus, .search-input:focus Selector
-    Applies neon borders on focus for filters and inputs inside the legend page.
-*/
+/* Styles the focused outline ring of selectors and input fields in light mode. */
 .category-filter-select:focus,
 .search-input:focus {
     border-color: var(--accent-blue);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1);
 }
 
-/*
-    .legend-table Selector
-    Styles the main database table, formatting border lines and rounding frames.
-*/
+/* Styles the focused outline ring of selectors and input fields in dark mode. */
+.dark-theme .category-filter-select:focus,
+.dark-theme .search-input:focus {
+    box-shadow: 0 0 0 3px rgba(238, 231, 220, 0.15);
+}
+
+/* Styles the main inventory record listings database data table. */
 .legend-table {
     border: 1px solid var(--border-light);
-    border-radius: 12px;
+    border-radius: 6px;
     overflow: hidden;
 }
 
@@ -3268,54 +3169,36 @@ h3,
     padding: 0.75rem 1rem;
 }
 
-/*
-    .search-result-card Selector (Search Results Page Card)
-    Updates dedicate search result items with clean borders, rounded frames,
-    and elevated glass panels.
-*/
+/* Styles the search result listing cards in the search result viewport. */
 .search-result-card {
     border: 1px solid var(--border-light);
-    border-radius: 16px;
+    border-radius: 6px;
     box-shadow: var(--card-shadow);
     background: var(--bg-card);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
     padding: 1.75rem;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.25s ease;
 }
 
-/*
-    .search-result-card:hover Selector (Result Card Hover State)
-    Highlights search result panels on hover using soft scaling and glowing borders.
-*/
+/* Styles the hover state of the search result listing card in light mode. */
 .search-result-card:hover {
-    border-color: rgba(37, 99, 235, 0.25);
+    border-color: var(--accent-blue);
     box-shadow: var(--card-shadow-hover);
-    scale: 1.01;
 }
 
-/*
-    .dark-theme .search-result-card:hover Selector (Dark Result Card Hover)
-    Adjusts the glow border color for results page cards in dark mode.
-*/
+/* Styles the hover state of the search result listing card in dark mode. */
 .dark-theme .search-result-card:hover {
-    border-color: rgba(0, 240, 255, 0.3);
+    border-color: var(--accent-gold);
 }
 
-/*
-    .chat-window Selector (AI Telemetry HUD Window)
-    Completely restyles the floating assistant panel into a sleek technical HUD,
-    applying solid obsidian backing, sharp border radii, and elevated glass shadows.
-*/
+/* Styles the main floating AI chat assistant window panel container. */
 .chat-window {
-    border-radius: 16px;
+    border-radius: 6px;
     background: var(--bg-card);
     border: 1px solid var(--border-light);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* Styles the header section within the AI chat window. */
 .chat-header {
     display: flex;
     align-items: center;
@@ -3324,10 +3207,7 @@ h3,
     padding: 0.85rem 1.25rem;
 }
 
-/*
-    .chat-header h3 Selector (Chat Header Title)
-    Formats the chat title using the space-grotesk modernist header font.
-*/
+/* Styles the header title text of the AI chat window. */
 .chat-header h3 {
     font-family: var(--font-heading);
     font-size: 0.95rem;
@@ -3335,10 +3215,7 @@ h3,
     letter-spacing: 0.02em;
 }
 
-/*
-    .chat-toggle Selector (Theme Toggle Partner Bubble)
-    Styles the bubble trigger with a circular radius, outline border, and scale shifts.
-*/
+/* Styles the floating AI chat window toggle trigger bubble. */
 .chat-toggle {
     border-radius: 50%;
     width: 48px;
@@ -3348,38 +3225,24 @@ h3,
     transition: all 0.25s ease;
 }
 
-/*
-    .chat-toggle:hover Selector (Chat Toggle Hover State)
-    Applies outline glow color feedback on bubble trigger mouseover.
-*/
+/* Styles the hover state of the floating chat window toggle trigger bubble in light mode. */
 .chat-toggle:hover {
-    scale: 1.08;
     border-color: var(--accent-blue);
-    background: rgba(37, 99, 235, 0.05);
+    background: rgba(30, 41, 59, 0.05);
 }
 
-/*
-    .dark-theme .chat-toggle:hover Selector (Dark Chat Toggle Hover)
-    Adjusts hover backgrounds inside the chat toggle button in dark mode.
-*/
+/* Styles the hover state of the floating chat window toggle trigger bubble in dark mode. */
 .dark-theme .chat-toggle:hover {
-    background: rgba(0, 240, 255, 0.08);
+    background: rgba(238, 231, 220, 0.06);
 }
 
-/*
-    .message Selector (Chat Bubble Base)
-    Applies standard border radii and compact text formatting for chat entries.
-*/
+/* Styles the base layout for each message bubble inside the chat log. */
 .message {
-    border-radius: 12px;
+    border-radius: 4px;
     font-size: 0.88rem;
 }
 
-/*
-    .ai-message Selector (AI Telemetry Bubble)
-    Formats AI assistant bubble feeds with clean theme slate colors
-    and sharp left-hand visual shapes.
-*/
+/* Styles the AI assistant chat response bubble. */
 .ai-message {
     background: var(--accent-bg);
     border: 1px solid var(--border-light);
@@ -3387,31 +3250,20 @@ h3,
     border-bottom-left-radius: 2px;
 }
 
-/*
-    .user-message Selector (User Bubble)
-    Formats human user bubble feeds with high-profile glowing blue backgrounds
-    and comfortable text layouts.
-*/
+/* Styles the human user chat query bubble in light mode. */
 .user-message {
     background: var(--accent-blue);
     color: #ffffff;
     border-bottom-right-radius: 2px;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
 }
 
-/*
-    .dark-theme .user-message Selector (Dark User Message)
-    Adjusts text and box shadows for the user message bubble in dark theme.
-*/
+/* Styles the human user chat query bubble in dark mode. */
 .dark-theme .user-message {
-    color: #030712;
-    box-shadow: 0 4px 12px rgba(0, 240, 255, 0.2);
+    color: #11100d;
+    background: var(--accent-blue);
 }
 
-/*
-    .chat-icon Selector (Chat Toggle Icon SVG Mask)
-    Applies the mask image pointing to the chat SVG for the floating toggle button.
-*/
+/* Styles the custom SVG mask chat icon within the toggle bubble. */
 .chat-toggle .chat-icon {
     display: inline-block;
     width: 20px;
@@ -3426,34 +3278,22 @@ h3,
     transition: transform 0.25s ease;
 }
 
-/*
-    .chat-header-info Selector (Chat Header Layout)
-    Aligns the header label and status dot horizontally with clear gaps.
-*/
+/* Styles the horizontal alignment container of the chat status dot and heading text. */
 .chat-header-info {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-/*
-    .chat-header-dot Selector (Active Indicator Dot)
-    Injects a realistic pulsating emerald online indicator next to the chat header text.
-*/
+/* Styles the steady green online status indicator dot in the chat header. */
 .chat-header-dot {
     display: inline-block;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: #10b981;
-    box-shadow: 0 0 8px #10b981;
-    animation: chatPulse 2s infinite ease-in-out;
 }
 
-@keyframes chatPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-}
 
 /*
     .chat-close Selector (Chat Header Close Button)
@@ -3542,6 +3382,7 @@ h3,
     .chat-send Selector (Transparent Send Button)
     Converts action bubbles to a responsive circular layout containing the paper plane SVG mask.
 */
+/* Styles the submit query action button in the AI chat widget input bar. */
 .chat-send {
     background: transparent;
     border: none;
@@ -3557,21 +3398,19 @@ h3,
     padding: 0;
 }
 
+/* Styles the hover state of the chat send button in light mode. */
 .chat-send:hover {
     color: var(--accent-blue);
-    background: rgba(37, 99, 235, 0.05);
-    scale: 1.08;
+    background: rgba(30, 41, 59, 0.05);
 }
 
+/* Styles the hover state of the chat send button in dark mode. */
 .dark-theme .chat-send:hover {
     color: var(--accent-blue);
-    background: rgba(0, 240, 255, 0.05);
+    background: rgba(238, 231, 220, 0.06);
 }
 
-/*
-    .chat-send .send-icon Selector (Send SVG Mask)
-    Applies the mask image pointing to the send SVG for the submit action.
-*/
+/* Styles the custom SVG mask send icon inside the send button container. */
 .chat-send .send-icon {
     display: inline-block;
     width: 16px;
@@ -3585,17 +3424,11 @@ h3,
     -webkit-mask-size: contain;
 }
 
-/*
-    .site-footer Selector (Sticky Glassmorphic Footer)
-    Styles the footer container with a glassmorphic look, high backdrop blur,
-    sleek top border, and comfortable spacing.
-*/
+/* Styles the global site footer panel at the bottom of pages. */
 .site-footer {
-    background: var(--glass-bg);
+    background: var(--bg-card);
     border-top: 1px solid var(--border-light);
     box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.02);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     padding: 5rem 0 3rem;
     transition: background 0.3s ease, border-color 0.3s ease;
 }
@@ -3668,27 +3501,25 @@ h3,
     .footer-version-tag Selector (Clean Build Tag)
     Displays the current database version metadata under the logo with high-contrast, simple layout.
 */
+/* Styles the build version catalog tag in the footer. */
 .footer-version-tag {
     font-family: var(--font-heading);
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--accent-blue);
+    color: var(--accent-gold);
     letter-spacing: 0.02em;
-    background: rgba(37, 99, 235, 0.05);
-    border: 1px solid rgba(37, 99, 235, 0.12);
+    background: rgba(30, 41, 59, 0.04);
+    border: 1px solid var(--border-light);
     padding: 4px 10px;
     border-radius: 4px;
     margin-top: 0.25rem;
 }
 
-/*
-    .dark-theme .footer-version-tag Selector (Dark Clean Build Tag)
-    Adapts tag borders and neon cyan colors to match the dark theme.
-*/
+/* Styles the build version catalog tag in dark mode. */
 .dark-theme .footer-version-tag {
-    color: var(--accent-blue);
-    background: rgba(0, 240, 255, 0.04);
-    border-color: rgba(0, 240, 255, 0.15);
+    color: var(--accent-gold);
+    background: rgba(238, 231, 220, 0.06);
+    border-color: var(--border-light);
 }
 
 /*
