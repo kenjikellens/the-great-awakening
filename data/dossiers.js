@@ -343,6 +343,27 @@ const DOSSIER_DATA = [
     "category": "Societal Transformation"
   },
   {
+    "id": "google-dietary-bias",
+    "title": "Google Search & Institutional Bias: Seed Oils vs. Red Meat",
+    "summary": "Investigating how search engines and AI Overviews promote industrial seed oils as healthy while warning against red meat, contrasting mainstream guidelines with the controversial Tufts Food Compass rankings.",
+    "keywords": ["Google Search", "AI Overview", "Seed Oils", "Red Meat", "Saturated Fat", "Tufts Food Compass", "Lucky Charms", "Dietary Guidelines", "Linoleic Acid"],
+    "category": "Societal Transformation"
+  },
+  {
+    "id": "alpha-gal-syndrome",
+    "title": "Alpha-gal Syndrome: The Tick-Induced Meat Allergy",
+    "summary": "Exploring Alpha-gal Syndrome (AGS), a tick-induced mammalian red meat allergy transmitted by the lone star tick, and analyzing its implications as a biological vector of dietary restriction.",
+    "keywords": ["Lone Star Tick", "Alpha-gal Syndrome", "Red Meat Allergy", "Amblyomma americanum", "CDC", "Biological Vector", "Dietary Restriction", "Bill Gates", "Lone Star", "Tick"],
+    "category": "Societal Transformation"
+  },
+  {
+    "id": "anti-tech-extremism",
+    "title": "Anti-Tech Extremism: Government Surveillance of Anti-AI Activists",
+    "summary": "Analyzing the FBI and DHS domestic threat classification 'anti-tech violent extremism' used to monitor anti-AI activists and data center protesters, as exposed by a May 2026 WIRED investigation.",
+    "keywords": ["FBI", "DHS", "Anti-Tech Extremism", "AI Protests", "Data Centers", "Surveillance", "Civil Liberties", "Daniel Boguslaw", "Fusion Centers"],
+    "category": "Intelligence & PsyOps"
+  },
+  {
     "id": "un-pact-for-the-future",
     "title": "UN Pact for the Future",
     "summary": "Documenting the September 2024 United Nations resolution establishing the Global Digital Compact and the emergency platform framework for global crises.",

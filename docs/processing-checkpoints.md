@@ -52,6 +52,9 @@ Date: 2026-04-22
 | 46 | "You Will Own Nothing" | you-will-own-nothing | OK (2) | OK | OK | PROCESSED |
 | 47 | HAARP | haarp | OK (2) | OK | OK | PROCESSED |
 | 48 | Project Blue Beam | project-blue-beam | OK (2) | OK | OK | PROCESSED |
+| 49 | Google Search & Institutional Bias: Seed Oils vs. Red Meat | google-dietary-bias | OK (3) | OK | OK | PROCESSED |
+| 50 | Alpha-gal Syndrome: The Tick-Induced Meat Allergy | alpha-gal-syndrome | OK (3) | OK | OK | PROCESSED |
+| 51 | Anti-Tech Extremism: Government Surveillance of Anti-AI Activists | anti-tech-extremism | OK (3) | OK | OK | PROCESSED |
 
 Legend:
 - Research (>=2 links): minimum two external source links present in dossier.

@@ -195,6 +195,11 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Status**: **FACT**.
 - **Size**: small size
 
+### Anti-Tech Extremism: Government Surveillance of Anti-AI Activists
+- **Documented Facts**: A May 2026 WIRED investigation using 1,000+ pages of FOIA files showed the FBI, DHS, and fusion centers tracking anti-AI protesters and data center critics under "anti-tech violent extremism."
+- **Narrative**: Conflation of peaceful dissent with domestic terrorism to protect corporate tech infrastructure and shield AI development from public oversight.
+- **Size**: small size
+
 ---
 
 ## 🎖️ Military & False Flags
@@ -270,6 +275,16 @@ This dossier is a comprehensive collection of documented information regarding t
 ### "You Will Own Nothing"
 - **Documented Facts**: Slogan from a 2016 WEF video/essay by Ida Auken regarding the "circular economy" and "as-a-service" models.
 - **Narrative**: The ultimate goal of stripping individual sovereignty and private property in favor of a permanent rental class.
+- **Size**: small size
+
+### Google Search & Institutional Bias: Seed Oils vs. Red Meat
+- **Documented Facts**: Search algorithms and AI Overviews promote industrial seed oils as healthy while labeling red meat as unhealthy. The underlying Tufts Food Compass (2021) assigned high health scores to cereals like Lucky Charms (60/100) and canola/soybean oils, while penalizing whole ground beef (26/100) and eggs.
+- **Narrative**: Corporate dietary guidelines and search ranking capture designed to replace natural animal agriculture with highly-processed, high-margin seed oils and synthetic alternatives.
+- **Size**: small size
+
+### Alpha-gal Syndrome: The Tick-Induced Meat Allergy
+- **Documented Facts**: The lone star tick (*Amblyomma americanum*) transmits the sugar molecule alpha-gal, triggering an immune response that makes victims allergic to mammalian red meat. The CDC estimates up to 450,000 Americans are affected.
+- **Narrative**: The potential deployment or exploitation of biological vectors to restrict meat consumption, reinforcing technocratic dietary transitions.
 - **Size**: small size
 
 ---

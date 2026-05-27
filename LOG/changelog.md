@@ -566,3 +566,11 @@
 [22:13 17/05/2026] pages/fragments/contact.html - Cleaned up form inputs and select elements by stripping all inline style attributes and centralizing them.
 [22:14 17/05/2026] js/dossier-manager.js - Added sitemap-dossier-list class to dossier listings to enable distinct font scaling in the Site Index.
 [22:15 17/05/2026] css/style.css - Implemented slightly darker blue for sitemap links, restored regular accent blue and underlines on hover, and scaled dossier links to 0.92rem.
+[10:00 27/05/2026] docs/items.md - Added Anti-Tech Extremism, Google Search Dietary Bias, and Alpha-gal Syndrome to the research index.
+[10:01 27/05/2026] data/dossiers.js - Integrated new topic metadata (google-dietary-bias, alpha-gal-syndrome, anti-tech-extremism) into the data store.
+[10:02 27/05/2026] pages/dossiers/google-dietary-bias.html - Created research dossier page for Google Search & Institutional Bias: Seed Oils vs. Red Meat.
+[10:03 27/05/2026] pages/dossiers/alpha-gal-syndrome.html - Created research dossier page for Alpha-gal Syndrome: The Tick-Induced Meat Allergy.
+[10:04 27/05/2026] pages/dossiers/anti-tech-extremism.html - Created research dossier page for Anti-Tech Extremism: Government Surveillance of Anti-AI Activists.
+[10:05 27/05/2026] pages/fragments/dossiers.html - Added recent updates entry for the three new dossiers.
+[10:06 27/05/2026] docs/processing-checkpoints.md - Registered the three new topics in the mass processing checkpoints log.
+[10:07 27/05/2026] pages/dossiers.html - Added static links for the three new research dossiers.
