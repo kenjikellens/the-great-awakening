@@ -35,7 +35,12 @@
         home: {
             fragment: 'pages/fragments/home.html',
             title: `${baseTitle} | Home`,
-            init: async () => {
+            /**
+             * Initializes the home route fragment elements, search engine, canvas particle background,
+             * and handles smooth scrolling to target sections if requested by routing parameters.
+             * @param {string} param - Routing sub-parameter (e.g. "1" or "dashboard" to scroll below hero).
+             */
+            init: async (param = '') => {
                 await DossierManager.renderHomeList();
                 if (typeof window.initDossierSearch === 'function') {
                     window.initDossierSearch();
@@ -49,6 +54,15 @@
                 // Sync theme state to hero background after fragment load
                 if (window.ThemeManager && typeof window.ThemeManager.refreshHeroTheme === 'function') {
                     window.ThemeManager.refreshHeroTheme();
+                }
+                // Scroll to dashboard if requested by the param (e.g. from the scroll indicator arrow)
+                if (param === '1' || param === 'dashboard') {
+                    const target = document.getElementById('dashboard-layer');
+                    if (target) {
+                        setTimeout(() => {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    }
                 }
             }
         },

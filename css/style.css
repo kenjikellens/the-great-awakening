@@ -49,6 +49,8 @@
     --hero-shadow: rgba(0, 0, 0, 0.05);
     --hero-icon-filter: brightness(0) opacity(0.5);
     --hero-particle-color: 0, 68, 204;
+    --hero-map-opacity: 0.12;
+    --hero-map-filter: none;
 }
 
 /* 
@@ -81,6 +83,8 @@
     --hero-icon-filter: brightness(0) invert(1) opacity(0.8);
     --hero-particle-color: 197, 160, 89;
     --nav-button-border: rgba(255, 255, 255, 0.4);
+    --hero-map-opacity: 0.07;
+    --hero-map-filter: invert(1) brightness(1.2);
 }
 
 /* 
@@ -176,8 +180,12 @@ body:not(.is-home) #content-shell {
     Webkit Scrollbar Thumb Hover 
     Interactive state for the scrollbar handle.
 */
+/* 
+    Webkit Scrollbar Thumb Hover 
+    Applies the theme-adaptive hover color (brown/yellow) to the scrollbar thumb when hovered.
+*/
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--accent-blue);
+    background-color: var(--accent-hover);
 }
 
 /* 
@@ -302,47 +310,39 @@ body:not(.is-home) #content-shell {
 
 /* 
     Nav Link Hover 
-    Subtle background highlight on mouseover.
+    Gives the button a solid white background, a stronger border, and casts an external 
+    elevation shadow to make the pill button appear to float without bleeding shadows internally.
 */
 .header-links>li>a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* 
     Dark Mode Nav Link Hover 
-    Specific hover tint for dark backgrounds.
+    Provides a solid, warm charcoal-brown background, cream text pop, 
+    and a distinct warm shadow for active visibility in dark mode.
 */
 .dark-theme .header-links>li>a:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    color: #f4eee5;
+    background-color: #2d2822;
+    border-color: rgba(238, 231, 220, 0.45);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 1px rgba(238, 231, 220, 0.15);
 }
 
 /* 
     Hero Mode Link Hover 
-    Brightens text on hover in hero mode.
+    Gives the button a solid theme-based background and shadow when hovered in hero mode.
 */
 .header-hero-mode .header-links>li>a:hover {
     color: var(--hero-text);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--hero-text);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* 
-    Active Nav Link 
-    Indicator for the currently selected page.
-*/
-.header-links>li>a.active {
-    background-color: rgba(0, 68, 204, 0.1);
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
-}
 
-/* 
-    Dark Mode Active Nav Link 
-    Adjusted contrast for active state in dark mode.
-*/
-.dark-theme .header-links>li>a.active {
-    background-color: rgba(88, 166, 255, 0.15);
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
-}
 
 /* 
     Theme Toggle Button 
@@ -364,10 +364,25 @@ body:not(.is-home) #content-shell {
 
 /* 
     Theme Toggle Hover 
-    Interactive feedback for the toggle button.
+    Gives the toggle a solid white background, a stronger border, and casts an external 
+    elevation shadow to make the button appear to float.
 */
 .theme-toggle:hover {
-    background-color: var(--border-light);
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 
+    Dark Mode Theme Toggle Hover 
+    Gives the toggle a solid, warm charcoal-brown background, cream icon coloring, 
+    and a prominent warm external elevation shadow in dark theme.
+*/
+.dark-theme .theme-toggle:hover {
+    color: #f4eee5;
+    background-color: #2d2822;
+    border-color: rgba(238, 231, 220, 0.45);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 1px rgba(238, 231, 220, 0.15);
 }
 
 /* 
@@ -378,8 +393,14 @@ body:not(.is-home) #content-shell {
     color: var(--hero-text);
 }
 
+/* 
+    Hero Mode Theme Toggle Hover 
+    Enhances borders and adds solid shadows when hovering the toggle in hero overlay mode.
+*/
 .header-hero-mode .theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--hero-text);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* 
@@ -675,6 +696,35 @@ body:not(.is-home) #content-shell {
 }
 
 /* 
+    Hero Map Overlay
+    Renders a subtle world map outline in the background of the hero section,
+    with theme-specific filters and opacity levels for maximum contrast.
+*/
+.hero-map-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('../svg/world-map-outline-isolated-on-transparent-background-free-png.webp');
+    background-repeat: no-repeat;
+    background-position: center 45%;
+    background-size: min(90%, 1100px);
+    opacity: var(--hero-map-opacity);
+    filter: var(--hero-map-filter);
+    pointer-events: none;
+}
+
+/* 
+    Responsive Hero Map Overlay
+    Swaps the background world map to a half-resolution image on mobile screens 
+    and tablets (under 768px width) to reduce memory overhead and load times.
+*/
+@media (max-width: 768px) {
+    .hero-map-overlay {
+        background-image: url('../svg/world-map-outline-isolated-on-transparent-background-free-png-small.webp');
+    }
+}
+
+/* 
     Hero Layer Exit Animation 
     Smoothly fades and blurs the hero when entering the dashboard.
 */
@@ -940,13 +990,21 @@ body:not(.is-home) #content-shell {
     Search Input Pill States 
     Interactive feedback (Scale is allowed for tactile depth).
 */
+/* 
+    Search Input Pill Hover State (Legacy)
+    Applies a theme-adaptive warm hover shadow to the search input pill.
+*/
 .search-input-pill:hover {
-    box-shadow: var(--search-shadow), 0 0 15px rgba(0, 68, 204, 0.1);
+    box-shadow: var(--search-shadow), 0 0 15px var(--accent-hover-shadow-tint);
 }
 
+/* 
+    Search Input Pill Focus State (Legacy)
+    Applies the theme-adaptive accent hover border color and a distinct halo on focus.
+*/
 .search-input-pill:focus {
-    border-color: var(--accent-blue);
-    box-shadow: 0 10px 30px rgba(0, 68, 204, 0.12);
+    border-color: var(--accent-hover);
+    box-shadow: 0 10px 30px var(--accent-hover-shadow-tint);
     scale: 1.01;
 }
 
@@ -966,9 +1024,13 @@ body:not(.is-home) #content-shell {
     box-shadow: var(--search-shadow);
 }
 
+/* 
+    Generic Search Input Focus State (Legacy)
+    Applies the theme-adaptive accent hover border color and focus halo shadow when the input is focused.
+*/
 .search-input:focus {
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(0, 68, 204, 0.1);
+    border-color: var(--accent-hover);
+    box-shadow: 0 0 0 3px var(--accent-hover-shadow-tint);
 }
 
 /* 
@@ -1006,9 +1068,13 @@ body:not(.is-home) #content-shell {
     transition: background-color 0.2s ease;
 }
 
+/* 
+    Search Suggestion Item Hover and Focus States (Legacy)
+    Applies a theme-adaptive light background tint when hovering search suggestions.
+*/
 .search-suggestion:hover,
 .search-suggestion:focus-visible {
-    background: rgba(0, 68, 204, 0.06);
+    background: var(--accent-hover-bg);
     outline: none;
 }
 
@@ -1119,6 +1185,10 @@ body:not(.is-home) #content-shell {
     Card Link 
     Centrally anchored action button within an info card.
 */
+/* 
+    Card Link (Legacy)
+    Interactive link block nested inside the card component, using theme-adaptive hover colors.
+*/
 .card-link {
     position: absolute;
     bottom: 1.25rem;
@@ -1129,7 +1199,7 @@ body:not(.is-home) #content-shell {
     text-transform: none;
     letter-spacing: normal;
     background-color: transparent !important;
-    background-image: linear-gradient(var(--accent-blue), var(--accent-blue));
+    background-image: linear-gradient(var(--accent-hover), var(--accent-hover));
     background-size: 0 3px;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -1137,10 +1207,14 @@ body:not(.is-home) #content-shell {
     border: 1px solid #b1b4b9;
 }
 
+/* 
+    Card Link Hover State (Legacy)
+    Displays a theme-adaptive hover highlight border and shifts the link color on cursor focus.
+*/
 .card-link:hover {
     background-size: 100% 3px !important;
-    border-bottom-color: var(--accent-blue) !important;
-    color: var(--accent-blue) !important;
+    border-bottom-color: var(--accent-hover) !important;
+    color: var(--accent-hover) !important;
 }
 
 /* 
@@ -1396,9 +1470,15 @@ body:not(.is-home) #content-shell {
     text-decoration: underline;
 }
 
+/* 
+    Legend Item Description 
+    Styles the dossier summary description column in the database inventory table using an elegant, italicized serif font (Lora/cursive).
+*/
 .legend-desc {
     color: var(--text-muted);
     font-size: 0.85rem;
+    font-family: var(--font-heading);
+    font-style: italic;
 }
 
 /* 
@@ -1595,13 +1675,28 @@ body:not(.is-home) #content-shell {
     transition: background-color 0.2s ease;
 }
 
+/* 
+    Primary Action Button 
+    Styles primary action buttons with the theme-adaptive accent hover color (brown in light mode, yellow in dark mode).
+*/
 .btn-primary {
-    background-color: var(--accent-blue);
-    color: #ffffff;
+    background-color: var(--accent-hover);
+    color: var(--bg-card);
+}
+/* 
+    Primary Action Button in Dark Theme 
+    Ensures primary action button text has high contrast in dark mode.
+*/
+.dark-theme .btn-primary {
+    color: #11100d;
 }
 
+/* 
+    Primary Action Button Hover State 
+    Changes primary button backgrounds to a theme-adaptive darker/brighter hover state background.
+*/
 .btn-primary:hover {
-    background-color: #0033aa;
+    background-color: var(--btn-primary-hover);
 }
 
 /* 
@@ -1628,10 +1723,14 @@ body:not(.is-home) #content-shell {
     width: fit-content;
 }
 
+/* 
+    Action Button Hover State 
+    Highlights action buttons (secondary/inline actions) with the theme-adaptive hover color and a translucent background tint.
+*/
 .btn-action:hover {
-    color: var(--accent-blue);
-    background: rgba(0, 68, 204, 0.05);
-    border-color: var(--accent-blue);
+    color: var(--accent-hover);
+    background: var(--accent-hover-bg);
+    border-color: var(--accent-hover);
 }
 
 /* 
@@ -1852,10 +1951,14 @@ textarea.form-input {
     pointer-events: auto;
 }
 
+/* 
+    AI Chat Toggle Hover State (Legacy)
+    Applies theme-adaptive accent colors to the chat widget toggle trigger on cursor hover.
+*/
 .chat-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
+    background-color: var(--accent-hover-bg);
+    border-color: var(--accent-hover);
+    color: var(--accent-hover);
 }
 
 .chat-window {
@@ -2132,6 +2235,10 @@ textarea.form-input {
     --text-muted: #64748b;
     --accent-blue: #1e3a8a;
     --accent-gold: #b45309;
+    --accent-hover: #92400e; /* Darker warm brown for light mode hover states */
+    --accent-hover-bg: rgba(146, 64, 14, 0.08); /* Translucent warm brown background for hover states */
+    --accent-hover-shadow-tint: rgba(146, 64, 14, 0.15); /* Warm brown shadow tint for hover states */
+    --btn-primary-hover: #78350f; /* Darker brown for primary button hover in light mode */
     --border-light: rgba(30, 41, 59, 0.1);
     --header-height: 64px;
     --max-width: 1200px;
@@ -2149,7 +2256,7 @@ textarea.form-input {
 
     /* Shadows, Elevation & Glowing Accents */
     --card-shadow: 0 4px 12px rgba(30, 41, 59, 0.04);
-    --card-shadow-hover: 0 12px 24px rgba(30, 41, 59, 0.08);
+    --card-shadow-hover: 0 18px 36px rgba(30, 41, 59, 0.14), 0 4px 12px rgba(30, 41, 59, 0.06); /* Pronounced double-layered shadow for premium depth on hover */
     --card-border-deco: rgba(30, 41, 59, 0.12);
     --search-border: rgba(30, 41, 59, 0.18);
     --search-shadow: 0 12px 36px rgba(30, 41, 59, 0.06);
@@ -2183,6 +2290,10 @@ textarea.form-input {
     --text-muted: #aaa194;
     --accent-blue: #a4c2a8;
     --accent-gold: #d5a85c;
+    --accent-hover: #f59e0b; /* Brighter warm yellow/gold for dark mode hover states */
+    --accent-hover-bg: rgba(245, 158, 11, 0.15); /* Translucent bright yellow/gold background for hover states */
+    --accent-hover-shadow-tint: rgba(245, 158, 11, 0.25); /* Warm yellow/gold shadow tint for hover states */
+    --btn-primary-hover: #fbbf24; /* Brighter yellow for primary button hover in dark mode */
     --border-light: rgba(238, 231, 220, 0.12);
 
     /* Glassmorphism & UI Accents */
@@ -2198,7 +2309,7 @@ textarea.form-input {
 
     /* Shadows, Elevation & Glowing Accents */
     --card-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-    --card-shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.35);
+    --card-shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.65), 0 4px 15px rgba(0, 0, 0, 0.45); /* Deep double-layered dark shadow for prominent contrast on dark background hover */
     --card-border-deco: rgba(238, 231, 220, 0.16);
     --search-border: rgba(238, 231, 220, 0.24);
     --search-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
@@ -2317,29 +2428,39 @@ h3,
     transition: all 0.25s ease;
 }
 
-/* Styles the hover state of navigation links in light mode. */
+/* 
+    Nav Link Hover 
+    Gives the button a solid white background, a stronger border, and casts an external 
+    elevation shadow to make the pill button appear to float without bleeding shadows internally.
+*/
 .header-links>li>a:hover {
-    color: var(--text-main);
-    background: rgba(30, 41, 59, 0.05);
-    border-color: rgba(30, 41, 59, 0.1);
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Styles the hover state of navigation links in dark mode. */
+/* 
+    Dark Mode Nav Link Hover 
+    Provides a solid, warm charcoal-brown background, cream text pop, 
+    and a distinct warm shadow for active visibility in dark mode.
+*/
 .dark-theme .header-links>li>a:hover {
-    color: var(--text-main);
-    background: rgba(238, 231, 220, 0.06);
-    border-color: rgba(238, 231, 220, 0.12);
+    color: #f4eee5;
+    background-color: #2d2822;
+    border-color: rgba(238, 231, 220, 0.45);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 1px rgba(238, 231, 220, 0.15);
 }
 
-/* Styles the active state of navigation links to apply a clean bottom underline. */
+/* 
+    Active Navigation Links Style
+    Applies the active styling to current navigation link buttons, incorporating a 
+    clean bottom accent indicator (accent gold shadow).
+*/
 .header-links>li>a.active,
 .dark-theme .header-links>li>a.active {
-    color: var(--text-main) !important;
-    background: transparent;
-    border-color: transparent;
-    border-radius: 0;
     box-shadow: inset 0 -2px 0 var(--accent-gold);
 }
+
 
 /* Standardizes borders and sharp border radii for all interactive dashboard controls. */
 .theme-toggle,
@@ -2362,15 +2483,17 @@ h3,
 
 /* Styles the hover state of the theme toggle switcher button in light mode. */
 .theme-toggle:hover {
-    background: rgba(30, 41, 59, 0.05);
-    border-color: var(--accent-blue);
-    scale: 1.05;
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Styles the hover state of the theme toggle switcher button in dark mode. */
 .dark-theme .theme-toggle:hover {
-    background: rgba(238, 231, 220, 0.06);
-    border-color: var(--accent-blue);
+    color: #f4eee5;
+    background-color: #2d2822;
+    border-color: rgba(238, 231, 220, 0.45);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 1px rgba(238, 231, 220, 0.15);
 }
 
 /*
@@ -2421,10 +2544,14 @@ h3,
     Highlights links in the mega menu on hover using underlines, text weight,
     and color shifts without translate Y/X.
 */
+/*
+    .mega-menu-item-link a:hover Selector (Mega Menu Link Hover)
+    Highlights links in the mega menu on hover with the theme-adaptive hover color (brown/yellow) and a bottom accent line.
+*/
 .mega-menu-item-link a:hover {
-    color: var(--accent-blue);
+    color: var(--accent-hover);
     text-decoration: none;
-    border-bottom-color: var(--accent-blue);
+    border-bottom-color: var(--accent-hover);
     text-shadow: none;
 }
 
@@ -2605,13 +2732,14 @@ h3,
 .search-input-pill:focus {
     scale: 1;
     outline: none;
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1), var(--search-shadow);
+    border-color: var(--accent-hover);
+    box-shadow: 0 0 0 3px var(--accent-hover-shadow-tint), var(--search-shadow);
 }
 
 /* Styles the focused state of the search input bar in dark mode. */
 .dark-theme .search-input-pill:focus {
-    box-shadow: 0 0 0 3px rgba(238, 231, 220, 0.15), var(--search-shadow);
+    border-color: var(--accent-hover);
+    box-shadow: 0 0 0 3px var(--accent-hover-shadow-tint), var(--search-shadow);
 }
 
 /* Styles the floating search suggestions dropdown container. */
@@ -2632,12 +2760,12 @@ h3,
 /* Styles the hover state of a search suggestion row in light mode. */
 .search-suggestion:hover,
 .search-suggestion:focus-visible {
-    background: rgba(30, 41, 59, 0.05);
+    background: var(--accent-hover-bg);
 }
 
 /* Styles the hover state of a search suggestion row in dark mode. */
 .dark-theme .search-suggestion:hover {
-    background: rgba(238, 231, 220, 0.06);
+    background: var(--accent-hover-bg);
 }
 
 /* Styles the metadata information grid container in the hero banner. */
@@ -2790,19 +2918,19 @@ h3,
 
 /* Styles the hover state of the archive dossier card in light mode. */
 .info-card:hover {
-    border-color: var(--accent-blue);
+    border-color: var(--accent-hover);
     box-shadow: var(--card-shadow-hover);
 }
 
 /* Styles the hover state of the archive dossier card in dark mode. */
 .dark-theme .info-card:hover {
-    border-color: var(--accent-gold);
+    border-color: var(--accent-hover);
     box-shadow: var(--card-shadow-hover);
 }
 
 /* Styles the dossier card title on hover. */
 .info-card:hover h3 {
-    color: var(--accent-blue);
+    color: var(--accent-hover);
 }
 
 /* Styles the dossier card title typography and default margins. */
@@ -2844,15 +2972,15 @@ h3,
 /* Styles the hover state of the dossier card action button in light mode. */
 .info-card:hover .card-link {
     color: #ffffff !important;
-    border-color: var(--accent-blue);
-    background: var(--accent-blue) !important;
+    border-color: var(--accent-hover);
+    background: var(--accent-hover) !important;
 }
 
 /* Styles the hover state of the dossier card action button in dark mode. */
 .dark-theme .info-card:hover .card-link {
-    color: #1a1814 !important;
-    border-color: var(--accent-blue);
-    background: var(--accent-blue) !important;
+    color: #11100d !important;
+    border-color: var(--accent-hover);
+    background: var(--accent-hover) !important;
 }
 
 /*
@@ -2967,21 +3095,27 @@ h3,
 /* Styles the hover state of the alphabet filter button in light mode. */
 .alphabet-btn:hover {
     color: var(--text-main);
-    background: rgba(30, 41, 59, 0.05);
-    border-color: var(--accent-blue);
+    background: var(--accent-hover-bg);
+    border-color: var(--accent-hover);
 }
 
 /* Styles the hover state of the alphabet filter button in dark mode. */
 .dark-theme .alphabet-btn:hover {
-    background: rgba(238, 231, 220, 0.06);
+    background: var(--accent-hover-bg);
+    border-color: var(--accent-hover);
 }
 
 /* Styles the active selected state of the alphabet filter button. */
 .alphabet-btn.active {
-    background: var(--accent-blue);
-    color: var(--bg-page) !important;
-    border-color: var(--accent-blue);
+    background: var(--accent-hover);
+    color: var(--bg-card) !important;
+    border-color: var(--accent-hover);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Styles the active selected state of the alphabet filter button in dark mode. */
+.dark-theme .alphabet-btn.active {
+    color: #11100d !important;
 }
 
 /* Styles the category selectors and search input fields in the library catalog. */
@@ -2998,15 +3132,17 @@ h3,
 /* Styles the focused outline ring of selectors and input fields in light mode. */
 .category-filter-select:focus,
 .search-input:focus {
-    border-color: var(--accent-blue);
+    border-color: var(--accent-hover);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1);
+    box-shadow: 0 0 0 3px var(--accent-hover-shadow-tint);
 }
 
 /* Styles the focused outline ring of selectors and input fields in dark mode. */
 .dark-theme .category-filter-select:focus,
 .dark-theme .search-input:focus {
-    box-shadow: 0 0 0 3px rgba(238, 231, 220, 0.15);
+    border-color: var(--accent-hover);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-hover-shadow-tint);
 }
 
 /* Styles the main inventory record listings database data table. */
@@ -3181,13 +3317,13 @@ h3,
 
 /* Styles the hover state of the search result listing card in light mode. */
 .search-result-card:hover {
-    border-color: var(--accent-blue);
+    border-color: var(--accent-hover);
     box-shadow: var(--card-shadow-hover);
 }
 
 /* Styles the hover state of the search result listing card in dark mode. */
 .dark-theme .search-result-card:hover {
-    border-color: var(--accent-gold);
+    border-color: var(--accent-hover);
 }
 
 /* Styles the main floating AI chat assistant window panel container. */
@@ -3227,13 +3363,14 @@ h3,
 
 /* Styles the hover state of the floating chat window toggle trigger bubble in light mode. */
 .chat-toggle:hover {
-    border-color: var(--accent-blue);
-    background: rgba(30, 41, 59, 0.05);
+    border-color: var(--accent-hover);
+    background: var(--accent-hover-bg);
 }
 
 /* Styles the hover state of the floating chat window toggle trigger bubble in dark mode. */
 .dark-theme .chat-toggle:hover {
-    background: rgba(238, 231, 220, 0.06);
+    border-color: var(--accent-hover);
+    background: var(--accent-hover-bg);
 }
 
 /* Styles the base layout for each message bubble inside the chat log. */
@@ -3400,14 +3537,14 @@ h3,
 
 /* Styles the hover state of the chat send button in light mode. */
 .chat-send:hover {
-    color: var(--accent-blue);
-    background: rgba(30, 41, 59, 0.05);
+    color: var(--accent-hover);
+    background: var(--accent-hover-bg);
 }
 
 /* Styles the hover state of the chat send button in dark mode. */
 .dark-theme .chat-send:hover {
-    color: var(--accent-blue);
-    background: rgba(238, 231, 220, 0.06);
+    color: var(--accent-hover);
+    background: var(--accent-hover-bg);
 }
 
 /* Styles the custom SVG mask send icon inside the send button container. */
@@ -3579,8 +3716,12 @@ h3,
     .footer-links-list a:hover Selector (Footer Link Hover state)
     Highlights directory links on hover with primary accent colors.
 */
+/*
+    .footer-links-list a:hover Selector (Footer Link Hover state)
+    Highlights directory links on hover with theme-adaptive hover colors (brown/yellow).
+*/
 .footer-links-list a:hover {
-    color: var(--accent-blue);
+    color: var(--accent-hover);
 }
 
 /*
@@ -4063,10 +4204,10 @@ h3,
 
 /* 
     .sitemap-list a:hover Selector
-    Flashes original accent-blue and underline emphasis strictly on cursor hover focus.
+    Flashes original theme-adaptive hover color (brown/yellow) and underline emphasis strictly on cursor hover focus.
 */
 .sitemap-list a:hover {
-    color: var(--accent-blue);
+    color: var(--accent-hover);
     text-decoration: underline;
 }
 
@@ -4121,9 +4262,13 @@ h3,
     .custom-file-upload-zone:hover Selector
     Illuminates active border and background when cursor hovers over card container.
 */
+/* 
+    .custom-file-upload-zone:hover Selector
+    Illuminates active border and background when cursor hovers over card container, using theme-adaptive hover colors.
+*/
 .custom-file-upload-zone:hover {
-    background-color: var(--border-light);
-    border-color: var(--accent-blue);
+    background-color: var(--accent-hover-bg);
+    border-color: var(--accent-hover);
 }
 
 /* 

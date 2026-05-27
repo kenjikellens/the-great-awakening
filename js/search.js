@@ -361,7 +361,14 @@ const initHeroTransition = () => {
 
     // --- Click Triggers ---
     if (clickTrigger) {
-        clickTrigger.addEventListener('click', transitionToDashboard);
+        /**
+         * Handles click events on the home scroll trigger button.
+         * Prevents the default anchor navigation and executes the cinematic transition.
+         */
+        clickTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            transitionToDashboard();
+        });
     }
     if (backTrigger) {
         backTrigger.addEventListener('click', transitionToHero);

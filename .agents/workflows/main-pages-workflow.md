@@ -104,6 +104,7 @@ Rules:
 - Ensure compatibility with search indexing.
 
 ### Additional Requirements
+- **Dossier Data Entry**: Add the new dossier's metadata object to `data/dossiers.js`, initializing both `"dateCreated"` and `"lastModified"` properties with the current date in ISO `YYYY-MM-DD` format.
 - Update global statistics if needed.
 - Verify all internal links.
 - Maintain consistent structure across the dashboard.

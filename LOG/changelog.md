@@ -574,3 +574,30 @@
 [10:05 27/05/2026] pages/fragments/dossiers.html - Added recent updates entry for the three new dossiers.
 [10:06 27/05/2026] docs/processing-checkpoints.md - Registered the three new topics in the mass processing checkpoints log.
 [10:07 27/05/2026] pages/dossiers.html - Added static links for the three new research dossiers.
+[10:12 27/05/2026] js/hero-canvas.js - Overhauled the background canvas animation to feature a 3D parallax depth effect, fluid flow-field drift, interactive pointer connections/repulsion, and tap-triggered ripple force waves with spark emissions.
+[10:15 27/05/2026] css/style.css - Added CSS variables and styling rules for the background world map overlay under the hero canvas.
+[10:15 27/05/2026] pages/fragments/home.html - Added the .hero-map-overlay container element behind the interactive canvas.
+[10:17 27/05/2026] svg/world-map-outline-isolated-on-transparent-background-free-png-small.webp - Created a half-resolution version (890x490) of the world map background.
+[10:17 27/05/2026] css/style.css - Added a responsive media query to load the smaller world map background on screens under 768px wide.
+[10:19 27/05/2026] css/style.css - Improved header buttons and theme toggle hover states, adding subtle shadow elevation and more pronounced borders.
+[10:20 27/05/2026] css/style.css - Solidified hover backgrounds for header buttons and theme toggle, ensuring shadows cast outward correctly without bleeding inside.
+[10:21 27/05/2026] css/style.css - Fixed active navigation link buttons to have a border-radius of 6px instead of resetting to 0.
+[10:22 27/05/2026] css/style.css - Adjusted dark mode hover backgrounds to lighter grey, white text pop, double-layered shadows, and enabled hover states on active link selectors.
+[10:23 27/05/2026] css/style.css - Aligned active button hover styles with normal hover styles, removing the active inset underline on hover.
+[10:24 27/05/2026] css/style.css - Eliminated conflicting duplicate navigation link selectors and aligned all hover styling and 6px border-radius values.
+[10:25 27/05/2026] css/style.css - Reverted base button border-radius to 4px, removed separate hover overrides, and simplified the active link selector.
+[10:29 27/05/2026] css/style.css - Adjusted dark mode hover backgrounds to warm charcoal-brown (#2d2822) and cream borders to align with UI design palette.
+[10:31 27/05/2026] pages/fragments/home.html - Inlined the arrow SVG and changed the scroll indicator link from #dossiers to #home.
+[10:31 27/05/2026] js/search.js - Updated the home scroll trigger click listener to prevent the default anchor navigation.
+[10:34 27/05/2026] pages/fragments/home.html - Updated scroll trigger href to #home/1 to trigger custom sub-routing and smooth scroll.
+[10:34 27/05/2026] js/router.js - Added parameter-based smooth scrolling to #dashboard-layer on home initialization.
+[10:37 27/05/2026] css/style.css - Swapped all blue hovers and focus outlines to theme-adaptive warm colors (brown in light mode, yellow/gold in dark mode) via new CSS variables.
+[10:38 27/05/2026] css/style.css - Enhanced hover card shadows with double-layered depth definitions in light and dark modes.
+[10:39 27/05/2026] css/style.css - Set dossier legend description styling to italicized serif font (cursive).
+[10:43 27/05/2026] pages/fragments/dossiers.html - Removed the Recent Database Updates section from the dossiers fragment template.
+[10:44 27/05/2026] pages/dossiers.html - Removed the Recent Database Updates section from the static dossiers index page.
+[10:45 27/05/2026] data/dossiers.js - Added dateCreated and lastModified tracking metadata properties to all dossier objects.
+[10:46 27/05/2026] docs/single-item-workflow.md - Updated workflow instructions to include dateCreated and lastModified metadata updates in dossiers.js.
+[10:46 27/05/2026] docs/main-workflow.md - Updated workflow instructions to include dateCreated and lastModified metadata updates in dossiers.js.
+[10:47 27/05/2026] .agents/workflows/single-item-workflow.md - Updated workflow to include dateCreated and lastModified tracking metadata updates in dossiers.js.
+[10:47 27/05/2026] .agents/workflows/main-pages-workflow.md - Updated workflow to include dateCreated and lastModified tracking metadata updates in dossiers.js.

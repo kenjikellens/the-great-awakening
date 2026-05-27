@@ -63,6 +63,7 @@ This protocol is intended for the focused development or update of a specific re
 - The card must contain:
   - an `h3` for the title
   - a `p` element for the description
+- **Dossier Data Entry**: Update `data/dossiers.js` by adding or updating the dossier's metadata object, ensuring it contains `"dateCreated"` and `"lastModified"` tracking keys with ISO date strings (`YYYY-MM-DD`).
 - Update any dashboard stats if the total database state changes.
 
 ### 7. FINAL VERIFICATION
