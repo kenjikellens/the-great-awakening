@@ -601,3 +601,47 @@
 [10:46 27/05/2026] docs/main-workflow.md - Updated workflow instructions to include dateCreated and lastModified metadata updates in dossiers.js.
 [10:47 27/05/2026] .agents/workflows/single-item-workflow.md - Updated workflow to include dateCreated and lastModified tracking metadata updates in dossiers.js.
 [10:47 27/05/2026] .agents/workflows/main-pages-workflow.md - Updated workflow to include dateCreated and lastModified tracking metadata updates in dossiers.js.
+[12:48 28/05/2026] pages/dossiers/15-minute-cities.html - Updated Oxford traffic filters trial details with mid-2026 postponement status and temporary congestion charge.
+[12:56 28/05/2026] pages/dossiers/agenda-2030.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/alpha-gal-syndrome.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/bilderberg.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/bis.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/blackrock-vanguard.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/cbdc.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/cfr.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/crowdstrike-outage.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/cyber-polygon.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/davos-manifesto.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/digital-id.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/esg-scores.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/event-201.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/federal-reserve.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/id2020.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/imf-world-bank.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/jekyll-island.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/mk-delta.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/my-carbon-wef.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/neuralink.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/project-agora.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/project-mariana.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/social-credit.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/the-great-reset.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/wef-global-risks-2026.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/wef.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/you-will-own-nothing.html - Inserted cross-links to related research topics in the text.
+[12:59 28/05/2026] pages/dossiers/oxford-15-minute-city.html - Created new dossier page detailing the Oxford traffic filters trial, permitting system, and 15-minute city debate.
+[13:00 28/05/2026] pages/dossiers/15-minute-cities.html - Linked Oxford traffic filters trial text to the new oxford-15-minute-city dossier.
+[13:01 28/05/2026] data/dossiers.js - Registered metadata for the new oxford-15-minute-city dossier.
+[13:02 28/05/2026] pages/dossiers.html - Added static link to the new oxford-15-minute-city dossier.
+[13:03 28/05/2026] data/dossiers.js - Corrected the title of the Oxford dossier to Oxford 15 Minute Cities.
+[13:03 28/05/2026] pages/dossiers/oxford-15-minute-city.html - Corrected page titles and headers to Oxford 15 Minute Cities.
+[13:03 28/05/2026] pages/dossiers.html - Updated static link label for Oxford dossier to Oxford 15 Minute Cities.
+[13:04 28/05/2026] pages/dossiers.html - Refactored dossier list to load dynamically from dossiers.js data instead of hardcoded HTML links.
+
+
+
+
+
+
+
+

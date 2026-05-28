@@ -24,6 +24,15 @@ const DOSSIER_DATA = [
     "lastModified": "2026-02-10"
   },
   {
+    "id": "oxford-15-minute-city",
+    "title": "Oxford 15 Minute Cities",
+    "summary": "Detailed review of the Oxford traffic filters trial, analyzing camera enforcement, the digital permit system, resident day-quotas, implementation delays, and the controversy over urban mobility zoning.",
+    "keywords": ["Oxford", "Traffic Filters", "ANPR", "Permit System", "Botley Road", "Oxfordshire County Council", "15-Minute Cities", "Digital Zoning"],
+    "category": "Societal Transformation",
+    "dateCreated": "2026-05-28",
+    "lastModified": "2026-05-28"
+  },
+  {
     "id": "algorithmic-enshittification",
     "title": "Algorithmic Enshittification",
     "summary": "Long-form analysis of how dominant digital platforms degrade through lock-in, ranking control, and two-sided market extraction, linking user frustration to competition and governance failures.",
