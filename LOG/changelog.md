@@ -637,6 +637,13 @@
 [13:03 28/05/2026] pages/dossiers/oxford-15-minute-city.html - Corrected page titles and headers to Oxford 15 Minute Cities.
 [13:03 28/05/2026] pages/dossiers.html - Updated static link label for Oxford dossier to Oxford 15 Minute Cities.
 [13:04 28/05/2026] pages/dossiers.html - Refactored dossier list to load dynamically from dossiers.js data instead of hardcoded HTML links.
+[13:05 28/05/2026] css/style.css - Added hover shadow and solid background transitions to the View Dossier buttons.
+[13:10 28/05/2026] css/style.css - Increased hover shadow intensity and set border outline thickness to 2px for View Dossier buttons.
+[13:19 28/05/2026] css/style.css - Applied scale 1.02 transition and set font-weight to 700 on hover of the View Dossier buttons.
+[13:24 28/05/2026] css/style.css - Doubled info-card borders, increased card paragraph contrast, and reverted button border to 1px.
+[13:25 28/05/2026] css/style.css - Modified futuristic section overrides to apply 2px card borders, high-contrast paragraphs, and button hover styles.
+[13:26 28/05/2026] css/style.css - Configured card summary paragraph text to smoothly transition to a darker (or lighter in dark mode) color on card hover.
+[13:27 28/05/2026] css/style.css - Isolated scale 1.02 and hover shadow effects on View Dossier buttons to trigger only when hovered directly.
 
 
 

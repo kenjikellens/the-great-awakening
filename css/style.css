@@ -51,6 +51,10 @@
     --hero-particle-color: 0, 68, 204;
     --hero-map-opacity: 0.12;
     --hero-map-filter: none;
+    --button-hover-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --card-link-hover-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    --card-text-muted: #3f3f46;
+    --card-text-hover: #000000;
 }
 
 /* 
@@ -85,6 +89,10 @@
     --nav-button-border: rgba(255, 255, 255, 0.4);
     --hero-map-opacity: 0.07;
     --hero-map-filter: invert(1) brightness(1.2);
+    --button-hover-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    --card-link-hover-shadow: 0 6px 16px rgba(0, 0, 0, 0.65);
+    --card-text-muted: #d4d4d8;
+    --card-text-hover: #ffffff;
 }
 
 /* 
@@ -1122,13 +1130,14 @@ body:not(.is-home) #content-shell {
 
 /* 
     Info Card 
-    Premium card component with unique rounded corners and hover elevation.
+    Premium card component with unique rounded corners, doubled border thickness (2px), 
+    and hover elevation.
 */
 .info-card {
     background: var(--bg-card);
-    border: 1px solid var(--card-border-deco);
-    border-right: 2px solid var(--card-border-deco);
-    border-bottom: 2px solid var(--card-border-deco);
+    border: 2px solid var(--card-border-deco);
+    border-right: 4px solid var(--card-border-deco);
+    border-bottom: 4px solid var(--card-border-deco);
     padding: 1.5rem 1.5rem 4rem 1.5rem;
     border-radius: 0 24px 0 0;
     box-shadow: 0 8px 25px var(--card-shadow);
@@ -1175,10 +1184,26 @@ body:not(.is-home) #content-shell {
     color: var(--text-main);
 }
 
+/* 
+    Info Card Paragraph 
+    Styles the description text inside the card with a highly legible, 
+    theme-aware text color (darker in light mode, lighter in dark mode).
+    Smoothly transitions color on hover of the parent card.
+*/
 .info-card p {
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: var(--card-text-muted);
     margin-bottom: 0.5rem;
+    transition: color 0.25s ease;
+}
+
+/* 
+    Info Card Paragraph Hover State 
+    Transitions the card paragraph description text to a darker color in light mode 
+    (and a brighter white in dark mode) for improved emphasis when hovered.
+*/
+.info-card:hover p {
+    color: var(--card-text-hover);
 }
 
 /* 
@@ -1203,18 +1228,26 @@ body:not(.is-home) #content-shell {
     background-size: 0 3px;
     background-position: center bottom;
     background-repeat: no-repeat;
-    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, scale 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     border: 1px solid #b1b4b9;
 }
 
 /* 
     Card Link Hover State (Legacy)
-    Displays a theme-adaptive hover highlight border and shifts the link color on cursor focus.
+    Displays a theme-adaptive 1px border highlight, casts a more prominent 
+    elevation shadow, and shifts the link color on cursor focus. It also transitions 
+    to a solid background color using the theme-aware card background to prevent 
+    the shadow from bleeding through transparent areas, sets font weight to 700 
+    for bolder text, and scales the entire element to 1.02.
 */
 .card-link:hover {
     background-size: 100% 3px !important;
-    border-bottom-color: var(--accent-hover) !important;
+    border-color: var(--accent-hover) !important;
     color: var(--accent-hover) !important;
+    background-color: var(--bg-card) !important;
+    box-shadow: var(--card-link-hover-shadow);
+    font-weight: 700 !important;
+    scale: 1.02;
 }
 
 /* 
@@ -2903,7 +2936,7 @@ h3,
     min-height: 280px;
     padding: 1.75rem 1.75rem 4rem;
     background: var(--bg-card);
-    border: 1px solid var(--border-light);
+    border: 2px solid var(--border-light);
     border-top: 3px solid var(--accent-gold);
     border-radius: 6px;
     box-shadow: var(--card-shadow);
@@ -2942,12 +2975,22 @@ h3,
     color: var(--text-main);
 }
 
-/* Styles the description text paragraphs within the dossier cards. */
+/* Styles the description text paragraphs within the dossier cards with a highly legible theme-aware color. */
 .info-card p {
     font-size: 0.88rem;
     line-height: 1.5;
-    color: var(--text-muted);
+    color: var(--card-text-muted);
     margin-bottom: 0;
+    transition: color 0.25s ease;
+}
+
+/* 
+    Info Card Paragraph Hover State (Override)
+    Transitions the description text color to be darker in light theme (and lighter in dark theme) 
+    on hover of the parent card.
+*/
+.info-card:hover p {
+    color: var(--card-text-hover);
 }
 
 /* Styles the action button link at the bottom of dossier cards. */
@@ -2967,20 +3010,32 @@ h3,
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: all 0.2s ease;
+    scale: 1;
 }
 
-/* Styles the hover state of the dossier card action button in light mode. */
+/* Styles the hover state of the dossier card action button in light mode when the card is hovered. */
 .info-card:hover .card-link {
     color: #ffffff !important;
     border-color: var(--accent-hover);
     background: var(--accent-hover) !important;
 }
 
-/* Styles the hover state of the dossier card action button in dark mode. */
+/* Styles the hover state of the dossier card action button in dark mode when the card is hovered. */
 .dark-theme .info-card:hover .card-link {
     color: #11100d !important;
     border-color: var(--accent-hover);
     background: var(--accent-hover) !important;
+}
+
+/* 
+    Card Link Active Hover 
+    Applies the scale (1.02), shadow, and bold font weight (700) only when the user 
+    hovers directly over the button itself.
+*/
+.info-card .card-link:hover {
+    box-shadow: var(--card-link-hover-shadow);
+    font-weight: 700 !important;
+    scale: 1.02;
 }
 
 /*
