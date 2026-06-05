@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+Dossier Page Layout & CSS Classes Explanation:
+- .dashboard-section: Container that structures the main content area with dynamic layout spacing.
+- .dossier-layout: Responsive grid layout that separates the metadata sidebar from the main dossier text.
+- .infobox-metadata: Sidebar element containing structured, high-level key facts and elite entities involved.
+- .infobox-table: Styled table inside the infobox representing key parameters of the dossier.
+- .dossier-header: Primary header section holding the title, subtitle, and primary narrative direction.
+- .section-title: Standard section divider styling for headers.
+- .dossier-list-styled: List elements with distinct iconography and typography for evidence points.
+- .dossier-sources: Container wrapping external source listings for transparency.
+- .source-item: Dynamic block representing a single verified reference article.
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Agorá | Research Dossier</title>
+    <title>Project Agorá: Centralized Global CBDC Surveillance Grid | Research Dossier</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -12,51 +24,66 @@
             <aside class="infobox-metadata">
                 <h4>Dossier Metadata</h4>
                 <table class="infobox-table">
-                    <tr><th>Concept</th><td>Project Agorá</td></tr>
-                    <tr><th>Originator</th><td>Bank for International Settlements (BIS)</td></tr>
-                    <tr><th>Launched</th><td>April 3, 2024</td></tr>
-                    <tr><th>Participants</th><td>BIS Innovation Hub, 7 Central Banks, private financial institutions</td></tr>
-                    <tr><th>Key Themes</th><td>Tokenization, wholesale CBDC, unified ledgers, public-private financial integration</td></tr>
+                    <tr>
+                        <th>Subject</th>
+                        <td>Project Agorá / Unified Ledger Tokenization</td>
+                    </tr>
+                    <tr>
+                        <th>Originator</th>
+                        <td>Bank for International Settlements (BIS)</td>
+                    </tr>
+                    <tr>
+                        <th>Key Players</th>
+                        <td>FRB New York, Bank of England, Swiss National Bank, SNB, BoJ</td>
+                    </tr>
+                    <tr>
+                        <th>Core Tech</th>
+                        <td>Unified Ledger (Tokenized deposits & wholesale CBDCs)</td>
+                    </tr>
+                    <tr>
+                        <th>Threat Vectors</th>
+                        <td>Cash elimination, transaction programmability, instant compliance</td>
+                    </tr>
+                    <tr>
+                        <th>Surveillance Level</th>
+                        <td>Absolute, real-time transaction tracking</td>
+                    </tr>
                 </table>
             </aside>
 
             <header class="dossier-header">
-                <h1>Project Agorá</h1>
-                <p>A dossier investigating Project Agorá, a major public-private financial experiment launched in 2024 to integrate commercial bank tokenized deposits with wholesale central bank digital currencies on a unified ledger.</p>
+                <h1>Project Agorá: The Global CBDC Surveillance Grid</h1>
+                <p>Exposing the global ledger: How the Bank for International Settlements (BIS) and 7 central banks are using Project Agorá to construct a unified digital transaction grid to eliminate cash privacy and enforce programmable financial control.</p>
             </header>
 
             <section>
-                <h2 class="section-title">Introduction</h2>
-                <p>Project Agorá (Greek for "marketplace") is a massive public-private partnership launched on April 3, 2024, by the <a href="#dossier/bis">Bank for International Settlements (BIS)</a>. The project brings together seven central banks—including the Federal Reserve Bank of New York, the Bank of England, the Bank of Japan, the Banque de France (representing the Eurosystem), the Swiss National Bank, the Bank of Korea, and the Banco de México—alongside a large group of private financial institutions. Project Agorá focuses on tokenizing cross-border wholesale payments, combining commercial bank money with wholesale central bank digital currencies (wCBDCs) within a unified programmable ledger.</p>
+                <h2 class="section-title">Documented Evidence</h2>
+                <p>Project Agorá (Greek for "marketplace") is a major public-private financial integration project launched on April 3, 2024, by the <a href="#dossier/bis">Bank for International Settlements (BIS)</a>. The project represents the real-world execution of the BIS's blueprint to build a centralized global transaction grid under the guise of cross-border payment speed.</p>
+                
+                <ul class="dossier-list-styled">
+                    <li><b>The Centralized Unified Ledger:</b> Agorá establishes the BIS-designed "unified ledger" technology. Rather than transferring funds across separate commercial and national database networks using messaging systems like SWIFT, this ledger merges commercial bank deposits and wholesale Central Bank Digital Currencies (wCBDCs) into a single, centralized database. This provides global banking institutions with immediate visibility over all transaction paths.</li>
+                    <li><b>Enforcing the Tokenization of Private Assets:</b> To prevent public opposition to direct retail <a href="#dossier/cbdc">CBDCs</a>, the BIS is co-opting commercial banks. Under Agorá, traditional banks must convert physical cash reserves and public customer deposits into digital "tokenized deposits" that clear against wCBDCs on the unified ledger. This co-opts the commercial banking sector into becoming a direct enforcement agent of central bank policies.</li>
+                    <li><b>Smart-Contract Programmability & Cash Elimination:</b> By embedding smart contracts directly into the ledger, Agorá builds the infrastructure for programmable money. This enables automated, instant tax extractions, geofenced purchasing restrictions, and the immediate freezing of accounts. This technology forms the structural foundation for a cashless society, removing private monetary sovereignty and transaction anonymity.</li>
+                </ul>
             </section>
 
             <section class="u-mt-3">
-                <h2 class="section-title">The Concept of the Unified Ledger</h2>
-                <p>The core technological innovation of Project Agorá is the "unified ledger." Rather than transferring money across separate databases using messaging systems (such as SWIFT) and settling them later, a unified ledger hosts central bank money, tokenized commercial bank deposits, and smart contracts on the same platform. Transactions are executed and settled simultaneously, eliminating clearing delays and counterparty risk. From a policy perspective, this is framed as a modernization of financial infrastructure. From a critical standpoint, it consolidates transaction recording, compliance monitoring, and sovereign money management into a single, centralized technological stack.</p>
-            </section>
-
-            <section class="u-mt-3">
-                <h2 class="section-title">Public-Private Financial Integration</h2>
-                <p>Agorá represents a major pivot in central banking strategy. Rather than bypassing traditional commercial banks with retail <a href="#dossier/cbdc">CBDCs</a>—which could trigger bank runs and destabilize the financial sector—Project Agorá seeks to co-opt commercial banks by embedding them directly in the tokenization process. In this model, commercial banks issue "tokenized deposits" representing public deposits, which are then cleared internationally against central bank wholesale tokens. This hybrid model preserves the role of existing commercial banks while subjecting their transactions to automated, smart-contract-enforced compliance rules governed by central banks.</p>
-            </section>
-
-            <section class="u-mt-3">
-                <h2 class="section-title">Analytical Implications</h2>
-                <p>Project Agorá is critical because it represents the real-world execution of the <a href="#dossier/bis">BIS</a>'s blueprint for the future monetary system. By creating an integrated ledger that matches wholesale central bank money with commercial digital deposits, the <a href="#dossier/bis">BIS</a> is building the structural plumbing for a fully programmable global financial network. This plumbing would allow for instant compliance checks, automated tax extractions, and the absolute enforcement of transaction rules. Project Agorá demonstrates that the transition to a cashless society is being organized at the institutional apex of global finance.</p>
+                <h2 class="section-title">Narrative Context</h2>
+                <p>Within the independent research community, Project Agorá is analyzed as the construction of a financial panopticon. By consolidating domestic currencies under a unified, BIS-governed ledger, participating central banks surrender their national monetary policies to a globalist banking cartel. The ultimate goal is the complete eradication of cash and financial privacy.</p>
+                <p>Once cash is fully eliminated and the unified ledger is integrated with <a href="#dossier/digital-id">digital ID</a> systems, private spending becomes entirely dependent on state approval. Planners gain the ability to enforce carbon quotas, limit purchases based on individual <a href="#dossier/social-credit">social compliance</a>, and lock dissidents out of the economy with a single stroke. Agorá is the technological framework designed to operationalize this absolute financial control.</p>
             </section>
 
             <section id="sources" class="dossier-sources u-mt-3">
-                <h2 class="section-title">Sources</h2>
                 <div class="source-item">
                     <p><b>Title:</b> Project Agorá: BIS and central banks join forces to explore tokenisation</p>
                     <p><b>Publisher:</b> Bank for International Settlements (BIS)</p>
-                    <p><b>Date:</b> 3 April 2024</p>
+                    <p><b>Date:</b> April 3, 2024</p>
                     <p><b>Link:</b> <a href="https://www.bis.org/press/p240403.htm" target="_blank" rel="noopener noreferrer">https://www.bis.org/press/p240403.htm</a></p>
                 </div>
                 <div class="source-item u-mt-1">
                     <p><b>Title:</b> Blueprint for the future monetary system: improving the old, enabling the new</p>
                     <p><b>Publisher:</b> BIS Annual Economic Report (Chapter III)</p>
-                    <p><b>Date:</b> June 2023, referenced May 2026</p>
+                    <p><b>Date:</b> June 2023</p>
                     <p><b>Link:</b> <a href="https://www.bis.org/publ/arpdf/ar2023e3.htm" target="_blank" rel="noopener noreferrer">https://www.bis.org/publ/arpdf/ar2023e3.htm</a></p>
                 </div>
             </section>

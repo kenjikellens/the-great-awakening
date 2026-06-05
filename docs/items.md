@@ -6,6 +6,11 @@ This dossier is a comprehensive collection of documented information regarding t
 
 ## 🏗️ Global Governance Agendas
 
+### WEF Leadership Integrity Scandal (2025)
+- **Documented Facts**: In April 2025, Klaus Schwab resigned as Executive Chair of the WEF following whistleblower allegations regarding index manipulation and misuse of funds. An independent investigation found "minor irregularities" but no material fraud.
+- **Narrative**: Reinforces criticisms regarding the WEF's lack of democratic accountability, transparency, and the centralized power of its leadership.
+- **Size**: medium size
+
 ### UN Agenda 2030 / Sustainable Development Goals
 - **Documented Facts**: Adopted in 2015 by all 193 UN Member States. Contains 17 SDGs targeting climate, poverty, and inequality.
 - **Narrative**: Critics suggest a blueprint for centralized world governance and absolute resource control.
@@ -60,6 +65,11 @@ This dossier is a comprehensive collection of documented information regarding t
 
 ## 💳 Biometric & Social Control
 
+### FISA Section 702 & Intelligence Leadership Crisis (2026)
+- **Documented Facts**: In mid-2026, the impending deadline for the reauthorization of FISA Section 702 (warrantless surveillance) was derailed by sudden intelligence leadership changes, notably the resignation of DNI Tulsi Gabbard and the controversial appointment of Bill Pulte.
+- **Narrative**: Illustrates how the immense power of digital surveillance systems is vulnerable to executive capture and rapid politicization.
+- **Size**: medium size
+
 ### Digital ID & Wallets (eIDAS)
 - **Documented Facts**: EU and national frameworks for digital identities. Key for digital governance.
 - **Narrative**: Foundation for a China-style social credit system.
@@ -83,6 +93,21 @@ This dossier is a comprehensive collection of documented information regarding t
 ### Neuralink & BCIs
 - **Documented Facts**: Elon Musk's neurotechnology company. Development of brain-computer interfaces for medical and cognitive enhancement.
 - **Narrative**: The "Transhumanist" gateway for digitizing human consciousness and enabling total cognitive surveillance.
+- **Size**: medium size
+
+### Palantir Technologies
+- **Documented Facts**: Established in 2003 with funding from the CIA's In-Q-Tel. Provides Gotham and Foundry data integration software to military, intelligence, and police agencies (including ICE and CBP).
+- **Narrative**: The centralized data-mining panopticon of the deep state, aggregating massive public and private files for warrantless surveillance and deportations.
+- **Size**: medium size
+
+### Flock Safety
+- **Documented Facts**: Manufactures automated license plate readers (ALPRs) deployed across municipalities, HOAs, and businesses, aggregating vehicle fingerprints into the national TALON database.
+- **Narrative**: A crowd-sourced vehicle-tracking surveillance grid that shares movement records directly with local and federal law enforcement without warrants.
+- **Size**: medium size
+
+### Ring Doorbell Surveillance
+- **Documented Facts**: Amazon-owned home camera network that has partnered with over 2,000 police forces. Rollout of the "Familiar Faces" facial recognition feature.
+- **Narrative**: A consumer-funded lateral surveillance panopticon that profiles neighborhood entrants and shares raw video files with law enforcement without judicial warrants.
 - **Size**: medium size
 
 ---
@@ -116,7 +141,21 @@ This dossier is a comprehensive collection of documented information regarding t
 
 ---
 
+## 🏞️ Elite Land Deals & Environmental Exploitation
+
+### Sazan Island Luxury Resort Scandal (2024-2026)
+- **Documented Facts**: Sazan Island was a closed military base until December 2024, when the Albanian government declassified it and granted "strategic investor status" to Jared Kushner's Affinity Partners for a €1.4 billion luxury resort project. In February 2024, the government modified the Law on Protected Areas (Law No. 21/2024), transferring environmental veto powers to the National Territorial Council chaired by the Prime Minister and permitting mega-resorts in IUCN Category I & II protected zones. This triggered mass protests in June 2026 and an anti-corruption investigation by SPAK.
+- **Narrative**: Illustrates how political and familial networks are leveraged to bypass conservation status, alter environmental laws, and privatize state/sovereign territory for private real estate development.
+- **Size**: medium size
+
+---
+
 ## ⚖️ Corporate Monopoly & ESG
+
+### Trafigura Bribery Scandal (2025)
+- **Documented Facts**: In January 2025, the Swiss Federal Criminal Court convicted commodities giant Trafigura of bribing Angolan officials for oil contracts, resulting in significant fines and prison sentences.
+- **Narrative**: Exposes the systemic, transnational mechanisms used by corporate monopolies to extract wealth from sovereign states through offshore networks.
+- **Size**: medium size
 
 ### The "Big Three" (BlackRock & Vanguard)
 - **Documented Facts**: Manage ~$20 trillion. Top shareholders in almost all S&P 500 companies.

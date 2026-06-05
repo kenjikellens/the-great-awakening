@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Dossier Page Layout & CSS Classes Explanation:
+- .dashboard-section: Main container providing margins and structure for the page content.
+- .dossier-layout: Flex/grid-based layout grouping the sidebar infobox and main content.
+- .infobox-metadata: Sidebar layout displaying structured corporate/technical parameters.
+- .infobox-table: Tabular key-value parameters inside the sidebar metadata pane.
+- .dossier-header: Page header holding the primary title and descriptive subtitle of the dossier.
+- .section-title: Reusable class for formatting standard header boundaries between sections.
+- .dossier-list-styled: List containing bulleted arguments or evidence points with styled icons/fonts.
+- .dossier-sources: Container grouping reference links and source publication metadata.
+- .source-item: Repeated blocks housing individual citation fields (title, publisher, date, link).
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flock Safety: The Neighborhood ALPR Surveillance Grid | Research Dossier</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Main container wrapping the dossier layout elements -->
+    <main class="dashboard-section u-mt-3">
+        <div class="dossier-layout">
+            <!-- Sidebar containing structured corporate and operational parameters -->
+            <aside class="infobox-metadata">
+                <h4>Dossier Metadata</h4>
+                <table class="infobox-table">
+                    <tr>
+                        <th>Subject</th>
+                        <td>Flock Safety / Automated License Plate Readers (ALPR)</td>
+                    </tr>
+                    <tr>
+                        <th>Primary Tech</th>
+                        <td>Machine-learning ANPR/ALPR cameras (Flock Falcon)</td>
+                    </tr>
+                    <tr>
+                        <th>Global Database</th>
+                        <td>TALON (National vehicle tracking network)</td>
+                    </tr>
+                    <tr>
+                        <th>Backers</th>
+                        <td>Andreessen Horowitz, Matrix Partners</td>
+                    </tr>
+                    <tr>
+                        <th>Target Scope</th>
+                        <td>Persistent vehicle movement tracking and fingerprinting</td>
+                    </tr>
+                    <tr>
+                        <th>Key Clients</th>
+                        <td>HOAs, local police departments, federal agencies (ICE)</td>
+                    </tr>
+                </table>
+            </aside>
+
+            <!-- Header detailing the core critical angle of the Flock Safety dossier -->
+            <header class="dossier-header">
+                <h1>Flock Safety: The Neighborhood ALPR Surveillance Grid</h1>
+                <p>Exposing the decentralized panopticon: How Flock Safety uses private neighborhood installations and Homeowners Association (HOA) partnerships to construct a warrantless, national vehicle-tracking database that feeds directly into law enforcement networks.</p>
+            </header>
+
+            <!-- Documented evidence section detail -->
+            <section>
+                <h2 class="section-title">Documented Evidence</h2>
+                <p>Flock Safety, a venture-backed technology company founded in 2017, has rapidly built the largest private Automatic License Plate Recognition (ALPR) network in the United States. By selling cheap, solar-powered cameras to both municipal police forces and private entities, the company has bypassed traditional legislative oversight to create a real-time car-tracking grid.</p>
+                
+                <ul class="dossier-list-styled">
+                    <li><b>TALON National Data-Sharing Network:</b> Flock Safety operates a centralized sharing infrastructure called TALON. When a camera captures a vehicle, it records not only the license plate but also vehicle make, color, model, and identifying markers (such as roof racks or decals). This "vehicle fingerprint" is uploaded to TALON, allowing law enforcement agencies across the country to track vehicles across state lines without warrants.</li>
+                    <li><b>HOA and Private Property Exploitation:</b> A major portion of Flock's cameras are installed on private properties, funded by Homeowners Associations (HOAs) and commercial businesses. By placing cameras at the entrances of residential neighborhoods, Flock captures the movements of residents and guests. This data is shared directly with local police departments, effectively turning private residential areas into extensions of the state surveillance apparatus.</li>
+                    <li><b>Federal Access and Data Leakage:</b> While municipalities frequently assure the public that local camera data is not shared with federal agencies, civil liberties investigations have documented that local police databases are regularly accessed by Immigration and Customs Enforcement (ICE) and other federal agencies. This structure creates a backdoor for federal immigration raids and intelligence tracking.</li>
+                </ul>
+            </section>
+
+            <!-- Editorial narrative context section -->
+            <section class="u-mt-3">
+                <h2 class="section-title">Narrative Context</h2>
+                <p>Within the independent research community, Flock Safety is analyzed as a pioneer of lateral, decentralized surveillance. By marketing its cameras as tools for neighborhood safety and property protection, Flock has incentivized private citizens to finance and build a national tracking system. This crowd-sourced surveillance grid operates outside the constitutional limits that govern public law enforcement agencies.</p>
+                <p>This network serves as a key physical pillar of the emerging Western <a href="#dossier/social-credit">Social Credit System</a>. When combined with smart city zones, digital ticketing, and <a href="#dossier/digital-id">digital ID</a> frameworks, the Flock database enables the automated enforcement of movement restrictions. Planners gain the ability to map social networks, profile political gatherings, and monitor travel patterns, removing the physical expectation of anonymity in public space.</p>
+            </section>
+
+            <!-- Sources list referencing the mandatory research inputs -->
+            <section id="sources" class="dossier-sources u-mt-3">
+                <h2 class="section-title">Sources</h2>
+                <div class="source-item">
+                    <p><b>Title:</b> Fast-Growing Roadside Surveillance Company Flock Safety Builds Nationwide Car-Tracking Network</p>
+                    <p><b>Publisher:</b> American Civil Liberties Union (ACLU)</p>
+                    <p><b>Date:</b> March 3, 2022</p>
+                    <p><b>Link:</b> <a href="https://www.aclu.org/news/privacy-technology/fast-growing-roadside-surveillance-company-flock-safety-builds-nationwide-car-tracking-network" target="_blank" rel="noopener noreferrer">https://www.aclu.org/news/privacy-technology/fast-growing-roadside-surveillance-company-flock-safety-builds-nationwide-car-tracking-network</a></p>
+                </div>
+                <div class="source-item u-mt-1">
+                    <p><b>Title:</b> Automated License Plate Readers (ALPRs): What You Need to Know</p>
+                    <p><b>Publisher:</b> Electronic Frontier Foundation (EFF)</p>
+                    <p><b>Date:</b> October 2023</p>
+                    <p><b>Link:</b> <a href="https://www.eff.org/deeplinks/2023/10/automated-license-plate-readers-alprs-what-you-need-know" target="_blank" rel="noopener noreferrer">https://www.eff.org/deeplinks/2023/10/automated-license-plate-readers-alprs-what-you-need-know</a></p>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

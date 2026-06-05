@@ -48,7 +48,6 @@
     --hero-text-muted: #404040;
     --hero-shadow: rgba(0, 0, 0, 0.05);
     --hero-icon-filter: brightness(0) opacity(0.5);
-    --hero-particle-color: 0, 68, 204;
     --hero-map-opacity: 0.12;
     --hero-map-filter: none;
     --button-hover-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -85,7 +84,6 @@
     --hero-text-muted: rgba(255, 255, 255, 0.7);
     --hero-shadow: rgba(0, 0, 0, 0.6);
     --hero-icon-filter: brightness(0) invert(1) opacity(0.8);
-    --hero-particle-color: 197, 160, 89;
     --nav-button-border: rgba(255, 255, 255, 0.4);
     --hero-map-opacity: 0.07;
     --hero-map-filter: invert(1) brightness(1.2);
@@ -689,18 +687,6 @@ body:not(.is-home) #content-shell {
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     mix-blend-mode: overlay;
-}
-
-/* 
-    Hero Canvas 
-    Container for the interactive particle system.
-*/
-.hero-canvas {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: auto;
-    opacity: 0.8;
 }
 
 /* 
@@ -1426,6 +1412,11 @@ body:not(.is-home) #content-shell {
     align-items: center;
 }
 
+/* 
+    Legend Filter & Sort Controls Selectors
+    Styles the dropdown select components (category, place, and sort) 
+    in the database inventory filter row, matching other system inputs.
+*/
 .category-filter-select {
     padding: 0.8rem 1.25rem;
     border: 2px solid var(--search-border);
@@ -1439,9 +1430,14 @@ body:not(.is-home) #content-shell {
     transition: border-color 0.2s ease;
 }
 
+/* 
+    Legend Filter & Sort Controls Focus Selectors
+    Highlights active select borders using the standard system accent blue color.
+*/
 .category-filter-select:focus {
     border-color: var(--accent-blue);
 }
+
 
 /* 
     Legend Table 
@@ -2299,7 +2295,6 @@ textarea.form-input {
     --hero-text: #1e293b;
     --hero-text-muted: #64748b;
     --hero-shadow: rgba(30, 41, 59, 0.05);
-    --hero-particle-color: 180, 83, 9;
 
     /* Semantic Redesign Tokens */
     --archive-paper: #ffffff;
@@ -2352,7 +2347,6 @@ textarea.form-input {
     --hero-text: #f4eee5;
     --hero-text-muted: #b7ad9f;
     --hero-shadow: rgba(0, 0, 0, 0.35);
-    --hero-particle-color: 213, 168, 92;
 
     /* Semantic Redesign Tokens */
     --archive-paper: #1a1814;
@@ -2646,14 +2640,6 @@ h3,
     pointer-events: none;
     background: linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.02) 100%);
     z-index: 1;
-}
-
-/*
-    .hero-canvas Selector (Constellation Canvas)
-    Reduces raw canvas opacity to fit perfectly with clean typography.
-*/
-.hero-canvas {
-    opacity: 0.45;
 }
 
 /*

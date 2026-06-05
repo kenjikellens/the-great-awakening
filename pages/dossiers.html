@@ -39,7 +39,7 @@
                 </div>
 
                 <div id="dossier-legend" class="legend-list u-flex-column u-gap-8 u-font-small">
-                    <!-- Dynamically populated from dossiers.js -->
+                    <!-- Dynamically populated from dossiers-data.json -->
                 </div>
                 </div>
             </div>
@@ -49,20 +49,19 @@
     <footer class="site-footer">
         <p>&copy; 2026 The Great Awakening Research Project. Archive status: Synchronized.</p>
     </footer>
-
-    <script src="../data/dossiers.js"></script>
     <script src="../js/dossier-manager.js"></script>
     <script src="../js/search.js"></script>
     <script src="../js/legend-search.js"></script>
     <script>
         /**
-         * Dynamically populates the dossier list on load from the shared DOSSIER_DATA store.
+         * Dynamically populates the dossier list on load from the JSON database via DossierManager.
          * Sorts all dossier entries alphabetically to maintain clean index ordering.
          */
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             const legendContainer = document.getElementById('dossier-legend');
-            if (legendContainer && typeof DOSSIER_DATA !== 'undefined') {
-                const sortedData = [...DOSSIER_DATA].sort((a, b) => a.title.localeCompare(b.title));
+            if (legendContainer && typeof DossierManager !== 'undefined') {
+                const data = await DossierManager.loadData();
+                const sortedData = [...data].sort((a, b) => a.title.localeCompare(b.title));
                 legendContainer.innerHTML = sortedData.map(item => `
                     <a href="dossiers/${item.id}.html" class="legend-item">${item.title}</a>
                 `).join('');

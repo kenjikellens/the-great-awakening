@@ -36,7 +36,7 @@
             fragment: 'pages/fragments/home.html',
             title: `${baseTitle} | Home`,
             /**
-             * Initializes the home route fragment elements, search engine, canvas particle background,
+             * Initializes the home route fragment elements, search engine,
              * and handles smooth scrolling to target sections if requested by routing parameters.
              * @param {string} param - Routing sub-parameter (e.g. "1" or "dashboard" to scroll below hero).
              */
@@ -47,9 +47,6 @@
                 }
                 if (typeof window.initHeroTransition === 'function') {
                     window.initHeroTransition();
-                }
-                if (typeof window.initHeroCanvas === 'function') {
-                    window.initHeroCanvas();
                 }
                 // Sync theme state to hero background after fragment load
                 if (window.ThemeManager && typeof window.ThemeManager.refreshHeroTheme === 'function') {
@@ -140,11 +137,6 @@
         // Handle old scroll listeners if any
         if (viewName !== 'home' && typeof window._lastHomeScrollHandler === 'function') {
             window.removeEventListener('scroll', window._lastHomeScrollHandler);
-        }
-
-        // Cleanup hero canvas if navigating away from home
-        if (viewName !== 'home' && typeof window.stopHeroCanvas === 'function') {
-            window.stopHeroCanvas();
         }
 
         shell.innerHTML = await fetchText(route.fragment);
