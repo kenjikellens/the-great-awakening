@@ -1753,29 +1753,50 @@
   {
     "id": "palantir",
     "title": "Palantir Technologies",
-    "summary": "A dossier documenting Peter Thiel and Alex Karp's CIA-funded data-mining firm Palantir Technologies, examining its Gotham and Foundry surveillance software, ICE contracts, predictive policing, and warrantless data aggregation.",
+    "summary": "A comprehensive dossier documenting Peter Thiel and Alex Karp's CIA-funded data-mining firm Palantir Technologies. Covers the Google Cloud two-way data federation deal, UK NHS £330M health data capture, $10B Army enterprise agreement, Maven Smart System battlefield AI, TITAN targeting, ICE deportation machinery, predictive policing, data broker integration (Thomson Reuters CLEAR, LexisNexis), and NSA/GCHQ analytical layer role.",
     "keywords": [
       "Palantir",
       "Peter Thiel",
       "Alex Karp",
       "In-Q-Tel",
+      "CIA",
       "Gotham",
       "Foundry",
+      "AIP",
       "FALCON",
       "ImmigrationOS",
       "ICE",
       "Warrantless Surveillance",
-      "Predictive Policing"
+      "Predictive Policing",
+      "Maven Smart System",
+      "TITAN",
+      "Google Cloud",
+      "BigQuery",
+      "Gemini AI",
+      "NHS",
+      "Federated Data Platform",
+      "Thomson Reuters",
+      "CLEAR",
+      "LexisNexis",
+      "Data Broker",
+      "GCHQ",
+      "NSA",
+      "NATO",
+      "US Army",
+      "Battlefield AI",
+      "PRISM",
+      "XKEYSCORE"
     ],
     "category": "Biometric & Social Control",
     "place": [
       "United States",
       "United Kingdom",
-      "Global"
+      "Global",
+      "Australia"
     ],
     "dateCreated": "2026-06-05",
     "lastModified": "2026-06-05",
-    "critical_angle": "Expose Palantir's role as a centralized surveillance engine funded by the CIA that integrates massive public and private data streams to execute warrantless surveillance, predictive policing, and deportations."
+    "critical_angle": "Expose Palantir as the intelligence community's outsourced operating system: CIA-funded, integrated with Google Cloud, capturing NHS health data, powering military AI targeting, automating deportations, and aggregating warrantless data from commercial brokers to build a Western surveillance panopticon."
   },
   {
     "id": "flock-safety",
