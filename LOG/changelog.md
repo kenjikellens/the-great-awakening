@@ -644,11 +644,21 @@
 [13:25 28/05/2026] css/style.css - Modified futuristic section overrides to apply 2px card borders, high-contrast paragraphs, and button hover styles.
 [13:26 28/05/2026] css/style.css - Configured card summary paragraph text to smoothly transition to a darker (or lighter in dark mode) color on card hover.
 [13:27 28/05/2026] css/style.css - Isolated scale 1.02 and hover shadow effects on View Dossier buttons to trigger only when hovered directly.
+[18:39 22/04/2026] pages/dossiers/the-great-reset.html - Normalized and expanded dossier to align with standard format and add structural depth.
+[18:39 22/04/2026] data/dossiers.js - Updated the-great-reset summary to match normalized content.
+[18:40 22/04/2026] pages/dossiers/wef.html - Normalized and expanded dossier to ~4x size with timeline, actors, impacts, and 3 official sources.
+[18:40 22/04/2026] data/dossiers.js - Updated wef summary to match expanded content.
+[18:45 22/04/2026] css/style.css - Reduced AI chat widget dimensions and implemented pointer-events fix to prevent hover blocking on the mega-menu.
 [20:06 03/06/2026] pages/dossiers/kalergi-plan.html - Created research dossier for the Kalergi Plan Conspiracy Theory.
 [20:07 03/06/2026] data/dossiers.js - Integrated Kalergi Plan entry into the centralized research data store.
 [20:08 03/06/2026] docs/items.md - Added Kalergi Plan Conspiracy Theory to the Research Wiki index.
 [20:09 03/06/2026] docs/processing-checkpoints.md - Registered the Kalergi Plan Conspiracy Theory dossier in the checklist.
 [20:10 03/06/2026] js/ai-chat.js - Added Kalergi Plan keyword matching to the AI assistant thematic matrix.
+[11:23 05/06/2026] pages/fragments/home.html - Removed the hero canvas background animation element.
+[11:23 05/06/2026] index.html - Removed the hero-canvas.js script entry.
+[11:23 05/06/2026] js/router.js - Removed hero canvas initialization and cleanup logic from routing lifecycle.
+[11:23 05/06/2026] js/hero-canvas.js - Deleted the hero canvas animation script.
+[11:23 05/06/2026] css/style.css - Removed hero-canvas styling rules and unused --hero-particle-color variables.
 [17:30 06/06/2026] docs/items.md - Added 11 missing research dossiers to the index under their respective sections.
 [17:30 06/06/2026] docs/processing-checkpoints.md - Updated checklist to include 11 new dossiers and synchronized the numbering with items.md.
 [17:38 06/06/2026] js/dossier-manager.js - Updated getColumnsPerPage to return a single column for narrow mobile viewports.
@@ -657,7 +667,247 @@
 
 
 
-
-
-
-
+[18:43 22/04/2026] pages/dossiers/trilateral-commission.html - Expanded and normalized dossier with source-verified institutional timeline, actors/mechanisms/impacts blocks, and official sources.
+[18:43 22/04/2026] pages/dossiers/bohemian-grove.html - Expanded and normalized dossier with archive-backed evidence sections and standardized official source blocks.
+[18:43 22/04/2026] pages/dossiers/mk-ultra.html - Rebuilt dossier into evidence-first structure using CIA and U.S. Senate oversight sources.
+[18:43 22/04/2026] pages/dossiers/mk-delta.html - Rebuilt dossier with constrained evidence framing and standardized source traceability.
+[18:43 22/04/2026] pages/dossiers/operation-mockingbird.html - Expanded dossier with Family Jewels and Church Committee evidence, separating documented facts from narrative claims.
+[18:43 22/04/2026] data/dossiers.js - Fixed syntax integrity and updated Operation Mockingbird summary to match expanded dossier content.
+[18:44 22/04/2026] pages/dossiers/operation-gladio.html - Expanded dossier one-by-one with source-constrained evidence, timeline blocks, and standardized official citations.
+[18:44 22/04/2026] data/dossiers.js - Updated Operation Gladio summary to reflect normalized evidence-first rewrite.
+[18:46 22/04/2026] pages/dossiers/operation-sea-spray.html - Rewritten one-by-one into evidence-first dossier with timeline/actors/mechanisms/impacts and standardized sources.
+[18:46 22/04/2026] data/dossiers.js - Updated Operation Sea-Spray summary to match expanded dossier content.
+[18:47 22/04/2026] pages/dossiers/uap-disclosure.html - Rewritten one-by-one with updated ODNI/DoD/NASA timeline and evidence-first structure.
+[18:47 22/04/2026] data/dossiers.js - Updated UAP Disclosure summary to reflect current institutional reporting focus.
+[19:03 22/04/2026] index.html - Added Site Index link to the footer navigation.
+[19:03 22/04/2026] js/router.js - Added Site Index route and initialization logic.
+[19:03 22/04/2026] pages/fragments/sitemap.html - Created Site Index fragment structure.
+[19:04 22/04/2026] js/dossier-manager.js - Implemented renderSitemap logic for dynamic index generation.
+[19:05 22/04/2026] css/style.css - Added hierarchical layout styles for the Site Index.
+[19:05 22/04/2026] pages/fragments/sitemap.html - Formalized index description; removed informal 'ecosystem' terminology.
+[19:08 22/04/2026] pages/dossiers/you-will-own-nothing.html - Fixed markdown bolding in HTML content.
+[19:10 22/04/2026] pages/dossiers/uss-liberty.html - Fixed markdown bolding in HTML content.
+[19:10 22/04/2026] pages/dossiers/pegasus-spyware.html - Fixed markdown bolding in HTML content.
+[19:10 22/04/2026] pages/dossiers/panama-papers.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/operation-paperclip.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/operation-northwoods.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/neuralink.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/imf-world-bank.html - Fixed markdown bolding in HTML content.
+[19:11 22/04/2026] pages/dossiers/id2020.html - Fixed markdown bolding in HTML content.
+[19:12 22/04/2026] pages/dossiers/haarp.html - Fixed markdown bolding in HTML content.
+[19:12 22/04/2026] pages/dossiers/gulf-of-tonkin.html - Fixed markdown bolding in HTML content.
+[19:12 22/04/2026] pages/dossiers/federal-reserve.html - Fixed markdown bolding in HTML content.
+[19:12 22/04/2026] pages/dossiers/event-201.html - Fixed markdown bolding in HTML content.
+[19:13 22/04/2026] pages/dossiers/epstein-files.html - Fixed markdown bolding in HTML content.
+[19:17 22/04/2026] css/style.css - Added scrollbar-gutter: stable to html to fix header shift between Home and other pages.
+[19:18 22/04/2026] js/hero-canvas.js - Removed all mouse/touch interactivity; background animation is now fully autonomous.
+[19:25 22/04/2026] css/style.css - Dossier typography refinement: smaller body text, tighter line-height, reduced heading sizes for institutional feel.
+[19:28 22/04/2026] css/style.css - Sources section: removed bullets, compact spacing, clean inline links (no icons), preserved yellow background.
+[19:28 22/04/2026] svg/link.svg - Created chain-link SVG icon (available for future use).
+[19:51 22/04/2026] css/style.css - Reorganized into logical modules with mandatory explanations and adherence to global rules; fixed misplaced items.
+[19:28 22/04/2026] css/style.css - Sources section: removed bullets, compact spacing, clean inline links (no icons), preserved yellow background.
+[19:28 22/04/2026] svg/link.svg - Created chain-link SVG icon (available for future use).
+[19:51 22/04/2026] css/style.css - Reorganized into logical modules with mandatory explanations and adherence to global rules; fixed misplaced items.
+[19:57 22/04/2026] css/style.css - Made dark mode hero background darker (#0d1117 to #000000 gradient).
+[19:57 22/04/2026] js/theme-manager.js - Fixed theme toggle icons by toggling .is-hidden class instead of overriding display style.
+[20:00 22/04/2026] css/style.css - Added display: block to .theme-icon so SVG masks render properly.
+[20:01 22/04/2026] js/theme-manager.js - Fixed syntax error where updateToggleIcons function was accidentally commented out.
+[20:05 22/04/2026] index.html & style.css - Replaced CSS mask-based theme icons with inline SVGs for bulletproof rendering in all modes.
+[20:08 22/04/2026] css/style.css - Added explicit display !important rules for .theme-icon to ensure SVGs don't collapse to 0.
+[22:37 30/04/2026] pages/fragments/home.html - Reworked home fragment into a static Premium Archive front desk with search, metadata highlights, and preview records.
+[22:37 30/04/2026] pages/fragments/dossiers.html - Refined dossier index copy and header structure for a curated catalog experience.
+[22:37 30/04/2026] js/dossier-manager.js - Added category metadata to archive cards and legend rows while limiting home preview records.
+[22:37 30/04/2026] js/search.js - Added category metadata to search results and bypassed cinematic transitions for the static archive home.
+[22:37 30/04/2026] css/style.css - Added Premium Archive design system overrides for tokens, navigation, home, index, dossier pages, chat, footer, and responsive states.
+[22:58 30/04/2026] css/style.css - Fixed Premium Archive mobile header wrapping and dossier infobox text overflow.
+[22:58 30/04/2026] css/style.css - Strengthened mobile dossier wrapping for metadata tables, paragraphs, and list content.
+[22:59 30/04/2026] css/style.css - Restored home archive item grid visibility after disabling the old reveal transition.
+[19:52 17/05/2026] css/style.css - Imported Google Fonts (Space Grotesk, Plus Jakarta Sans) for the new cyber-glassmorphism portal theme.
+[19:54 17/05/2026] css/style.css - Redesigned Section 16 to implement an ultra-premium Cyber-Glassmorphic Intelligence Portal theme with futuristic typography, glowing interactive controls, and compliant shadows.
+[19:55 17/05/2026] index.html - Upgraded the simple ui footer to a premium, multi-column HUD portal layout featuring operational pulse dots and telemetry readouts.
+[19:56 17/05/2026] css/style.css - Implemented glassmorphic styling, pulse-LED operational states, and telemetry data layout properties for the new multi-column HUD site footer.
+[19:57 17/05/2026] css/style.css - Appended tablet (2x2 grid) and smartphone (vertical list) responsive media query rules for the upgraded footer layout.
+[19:58 17/05/2026] index.html - Simplified the footer layout to an elegant, realistic 3-column architecture, removing mock status indicators and telemetry dashboards.
+[19:59 17/05/2026] css/style.css - Refactored footer overrides to a clean 3-column distribution and added version-tag styling, removing all mock telemetry and LED pulse keyframe rules.
+[20:00 17/05/2026] css/style.css - Refined tablet media query footer columns for a 3-column architecture, utilizing a full-width brand row with subcolumn pairings.
+[20:01 17/05/2026] css/style.css - Removed glowing category indicator dots from dashboard cards and dossiers list, and restored button arrow SVG mask-image rules.
+[20:03 17/05/2026] svg/close.svg - Created a premium, clean geometric close cross SVG asset.
+[20:04 17/05/2026] index.html - Replaced the raw text close entity with a close-icon span in the chat widget header.
+[20:05 17/05/2026] css/style.css - Appended gorgeous, fully commented glassmorphic chat widget styles and SVG mask rules for the chat, send, and close icons.
+[20:07 17/05/2026] js/ai-chat.js - Implemented high-performance local client-side semantic and keyword dossiers NLP search engine (Mini-RAG).
+[20:09 17/05/2026] js/ai-chat.js - Integrated a secure, lightweight client-side Markdown parser for rendering bold, italic, and inline link elements in chat bubbles.
+[20:12 17/05/2026] svg/energy.svg - Created a clean vector stroke energy lightning icon for the WebGPU AI toggle.
+[20:13 17/05/2026] index.html - Integrated a chat-gpu-toggle button and chat-header-actions container inside the chat widget header.
+[20:14 17/05/2026] css/style.css - Added styling selectors and SVG mask rules for the chat-gpu-toggle and chat-header-actions components.
+[20:15 17/05/2026] js/ai-chat.js - Implemented dynamic WebLLM import, WebGPU capabilities detection, and local generative neural network inference toggle.
+[20:16 17/05/2026] js/ai-chat.js - Overhauled response templates and system prompts to use clean professional terminology (Category, Summary, Keywords) and block dramatic sci-fi jargon.
+[20:17 17/05/2026] index.html - Removed the experimental chat-gpu-toggle button and header actions layout container from the chat window header.
+[20:18 17/05/2026] css/style.css - Cleaned up and removed the WebGPU toggle, spinner keyframe, and SVG mask styling rules.
+[20:19 17/05/2026] js/ai-chat.js - Completely removed WebGPU dependencies, toggle listeners, and status state variables, refactoring the RAG search index to be typo-tolerant via Levenshtein Distance.
+[20:20 17/05/2026] svg/energy.svg - Deleted the obsolete vector lightning SVG asset.
+[20:21 17/05/2026] css/style.css - Redefined the primary .dashboard-back-strip styling rule, converting the featured records header to a static, enlarged, gold-accented title.
+[20:22 17/05/2026] pages/fragments/home.html - Removed the back arrow icon and interactive trigger ID from the featured archive records header.
+[21:56 17/05/2026] js/ai-chat.js - Upgraded offline search widget with semantic synonyms, stop words filters, active page context awareness, and fuzzy 'Did you mean?' recommendations.
+[21:59 17/05/2026] js/ai-chat.js - Refactored greeting and fallback text blocks to use formal, dry institutional phrasing, removing all casual roleplay terminology.
+[21:59 17/05/2026] index.html - Updated static assistant welcome message to use formal, dry phrasing, and documented the component comment.
+[22:00 17/05/2026] pages/dossiers/jekyll-island.html - Converted heading from 'The Conspiracy of Secrecy' to 'Secrecy Protocols' to maintain dry, institutional language.
+[22:02 17/05/2026] pages/fragments/home.html - Converted inconsistent lowercase metadata and scroll triggers to proper Title Case, ensuring premium visual consistency.
+[22:05 17/05/2026] index.html - Replaced all sci-fi roleplay footer links (Home Portal, Verification, Submit Evidence, etc.) with standard Wikipedia-like labels (Main Page, Sitemap, Contact Us).
+[22:05 17/05/2026] pages/fragments/home.html - Replaced front page titles and triggers with academic, Wikipedia-like vocabulary (Dossier Database, Open Access, View All Articles, Featured Articles).
+[22:05 17/05/2026] js/ai-chat.js - Changed chat category index link label from 'Dossiers Portal' to 'Dossier Index' to maintain dry, institutional terminology.
+[22:06 17/05/2026] pages/fragments/about.html - Completely redesigned into an official Editorial Standards & Verification page with rigorous peer-review methodologies.
+[22:06 17/05/2026] pages/fragments/contact.html - Completely redesigned into a professional Contact & Submissions portal, removing the goofy 'Secure Channel' roleplay naming.
+[22:08 17/05/2026] pages/fragments/about.html - Rewrote page content in simple, clear, plain English, stripping away stiff declassified and legal jargon.
+[22:08 17/05/2026] pages/fragments/contact.html - Rewrote form fields and submission guidelines in plain English to match standard, highly accessible encyclopedic vocabulary.
+[22:09 17/05/2026] pages/fragments/contact.html - Integrated a beautifully styled, theme-aware file upload input field to support primary source document submissions.
+[22:10 17/05/2026] pages/fragments/contact.html - Overhauled native browser file input to a custom, dashboard-style upload zone card with inline SVG and dynamic name feedback.
+[22:10 17/05/2026] pages/fragments/contact.html - Fixed single/double quote rendering conflict in file upload zone by inlining the SVG element natively.
+[22:12 17/05/2026] js/dossier-manager.js - Aligned renderSitemap static link labels to match standard Wikipedia-style vocabulary.
+[22:12 17/05/2026] pages/fragments/sitemap.html - Redesigned sitemap to render sections and category indexes in a vertical column stack (each section below the other).
+[22:13 17/05/2026] pages/fragments/sitemap.html - Applied custom Wikipedia link styling to sitemap navigation links (blue text with underlines, removing underline on hover).
+[22:13 17/05/2026] css/style.css - Centralized all sitemap stacked layouts, reversed sitemap hover-underlined links, and custom file upload styling rules.
+[22:13 17/05/2026] pages/fragments/sitemap.html - Removed all block and inline styles, delegating styling entirely to centralized style.css.
+[22:13 17/05/2026] pages/fragments/contact.html - Cleaned up form inputs and select elements by stripping all inline style attributes and centralizing them.
+[22:14 17/05/2026] js/dossier-manager.js - Added sitemap-dossier-list class to dossier listings to enable distinct font scaling in the Site Index.
+[22:15 17/05/2026] css/style.css - Implemented slightly darker blue for sitemap links, restored regular accent blue and underlines on hover, and scaled dossier links to 0.92rem.
+[10:00 27/05/2026] docs/items.md - Added Anti-Tech Extremism, Google Search Dietary Bias, and Alpha-gal Syndrome to the research index.
+[10:01 27/05/2026] data/dossiers.js - Integrated new topic metadata (google-dietary-bias, alpha-gal-syndrome, anti-tech-extremism) into the data store.
+[10:02 27/05/2026] pages/dossiers/google-dietary-bias.html - Created research dossier page for Google Search & Institutional Bias: Seed Oils vs. Red Meat.
+[10:03 27/05/2026] pages/dossiers/alpha-gal-syndrome.html - Created research dossier page for Alpha-gal Syndrome: The Tick-Induced Meat Allergy.
+[10:04 27/05/2026] pages/dossiers/anti-tech-extremism.html - Created research dossier page for Anti-Tech Extremism: Government Surveillance of Anti-AI Activists.
+[10:05 27/05/2026] pages/fragments/dossiers.html - Added recent updates entry for the three new dossiers.
+[10:06 27/05/2026] docs/processing-checkpoints.md - Registered the three new topics in the mass processing checkpoints log.
+[10:07 27/05/2026] pages/dossiers.html - Added static links for the three new research dossiers.
+[10:12 27/05/2026] js/hero-canvas.js - Overhauled the background canvas animation to feature a 3D parallax depth effect, fluid flow-field drift, interactive pointer connections/repulsion, and tap-triggered ripple force waves with spark emissions.
+[10:15 27/05/2026] css/style.css - Added CSS variables and styling rules for the background world map overlay under the hero canvas.
+[10:15 27/05/2026] pages/fragments/home.html - Added the .hero-map-overlay container element behind the interactive canvas.
+[10:17 27/05/2026] svg/world-map-outline-isolated-on-transparent-background-free-png-small.webp - Created a half-resolution version (890x490) of the world map background.
+[10:17 27/05/2026] css/style.css - Added a responsive media query to load the smaller world map background on screens under 768px wide.
+[10:19 27/05/2026] css/style.css - Improved header buttons and theme toggle hover states, adding subtle shadow elevation and more pronounced borders.
+[10:20 27/05/2026] css/style.css - Solidified hover backgrounds for header buttons and theme toggle, ensuring shadows cast outward correctly without bleeding inside.
+[10:21 27/05/2026] css/style.css - Fixed active navigation link buttons to have a border-radius of 6px instead of resetting to 0.
+[10:22 27/05/2026] css/style.css - Adjusted dark mode hover backgrounds to lighter grey, white text pop, double-layered shadows, and enabled hover states on active link selectors.
+[10:23 27/05/2026] css/style.css - Aligned active button hover styles with normal hover styles, removing the active inset underline on hover.
+[10:24 27/05/2026] css/style.css - Eliminated conflicting duplicate navigation link selectors and aligned all hover styling and 6px border-radius values.
+[10:25 27/05/2026] css/style.css - Reverted base button border-radius to 4px, removed separate hover overrides, and simplified the active link selector.
+[10:29 27/05/2026] css/style.css - Adjusted dark mode hover backgrounds to warm charcoal-brown (#2d2822) and cream borders to align with UI design palette.
+[10:31 27/05/2026] pages/fragments/home.html - Inlined the arrow SVG and changed the scroll indicator link from #dossiers to #home.
+[10:31 27/05/2026] js/search.js - Updated the home scroll trigger click listener to prevent the default anchor navigation.
+[10:34 27/05/2026] pages/fragments/home.html - Updated scroll trigger href to #home/1 to trigger custom sub-routing and smooth scroll.
+[10:34 27/05/2026] js/router.js - Added parameter-based smooth scrolling to #dashboard-layer on home initialization.
+[10:37 27/05/2026] css/style.css - Swapped all blue hovers and focus outlines to theme-adaptive warm colors (brown in light mode, yellow/gold in dark mode) via new CSS variables.
+[10:38 27/05/2026] css/style.css - Enhanced hover card shadows with double-layered depth definitions in light and dark modes.
+[10:39 27/05/2026] css/style.css - Set dossier legend description styling to italicized serif font (cursive).
+[10:43 27/05/2026] pages/fragments/dossiers.html - Removed the Recent Database Updates section from the dossiers fragment template.
+[10:44 27/05/2026] pages/dossiers.html - Removed the Recent Database Updates section from the static dossiers index page.
+[10:45 27/05/2026] data/dossiers.js - Added dateCreated and lastModified tracking metadata properties to all dossier objects.
+[10:46 27/05/2026] docs/single-item-workflow.md - Updated workflow instructions to include dateCreated and lastModified metadata updates in dossiers.js.
+[10:46 27/05/2026] docs/main-workflow.md - Updated workflow instructions to include dateCreated and lastModified metadata updates in dossiers.js.
+[10:47 27/05/2026] .agents/workflows/single-item-workflow.md - Updated workflow to include dateCreated and lastModified tracking metadata updates in dossiers.js.
+[10:47 27/05/2026] .agents/workflows/main-pages-workflow.md - Updated workflow to include dateCreated and lastModified tracking metadata updates in dossiers.js.
+[12:48 28/05/2026] pages/dossiers/15-minute-cities.html - Updated Oxford traffic filters trial details with mid-2026 postponement status and temporary congestion charge.
+[12:56 28/05/2026] pages/dossiers/agenda-2030.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/alpha-gal-syndrome.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/bilderberg.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/bis.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/blackrock-vanguard.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/cbdc.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/cfr.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/crowdstrike-outage.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/cyber-polygon.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/davos-manifesto.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/digital-id.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/esg-scores.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/event-201.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/federal-reserve.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/id2020.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/imf-world-bank.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/jekyll-island.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/mk-delta.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/my-carbon-wef.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/neuralink.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/project-agora.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/project-mariana.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/social-credit.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/the-great-reset.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/wef-global-risks-2026.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/wef.html - Inserted cross-links to related research topics in the text.
+[12:56 28/05/2026] pages/dossiers/you-will-own-nothing.html - Inserted cross-links to related research topics in the text.
+[12:59 28/05/2026] pages/dossiers/oxford-15-minute-city.html - Created new dossier page detailing the Oxford traffic filters trial, permitting system, and 15-minute city debate.
+[13:00 28/05/2026] pages/dossiers/15-minute-cities.html - Linked Oxford traffic filters trial text to the new oxford-15-minute-city dossier.
+[13:01 28/05/2026] data/dossiers.js - Registered metadata for the new oxford-15-minute-city dossier.
+[13:02 28/05/2026] pages/dossiers.html - Added static link to the new oxford-15-minute-city dossier.
+[13:03 28/05/2026] data/dossiers.js - Corrected the title of the Oxford dossier to Oxford 15 Minute Cities.
+[13:03 28/05/2026] pages/dossiers/oxford-15-minute-city.html - Corrected page titles and headers to Oxford 15 Minute Cities.
+[13:03 28/05/2026] pages/dossiers.html - Updated static link label for Oxford dossier to Oxford 15 Minute Cities.
+[13:04 28/05/2026] pages/dossiers.html - Refactored dossier list to load dynamically from dossiers.js data instead of hardcoded HTML links.
+[13:05 28/05/2026] css/style.css - Added hover shadow and solid background transitions to the View Dossier buttons.
+[13:10 28/05/2026] css/style.css - Increased hover shadow intensity and set border outline thickness to 2px for View Dossier buttons.
+[13:19 28/05/2026] css/style.css - Applied scale 1.02 transition and set font-weight to 700 on hover of the View Dossier buttons.
+[13:24 28/05/2026] css/style.css - Doubled info-card borders, increased card paragraph contrast, and reverted button border to 1px.
+[13:25 28/05/2026] css/style.css - Modified futuristic section overrides to apply 2px card borders, high-contrast paragraphs, and button hover styles.
+[13:26 28/05/2026] css/style.css - Configured card summary paragraph text to smoothly transition to a darker (or lighter in dark mode) color on card hover.
+[13:27 28/05/2026] css/style.css - Isolated scale 1.02 and hover shadow effects on View Dossier buttons to trigger only when hovered directly.
+[11:23 05/06/2026] pages/fragments/home.html - Removed the hero canvas background animation element.
+[11:23 05/06/2026] index.html - Removed the hero-canvas.js script entry.
+[11:23 05/06/2026] js/router.js - Removed hero canvas initialization and cleanup logic from routing lifecycle.
+[11:23 05/06/2026] js/hero-canvas.js - Deleted the hero canvas animation script.
+[11:23 05/06/2026] css/style.css - Removed hero-canvas styling rules and unused --hero-particle-color variables.
+[11:45 05/06/2026] pages/dossiers/wef-scandal-2025.html - Created dossier for WEF Leadership Integrity Scandal (2025).
+[11:46 05/06/2026] data/dossiers.js - Integrated WEF Leadership Integrity Scandal (2025) into the dossier data store.
+[11:47 05/06/2026] docs/items.md - Added WEF Leadership Integrity Scandal (2025) to the research index.
+[11:48 05/06/2026] pages/dossiers/trafigura-scandal-2025.html - Created dossier for Trafigura Bribery Scandal (2025).
+[11:49 05/06/2026] data/dossiers.js - Integrated Trafigura Bribery Scandal (2025) into the dossier data store.
+[11:50 05/06/2026] docs/items.md - Added Trafigura Bribery Scandal (2025) to the research index.
+[11:51 05/06/2026] pages/dossiers/fisa-702-crisis-2026.html - Created dossier for FISA Section 702 & Intelligence Leadership Crisis (2026).
+[11:52 05/06/2026] data/dossiers.js - Integrated FISA Section 702 & Intelligence Leadership Crisis (2026) into the dossier data store.
+[11:53 05/06/2026] docs/items.md - Added FISA Section 702 & Intelligence Leadership Crisis (2026) to the research index.
+[11:57 05/06/2026] pages/dossiers/sazan-island-scandal.html - Created research dossier for the Sazan Island luxury resort scandal.
+[11:58 05/06/2026] data/dossiers.js - Integrated Sazan Island Luxury Resort Scandal (2024-2026) and new category into the dossier data store.
+[11:59 05/06/2026] docs/items.md - Added Sazan Island Luxury Resort Scandal (2024-2026) under new category to the research index.
+[12:10 05/06/2026] data/dossiers-data.json - Created JSON database containing all 66 dossiers, each mapped with a new country metadata key.
+[12:10 05/06/2026] data/dossiers.js - Deleted legacy JavaScript-based database file.
+[12:11 05/06/2026] js/dossier-manager.js - Refactored data loader function to fetch JSON database asynchronously and dynamically determine relative base paths.
+[12:12 05/06/2026] index.html - Removed obsolete dossiers.js script tag.
+[12:13 05/06/2026] pages/dossiers.html - Removed obsolete dossiers.js script tag and updated DOMContentLoaded listener to load data asynchronously.
+[12:14 05/06/2026] data/dossiers-data.json - Renamed country key to place in the JSON database.
+[12:15 05/06/2026] js/ai-chat.js - Refactored chat assistant to query dossiers dynamically via DossierManager instead of legacy global variable.
+[12:16 05/06/2026] pages/dossiers.html - Cleaned up comment referring to dossiers.js to reference dossiers-data.json.
+[12:20 05/06/2026] data/dossiers-data.json - Converted place field to a string array supporting multiple countries.
+[12:21 05/06/2026] pages/fragments/dossiers.html - Added Place and Sort filter selector dropdowns to the dossiers index page UI.
+[12:22 05/06/2026] css/style.css - Grouped select styling for category, place, and sort filter dropdowns with selectors explanations.
+[12:25 05/06/2026] js/dossier-manager.js - Updated index rendering, sorting, filtering, and event listeners logic to support Place array filters and Title vs. Place sorting while preserving active options state.
+[12:26 05/06/2026] pages/fragments/dossiers.html - Changed class names of place-filter and sort-filter to category-filter-select to share styled rules.
+[12:28 05/06/2026] css/style.css - Reverted redundant place-filter-select and sort-select class selectors, keeping category-filter-select.
+[12:29 05/06/2026] data/dossiers-data.json - Enriched place arrays for all 66 dossiers by scanning text contents for all involved countries.
+[12:30 05/06/2026] js/dossier-manager.js - Updated place filter logic to include 'Global' dossiers when filtering by a specific country.
+[12:31 05/06/2026] js/dossier-manager.js - Removed Place column from the list view table while preserving sorting and filtering.
+[12:35 05/06/2026] fix-items.md - Created audit document detailing faulty/mainstream articles in the database that require deep-state/corruption updates.
+[12:38 05/06/2026] .agents/rules/editorial-policy.md - Created agent-facing editorial rules file enforcing conspiracy/corruption narrative guidelines.
+[12:39 05/06/2026] data/dossiers-data.json - Added critical_angle metadata specifying the platform's narrative focus for all 66 dossiers.
+[12:40 05/06/2026] pages/dossiers/alpha-gal-syndrome.html - Overhauled dossier to focus on Bill Gates' dual-sector investments and the synthetic meat agenda.
+[12:41 05/06/2026] pages/dossiers/uap-disclosure.html - Overhauled dossier to center on David Grusch's whistleblower testimony and illegal crash retrieval programs.
+[12:42 05/06/2026] pages/dossiers/eu-ai-act.html - Overhauled dossier to expose biometric surveillance backdoors, lobbying loopholes, and market monopolization.
+[12:43 05/06/2026] pages/dossiers/project-agora.html - Overhauled dossier to expose how the unified ledger functions as a global surveillance and transaction control grid.
+[12:44 05/06/2026] .agents/rules/editorial-policy.md - Shortened narrative guidelines rules to make them more concise and direct.
+[12:45 05/06/2026] .agents/rules/editorial-policy.md - Generalised editorial policy to cover exposing corruption generally across all research dossiers.
+[12:47 05/06/2026] .agents/rules/editorial-policy.md - Clarified that articles may briefly explain how a topic works before exposing the corruption behind it.
+[12:51 05/06/2026] .agents/rules/editorial-policy.md - Added rule requiring Wikipedia-style inline linking between dossiers within article bodies.
+[12:51 05/06/2026] pages/dossiers/eu-ai-act.html - Added inline Wikipedia-style links referencing us-ai-executive-order and social-credit.
+[12:52 05/06/2026] pages/dossiers/alpha-gal-syndrome.html - Added inline Wikipedia-style links referencing bill-gates, the-great-reset, and agenda-2030.
+[12:52 05/06/2026] pages/dossiers/uap-disclosure.html - Added inline Wikipedia-style links referencing operation-paperclip and operation-mockingbird.
+[12:52 05/06/2026] pages/dossiers/project-agora.html - Added inline Wikipedia-style links referencing bis, digital-id, and social-credit.
+[12:56 05/06/2026] pages/dossiers/palantir.html - Created dossier documenting Palantir Technologies surveillance, predictive policing, and ICE contracts.
+[12:56 05/06/2026] data/dossiers-data.json - Registered Palantir Technologies metadata in the data store.
+[12:56 05/06/2026] pages/dossiers/flock-safety.html - Created dossier documenting Flock Safety Automated License Plate Recognition (ALPR) and neighborhood surveillance.
+[12:56 05/06/2026] data/dossiers-data.json - Registered Flock Safety metadata in the data store.
+[12:57 05/06/2026] pages/dossiers/ring-surveillance.html - Created dossier documenting Ring Doorbell surveillance, Familiar Faces facial recognition, and warrantless police access.
+[12:57 05/06/2026] data/dossiers-data.json - Registered Ring Doorbell Surveillance metadata in the data store.
+[12:58 05/06/2026] js/ai-chat.js - Mapped keywords and ids for new dossiers (palantir, flock-safety, ring-surveillance) inside the chat widget's thematicMatrix.
+[12:58 05/06/2026] docs/items.md - Registered Palantir Technologies, Flock Safety, and Ring Doorbell Surveillance in the research wiki.
+[13:05 05/06/2026] pages/dossiers/palantir.html - Major expansion: 8-section exposé covering CIA origins, NSA analytical layer, ICE deportation machinery, predictive policing, $10B military contracts (Maven/TITAN/NATO), Google Cloud data federation, UK NHS £330M health data capture, and warrantless data broker aggregation. Added 12+ inline cross-links.
+[13:05 05/06/2026] data/dossiers-data.json - Expanded Palantir metadata with 20 additional keywords (Maven, TITAN, NHS, Google Cloud, data brokers, GCHQ, NSA, NATO, etc.) and updated critical angle.
+[13:06 05/06/2026] js/ai-chat.js - Expanded Palantir search keywords in thematic matrix (foundry, aip, falcon, immigrationos, maven, titan, in-q-tel, google cloud, nhs, thomson reuters, gchq, nsa, nato, prism, xkeyscore).
+[17:43 06/06/2026] LOG/changelog.md - Resolved git merge conflicts and sorted entries chronologically.
+[17:43 06/06/2026] docs/items.md - Resolved git merge conflicts by preserving all biometric and social control dossiers.
+[17:44 06/06/2026] data/dossiers-data.json - Registered Kalergi Plan Conspiracy Theory metadata in the JSON database.

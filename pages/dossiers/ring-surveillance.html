@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Dossier Page Layout & CSS Classes Explanation:
+- .dashboard-section: Main container providing margins and structure for the page content.
+- .dossier-layout: Flex/grid-based layout grouping the sidebar infobox and main content.
+- .infobox-metadata: Sidebar layout displaying structured corporate/technical parameters.
+- .infobox-table: Tabular key-value parameters inside the sidebar metadata pane.
+- .dossier-header: Page header holding the primary title and descriptive subtitle of the dossier.
+- .section-title: Reusable class for formatting standard header boundaries between sections.
+- .dossier-list-styled: List containing bulleted arguments or evidence points with styled icons/fonts.
+- .dossier-sources: Container grouping reference links and source publication metadata.
+- .source-item: Repeated blocks housing individual citation fields (title, publisher, date, link).
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Doorbell Surveillance: The Consumer-Funded Panopticon | Research Dossier</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Main container wrapping the dossier layout elements -->
+    <main class="dashboard-section u-mt-3">
+        <div class="dossier-layout">
+            <!-- Sidebar containing structured corporate and operational parameters -->
+            <aside class="infobox-metadata">
+                <h4>Dossier Metadata</h4>
+                <table class="infobox-table">
+                    <tr>
+                        <th>Subject</th>
+                        <td>Ring Doorbell Surveillance / Biometric Home Security</td>
+                    </tr>
+                    <tr>
+                        <th>Corporate Owner</th>
+                        <td>Amazon.com, Inc.</td>
+                    </tr>
+                    <tr>
+                        <th>Biometric Feature</th>
+                        <td>"Familiar Faces" (Iris & facial recognition scanning)</td>
+                    </tr>
+                    <tr>
+                        <th>Public App</th>
+                        <td>Neighbors App / Neighbors Public Safety Service (NPSS)</td>
+                    </tr>
+                    <tr>
+                        <th>Threat Vectors</th>
+                        <td>Warrantless police video access, peer-to-peer profiling</td>
+                    </tr>
+                    <tr>
+                        <th>Partner Agencies</th>
+                        <td>Over 2,000 local police departments and municipal entities</td>
+                    </tr>
+                </table>
+            </aside>
+
+            <!-- Header detailing the core critical angle of the Ring dossier -->
+            <header class="dossier-header">
+                <h1>Ring Doorbell Surveillance: The Consumer-Funded Panopticon</h1>
+                <p>Exposing lateral surveillance and biometric profiling: How Amazon's Ring doorbell network leverages consumer-funded devices and facial recognition to construct a peer-to-peer surveillance panopticon that coordinates warrantless data sharing with law enforcement.</p>
+            </header>
+
+            <!-- Documented evidence section detail -->
+            <section>
+                <h2 class="section-title">Documented Evidence</h2>
+                <p>Amazon's Ring, acquired in 2018, has deployed millions of internet-connected camera doorbells across suburban and urban communities. By converting private home security devices into nodes of a coordinated network, Amazon has constructed a vast, decentralized surveillance system financed entirely by the consumers being monitored.</p>
+                
+                <ul class="dossier-list-styled">
+                    <li><b>Warrantless Police Access:</b> For years, Ring maintained a formal pipeline allowing police departments to request video footage directly from users via the Neighbors app without a search warrant. Even after announcing a policy shift in early 2024 to end direct police requests through Neighbors, Ring maintains "emergency request" provisions that permit the company to hand over raw video files to law enforcement without customer consent or a judicial warrant.</li>
+                    <li><b>Unconsented Biometric Profiling:</b> Ring's "Familiar Faces" feature utilizes advanced facial recognition algorithms to capture, analyze, and catalog the biometric faceprints of visitors, postal workers, and pedestrians. This processing occurs without the consent of those being scanned, leading to multiple class-action lawsuits under biometric privacy laws (such as Illinois' BIPA).</li>
+                    <li><b>FTC Disclosures on Data Exposure:</b> In May 2023, the Federal Trade Commission (FTC) charged Ring with violating consumer privacy. The FTC complaint detailed that Ring granted employees and third-party contractors unrestricted access to customers' private video feeds, which were used to train facial recognition models and monitor private spaces without authorization.</li>
+                </ul>
+            </section>
+
+            <!-- Editorial narrative context section -->
+            <section class="u-mt-3">
+                <h2 class="section-title">Narrative Context</h2>
+                <p>Within the independent research community, Ring is analyzed as a masterclass in lateral surveillance. By leveraging suburban fear, Amazon convinces citizens to install and pay for the hardware of a national monitoring network. This crowd-sourced surveillance system bypasses standard legislative debates and municipal bans on public facial recognition, establishing the physical endpoints of a surveillance grid directly on private doorsteps.</p>
+                <p>When combined with centralized databases like <a href="#dossier/flock-safety">Flock Safety</a> ANPR grids and state-level biometric registries, the Ring database completes the loop of a localized, peer-to-peer <a href="#dossier/social-credit">Social Credit System</a>. The normalization of constant profiling at the household level ensures the elimination of visual anonymity in residential neighborhoods, enforcing behavioral compliance through constant corporate and community monitoring.</p>
+            </section>
+
+            <!-- Sources list referencing the mandatory research inputs -->
+            <section id="sources" class="dossier-sources u-mt-3">
+                <h2 class="section-title">Sources</h2>
+                <div class="source-item">
+                    <p><b>Title:</b> Ring to Stop Allowing Police to Request Footage From Users</p>
+                    <p><b>Publisher:</b> Electronic Frontier Foundation (EFF)</p>
+                    <p><b>Date:</b> January 24, 2024</p>
+                    <p><b>Link:</b> <a href="https://www.eff.org/deeplinks/2024/01/ring-stop-allowing-police-request-footage-users-neighbors-app" target="_blank" rel="noopener noreferrer">https://www.eff.org/deeplinks/2024/01/ring-stop-allowing-police-request-footage-users-neighbors-app</a></p>
+                </div>
+                <div class="source-item u-mt-1">
+                    <p><b>Title:</b> FTC Says Ring Employees and Contractors Had Unrestricted Access to Customer Video Data</p>
+                    <p><b>Publisher:</b> Federal Trade Commission (FTC)</p>
+                    <p><b>Date:</b> May 31, 2023</p>
+                    <p><b>Link:</b> <a href="https://www.ftc.gov/news-events/news/press-releases/2023/05/ftc-says-ring-employees-contractors-had-unrestricted-access-customer-video-data" target="_blank" rel="noopener noreferrer">https://www.ftc.gov/news-events/news/press-releases/2023/05/ftc-says-ring-employees-contractors-had-unrestricted-access-customer-video-data</a></p>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

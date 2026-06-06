@@ -81,8 +81,8 @@ class AiChatWidget {
                 keywords: ['leak', 'leaks', 'panama', 'epstein', 'unsealed', 'court files', 'kompromat', 'blackmail', 'assange', 'wikileaks', 'vault 7', 'hacking', 'zero-day', 'surveillance', 'pegasus', 'nso group', 'spyware', 'cyber-intelligence', 'wiretap']
             },
             {
-                ids: ['social-credit', 'digital-id', 'id2020', 'neuralink', 'eu-ai-act', 'us-ai-executive-order', 'fisa-702-reauthorization', 'worldcoin-world-id'],
-                keywords: ['social credit', 'sesame', 'digital id', 'eidas', 'biometrics', 'biometric', 'id2020', 'neuralink', 'bci', 'musk', 'brain chip', 'surveillance state', 'digital wallet', 'identity framework', 'universal id', 'ai act', 'artificial intelligence', 'fisa', 'section 702', 'warrantless', 'worldcoin', 'world id', 'orb', 'iris scan', 'sam altman', 'proof of personhood', 'executive order 14110', 'ai safety', 'watermarking', 'content provenance', 'c2pa']
+                ids: ['social-credit', 'digital-id', 'id2020', 'neuralink', 'eu-ai-act', 'us-ai-executive-order', 'fisa-702-reauthorization', 'worldcoin-world-id', 'palantir', 'flock-safety', 'ring-surveillance'],
+                keywords: ['social credit', 'sesame', 'digital id', 'eidas', 'biometrics', 'biometric', 'id2020', 'neuralink', 'bci', 'musk', 'brain chip', 'surveillance state', 'digital wallet', 'identity framework', 'universal id', 'ai act', 'artificial intelligence', 'fisa', 'section 702', 'warrantless', 'worldcoin', 'world id', 'orb', 'iris scan', 'sam altman', 'proof of personhood', 'executive order 14110', 'ai safety', 'watermarking', 'content provenance', 'c2pa', 'palantir', 'gotham', 'foundry', 'aip', 'falcon', 'immigrationos', 'maven', 'titan', 'in-q-tel', 'predictive policing', 'thiel', 'karp', 'google cloud', 'bigquery', 'gemini', 'nhs', 'federated data platform', 'thomson reuters', 'clear', 'lexisnexis', 'data broker', 'gchq', 'nsa', 'nato', 'battlefield ai', 'prism', 'xkeyscore', 'flock', 'flock safety', 'alpr', 'anpr', 'license plate', 'cameras', 'ring', 'doorbell', 'amazon', 'warrantless sharing', 'police access', 'familiar faces']
             }
         ];
 
@@ -261,7 +261,14 @@ class AiChatWidget {
      * @param {string} userQuery - The search query sent by the user.
      * @returns {void}
      */
-    simulateAiResponse(userQuery) {
+    /**
+     * Synthesizes a natural wait-delay (1200ms) with typing indicators
+     * to emulate remote processing before outputting the local search result.
+     * Fetches dynamic dossier data before responding.
+     * @param {string} userQuery - The search query sent by the user.
+     * @returns {Promise<void>}
+     */
+    async simulateAiResponse(userQuery) {
         this.isTyping = true;
         
         // Show typing indicator
@@ -273,18 +280,28 @@ class AiChatWidget {
         this.messagesContainer.appendChild(typingDiv);
         this.scrollToBottom();
 
-        // 1200ms delay to make it feel natural and deliberate
-        setTimeout(() => {
-            // Remove typing indicator
+        try {
+            const dossiers = await DossierManager.loadData();
+            
+            // 1200ms delay to make it feel natural and deliberate
+            setTimeout(() => {
+                // Remove typing indicator
+                const indicator = document.getElementById(typingId);
+                if (indicator) indicator.remove();
+
+                // Synthesize the smart local intelligence reply
+                const response = this.generateLocalResponse(userQuery, dossiers);
+                this.addMessage(response, false);
+                
+                this.isTyping = false;
+            }, 1200);
+        } catch (error) {
+            console.error("AI response simulation failed:", error);
             const indicator = document.getElementById(typingId);
             if (indicator) indicator.remove();
-
-            // Synthesize the smart local intelligence reply
-            const response = this.generateLocalResponse(userQuery);
-            this.addMessage(response, false);
-            
+            this.addMessage("Sorry, I encountered an error accessing the database archive.", false);
             this.isTyping = false;
-        }, 1200);
+        }
     }
 
     /**
@@ -331,18 +348,19 @@ class AiChatWidget {
     /**
      * Analyzes the query using stop-word filtering, thematic concept matrices, 
      * bi-gram multi-word phrase matching, active page context awareness, and fuzzy 
-     * Levenshtein distances. Matches against DOSSIER_DATA and returns structured HTML.
+     * Levenshtein distances. Matches against loadable dossiers and returns structured HTML.
      * @param {string} userQuery - The search input entered by the user.
+     * @param {Array} dossiers - The active array of dossier objects.
      * @returns {string} The rich synthesized HTML response message with quick links.
      */
-    generateLocalResponse(userQuery) {
+    generateLocalResponse(userQuery, dossiers = []) {
         const query = userQuery.toLowerCase().trim();
         const cleanQuery = this.cleanString(query);
 
         // 1. Check for standard greetings
         const greetings = ['hello', 'hi', 'hey', 'greetings', 'welcome', 'yo', 'good morning', 'good afternoon'];
         if (greetings.some(g => query === g || query.startsWith(g + ' '))) {
-            return `Welcome. I am the TGA digital Archive Assistant. I have indexed all **${DOSSIER_DATA.length} active intelligence dossiers** in the database.<br><br>` +
+            return `Welcome. I am the TGA digital Archive Assistant. I have indexed all **${dossiers.length} active intelligence dossiers** in the database.<br><br>` +
                    `You can query monetary systems (such as the *Federal Reserve* or *Jekyll Island*), public policy initiatives (*15-Minute Cities*, *Local Climate Mandates*), declassified operations (*MK-Ultra*, *Operation Mockingbird*), or unsealed public records (*Epstein Files*, *Panama Papers*).<br><br>` +
                    `How can I assist your research?`;
         }
@@ -351,7 +369,7 @@ class AiChatWidget {
         const listTriggers = ['list', 'dossiers', 'dossier', 'all dossiers', 'index', 'show all', 'categories'];
         if (listTriggers.some(t => query === t || query.startsWith(t + ' ') || (query.length < 15 && query.includes(t)))) {
             const categories = {};
-            DOSSIER_DATA.forEach(d => {
+            dossiers.forEach(d => {
                 if (!categories[d.category]) {
                     categories[d.category] = [];
                 }
@@ -375,7 +393,7 @@ class AiChatWidget {
         // 3. Page Context / Referral Awareness
         const activeDossierId = this.getActiveDossierId();
         if (activeDossierId && this.isContextualQuery(query)) {
-            const activeDossier = DOSSIER_DATA.find(d => d.id === activeDossierId);
+            const activeDossier = dossiers.find(d => d.id === activeDossierId);
             if (activeDossier) {
                 // If they asked specifically for "keywords"
                 if (query.includes('keyword')) {
@@ -392,7 +410,7 @@ class AiChatWidget {
         }
 
         // 4. Score dossier objects using a refined ranking hierarchy
-        const scoredDossiers = DOSSIER_DATA.map(dossier => {
+        const scoredDossiers = dossiers.map(dossier => {
             let score = 0;
             const titleLower = dossier.title.toLowerCase();
             const summaryLower = dossier.summary.toLowerCase();
@@ -494,7 +512,7 @@ class AiChatWidget {
 
         // 5. Generate Response based on matching results
         if (bestMatch && bestMatch.score >= 5) {
-            const related = DOSSIER_DATA.filter(d => d.id !== bestMatch.dossier.id && d.category === bestMatch.dossier.category).slice(0, 2);
+            const related = dossiers.filter(d => d.id !== bestMatch.dossier.id && d.category === bestMatch.dossier.category).slice(0, 2);
             let relatedText = "";
             if (related.length > 0) {
                 relatedText = `<br><br>**Related Dossiers:**<br>` + 

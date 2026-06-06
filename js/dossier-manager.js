@@ -24,19 +24,29 @@ const DossierManager = (function () {
         currentCategoryPage += direction;
         renderMegaMenu();
     }
-
     /**
-     * Gets the dossier data from the global store.
+     * Asynchronously loads the dossiers data from data/dossiers-data.json.
+     * Detects context route to adjust relative pathing for subdirectories.
+     * Caches the loaded data in a local closure variable to optimize subsequent requests.
+     * @returns {Promise<Array>} A promise that resolves to the array of dossier objects.
      */
     async function loadData() {
         if (dossiersData) return dossiersData;
         
-        // Use global variable from dossiers.js
-        if (typeof DOSSIER_DATA !== 'undefined') {
-            dossiersData = DOSSIER_DATA;
+        try {
+            let path = 'data/dossiers-data.json';
+            // Adjust relative path if the application is running from within a subdirectory (e.g. pages/)
+            if (window.location.pathname.includes('/pages/') || window.location.pathname.endsWith('dossiers.html')) {
+                path = '../data/dossiers-data.json';
+            }
+            const response = await fetch(path);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            dossiersData = await response.json();
             console.log('Dossier data loaded successfully:', dossiersData.length, 'items found.');
-        } else {
-            console.error('DOSSIER_DATA global variable not found. Check if data/dossiers.js is loaded correctly.');
+        } catch (error) {
+            console.error('Failed to load dossiers-data.json:', error);
             dossiersData = [];
         }
         return dossiersData;
@@ -136,18 +146,92 @@ const DossierManager = (function () {
     }
 
     /**
+     * Toggles a 'No results found' element inside the specified container.
+     * Hides the inner table when showing the message, and restores it when removed.
+     * @param {boolean} show Whether to display the "no results" state.
+     * @param {string} containerId The ID of the container element.
+     */
+    function toggleNoResults(show, containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        let noResultsEl = document.getElementById(containerId + '-no-results');
+
+        if (show) {
+            if (!noResultsEl) {
+                noResultsEl = document.createElement('div');
+                noResultsEl.id = containerId + '-no-results';
+                noResultsEl.className = 'no-results-msg u-mt-2 u-mb-2';
+                noResultsEl.innerHTML = `
+                    <div class="content-card u-text-center">
+                        <p class="u-text-muted">No records matching the current filters were found.</p>
+                    </div>
+                `;
+                container.appendChild(noResultsEl);
+            }
+            const table = container.querySelector('table');
+            if (table) table.classList.add('hidden');
+        } else {
+            if (noResultsEl) {
+                noResultsEl.remove();
+            }
+            const table = container.querySelector('table');
+            if (table) table.classList.remove('hidden');
+        }
+    }
+
+    /**
+     * Populates the place filter dropdown with unique, sorted place strings from the data.
+     * @param {Array} data The full list of dossier objects.
+     */
+    function populatePlaceFilter(data) {
+        const select = document.getElementById('place-filter');
+        if (!select) return;
+
+        const places = [...new Set(data.flatMap(item => item.place || []))].sort();
+        select.innerHTML = `<option value="ALL">All Places</option>` +
+            places.map(p => `<option value="${p}">${p}</option>`).join('');
+    }
+
+    /**
      * Renders the categorized dossier index for the Dossiers view (Legend).
-     * Also populates the alphabet bar and category dropdown with available options.
+     * Populates alphabet bar, category dropdown, and place dropdown.
+     * Supports title and place sorting alphabetically.
+     * Restores selections and applies active filters immediately.
      */
     async function renderDossiersIndex() {
         const data = await loadData();
         const container = document.getElementById('dossier-legend-container');
         if (!container) return;
 
-        // Sort all dossiers alphabetically
-        const sortedData = [...data].sort((a, b) => a.title.localeCompare(b.title));
+        // Save current selections to preserve state
+        const categorySelect = document.getElementById('category-filter');
+        const activeCategory = categorySelect ? categorySelect.value : 'ALL';
 
-        // Group by starting letter
+        const placeSelect = document.getElementById('place-filter');
+        const activePlace = placeSelect ? placeSelect.value : 'ALL';
+
+        const activeLetterBtn = document.querySelector('.alphabet-btn.active');
+        const activeLetter = activeLetterBtn ? activeLetterBtn.dataset.letter : 'ALL';
+
+        const searchInput = document.getElementById('legend-search');
+        const searchQuery = searchInput ? searchInput.value : '';
+
+        const sortSelect = document.getElementById('sort-filter');
+        const activeSort = sortSelect ? sortSelect.value : 'title';
+
+        // Sort data based on selected sort criteria (with sub-sorting by title)
+        const sortedData = [...data].sort((a, b) => {
+            if (activeSort === 'place') {
+                const placeA = (a.place || []).join(', ');
+                const placeB = (b.place || []).join(', ');
+                const cmp = placeA.localeCompare(placeB);
+                if (cmp !== 0) return cmp;
+            }
+            return a.title.localeCompare(b.title);
+        });
+
+        // Group by starting letter of title
         const alphabetGroups = sortedData.reduce((acc, item) => {
             const letter = item.title.charAt(0).toUpperCase();
             if (!acc[letter]) acc[letter] = [];
@@ -157,12 +241,12 @@ const DossierManager = (function () {
 
         const sortedLetters = Object.keys(alphabetGroups).sort();
 
-        // Populate the alphabet bar with available letters
+        // Populate controls
         populateAlphabetBar(sortedLetters);
-
-        // Populate the category dropdown with unique categories
         populateCategoryFilter(sortedData);
+        populatePlaceFilter(sortedData);
 
+        // Render the index table
         container.innerHTML = `
             <table class="legend-table">
                 <thead>
@@ -174,7 +258,7 @@ const DossierManager = (function () {
                 </thead>
                 <tbody>
                     ${sortedData.map(item => `
-                        <tr class="legend-item" data-id="${item.id}" data-category="${item.category}">
+                        <tr class="legend-item" data-id="${item.id}" data-category="${item.category}" data-place="${(item.place || []).join(',')}">
                             <td><a href="#dossier/${item.id}" class="legend-link">${item.title}</a></td>
                             <td><span class="legend-category">${item.category || 'Uncategorized'}</span></td>
                             <td class="legend-desc">${item.summary}</td>
@@ -184,12 +268,30 @@ const DossierManager = (function () {
             </table>
         `;
 
-        // Attach filter event listeners
+        // Restore active states and input values
+        if (categorySelect) categorySelect.value = activeCategory;
+        if (placeSelect) placeSelect.value = activePlace;
+        if (searchInput) searchInput.value = searchQuery;
+        if (sortSelect) sortSelect.value = activeSort;
+
+        const bar = document.getElementById('alphabet-bar');
+        if (bar) {
+            bar.querySelectorAll('.alphabet-btn').forEach(btn => {
+                const isMatch = btn.dataset.letter === activeLetter;
+                btn.classList.toggle('active', isMatch);
+            });
+        }
+
+        // Apply filters to newly rendered list
+        applyDossierFilters();
+
+        // Attach event listeners (safely guarded against duplicates)
         attachFilterListeners();
     }
 
     /**
      * Populates the alphabet bar with A-Z buttons, marking letters with data as active.
+     * @param {Array} availableLetters List of starting letters that have corresponding data.
      */
     function populateAlphabetBar(availableLetters) {
         const bar = document.getElementById('alphabet-bar');
@@ -205,6 +307,7 @@ const DossierManager = (function () {
 
     /**
      * Populates the category dropdown with unique categories from the data.
+     * @param {Array} data The full list of dossier objects.
      */
     function populateCategoryFilter(data) {
         const select = document.getElementById('category-filter');
@@ -216,14 +319,18 @@ const DossierManager = (function () {
     }
 
     /**
-     * Attaches click/change/input listeners to the alphabet bar, category filter, and search input.
+     * Attaches click/change/input listeners to the alphabet bar, category filter, place filter, sort select, and search input.
+     * Guarantees event listeners are only bound once per element using data markers.
      */
     function attachFilterListeners() {
         const bar = document.getElementById('alphabet-bar');
         const categorySelect = document.getElementById('category-filter');
+        const placeSelect = document.getElementById('place-filter');
+        const sortSelect = document.getElementById('sort-filter');
         const searchInput = document.getElementById('legend-search');
 
-        if (bar) {
+        if (bar && !bar.dataset.listenerAttached) {
+            bar.dataset.listenerAttached = 'true';
             bar.addEventListener('click', (e) => {
                 const btn = e.target.closest('.alphabet-btn');
                 if (!btn || btn.classList.contains('disabled')) return;
@@ -235,23 +342,38 @@ const DossierManager = (function () {
             });
         }
 
-        if (categorySelect) {
+        if (categorySelect && !categorySelect.dataset.listenerAttached) {
+            categorySelect.dataset.listenerAttached = 'true';
             categorySelect.addEventListener('change', () => applyDossierFilters());
         }
 
-        if (searchInput) {
+        if (placeSelect && !placeSelect.dataset.listenerAttached) {
+            placeSelect.dataset.listenerAttached = 'true';
+            placeSelect.addEventListener('change', () => applyDossierFilters());
+        }
+
+        if (sortSelect && !sortSelect.dataset.listenerAttached) {
+            sortSelect.dataset.listenerAttached = 'true';
+            sortSelect.addEventListener('change', () => renderDossiersIndex());
+        }
+
+        if (searchInput && !searchInput.dataset.listenerAttached) {
+            searchInput.dataset.listenerAttached = 'true';
             searchInput.addEventListener('input', () => applyDossierFilters());
         }
     }
 
     /**
-     * Applies combined filtering (letter + category + text search) to the dossier legend items.
+     * Applies combined filtering (letter + category + place + text search) to the dossier legend items.
+     * Uses scoreSearchMatch score ranking logic to maintain consistent query matching accuracy.
      */
     function applyDossierFilters() {
         const activeLetterBtn = document.querySelector('.alphabet-btn.active');
         const activeLetter = activeLetterBtn ? activeLetterBtn.dataset.letter : 'ALL';
         const categorySelect = document.getElementById('category-filter');
         const activeCategory = categorySelect ? categorySelect.value : 'ALL';
+        const placeSelect = document.getElementById('place-filter');
+        const activePlace = placeSelect ? placeSelect.value : 'ALL';
         const searchInput = document.getElementById('legend-search');
         const searchQuery = normalizeSearchText(searchInput ? searchInput.value : '');
 
@@ -261,7 +383,9 @@ const DossierManager = (function () {
         items.forEach(item => {
             const id = item.dataset.id;
             const category = item.dataset.category || '';
-            const title = item.textContent.trim();
+            const places = item.dataset.place ? item.dataset.place.split(',') : [];
+            const titleElement = item.querySelector('.legend-link');
+            const title = titleElement ? titleElement.textContent.trim() : '';
             const firstLetter = title.charAt(0).toUpperCase();
 
             let show = true;
@@ -276,9 +400,19 @@ const DossierManager = (function () {
                 show = false;
             }
 
-            // Text search filter
-            if (searchQuery && !normalizeSearchText(title).includes(searchQuery)) {
+            // Place filter
+            if (activePlace !== 'ALL' && !places.includes(activePlace) && !places.includes('Global')) {
                 show = false;
+            }
+
+            // Text search filter (using advanced search score if dossier cache exists)
+            if (show && searchQuery) {
+                const dossier = dossiersData ? dossiersData.find(d => d.id === id) : null;
+                if (dossier) {
+                    show = scoreSearchMatch(dossier, searchQuery) > 0;
+                } else {
+                    show = normalizeSearchText(title).includes(searchQuery);
+                }
             }
 
             item.classList.toggle('hidden', !show);
@@ -342,12 +476,12 @@ const DossierManager = (function () {
 
     /**
      * Advanced search: Scans title, summary, and hidden keywords.
+     * Updates either the home cards list or triggers combined legend filtering.
      * @param {string} query The search query.
      * @param {string} mode 'home' or 'legend' to determine which UI to update.
      */
     async function executeSearch(query, mode = 'home') {
         const results = await searchDossiers(query, { includeEmpty: true });
-
         const resultIds = results.map(r => r.id);
         
         if (mode === 'home') {
@@ -358,12 +492,8 @@ const DossierManager = (function () {
             });
             toggleNoResults(results.length === 0, 'home-dossier-list');
         } else {
-            const items = document.querySelectorAll('.legend-item');
-            items.forEach(el => {
-                const id = el.dataset.id;
-                el.classList.toggle('hidden', !resultIds.includes(id));
-            });
-            toggleNoResults(results.length === 0, 'dossier-legend-container');
+            // Unify legend search under the single-source-of-truth combined filters method
+            applyDossierFilters();
         }
     }
 
