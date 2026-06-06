@@ -571,5 +571,15 @@ const DOSSIER_DATA = [
     "category": "Societal Transformation",
     "dateCreated": "2023-10-05",
     "lastModified": "2024-04-12"
+  },
+  {
+    "id": "kalergi-plan",
+    "title": "Kalergi Plan Conspiracy Theory",
+    "summary": "Historical analysis of the 'Kalergi Plan' conspiracy theory, tracing its origins to neo-Nazi Gerd Honsik's misrepresentation of Richard von Coudenhove-Kalergi's 1925 book Praktischer Idealismus.",
+    "keywords": ["Richard von Coudenhove-Kalergi", "Paneuropean Union", "Praktischer Idealismus", "Gerd Honsik", "Great Replacement", "White Genocide", "Conspiracy Theory", "Adios Europa"],
+    "category": "Global Governance Agendas",
+    "dateCreated": "2026-06-03",
+    "lastModified": "2026-06-03"
   }
 ];
+

@@ -56,6 +56,21 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Narrative**: Interpreted as a "New World Order" blueprint for global depopulation and a post-collapse society.
 - **Size**: small size
 
+### Kalergi Plan Conspiracy Theory
+- **Documented Facts**: Modern replacement myth popularized in 2005 by neo-Nazi Gerd Honsik. Falsely misrepresents the philosophical reflections in Count Richard von Coudenhove-Kalergi's 1925 book *Praktischer Idealismus* regarding the long-term blending of human populations as an active, top-down plot.
+- **Narrative**: Interpreted as a blueprint for "white genocide" and mass demographic replacement orchestrated by international elites.
+- **Size**: small size
+
+### UN Pact for the Future
+- **Documented Facts**: Adopted on September 22, 2024, by the UN General Assembly (Resolution 79/1). Includes the Global Digital Compact and the Declaration on Future Generations, targeting sustainable development, science/tech, and global governance reform.
+- **Narrative**: Critics argue the focus on Digital Public Infrastructure (DPI) lays the groundwork for global digital identity and biometric registries, while the proposed "Emergency Platform" grants the UN Secretary-General coordinating authority during global shocks (pandemics, cyberattacks) without local legislative oversight.
+- **Size**: small size
+
+### WEF Global Risks (2024-2026)
+- **Documented Facts**: Published annually in January ahead of the Davos summits. The 2024-2026 reports identify AI-driven misinformation/disinformation and cyber insecurity as the top short-term global risks, ahead of climate and economic issues.
+- **Narrative**: Critics argue that elevating misinformation to a top civilizational threat justifies public-private internet censorship, content filtering, and identity verification, while warnings of a "cyber pandemic" prime the public to accept centralized biometric digital IDs and conditional internet access.
+- **Size**: small size
+
 ---
 
 ## 💳 Biometric & Social Control
@@ -85,6 +100,26 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Narrative**: The "Transhumanist" gateway for digitizing human consciousness and enabling total cognitive surveillance.
 - **Size**: medium size
 
+### EU AI Act
+- **Documented Facts**: Regulation (EU) 2024/1689 adopted in 2024, with full implementation by mid-2026. Classifies AI systems into risk tiers, banning unacceptable risks (social scoring, untargeted facial scraping) and placing strict requirements on high-risk applications (credit scoring, law enforcement, border control).
+- **Narrative**: Critics note that controversial exemptions for law enforcement real-time biometric identification (RBI) leave room for surveillance creep, while heavy compliance costs consolidate AI market power within established tech giants.
+- **Size**: small size
+
+### FISA Section 702 Reauthorization
+- **Documented Facts**: FISA Section 702 reauthorized under the Reforming Intelligence and Securing America Act (RISAA) in April 2024 for two years. Allows US intelligence agencies (NSA, FBI, CIA, ODNI) to conduct warrantless surveillance on foreign targets, which incidentally collects US citizen communications.
+- **Narrative**: Critics highlight the expanded definition of "electronic communication service provider" (ECSP) to include any business or individual with access to communication equipment (like landlords, co-working spaces), turning them into conscripted surveillance nodes, and the codification of the "backdoor search loophole" allowing warrantless domestic searches.
+- **Size**: small size
+
+### US AI Executive Order 14110
+- **Documented Facts**: Executive Order 14110 signed on October 30, 2023, with phased enforcement over 2024-2025. Invokes the Korean War-era Defense Production Act to require developers of large AI models (exceeding 10^26 operations) to submit training parameters and safety data to federal agencies (NIST, Department of Commerce, DHS).
+- **Narrative**: Critics note that using national defense emergency powers to monitor civilian research sets a dangerous precedent, and warning that standards for digital watermarking and content provenance (C2PA) create the technical infrastructure for a "verified internet" where independent, unwatermarked content is automatically suppressed.
+- **Size**: small size
+
+### Worldcoin & World ID
+- **Documented Facts**: Launched in July 2023 by Sam Altman's Tools for Humanity and expanded through 2024-2026. World ID acts as a digital passport verifying human users using a physical biometric iris-scanner ("The Orb") to generate iris hashes. Faced bans or investigations in Spain, Kenya, Hong Kong, and Germany.
+- **Narrative**: Positioned as the default proof-of-personhood mechanism for the AI era and as the infrastructure for distributing Universal Basic Income (UBI), creating a future where economic survival is conditional on biometric submission.
+- **Size**: small size
+
 ---
 
 ## 🏦 Monetary & Financial Apex
@@ -113,6 +148,16 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Documented Facts**: Digital version of central bank money (e.g., Digital Euro) being tested by the ECB and Fed.
 - **Narrative**: The end of financial privacy and the introduction of "programmable" money.
 - **Size**: medium size
+
+### Project Agorá (BIS Tokenization)
+- **Documented Facts**: Launched on April 3, 2024, by the Bank for International Settlements (BIS), seven central banks (including the Federal Reserve Bank of New York, Bank of England, Bank of Japan), and private financial institutions. Aims to integrate tokenized commercial bank deposits with wholesale CBDCs on a unified programmable ledger.
+- **Narrative**: Critics view the unified ledger as a mechanism that consolidates all global transaction records, compliance monitoring, and sovereign money management into a single, centralized technological stack, laying the groundwork for absolute transaction rules and automated compliance.
+- **Size**: small size
+
+### Project Mariana (BIS AMM)
+- **Documented Facts**: Collaborative experiment concluded in late 2023 with reports in 2024, conducted by the BIS Innovation Hub, Swiss National Bank, Banque de France, and Monetary Authority of Singapore. Tested cross-border settlement of wholesale CBDCs using Automated Market Makers (AMMs) on a public-private hybrid ledger.
+- **Narrative**: Analyzed as a method to co-opt decentralized finance (DeFi) technology to replace traditional interbank clearing and commercial forex dealers with code governed by central banks, enabling real-time compliance rules and centralized asset controls.
+- **Size**: small size
 
 ---
 
@@ -286,6 +331,21 @@ This dossier is a comprehensive collection of documented information regarding t
 - **Documented Facts**: The lone star tick (*Amblyomma americanum*) transmits the sugar molecule alpha-gal, triggering an immune response that makes victims allergic to mammalian red meat. The CDC estimates up to 450,000 Americans are affected.
 - **Narrative**: The potential deployment or exploitation of biological vectors to restrict meat consumption, reinforcing technocratic dietary transitions.
 - **Size**: small size
+
+### Carbon Border Adjustment Mechanism (CBAM)
+- **Documented Facts**: Entered transitional reporting phase on October 1, 2023, expanding through 2024-2025 with full enforcement in 2026. Importers must purchase CBAM certificates to cover carbon price differences of imported industrial goods (steel, cement, aluminum, fertilizer, electricity, hydrogen).
+- **Narrative**: Critics view it as the economic foundation of a global carbon tax union, and a scalable framework for integrating individual carbon tracking into supply chains and retail transactions.
+- **Size**: small size
+
+### 2024 CrowdStrike IT Outage
+- **Documented Facts**: July 19, 2024 IT outage caused by a faulty CrowdStrike Falcon Sensor configuration update at Kernel Mode (Ring 0) in Microsoft Windows, affecting ~8.5 million systems globally and disrupting aviation, healthcare, and finance.
+- **Narrative**: Analyzed as a real-world validation of the WEF's "Cyber Polygon" cyber pandemic simulations and as a proof of risk in the consolidation of global security infrastructure under a few private firms.
+- **Size**: small size
+
+### Oxford 15 Minute Cities
+- **Documented Facts**: Oxfordshire County Council approved a trial of six camera-enforced traffic filters in Oxford, relying on ANPR cameras rather than physical barriers. Launching in August 2026 (delayed from 2024), it implements a digital permit system granting Oxford residents 100 days of filter transit per year.
+- **Narrative**: Critics view the trial as the structural infrastructure for municipal digital zoning under the Oxford Local Plan 2040 (15-minute city model), transforming free movement into a state-regulated privilege monitored by camera networks.
+- **Size**: medium size
 
 ---
 

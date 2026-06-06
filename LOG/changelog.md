@@ -644,6 +644,15 @@
 [13:25 28/05/2026] css/style.css - Modified futuristic section overrides to apply 2px card borders, high-contrast paragraphs, and button hover styles.
 [13:26 28/05/2026] css/style.css - Configured card summary paragraph text to smoothly transition to a darker (or lighter in dark mode) color on card hover.
 [13:27 28/05/2026] css/style.css - Isolated scale 1.02 and hover shadow effects on View Dossier buttons to trigger only when hovered directly.
+[20:06 03/06/2026] pages/dossiers/kalergi-plan.html - Created research dossier for the Kalergi Plan Conspiracy Theory.
+[20:07 03/06/2026] data/dossiers.js - Integrated Kalergi Plan entry into the centralized research data store.
+[20:08 03/06/2026] docs/items.md - Added Kalergi Plan Conspiracy Theory to the Research Wiki index.
+[20:09 03/06/2026] docs/processing-checkpoints.md - Registered the Kalergi Plan Conspiracy Theory dossier in the checklist.
+[20:10 03/06/2026] js/ai-chat.js - Added Kalergi Plan keyword matching to the AI assistant thematic matrix.
+[17:30 06/06/2026] docs/items.md - Added 11 missing research dossiers to the index under their respective sections.
+[17:30 06/06/2026] docs/processing-checkpoints.md - Updated checklist to include 11 new dossiers and synchronized the numbering with items.md.
+[17:38 06/06/2026] js/dossier-manager.js - Updated getColumnsPerPage to return a single column for narrow mobile viewports.
+[17:39 06/06/2026] css/style.css - Refactored mega menu, alphabet bar, and inventory table for mobile responsiveness.
 
 
 
