@@ -911,3 +911,6 @@
 [17:43 06/06/2026] LOG/changelog.md - Resolved git merge conflicts and sorted entries chronologically.
 [17:43 06/06/2026] docs/items.md - Resolved git merge conflicts by preserving all biometric and social control dossiers.
 [17:44 06/06/2026] data/dossiers-data.json - Registered Kalergi Plan Conspiracy Theory metadata in the JSON database.
+[11:20 20/06/2026] data/dossiers-data.json - Add Peter Thiel's Dialog Network & Leak (2026) dossier entry
+[11:20 20/06/2026] pages/dossiers/peter-thiel-dialog-leak.html - Created dossier documenting the Dialog network co-founded by Peter Thiel and the June 2026 data leak.
+[11:21 20/06/2026] js/ai-chat.js - Mapped keywords and id for peter-thiel-dialog-leak in thematicMatrix.
