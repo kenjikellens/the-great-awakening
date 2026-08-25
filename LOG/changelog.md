@@ -899,3 +899,5 @@
 [13:05 05/06/2026] pages/dossiers/palantir.html - Major expansion: 8-section exposé covering CIA origins, NSA analytical layer, ICE deportation machinery, predictive policing, $10B military contracts (Maven/TITAN/NATO), Google Cloud data federation, UK NHS £330M health data capture, and warrantless data broker aggregation. Added 12+ inline cross-links.
 [13:05 05/06/2026] data/dossiers-data.json - Expanded Palantir metadata with 20 additional keywords (Maven, TITAN, NHS, Google Cloud, data brokers, GCHQ, NSA, NATO, etc.) and updated critical angle.
 [13:06 05/06/2026] js/ai-chat.js - Expanded Palantir search keywords in thematic matrix (foundry, aip, falcon, immigrationos, maven, titan, in-q-tel, google cloud, nhs, thomson reuters, gchq, nsa, nato, prism, xkeyscore).
+[16:40 25/08/2026] pages/fragments/home.html - Removed archive highlights information panel (Collection, Method, Access metadata).
+[16:40 25/08/2026] css/style.css - Removed obsolete .archive-frontdesk-meta container, dark-theme override, and responsive media rules.
