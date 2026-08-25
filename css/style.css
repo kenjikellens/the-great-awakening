@@ -541,18 +541,33 @@ body:not(.is-home) #content-shell {
     cursor: default;
 }
 
-/* 
-    Mega Menu Grid 
-    Multi-column layout for organizing many links efficiently.
-*/
+/* Layout grid inside the mega menu organizing dossier links into dynamic columns. */
 .mega-menu-grid {
     display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(6, auto);
-    grid-auto-columns: minmax(200px, 1fr);
+    grid-auto-flow: row;
     gap: 0.5rem 3rem;
     flex-grow: 1;
     width: 100%;
+}
+
+/* Configures the mega menu grid columns for 4-column layouts. */
+.mega-menu-grid.columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Configures the mega menu grid columns for 3-column layouts. */
+.mega-menu-grid.columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Configures the mega menu grid columns for 2-column layouts. */
+.mega-menu-grid.columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Configures the mega menu grid columns for 1-column mobile layouts. */
+.mega-menu-grid.columns-1 {
+    grid-template-columns: repeat(1, 1fr);
 }
 
 /* 
@@ -2549,6 +2564,7 @@ h3,
     .mega-menu-grid Selector
     Reduces spacing and configures columns inside the mega menu grid system.
 */
+/* Overrides mega menu grid spacing to tighten grid gaps inside the premium HUD panel. */
 .mega-menu-grid {
     gap: 0.5rem 2rem;
 }
@@ -3910,95 +3926,70 @@ h3,
 .u-list-custom {
     padding-left: 1.2rem;
 }
-
 /*
     Responsive Breakpoints (max-width: 900px)
-    Adapts columns, layouts, filters, tables, and widgets to smaller mobile screens.
+    Adapts columns, layouts, filters, tables, and widgets to tablet and smaller screens.
 */
 @media (max-width: 900px) {
-
-    /*
-        .archive-frontdesk Selector (Mobile Hero Layout)
-        Adjusts padding and fits dimensions for compact smartphone display screens.
-    */
+    /* Styles the mobile hero banner with compact vertical padding on smaller screens. */
     .archive-frontdesk {
         min-height: auto;
         padding: calc(var(--header-height) + 3rem) 1.5rem 3.5rem;
     }
 
-    /*
-        .archive-frontdesk-meta Selector (Mobile highlights Panel)
-        Collapses highlights columns into a unified vertical list block.
-    */
-    .archive-frontdesk-meta {
+    /* Sets column layout and grid gaps for about page content on smaller screens. */
+    .about-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    /*
-        .archive-frontdesk-meta > div Selector (Mobile highlights Column)
-        Switches separator borders from right side to bottom side.
-    */
-    .archive-frontdesk-meta>div {
-        border-right: 0;
-        border-bottom: 1px solid var(--border-light);
+    /* Sets column layout and grid gaps for contact forms on smaller screens. */
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    /*
-        .archive-frontdesk-meta > div:last-child Selector (Mobile highlights Last Column)
-        Removes separator border from the final list element.
-    */
-    .archive-frontdesk-meta>div:last-child {
-        border-bottom: 0;
+    /* Adjusts the dashboard width and pads card gaps on medium screen sizes. */
+    .dashboard-section {
+        width: min(1180px, calc(100% - 2.5rem));
     }
 
-    /*
-        .legend-filter-row Selector (Mobile Inventory Controls)
-        Arranges controls vertically on medium screen widths.
-    */
+    /* Arranges inventory filters vertically with equal row spacing. */
     .legend-filter-row {
         flex-direction: column;
+        gap: 1rem;
     }
 
-    /*
-        .category-filter-select and .u-max-w-400 Selector
-        Stretches selection elements and search bars to 100% viewport width.
-    */
-    .category-filter-select,
+    /* Stretches the category filter select dropdown to full width on medium screens. */
+    .category-filter-select {
+        max-width: none;
+        width: 100%;
+    }
+
+    /* Stretches the search inputs to full width on medium screens. */
     .u-max-w-400 {
         max-width: none;
         width: 100%;
     }
 
-    /*
-        .search-result-card Selector (Mobile Search Result Card)
-        Rearranges horizontal result cards into a standard vertical flow.
-    */
+    /* Rearranges horizontal search results into a standard vertical flow. */
     .search-result-card {
         flex-direction: column;
     }
 
-    /*
-        .search-result-card__actions .card-link Selector
-        Frees result buttons to align cleanly inside vertical parent modules.
-    */
+    /* Resets positioning of the view action links inside vertical search cards. */
     .search-result-card__actions .card-link {
         position: static;
     }
 
-    /*
-        .infobox-metadata Selector (Mobile Infobox Summary)
-        Disables floats to center summaries above dossier headers on mobile screens.
-    */
+    /* Disables floating behaviors to center summary infoboxes above dossier text. */
     .infobox-metadata {
         float: none;
         width: 100%;
         margin: 0 0 1.5rem;
     }
 
-    /*
-        .footer-columns Selector (Mobile 900px Footer Columns)
-        Changes the 4-column grid into a highly balanced 2x2 grid layout on tablet viewports.
-    */
+    /* Arranges the footer columns into a 2x2 grid layout on tablet viewports. */
     .footer-columns {
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
@@ -4006,33 +3997,83 @@ h3,
 }
 
 /*
-    Responsive Breakpoints (max-width: 650px)
-    Refines header heights, brand scales, letter lists, and tables for extra small screens.
+    Responsive Breakpoints (max-width: 800px)
+    Converts the inventory data table into a highly readable card stack layout.
 */
-@media (max-width: 650px) {
-
-    /*
-        :root Selector (Mobile Header Height Tokens)
-        Expands header heights to fit dual-layered mobile layouts.
-    */
-    :root {
-        --header-height: 96px;
+@media (max-width: 800px) {
+    /* Converts the legend table container to block formatting for card layout. */
+    .legend-table {
+        display: block;
+        width: 100%;
+        border: none;
     }
 
-    /*
-        .site-header Selector (Mobile Header Height Overwrite)
-        Allows header to expand vertically to hold wrapped items.
-    */
+    /* Converts the legend table body to block formatting for card layout. */
+    .legend-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    /* Redesigns inventory table rows into discrete cards with borders and shadows. */
+    .legend-table tr {
+        display: block;
+        width: 100%;
+        background: var(--bg-card);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+        box-shadow: var(--card-shadow);
+    }
+
+    /* Converts legend table cells into block rows to stack details. */
+    .legend-table td {
+        display: block;
+        width: 100%;
+        padding: 0.35rem 0;
+        border: none;
+    }
+
+    /* Highlights the dossier title cell as a header and adds a divider line. */
+    .legend-table td:first-child {
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-light);
+        margin-bottom: 0.5rem;
+    }
+
+    /* Displays category badge in-line and keeps standard padding. */
+    .legend-table td:nth-child(2) {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    /* Formats the summary text in the collapsed card with a muted text color. */
+    .legend-table td:last-child {
+        color: var(--text-muted);
+        margin-top: 0.5rem;
+    }
+
+    /* Hides the desktop table header cells on tablet and mobile viewports. */
+    .legend-table thead {
+        display: none;
+    }
+}
+
+/*
+    Responsive Breakpoints (max-width: 650px)
+    Refines header heights, logo scales, alphabet sliders, and footer wrapping.
+*/
+@media (max-width: 650px) {
+    /* Expands header height bounds to hold wrapped nav items safely. */
     .site-header {
         min-height: var(--header-height);
         height: auto;
         align-items: flex-start;
     }
 
-    /*
-        .nav-container Selector (Mobile Nav Alignments)
-        Wraps navigation items, logo, and theme buttons safely within the header.
-    */
+    /* Centers brand logo text, links, and switches to wrapping navigation container. */
     .nav-container {
         padding: 0 1rem;
         min-height: var(--header-height);
@@ -4042,10 +4083,7 @@ h3,
         row-gap: 0.35rem;
     }
 
-    /*
-        .header-brand Selector (Mobile Logo Title Scale)
-        Centers and wraps logo titles on extra small mobile interfaces.
-    */
+    /* Centers and scales brand title logo text on smaller screen viewports. */
     .header-brand {
         flex: 0 0 100%;
         padding-right: 0;
@@ -4054,10 +4092,7 @@ h3,
         line-height: 1.1;
     }
 
-    /*
-        .header-links Selector (Mobile Navigation Flex Links)
-        Centers wrapped pills inside the subnav area of the mobile header.
-    */
+    /* Centers navigation buttons within the wrapped mobile subheader container. */
     .header-links {
         width: auto;
         gap: 0.5rem;
@@ -4065,19 +4100,13 @@ h3,
         justify-content: center;
     }
 
-    /*
-        .header-links>li>a Selector (Mobile Navigation Pills Scale)
-        Tightens font sizes and margins inside menu links for narrow screen widths.
-    */
+    /* Formats navigation capsule buttons for extra small viewports. */
     .header-links>li>a {
         font-size: 0.65rem;
         padding: 4px 10px;
     }
 
-    /*
-        .theme-toggle Selector (Mobile Theme manager Trigger)
-        Locks theme managers in a fixed floating corner to prevent overlap.
-    */
+    /* Repositions the theme toggle button to prevent overlapping links. */
     .theme-toggle {
         position: absolute;
         right: 0.75rem;
@@ -4086,82 +4115,29 @@ h3,
         padding: 0.35rem;
     }
 
-    /*
-        .dashboard-section Selector (Mobile Dashboard Width limits)
-        Expands dashboard container widths to utilize full mobile screens.
-    */
+    /* Scales the dashboard section width to fit compact mobile sizes. */
     .dashboard-section {
         width: min(100% - 1.5rem, 1180px);
         padding: 2.5rem 0;
     }
 
-    /*
-        .content-card Selector (Mobile card spacing override)
-        Compacts card padding on mobile screens.
-    */
+    /* Compacts container card padding on small mobile layouts. */
     .content-card {
         padding: 1.5rem;
     }
 
-    /*
-        .legend-table, .legend-table thead, .legend-table tbody, .legend-table tr, .legend-table th, .legend-table td Selector
-        Transforms table systems into a responsive list of stacked detail fields on smartphones.
-    */
-    .legend-table,
-    .legend-table thead,
-    .legend-table tbody,
-    .legend-table tr,
-    .legend-table th,
-    .legend-table td {
-        display: block;
-    }
-
-    /*
-        .legend-table thead Selector (Mobile Table Headers Hiding)
-        Hides table headers on screen sizes below 650px.
-    */
-    .legend-table thead {
-        display: none;
-    }
-
-    /*
-        .legend-table tr Selector (Mobile Table Rows Separator)
-        Adds clean visual separator boxes between data table records on mobile.
-    */
-    .legend-table tr {
-        border-bottom: 1px solid var(--border-light);
-        padding: 1rem;
-    }
-
-    /*
-        .legend-table td Selector (Mobile Table Cell Padding)
-        Removes default cell padding to prevent layout shifts.
-    */
-    .legend-table td {
-        padding: 0.25rem 0;
-    }
-
-    /*
-        .chat-window Selector (Mobile AI Chat Window Dimensions)
-        Locks floating assistant HUD panels to maximum available mobile screen bounds.
-    */
+    /* Locks the floating assistant widget container to maximum mobile screen bounds. */
     .chat-window {
         width: calc(100vw - 2rem);
         height: min(460px, calc(100vh - 7rem));
     }
 
-    /*
-        .infobox-table Selector (Mobile Infobox layout)
-        Forces infobox tables to stack cleanly without columns on mobile interfaces.
-    */
+    /* Enables table block layouts to support flexible wrapping. */
     .infobox-table {
         table-layout: fixed;
     }
 
-    /*
-        .infobox-table th, .infobox-table td, .dossier-layout p, .dossier-layout li, .dossier-layout Selector
-        Enforces clean text wrapping boundaries to eliminate overflow on mobile views.
-    */
+    /* Wraps long text inside tables and dossier layouts to eliminate horizontal overflows. */
     .infobox-table th,
     .infobox-table td,
     .dossier-layout p,
@@ -4171,49 +4147,82 @@ h3,
         word-break: normal;
     }
 
-    /*
-        .infobox-table tr, .infobox-table th, .infobox-table td Selector
-        Ensures infobox elements display as block sections.
-    */
-    .infobox-table tr,
-    .infobox-table th,
-    .infobox-table td {
+    /* Sets infobox rows to stack vertically. */
+    .infobox-table tr {
         display: block;
         width: 100%;
     }
 
-    /*
-        .infobox-table th Selector (Mobile Infobox Label cell)
-        Tops label cells with breathing space, separating them from data cells.
-    */
+    /* Formats infobox table label cells as full-width block rows. */
     .infobox-table th {
+        display: block;
+        width: 100%;
         padding-bottom: 0.1rem;
         border-bottom: 0;
     }
 
-    /*
-        .infobox-table td Selector (Mobile Infobox Data cell)
-        Removes top boundaries inside detail rows to stack cleanly under label headings.
-    */
+    /* Formats infobox table data cells as full-width block rows under headings. */
     .infobox-table td {
+        display: block;
+        width: 100%;
         padding-top: 0;
     }
 
-    /*
-        .footer-columns Selector (Mobile 650px Footer Columns)
-        Collapses the grid into a single responsive column on compact smartphone screens.
-    */
+    /* Collapses footer directories into a single responsive column list. */
     .footer-columns {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    /*
-        .site-footer .footer-bottom Selector (Mobile Footer Bottom)
-        Adjusts padding and spacing on compact mobile screens.
-    */
+    /* Compacts footer padding and heights for smaller viewports. */
     .site-footer .footer-bottom {
         padding-top: 1.5rem;
+    }
+
+    /* Adjusts base body header variables for mobile header sizes. */
+    :root {
+        --header-height: 96px;
+    }
+}
+
+/*
+    Responsive Breakpoints (max-width: 600px)
+    Enables touch-based horizontal scrolling for the A-Z alphabet bar.
+*/
+@media (max-width: 600px) {
+    /* Enables horizontal touch scrolling and hides wrapping for alphabet button rows. */
+    .alphabet-bar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    /* Hides the default scrollbar indicators on Webkit scrollable rows. */
+    .alphabet-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Prevents individual letter filter buttons from shrinking when scrolled. */
+    .alphabet-btn {
+        flex: 0 0 auto;
+    }
+
+    /* Collapses the highlights metadata panel into a single vertical block. */
+    .archive-frontdesk-meta {
+        grid-template-columns: 1fr;
+    }
+
+    /* Replaces vertical divider borders with horizontal bottom borders. */
+    .archive-frontdesk-meta>div {
+        border-right: 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    /* Removes border highlights from the last metadata block item. */
+    .archive-frontdesk-meta>div:last-child {
+        border-bottom: 0;
     }
 }
 

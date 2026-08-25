@@ -644,16 +644,25 @@
 [13:25 28/05/2026] css/style.css - Modified futuristic section overrides to apply 2px card borders, high-contrast paragraphs, and button hover styles.
 [13:26 28/05/2026] css/style.css - Configured card summary paragraph text to smoothly transition to a darker (or lighter in dark mode) color on card hover.
 [13:27 28/05/2026] css/style.css - Isolated scale 1.02 and hover shadow effects on View Dossier buttons to trigger only when hovered directly.
-[11:23 05/06/2026] pages/fragments/home.html - Removed the hero canvas background animation element.
-[11:23 05/06/2026] index.html - Removed the hero-canvas.js script entry.
-[11:23 05/06/2026] js/router.js - Removed hero canvas initialization and cleanup logic from routing lifecycle.
-[11:23 05/06/2026] js/hero-canvas.js - Deleted the hero canvas animation script.
-[11:23 05/06/2026] css/style.css - Removed hero-canvas styling rules and unused --hero-particle-color variables.
 [18:39 22/04/2026] pages/dossiers/the-great-reset.html - Normalized and expanded dossier to align with standard format and add structural depth.
 [18:39 22/04/2026] data/dossiers.js - Updated the-great-reset summary to match normalized content.
 [18:40 22/04/2026] pages/dossiers/wef.html - Normalized and expanded dossier to ~4x size with timeline, actors, impacts, and 3 official sources.
 [18:40 22/04/2026] data/dossiers.js - Updated wef summary to match expanded content.
 [18:45 22/04/2026] css/style.css - Reduced AI chat widget dimensions and implemented pointer-events fix to prevent hover blocking on the mega-menu.
+[20:06 03/06/2026] pages/dossiers/kalergi-plan.html - Created research dossier for the Kalergi Plan Conspiracy Theory.
+[20:07 03/06/2026] data/dossiers.js - Integrated Kalergi Plan entry into the centralized research data store.
+[20:08 03/06/2026] docs/items.md - Added Kalergi Plan Conspiracy Theory to the Research Wiki index.
+[20:09 03/06/2026] docs/processing-checkpoints.md - Registered the Kalergi Plan Conspiracy Theory dossier in the checklist.
+[20:10 03/06/2026] js/ai-chat.js - Added Kalergi Plan keyword matching to the AI assistant thematic matrix.
+[11:23 05/06/2026] pages/fragments/home.html - Removed the hero canvas background animation element.
+[11:23 05/06/2026] index.html - Removed the hero-canvas.js script entry.
+[11:23 05/06/2026] js/router.js - Removed hero canvas initialization and cleanup logic from routing lifecycle.
+[11:23 05/06/2026] js/hero-canvas.js - Deleted the hero canvas animation script.
+[11:23 05/06/2026] css/style.css - Removed hero-canvas styling rules and unused --hero-particle-color variables.
+[17:30 06/06/2026] docs/items.md - Added 11 missing research dossiers to the index under their respective sections.
+[17:30 06/06/2026] docs/processing-checkpoints.md - Updated checklist to include 11 new dossiers and synchronized the numbering with items.md.
+[17:38 06/06/2026] js/dossier-manager.js - Updated getColumnsPerPage to return a single column for narrow mobile viewports.
+[17:39 06/06/2026] css/style.css - Refactored mega menu, alphabet bar, and inventory table for mobile responsiveness.
 
 
 
@@ -898,6 +907,12 @@
 [12:58 05/06/2026] docs/items.md - Registered Palantir Technologies, Flock Safety, and Ring Doorbell Surveillance in the research wiki.
 [13:05 05/06/2026] pages/dossiers/palantir.html - Major expansion: 8-section exposé covering CIA origins, NSA analytical layer, ICE deportation machinery, predictive policing, $10B military contracts (Maven/TITAN/NATO), Google Cloud data federation, UK NHS £330M health data capture, and warrantless data broker aggregation. Added 12+ inline cross-links.
 [13:05 05/06/2026] data/dossiers-data.json - Expanded Palantir metadata with 20 additional keywords (Maven, TITAN, NHS, Google Cloud, data brokers, GCHQ, NSA, NATO, etc.) and updated critical angle.
-[13:06 05/06/2026] js/ai-chat.js - Expanded Palantir search keywords in thematic matrix (foundry, aip, falcon, immigrationos, maven, titan, in-q-tel, google cloud, nhs, thomson reuters, gchq, nsa, nato, prism, xkeyscore).
+[17:43 06/06/2026] LOG/changelog.md - Resolved git merge conflicts and sorted entries chronologically.
+[17:43 06/06/2026] docs/items.md - Resolved git merge conflicts by preserving all biometric and social control dossiers.
+[17:44 06/06/2026] data/dossiers-data.json - Registered Kalergi Plan Conspiracy Theory metadata in the JSON database.
+[11:20 20/06/2026] data/dossiers-data.json - Add Peter Thiel's Dialog Network & Leak (2026) dossier entry
+[11:20 20/06/2026] pages/dossiers/peter-thiel-dialog-leak.html - Created dossier documenting the Dialog network co-founded by Peter Thiel and the June 2026 data leak.
+[11:21 20/06/2026] js/ai-chat.js - Mapped keywords and id for peter-thiel-dialog-leak in thematicMatrix.
 [16:40 25/08/2026] pages/fragments/home.html - Removed archive highlights information panel (Collection, Method, Access metadata).
 [16:40 25/08/2026] css/style.css - Removed obsolete .archive-frontdesk-meta container, dark-theme override, and responsive media rules.
+[17:02 25/08/2026] index.html - Added standardized OOCSS classes (.pill-btn, .icon-btn) to header navigation and theme toggle.

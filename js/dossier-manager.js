@@ -6,13 +6,15 @@ const DossierManager = (function () {
     let currentCategoryPage = 0;
 
     /**
-     * Detects how many columns to show based on responsive breakpoints.
+     * Detects the optimal number of grid columns for the mega-menu based on active viewport width breakpoints.
+     * Affects the navigation layout configuration during dynamic resizing events.
      */
     function getColumnsPerPage() {
         const width = window.innerWidth;
         if (width >= 1200) return 4;
         if (width >= 768) return 3;
-        return 2;
+        if (width >= 480) return 2;
+        return 1;
     }
 
     /**

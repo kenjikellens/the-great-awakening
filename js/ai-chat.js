@@ -65,8 +65,8 @@ class AiChatWidget {
                 keywords: ['climate', 'carbon', 'mandate', 'ulez', 'energy', 'lockdown', 'car-free', '15-minute', 'environmental', 'sustainable', 'sdgs', 'greenhouse', 'pollution', 'warming', 'mobility', 'restrictions', 'net zero', 'cbam', 'carbon border', 'carbon tariff', 'emissions tracking', 'crowdstrike', 'outage', 'blue screen', 'bsod', 'cyber-polygon']
             },
             {
-                ids: ['wef', 'the-great-reset', 'davos-manifesto', 'bilderberg', 'trilateral-commission', 'un-pact-for-the-future', 'wef-global-risks-2026'],
-                keywords: ['schwab', 'davos', 'world economic forum', 'bilderberg', 'trilateral', 'stakeholder capitalism', 'globalist', 'globalists', 'elite', 'elites', 'great reset', 'manifesto', 'private policy', 'young global leaders', 'fourth industrial', 'pact for the future', 'digital compact', 'un pact', 'global risks', 'disinformation', 'emergency platform']
+                ids: ['wef', 'the-great-reset', 'davos-manifesto', 'bilderberg', 'trilateral-commission', 'un-pact-for-the-future', 'wef-global-risks-2026', 'kalergi-plan', 'peter-thiel-dialog-leak'],
+                keywords: ['schwab', 'davos', 'world economic forum', 'bilderberg', 'trilateral', 'stakeholder capitalism', 'globalist', 'globalists', 'elite', 'elites', 'great reset', 'manifesto', 'private policy', 'young global leaders', 'fourth industrial', 'pact for the future', 'digital compact', 'un pact', 'global risks', 'disinformation', 'emergency platform', 'kalergi', 'kalergi plan', 'coudenhove-kalergi', 'replacement', 'great replacement', 'white genocide', 'dialog', 'dialog network', 'thiel', 'peter thiel', 'auren hoffman', 'cult', 'build-a-cult', 'crimew']
             },
             {
                 ids: ['mk-ultra', 'mk-delta', 'operation-mockingbird', 'operation-gladio', 'operation-sea-spray'],

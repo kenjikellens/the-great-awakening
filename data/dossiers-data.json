@@ -1,5 +1,29 @@
 [
   {
+    "id": "peter-thiel-dialog-leak",
+    "title": "Peter Thiel's Dialog Network & Leak (2026)",
+    "summary": "A dossier on the secretive elite network Dialog, co-founded by Peter Thiel and Auren Hoffman, and the June 2026 data leak exposing its member database and controversial agenda items such as 'Build-a-Cult'.",
+    "keywords": [
+      "Peter Thiel",
+      "Dialog",
+      "Auren Hoffman",
+      "Build-a-Cult",
+      "Data Leak",
+      "Elite Networks",
+      "maia arson crimew",
+      "2026"
+    ],
+    "category": "Elite Discussion Groups",
+    "place": [
+      "Global",
+      "Ireland",
+      "United States"
+    ],
+    "dateCreated": "2026-06-20",
+    "lastModified": "2026-06-20",
+    "critical_angle": "Expose the secretive network of global tech, political, and military elites co-ordinating off-the-record agendas under Thiel's guidance."
+  },
+  {
     "id": "sazan-island-scandal",
     "title": "Sazan Island Luxury Resort Scandal (2024-2026)",
     "summary": "A dossier on the environmental and political controversy surrounding Jared Kushner's luxury resort project on Sazan Island, the 2024 amendments weakening Albania's protected areas, and the subsequent 2026 anti-corruption probe and public protests.",
@@ -1847,5 +1871,29 @@
     "dateCreated": "2026-06-05",
     "lastModified": "2026-06-05",
     "critical_angle": "Expose how Amazon's Ring doorbell network leverages consumer-funded devices and biometric facial recognition (\"Familiar Faces\") to build a peer-to-peer surveillance panopticon that shares raw video streams with law enforcement and federal entities without judicial warrants."
+  },
+  {
+    "id": "kalergi-plan",
+    "title": "Kalergi Plan Conspiracy Theory",
+    "summary": "Historical analysis of the 'Kalergi Plan' conspiracy theory, tracing its origins to neo-Nazi Gerd Honsik's misrepresentation of Richard von Coudenhove-Kalergi's 1925 book Praktischer Idealismus.",
+    "keywords": [
+      "Richard von Coudenhove-Kalergi",
+      "Paneuropean Union",
+      "Praktischer Idealismus",
+      "Gerd Honsik",
+      "Great Replacement",
+      "White Genocide",
+      "Conspiracy Theory",
+      "Adios Europa"
+    ],
+    "category": "Global Governance Agendas",
+    "place": [
+      "Austria",
+      "Germany",
+      "Global"
+    ],
+    "dateCreated": "2026-06-03",
+    "lastModified": "2026-06-03",
+    "critical_angle": "Expose the neo-Nazi fabrication of the Kalergi Plan, detailing how Coudenhove-Kalergi's philosophical works were distorted to create a white genocide replacement myth."
   }
 ]
